@@ -23,10 +23,10 @@ import json
 import math
 from pathlib import Path
 
-BIODEVOPS_ROOT = Path("/root/Desktop/BioDevOps")
-PROD_RAG = BIODEVOPS_ROOT / "biodevops_rag"
-SWEEP_ROOT = BIODEVOPS_ROOT / "si_scaling_sweep_2026"
-OUT_DIR = SWEEP_ROOT / "results" / "redundancy_audit"
+PACKAGE_RESULTS = Path(__file__).resolve().parent
+QWEN25_RAW = PACKAGE_RESULTS / "qwen25_natural_output_raw"
+SWEEP_RESULTS = PACKAGE_RESULTS
+OUT_DIR = PACKAGE_RESULTS / "redundancy_audit"
 
 SHACL_INJECTED_MARKER = "clinical_shacl_nonconformance_routes_review"
 
@@ -160,9 +160,9 @@ def summarize(cases_classified: list[dict]) -> dict:
 
 def run_qwen25() -> dict:
     files = {
-        "qwen2.5:1.5b": PROD_RAG / "evaluation_outputs/generator_sweep_matched/qwen2.5_1.5b/batch_eval_results.json",
-        "qwen2.5:3b": PROD_RAG / "evaluation_outputs/generator_sweep_matched/qwen2.5_3b/batch_eval_results.json",
-        "qwen2.5:7b": PROD_RAG / "evaluation_outputs/generator_sweep/qwen25_7b_strict_runtime_shacl/batch_eval_results.json",
+        "qwen2.5:1.5b": QWEN25_RAW / "qwen2.5_1.5b_baseline_batch_eval_results.json",
+        "qwen2.5:3b": QWEN25_RAW / "qwen2.5_3b_baseline_batch_eval_results.json",
+        "qwen2.5:7b": QWEN25_RAW / "qwen2.5_7b_baseline_batch_eval_results.json",
     }
     results = {}
     for label, path in files.items():
@@ -191,8 +191,8 @@ NEW_SWEEP_MODELS = [
 def run_new_sweep() -> dict:
     results = {}
     for model in NEW_SWEEP_MODELS:
-        dev_path = SWEEP_ROOT / "results/matched_strict" / model / "development/batch_eval_results.json"
-        held_path = SWEEP_ROOT / "results/matched_strict" / model / "held_out/batch_eval_results.json"
+        dev_path = SWEEP_RESULTS / "matched_strict" / model / "development/batch_eval_results.json"
+        held_path = SWEEP_RESULTS / "matched_strict" / model / "held_out/batch_eval_results.json"
         if not dev_path.exists() or not held_path.exists():
             results[model] = {"status": "FAILED_OR_MISSING"}
             continue

@@ -11,7 +11,7 @@ import json
 import math
 from pathlib import Path
 
-ROOT = Path("/root/Desktop/BioDevOps/si_scaling_sweep_2026/results/rq2_multimodel_bounded_agent")
+ROOT = Path(__file__).resolve().parent.parent / "rq2_multimodel_bounded_agent"
 MODELS = ["qwen2.5_7b", "qwen3.5_0.8b", "gemma3_1b", "qwen3.5_2b", "gemma3_4b",
           "qwen3.5_4b", "qwen3.5_9b", "gemma3_12b", "gemma3_27b", "qwen3.5_27b"]
 SPLITS = ["development", "held_out"]
@@ -93,7 +93,7 @@ def main() -> None:
     )
     print(f"Models with 100/100 on both splits: {n_models_full}")
 
-    out_path = Path("/root/Desktop/BioDevOps/results/inloop_revision_cross_series_20260806/rq2_table_verified.json")
+    out_path = Path(__file__).resolve().parent / "rq2_table_verified.json"
     out_path.write_text(json.dumps(table_rows, indent=2))
     print(f"\nWritten: {out_path}")
 

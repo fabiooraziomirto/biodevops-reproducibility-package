@@ -11,8 +11,8 @@ import json
 import math
 from pathlib import Path
 
-ROOT = Path("/root/Desktop/BioDevOps/si_scaling_sweep_2026")
-RESULTS = ROOT / "results/matched_strict"
+ROOT = Path(__file__).resolve().parent
+RESULTS = ROOT / "matched_strict"
 
 MODELS = [
     "qwen3.5_0.8b", "gemma3_1b", "qwen3.5_2b", "gemma3_4b", "qwen3.5_4b",
@@ -72,7 +72,7 @@ def main() -> None:
             "citation_hallucination_rate": f"{halluc}/{n}={halluc/n:.3f}",
         })
 
-    out = ROOT / "results/scaling_summary_table.json"
+    out = ROOT / "scaling_summary_table.json"
     out.write_text(json.dumps(rows, indent=2))
 
     lines = [
@@ -88,7 +88,7 @@ def main() -> None:
             f"{r['severity_within1']} {r['severity_within1_ci95']} | "
             f"{r['opa_or_shacl_union_yield']} {r['union_yield_ci95']} | {r['citation_hallucination_rate']} |"
         )
-    (ROOT / "results/scaling_summary_table.md").write_text("\n".join(lines) + "\n")
+    (ROOT / "scaling_summary_table.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
 
 

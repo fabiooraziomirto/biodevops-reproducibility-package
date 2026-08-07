@@ -31,9 +31,22 @@ publicity, privacy, or moral rights, may limit how you use the material.
 
 ---
 
-Third-party content: this package includes synthetic scenarios, curated
-FHIR/SNOMED CT fact fragments, and public FDA MAUDE narrative text (public
-domain, U.S. government work) used as annotation input -- see PROVENANCE.md
-and README.md for provenance detail. No license is asserted over
-third-party standards, ontologies, or model weights referenced but not
-redistributed by this package.
+Third-party content NOT covered by the CC BY 4.0 grant above, retained
+under its own original license:
+  - `formal_models/formal_artifacts/tools/org.alloytools.alloy.dist.jar`
+    and `formal_models/extended_scope/` equivalent -- Alloy, MIT License,
+    (c) the Alloy developers (alloytools.org).
+  - `formal_models/formal_artifacts/tools/tla2tools.jar` -- TLA+ Tools,
+    MIT License, (c) Microsoft Corp. and the TLA+ project.
+  - `manuscript/ieeecolor.cls`, `manuscript/generic.sty`,
+    `manuscript/logo.eps`, `manuscript/logo-eps-converted-to.pdf` -- IEEE
+    LaTeX typesetting template files, used under IEEE's terms for authors
+    typesetting IEEE submissions, not authored by this package's authors.
+
+Also not covered, and not asserted under any license by this package:
+synthetic scenarios and curated FHIR/SNOMED CT fact fragments reference
+third-party clinical coding standards (SNOMED CT, FHIR) without
+redistributing them; public FDA MAUDE narrative text used as annotation
+input is a U.S. government work (public domain) reproduced here, not
+authored by this package's authors -- see PROVENANCE.md and README.md for
+full provenance detail.

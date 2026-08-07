@@ -14,12 +14,12 @@ import json
 from pathlib import Path
 
 CAMPAIGNS = {
-    "qwen2.5:3b": Path("/root/Desktop/BioDevOps/results/inloop_revision_campaign_rerun_20260805"),
-    "qwen3.5:9b": Path("/root/Desktop/BioDevOps/results/inloop_revision_cross_series_20260806/qwen3.5_9b"),
-    "gemma3:12b": Path("/root/Desktop/BioDevOps/results/inloop_revision_cross_series_20260806/gemma3_12b"),
+    "qwen2.5:3b": Path(__file__).resolve().parent.parent / "inloop_revision_baseline_qwen25_3b",
+    "qwen3.5:9b": Path(__file__).resolve().parent / "qwen3.5_9b",
+    "gemma3:12b": Path(__file__).resolve().parent / "gemma3_12b",
 }
 
-OUT_DIR = Path("/root/Desktop/BioDevOps/results/inloop_revision_cross_series_20260806")
+OUT_DIR = Path(__file__).resolve().parent
 
 
 def sha(path: Path) -> str:

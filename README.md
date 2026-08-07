@@ -8,6 +8,10 @@ It is not a clinical validation package.
 
 - `manuscript/`: manuscript source (`main.tex`), compiled PDF, IEEE class/style
   files, and figure sources (TikZ + PDF).
+- `environment/`: pinned Python dependencies (`requirements.txt`) and exact
+  non-Python tool versions (`TOOL_VERSIONS.md`: OPA, Ollama, Alloy, TLC).
+- `reproduce.sh`: single entry point that regenerates every number in
+  Tables I-V from stored raw outputs (see Reproduction below).
 - `formal_models/`: bounded Alloy/TLA+/Python models and negative controls
   (`formal_artifacts/`), plus `extended_scope/`, the larger-bound re-run
   (autonomy 514->12,292 states, evidence mediation 13->275, human
@@ -16,8 +20,10 @@ It is not a clinical validation package.
   bounded orchestrator (`bounded_agent.py`, `rag_pipeline.py`), plus the
   matched development/held-out campaign raw traces.
 - `executable_governance/`: OPA/Rego policies, SHACL/OWL shapes, clinical
-  concept mappings, and the frozen factorial conformance suite (48-row
-  prospective + 54-row regression results).
+  concept mappings, `ontology_validate.py` (the pySHACL/rdflib validator that
+  regenerates the paraphrase OPA-or-SHACL decomposition), and the frozen
+  factorial conformance suite (48-row prospective + 54-row regression
+  results).
 - `evaluation_protocol/`: rubrics, frozen labels, the blinded independent-40
   annotation packet, and `maude_ecg_annotations/` (see below).
 - `data_availability/`: complete synthetic data; MAUDE identifiers/digests.
@@ -52,7 +58,7 @@ It is not a clinical validation package.
 | Table V (`tab:scaling-sweep`): 8-config scaling sweep | `results/matched_strict/`; aggregated in `results/consolidated_tables/table_scaling_sweep.json` |
 | Same-digest 72h re-probe (Threats to Validity, Model reproducibility) | `results/matched_strict_drift_probe/` |
 | Cross-domain (CGM) stress test | `formal_models/formal_artifacts/CGM_BOUNDARY_NOTE.md`; CGM-arm rows are part of the frozen campaigns above (see per-model manifests) |
-| Paraphrase robustness: 24/40 agreement, 19/40 OPA-or-SHACL union yield | `results/paraphrase_robustness/` |
+| Paraphrase robustness: 24/40 agreement, 19/40 OPA-or-SHACL union yield | `results/paraphrase_robustness/`; regenerable via `executable_governance/ontology_validate.py` (see `reproduce.sh`) |
 | Internal-validity design effect (36 scenarios -> 19 clusters, DE 1.7-2.0) | `results/rq2_full_sweep_cluster_ci/` (cluster-adjustment method; see `README.md`/scripts in `results/`) |
 
 This table lists where each manuscript-reported number lives; most entries
@@ -83,21 +89,32 @@ against the source text, rather than only against an FDA record ID/digest.
 
 ## Reproduction
 
-From `agent_specification/` and `executable_governance/`, use Python 3.10+
-and a local Ollama-compatible runtime for any real inference; record model
-digest, seed, and source in every trace (already recorded in the stored
-manifests). The matched development/held-out bounded-agent campaigns, the
-RQ2 ten-model campaign, the in-loop revision campaigns, and the drift probe
-under `results/` are frozen, hash-authorized, one-shot runs; do not rerun
-them to "reproduce" a table -- rerun the table-regeneration scripts against
-the stored raw outputs instead (`rq2_multimodel_cluster_ci.py`,
-`build_scaling_summary_table.py`, `redundancy_audit.py`,
+```bash
+python3 -m venv venv && source venv/bin/activate
+pip install -r environment/requirements.txt
+./reproduce.sh
+```
+
+`reproduce.sh` runs every table-regeneration script in sequence
+(`rq2_multimodel_cluster_ci.py`, `build_scaling_summary_table.py`,
+`redundancy_audit.py`, `recompute_opa_shacl_breakdown.py`,
 `inloop_revision_cross_series/aggregate_inloop_cross_series.py`,
 `inloop_revision_cross_series/verify_rq2_table.py`,
-`evaluation_protocol/maude_ecg_annotations/compute_kappa.py`).
-`agent_specification/run_bounded_arm_inloop_revision.py` is the runner that
-produced the in-loop revision campaigns and can be rerun on new scenarios or
-models under the same frozen protocol.
+`evaluation_protocol/maude_ecg_annotations/compute_kappa.py`,
+`executable_governance/ontology_validate.py`) against the stored raw
+outputs and prints every number that appears in Tables I-V. It requires only
+Python 3.10+ and `environment/requirements.txt` -- no OPA binary, no Ollama,
+no Alloy/TLC (see `environment/TOOL_VERSIONS.md` for exact versions and what
+does vs. does not need them).
+
+The matched development/held-out bounded-agent campaigns, the RQ2 ten-model
+campaign, the in-loop revision campaigns, and the drift probe under
+`results/` are frozen, hash-authorized, one-shot runs; `reproduce.sh` never
+reruns them, only the derived-table scripts above. `agent_specification/
+run_bounded_arm_inloop_revision.py` is the runner that produced the in-loop
+revision campaigns and can be rerun on new scenarios or models under the
+same frozen protocol (requires OPA and Ollama, see
+`environment/TOOL_VERSIONS.md`) -- `reproduce.sh` does not call it.
 
 ## Data availability and reuse
 
@@ -123,9 +140,17 @@ if a path inside a manifest no longer matches the folder it lives in.
 
 ## Checksums
 
-`SHA256SUMS.json` covers the files inherited from the base reproducibility
-snapshot (everything except `manuscript/`, `formal_models/extended_scope/`,
-`results/matched_strict_drift_probe/`, `evaluation_protocol/maude_ecg_annotations/`,
-and `results/paraphrase_robustness/`, which were added on top and are not yet
-in that manifest). Regenerate a package-wide manifest before archival deposit
-if a single combined checksum file is required.
+`SHA256SUMS.json` is a flat `relative_path -> sha256` manifest covering
+every file in this package (3,214 files). Verify with:
+
+```bash
+python3 -c "
+import hashlib, json
+from pathlib import Path
+manifest = json.load(open('SHA256SUMS.json'))
+bad = [p for p, h in manifest.items() if hashlib.sha256(Path(p).read_bytes()).hexdigest() != h]
+print('OK' if not bad else f'MISMATCH: {bad}')
+"
+```
+
+Regenerate after any further change to this package's contents.

@@ -459,7 +459,7 @@
         0.913
       ]
     },
-    "source_file": "/root/Desktop/BioDevOps/biodevops_rag/evaluation_outputs/generator_sweep_matched/qwen2.5_1.5b/batch_eval_results.json",
+    "source_file": "/root/Desktop/BioDevOps/zenodo_2026-08-07/results/qwen25_natural_output_raw/qwen2.5_1.5b_baseline_batch_eval_results.json",
     "status": "OK"
   },
   "qwen2.5:3b": {
@@ -870,7 +870,7 @@
         0.758
       ]
     },
-    "source_file": "/root/Desktop/BioDevOps/biodevops_rag/evaluation_outputs/generator_sweep_matched/qwen2.5_3b/batch_eval_results.json",
+    "source_file": "/root/Desktop/BioDevOps/zenodo_2026-08-07/results/qwen25_natural_output_raw/qwen2.5_3b_baseline_batch_eval_results.json",
     "status": "OK"
   },
   "qwen2.5:7b": {
@@ -1342,7 +1342,7 @@
         0.96
       ]
     },
-    "source_file": "/root/Desktop/BioDevOps/biodevops_rag/evaluation_outputs/generator_sweep/qwen25_7b_strict_runtime_shacl/batch_eval_results.json",
+    "source_file": "/root/Desktop/BioDevOps/zenodo_2026-08-07/results/qwen25_natural_output_raw/qwen2.5_7b_baseline_batch_eval_results.json",
     "status": "OK"
   }
 }

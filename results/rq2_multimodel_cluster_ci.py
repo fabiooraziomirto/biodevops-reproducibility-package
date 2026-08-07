@@ -12,8 +12,8 @@ import math
 from collections import defaultdict
 from pathlib import Path
 
-ROOT = Path("/root/Desktop/BioDevOps")
-OUT_ROOT = ROOT / "si_scaling_sweep_2026/results/rq2_multimodel_bounded_agent"
+ROOT = Path(__file__).resolve().parent
+OUT_ROOT = ROOT / "rq2_multimodel_bounded_agent"
 MODELS = [
     "qwen3.5_0.8b", "gemma3_1b", "qwen3.5_2b", "gemma3_4b", "qwen3.5_4b",
     "qwen3.5_9b", "gemma3_12b", "gemma3_27b", "qwen3.5_27b", "qwen2.5_7b",
@@ -83,7 +83,7 @@ def main() -> None:
                     continue
                 rows.append(cell_row(model, split, arm, by_scenario))
 
-    out_dir = ROOT / "results/rq2_full_sweep_cluster_ci"
+    out_dir = ROOT / "rq2_full_sweep_cluster_ci"
     out_dir.mkdir(parents=True, exist_ok=True)
     import csv
     with (out_dir / "summary.csv").open("w", newline="") as f:
