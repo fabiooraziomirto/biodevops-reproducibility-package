@@ -1,0 +1,3 @@
+Clinical-facts annotation packet
+
+Annotate independently. Do not inspect benchmark labels, expected failure probes, model outputs, existing ontology mappings, or another rater's file. For each narrative, record only explicitly supported facts. Choose a numeric SNOMED CT code, event/exposure booleans, harm_outcome (none|harm|death), assertion_status (confirmed|suspected|negated|mention-only|absent), and a minimal FHIR-shaped fragment (Observation or DetectedIssue; id; status). Return only the completed CSV; disagreements are adjudicated separately.

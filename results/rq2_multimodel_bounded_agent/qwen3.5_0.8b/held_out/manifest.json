@@ -1,0 +1,49 @@
+{
+  "model": "qwen3.5:0.8b",
+  "model_digest": "f3817196d142",
+  "split": "held_out",
+  "scenario_ids": [
+    "SYN-IND-0002",
+    "SYN-IND-0004",
+    "SYN-IND-0006",
+    "SYN-IND-0008",
+    "SYN-IND-0010",
+    "SYN-IND-0012",
+    "SYN-IND-0014",
+    "SYN-IND-0016",
+    "SYN-IND-0018",
+    "SYN-IND-0020",
+    "SYN-IND-0022",
+    "SYN-IND-0024",
+    "SYN-IND-0026",
+    "SYN-IND-0028",
+    "SYN-IND-0030",
+    "SYN-IND-0032",
+    "SYN-IND-0034",
+    "SYN-IND-0036",
+    "SYN-IND-0038",
+    "SYN-IND-0040"
+  ],
+  "replicates": 5,
+  "decoding": {
+    "temperature": 0.0,
+    "seeds": [
+      20260802,
+      20260803,
+      20260804,
+      20260805,
+      20260806
+    ]
+  },
+  "runtime_bounds": {
+    "max_steps": 6,
+    "max_revisions": 1
+  },
+  "arms": [
+    "direct",
+    "rag",
+    "agent_raw",
+    "agent_opa"
+  ],
+  "note": "New methodological run generalizing the frozen qwen2.5:7b matched protocol across scaling-sweep models; per-scenario failures are caught and recorded, not fail-fast."
+}

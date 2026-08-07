@@ -1,0 +1,173 @@
+{
+  "arm": "rag",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 15155.138,
+  "model_token_counts": {
+    "completion": 579,
+    "prompt": 1999
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n  \"severity\": 1,\n  \"confidence\": 0.95,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The synthetic incident involves a minor, non-recurrent ventricular tachycardia-adjacent irregularity with no adverse patient outcome recorded. The issue was contained before any clinical deployment or use, and the event did not reach a patient. However, there is a potential risk of recurrence due to the unfiled clinician note documenting this irregularity.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"mdr-art2-def-risk-incident\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"Defines 'risk' and 'incident', which are relevant to the severity assessment.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-4-corrective-link\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"Links post-market surveillance findings with corrective actions, but no such action is required here.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art87-reporting-timelines\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"Provides timelines for reporting serious incidents, which are not applicable in this case.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.10-e-enforcement\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"Outlines enforcement actions for non-compliance, but the incident does not meet the criteria for such action.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"The event did not cause patient harm.\",\n      \"cited_artifact_id\": \"mdr-art2-def-risk-incident\",\n      \"support_status\": \"supported\"\n   ,\n    \"support_note\": \"No adverse patient outcome was recorded.\"\n    },\n    {\n      \"claim\": \"The issue was contained before any clinical deployment or use.\",\n      \"cited_artifact_id\": \"CGM-ARTIFACT-METER-0008\",\n      \"support_status\": \"supported\"\n    ,\n    \"support_note\": \"The synthetic external meter record confirms the event did not reach a patient.\"\n    },\n    {\n      \"claim\": \"There is a potential risk of recurrence due to the unfiled clinician note.\",\n      \"cited_artifact_id\": \"mdr-art2-def-risk-incident\",\n      \"support_status\": \"weakly_supported\"\n    ,\n    \"support_note\": \"The definition of 'risk' includes the probability of occurrence, and the unfiled note suggests a potential for recurrence.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE",
+    "scenario_id": "SYN-IND-0012"
+  },
+  "replicate": 1,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-art2-def-risk-incident",
+        "claim": "The event did not cause patient harm.",
+        "support_note": "No adverse patient outcome was recorded.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "CGM-ARTIFACT-METER-0008",
+        "claim": "The issue was contained before any clinical deployment or use.",
+        "support_note": "The synthetic external meter record confirms the event did not reach a patient.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art2-def-risk-incident",
+        "claim": "There is a potential risk of recurrence due to the unfiled clinician note.",
+        "support_note": "The definition of 'risk' includes the probability of occurrence, and the unfiled note suggests a potential for recurrence.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art2-def-risk-incident",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Defines 'risk' and 'incident', which are relevant to the severity assessment."
+      },
+      {
+        "artifact_id": "mdr-art83-4-corrective-link",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Links post-market surveillance findings with corrective actions, but no such action is required here."
+      },
+      {
+        "artifact_id": "mdr-art87-reporting-timelines",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Provides timelines for reporting serious incidents, which are not applicable in this case."
+      },
+      {
+        "artifact_id": "qmsr-820.10-e-enforcement",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Outlines enforcement actions for non-compliance, but the incident does not meet the criteria for such action."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic incident involves a minor, non-recurrent ventricular tachycardia-adjacent irregularity with no adverse patient outcome recorded. The issue was contained before any clinical deployment or use, and the event did not reach a patient. However, there is a potential risk of recurrence due to the unfiled clinician note documenting this irregularity.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 1
+  },
+  "scenario_id": "SYN-IND-0012",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 1 is below derived clinical floor 2. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {},
+  "trace_path": null,
+  "unsupported_claim_count": 0,
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.3333,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art2-def-risk-incident",
+          "claim": "The event did not cause patient harm.",
+          "support_note": "No adverse patient outcome was recorded.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "CGM-ARTIFACT-METER-0008",
+          "claim": "The issue was contained before any clinical deployment or use.",
+          "support_note": "The synthetic external meter record confirms the event did not reach a patient.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art2-def-risk-incident",
+          "claim": "There is a potential risk of recurrence due to the unfiled clinician note.",
+          "support_note": "The definition of 'risk' includes the probability of occurrence, and the unfiled note suggests a potential for recurrence.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art2-def-risk-incident",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "Defines 'risk' and 'incident', which are relevant to the severity assessment."
+        },
+        {
+          "artifact_id": "mdr-art83-4-corrective-link",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "Links post-market surveillance findings with corrective actions, but no such action is required here."
+        },
+        {
+          "artifact_id": "mdr-art87-reporting-timelines",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "Provides timelines for reporting serious incidents, which are not applicable in this case."
+        },
+        {
+          "artifact_id": "qmsr-820.10-e-enforcement",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "Outlines enforcement actions for non-compliance, but the incident does not meet the criteria for such action."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic incident involves a minor, non-recurrent ventricular tachycardia-adjacent irregularity with no adverse patient outcome recorded. The issue was contained before any clinical deployment or use, and the event did not reach a patient. However, there is a potential risk of recurrence due to the unfiled clinician note documenting this irregularity.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": [
+      "The issue was contained before any clinical deployment or use.",
+      "There is a potential risk of recurrence due to the unfiled clinician note."
+    ]
+  }
+}

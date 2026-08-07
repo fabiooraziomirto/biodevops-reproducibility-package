@@ -1,0 +1,163 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0027",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic remote monitoring center reported that the device failed to flag a clinically significant complete atrioventricular block episode in real time. A retrospective clinician review confirms a single missed, sustained complete atrioventricular block episode that self-resolved with no recorded adverse outcome; no second occurrence has yet been confirmed. The device's own confidence-score log and the clinician's retrospective read disagree on episode duration, an unresolved discrepancy.",
+  "model_token_counts": {
+    "completion": 355,
+    "prompt": 2047
+  },
+  "raw_content": "{\n  \"severity\": 3,\n  \"confidence\": 0.65,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident report indicates a missed complete atrioventricular block episode, which may trigger obligations under EU MDR Article 83(1)-(2) for post-market surveillance system and Annex I, Chapter II, Section 17.4 for IT security requirements. The event reached a patient but was not deployed to the clinical environment due to an automatic control. However, the exact cause of the missed episode is unclear from the provided context.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-INCIDENT-2037A\",\n      \"artifact_type\": \"incident_report\",\n      \"relevance_note\": \"This incident report confirms a life-threatening complete atrioventricular block event, which reached a patient but was not deployed to the clinical environment.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"EU MDR Article 83(1)-(2) requires manufacturers to establish and maintain a post-market surveillance system. The missed episode may trigger obligations under this regulation.\"\n    },\n    {\n      \"artifact_id\": \"mdr-annexI-sec17.4-it-security\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"EU MDR Annex I, Chapter II, Section 17.4 requires manufacturers to set out minimum requirements concerning hardware and IT security measures. The missed episode may trigger obligations under this regulation.\"\n    }\n  ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: deny:risk_report_contains_unresolved_or_trap_citation; clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (concept_severity_undercall) Predicted severity 2 is below derived clinical floor 3. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.\n- (concept_severity_undercall) concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.65,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "This incident report confirms a life-threatening complete atrioventricular block event, which reached a patient but was not deployed to the clinical environment."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 83(1)-(2) requires manufacturers to establish and maintain a post-market surveillance system. The missed episode may trigger obligations under this regulation."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 requires manufacturers to set out minimum requirements concerning hardware and IT security measures. The missed episode may trigger obligations under this regulation."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident report indicates a missed complete atrioventricular block episode, which may trigger obligations under EU MDR Article 83(1)-(2) for post-market surveillance system and Annex I, Chapter II, Section 17.4 for IT security requirements. The event reached a patient but was not deployed to the clinical environment due to an automatic control. However, the exact cause of the missed episode is unclear from the provided context.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 3
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.6667,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The incident report indicates a missed complete atrioventricular block episode, which may trigger obligations under EU MDR Article 83(1)-(2) for post-market surveillance system and Annex I, Chapter II, Section 17.4 for IT security requirements.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The event reached a patient but was not deployed to the clinical environment due to an automatic control.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "However, the exact cause of the missed episode is unclear from the provided context.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.65,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "artifact_type": "incident_report",
+          "relevance_note": "This incident report confirms a life-threatening complete atrioventricular block event, which reached a patient but was not deployed to the clinical environment."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Article 83(1)-(2) requires manufacturers to establish and maintain a post-market surveillance system. The missed episode may trigger obligations under this regulation."
+        },
+        {
+          "artifact_id": "mdr-annexI-sec17.4-it-security",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 requires manufacturers to set out minimum requirements concerning hardware and IT security measures. The missed episode may trigger obligations under this regulation."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The incident report indicates a missed complete atrioventricular block episode, which may trigger obligations under EU MDR Article 83(1)-(2) for post-market surveillance system and Annex I, Chapter II, Section 17.4 for IT security requirements. The event reached a patient but was not deployed to the clinical environment due to an automatic control. However, the exact cause of the missed episode is unclear from the provided context.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "weakly_supported_claims": [
+      "However, the exact cause of the missed episode is unclear from the provided context."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The incident report indicates a missed complete atrioventricular block episode, which may trigger obligations under EU MDR Article 83(1)-(2) for post-market surveillance system and Annex I, Chapter II, Section 17.4 for IT security requirements.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The event reached a patient but was not deployed to the clinical environment due to an automatic control.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "However, the exact cause of the missed episode is unclear from the provided context.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.65,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "This incident report confirms a life-threatening complete atrioventricular block event, which reached a patient but was not deployed to the clinical environment."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 83(1)-(2) requires manufacturers to establish and maintain a post-market surveillance system. The missed episode may trigger obligations under this regulation."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 requires manufacturers to set out minimum requirements concerning hardware and IT security measures. The missed episode may trigger obligations under this regulation."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident report indicates a missed complete atrioventricular block episode, which may trigger obligations under EU MDR Article 83(1)-(2) for post-market surveillance system and Annex I, Chapter II, Section 17.4 for IT security requirements. The event reached a patient but was not deployed to the clinical environment due to an automatic control. However, the exact cause of the missed episode is unclear from the provided context.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  }
+}

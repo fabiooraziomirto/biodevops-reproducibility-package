@@ -1,0 +1,159 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0026",
+    "clinical_inconsistency_class": "none",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic cardiology ward reported that the device failed to flag a clinically significant ventricular fibrillation episode in real time. Two independent overnight telemetry reviews and the cloud-side classifier log all confirm a documented, sustained ventricular fibrillation episode that was missed at the time; a second, structurally identical miss was confirmed in a separate patient on the same software version, establishing recurrence across the deployed population. The confirmatory device confidence-score log for the exact episode window is missing from the file, though the clinical review stands.",
+  "model_token_counts": {
+    "completion": 529,
+    "prompt": 2292
+  },
+  "raw_content": "{\n  \"severity\": 4,\n  \"confidence\": 0.85,\n  \"recommendation\": \"FIELD_SAFETY_CORRECTIVE_ACTION\",\n  \"rationale\": \"The incident narrative describes a confirmed failure to detect ventricular fibrillation (VF), which is a life-threatening arrhythmia requiring immediate intervention. The event was not contained by an automatic control; instead, the device failed its primary safety function in real-time use. Crucially, the narrative confirms recurrence across the deployed population ('a second... miss was confirmed in a separate patient on the same software version'), establishing broad exposure to serious risk. This meets the criteria for Severity 4 (realized serious harm potential with recurrent impact) and mandates immediate Field Safety Corrective Action per regulatory obligations regarding post-market surveillance of safety-critical failures.\",\n  \"claim_support\": [\n    {\n      \"claim\": \"The device failed a critical safety function (VF detection) in real-time use, leading to missed clinical alerts.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2023A\",\n      \"support_status\": \"weakly_supported\",\n      \"support_note\": \"The artifact description mentions 'missed complete atrioventricular block' rather than VF. However, in the context of this synthetic incident report where both artifacts are labeled as logs for missed episodes and no other technical evidence exists, we must rely on the narrative's assertion that these logs confirm the misses. The specific pathology (VF vs AVB) is defined by the clinical review mentioned in the text.\"\n    },\n    {\n      \"claim\": \"The failure has recurred across multiple patients using the same software version.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2027A\",\n      \"support_status\": \"weakly_supported\",\n      \"support_note\": \"Similar to above; while labeled for AVB in metadata, it serves as the second data point confirming recurrence of detection failures within this synthetic dataset.\"\n    },\n    {\n      \"claim\": \"The missing confidence-score log indicates a potential traceability or logging gap that complicates root cause analysis.\",\n      \"cited_artifact_id\": \"\",\n      \"support_status\": \"unsupported\",\n      \"support_note\": \"No specific artifact was retrieved containing the 'missing' file; this is an observation from the narrative text only.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: fsca_without_confirmatory_evidence_downgraded; severity4_or_death_forced_immediate_human_escalation; technical_incident_missing_technical_evidence; deny:technical_incident_missing_technical_evidence; clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: At least one retrieved technical artifact supporting the incident judgment.; Causal link between the artifact/change and the observed event.; Evidence of recurrence or confirmed deployed-population impact.; Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (shacl) RiskReport must link at least one evidence id.",
+  "risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The device failed a critical safety function (VF detection) in real-time use, leading to missed clinical alerts.",
+        "support_note": "The artifact description mentions 'missed complete atrioventricular block' rather than VF. However, in the context of this synthetic incident report where both artifacts are labeled as logs for missed episodes and no other technical evidence exists, we must rely on the narrative's assertion that these logs confirm the misses. The specific pathology (VF vs AVB) is defined by the clinical review mentioned in the text.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "claim": "The failure has recurred across multiple patients using the same software version.",
+        "support_note": "Similar to above; while labeled for AVB in metadata, it serves as the second data point confirming recurrence of detection failures within this synthetic dataset.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "The missing confidence-score log indicates a potential traceability or logging gap that complicates root cause analysis.",
+        "support_note": "No specific artifact was retrieved containing the 'missing' file; this is an observation from the narrative text only.",
+        "support_status": "unsupported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a confirmed failure to detect ventricular fibrillation (VF), which is a life-threatening arrhythmia requiring immediate intervention. The event was not contained by an automatic control; instead, the device failed its primary safety function in real-time use. Crucially, the narrative confirms recurrence across the deployed population ('a second... miss was confirmed in a separate patient on the same software version'), establishing broad exposure to serious risk. This meets the criteria for Severity 4 (realized serious harm potential with recurrent impact) and mandates immediate Field Safety Corrective Action per regulatory obligations regarding post-market surveillance of safety-critical failures.",
+    "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "requires_human_review": true,
+    "severity": 4
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "fsca_without_confirmatory_evidence_downgraded",
+      "severity4_or_death_forced_immediate_human_escalation",
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence",
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "The missing confidence-score log indicates a potential traceability or logging gap that complicates root cause analysis."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The device failed a critical safety function (VF detection) in real-time use, leading to missed clinical alerts.",
+          "support_note": "The artifact description mentions 'missed complete atrioventricular block' rather than VF. However, in the context of this synthetic incident report where both artifacts are labeled as logs for missed episodes and no other technical evidence exists, we must rely on the narrative's assertion that these logs confirm the misses. The specific pathology (VF vs AVB) is defined by the clinical review mentioned in the text.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "claim": "The failure has recurred across multiple patients using the same software version.",
+          "support_note": "Similar to above; while labeled for AVB in metadata, it serves as the second data point confirming recurrence of detection failures within this synthetic dataset.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "The missing confidence-score log indicates a potential traceability or logging gap that complicates root cause analysis.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment.",
+        "Causal link between the artifact/change and the observed event.",
+        "Evidence of recurrence or confirmed deployed-population impact.",
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident narrative describes a confirmed failure to detect ventricular fibrillation (VF), which is a life-threatening arrhythmia requiring immediate intervention. The event was not contained by an automatic control; instead, the device failed its primary safety function in real-time use. Crucially, the narrative confirms recurrence across the deployed population ('a second... miss was confirmed in a separate patient on the same software version'), establishing broad exposure to serious risk. This meets the criteria for Severity 4 (realized serious harm potential with recurrent impact) and mandates immediate Field Safety Corrective Action per regulatory obligations regarding post-market surveillance of safety-critical failures.",
+      "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "requires_human_review": true,
+      "severity": 4
+    },
+    "weakly_supported_claims": [
+      "The device failed a critical safety function (VF detection) in real-time use, leading to missed clinical alerts.",
+      "The failure has recurred across multiple patients using the same software version."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The device failed a critical safety function (VF detection) in real-time use, leading to missed clinical alerts.",
+        "support_note": "The artifact description mentions 'missed complete atrioventricular block' rather than VF. However, in the context of this synthetic incident report where both artifacts are labeled as logs for missed episodes and no other technical evidence exists, we must rely on the narrative's assertion that these logs confirm the misses. The specific pathology (VF vs AVB) is defined by the clinical review mentioned in the text.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "claim": "The failure has recurred across multiple patients using the same software version.",
+        "support_note": "Similar to above; while labeled for AVB in metadata, it serves as the second data point confirming recurrence of detection failures within this synthetic dataset.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "The missing confidence-score log indicates a potential traceability or logging gap that complicates root cause analysis.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [],
+    "missing_evidence": [
+      "At least one retrieved technical artifact supporting the incident judgment.",
+      "Causal link between the artifact/change and the observed event.",
+      "Evidence of recurrence or confirmed deployed-population impact.",
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident narrative describes a confirmed failure to detect ventricular fibrillation (VF), which is a life-threatening arrhythmia requiring immediate intervention. The event was not contained by an automatic control; instead, the device failed its primary safety function in real-time use. Crucially, the narrative confirms recurrence across the deployed population ('a second... miss was confirmed in a separate patient on the same software version'), establishing broad exposure to serious risk. This meets the criteria for Severity 4 (realized serious harm potential with recurrent impact) and mandates immediate Field Safety Corrective Action per regulatory obligations regarding post-market surveillance of safety-critical failures.",
+    "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+    "requires_human_review": true,
+    "severity": 4
+  }
+}

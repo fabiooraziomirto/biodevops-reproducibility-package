@@ -1,0 +1,174 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0010",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway. No confirmatory clinician note is on file, but the automated CI validation gate blocked the release candidate before any clinical deployment, so no patient was exposed regardless. No patient-facing exposure occurred and the engineering finding was fully contained pre-release or resolved as a non-event.",
+  "model_token_counts": {
+    "completion": 362,
+    "prompt": 2067
+  },
+  "raw_content": "{\n  \"severity\": 1,\n  \"confidence\": 0.92,\n  \"recommendation\": \"NO_ACTION\",\n  \"rationale\": \"The incident narrative describes a synthetic field service finding regarding an atrial fibrillation detection pathway validation issue. Crucially, the automated CI/CD quality gate blocked the release candidate before any clinical deployment, resulting in zero patient exposure and containment of the engineering finding pre-release. The retrieved artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) are identified as synthetic logs for unrelated or hypothetical scenarios ('missed complete atrioventricular block episode') rather than evidence of a realized failure in the current deployment pipeline described. The regulatory context (qmsr-820.10-c-design-development, mdr-art83-pms-system) mandates design controls and post-market surveillance but does not override the fact that no patient harm occurred because the event was contained by an automatic control before use. Therefore, this is a technical quality finding successfully mitigated by existing safety controls.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2023A\",\n      \"artifact_type\": \"test_log\",\"relevance_note\":\"Identified as synthetic log for a hypothetical scenario, confirming no real patient exposure data exists in the retrieved set.\"},\n      {\n        \"artifact_id\": \"ARTIFACT-TESTLOG-2027A\",\n        \"artifact_type\": \"test_log\",\"relevance_note\":\"Identified as synthetic log for a hypothetical scenario, supporting the conclusion that no realized failure occurred.\"}\n    ]\n  }",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.92,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Identified as synthetic log for a hypothetical scenario, confirming no real patient exposure data exists in the retrieved set."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Identified as synthetic log for a hypothetical scenario, supporting the conclusion that no realized failure occurred."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a synthetic field service finding regarding an atrial fibrillation detection pathway validation issue. Crucially, the automated CI/CD quality gate blocked the release candidate before any clinical deployment, resulting in zero patient exposure and containment of the engineering finding pre-release. The retrieved artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) are identified as synthetic logs for unrelated or hypothetical scenarios ('missed complete atrioventricular block episode') rather than evidence of a realized failure in the current deployment pipeline described. The regulatory context (qmsr-820.10-c-design-development, mdr-art83-pms-system) mandates design controls and post-market surveillance but does not override the fact that no patient harm occurred because the event was contained by an automatic control before use. Therefore, this is a technical quality finding successfully mitigated by existing safety controls.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.4,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The incident narrative describes a synthetic field service finding regarding an atrial fibrillation detection pathway validation issue.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "Crucially, the automated CI/CD quality gate blocked the release candidate before any clinical deployment, resulting in zero patient exposure and containment of the engineering finding pre-release.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The retrieved artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) are identified as synthetic logs for unrelated or hypothetical scenarios ('missed complete atrioventricular block episode') rather than evidence of a realized failure in the current deployment pipeline described.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The regulatory context (qmsr-820.10-c-design-development, mdr-art83-pms-system) mandates design controls and post-market surveillance but does not override the fact that no patient harm occurred because the event was contained by an automatic control before use.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "Therefore, this is a technical quality finding successfully mitigated by existing safety controls.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.92,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "artifact_type": "test_log",
+          "relevance_note": "Identified as synthetic log for a hypothetical scenario, confirming no real patient exposure data exists in the retrieved set."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "artifact_type": "test_log",
+          "relevance_note": "Identified as synthetic log for a hypothetical scenario, supporting the conclusion that no realized failure occurred."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The incident narrative describes a synthetic field service finding regarding an atrial fibrillation detection pathway validation issue. Crucially, the automated CI/CD quality gate blocked the release candidate before any clinical deployment, resulting in zero patient exposure and containment of the engineering finding pre-release. The retrieved artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) are identified as synthetic logs for unrelated or hypothetical scenarios ('missed complete atrioventricular block episode') rather than evidence of a realized failure in the current deployment pipeline described. The regulatory context (qmsr-820.10-c-design-development, mdr-art83-pms-system) mandates design controls and post-market surveillance but does not override the fact that no patient harm occurred because the event was contained by an automatic control before use. Therefore, this is a technical quality finding successfully mitigated by existing safety controls.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": [
+      "The incident narrative describes a synthetic field service finding regarding an atrial fibrillation detection pathway validation issue.",
+      "The regulatory context (qmsr-820.10-c-design-development, mdr-art83-pms-system) mandates design controls and post-market surveillance but does not override the fact that no patient harm occurred because the event was contained by an automatic control before use.",
+      "Therefore, this is a technical quality finding successfully mitigated by existing safety controls."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The incident narrative describes a synthetic field service finding regarding an atrial fibrillation detection pathway validation issue.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "Crucially, the automated CI/CD quality gate blocked the release candidate before any clinical deployment, resulting in zero patient exposure and containment of the engineering finding pre-release.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The retrieved artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) are identified as synthetic logs for unrelated or hypothetical scenarios ('missed complete atrioventricular block episode') rather than evidence of a realized failure in the current deployment pipeline described.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The regulatory context (qmsr-820.10-c-design-development, mdr-art83-pms-system) mandates design controls and post-market surveillance but does not override the fact that no patient harm occurred because the event was contained by an automatic control before use.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "Therefore, this is a technical quality finding successfully mitigated by existing safety controls.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.92,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Identified as synthetic log for a hypothetical scenario, confirming no real patient exposure data exists in the retrieved set."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Identified as synthetic log for a hypothetical scenario, supporting the conclusion that no realized failure occurred."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a synthetic field service finding regarding an atrial fibrillation detection pathway validation issue. Crucially, the automated CI/CD quality gate blocked the release candidate before any clinical deployment, resulting in zero patient exposure and containment of the engineering finding pre-release. The retrieved artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) are identified as synthetic logs for unrelated or hypothetical scenarios ('missed complete atrioventricular block episode') rather than evidence of a realized failure in the current deployment pipeline described. The regulatory context (qmsr-820.10-c-design-development, mdr-art83-pms-system) mandates design controls and post-market surveillance but does not override the fact that no patient harm occurred because the event was contained by an automatic control before use. Therefore, this is a technical quality finding successfully mitigated by existing safety controls.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

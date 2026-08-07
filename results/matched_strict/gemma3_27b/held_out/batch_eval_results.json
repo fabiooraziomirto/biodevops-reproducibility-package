@@ -1,0 +1,3585 @@
+{
+  "summary": {
+    "n_cases": 20,
+    "n_base_scenarios": 20,
+    "severity_accuracy": 0.7,
+    "verified_severity_accuracy": 0.7,
+    "recommendation_accuracy": 0.5,
+    "verified_recommendation_accuracy": 0.65,
+    "mean_artifact_recall_at_4": 0.3,
+    "mean_citation_validity": 1.0,
+    "mean_claim_grounding_rate": 0.5383,
+    "citation_hallucination_rate": 0.0,
+    "unsupported_claim_rate": 0.0,
+    "hallucination_escape_rate": 0.5,
+    "claim_grounding_omission_rate": 0.95,
+    "escalation_safety": 1.0,
+    "human_review_rate": 1.0,
+    "severity_ece": 0.065,
+    "mock_fallback_cases": 0,
+    "opa_policy_cases": 20,
+    "per_scenario_breakdown": [
+      {
+        "base_scenario_id": "SYN-IND-0002",
+        "n_cases": 1,
+        "ground_truth_severity": 1,
+        "ground_truth_recommendation": "NO_ACTION",
+        "severity_correct_mean": 0.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 0.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.3333,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 2,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "CAPA_INVESTIGATE",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0004",
+        "n_cases": 1,
+        "ground_truth_severity": 1,
+        "ground_truth_recommendation": "NO_ACTION",
+        "severity_correct_mean": 0.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 0.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.0,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 2,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "CAPA_INVESTIGATE",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0006",
+        "n_cases": 1,
+        "ground_truth_severity": 1,
+        "ground_truth_recommendation": "NO_ACTION",
+        "severity_correct_mean": 0.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 0.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.25,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 2,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "CAPA_INVESTIGATE",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0008",
+        "n_cases": 1,
+        "ground_truth_severity": 1,
+        "ground_truth_recommendation": "NO_ACTION",
+        "severity_correct_mean": 0.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 0.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.5,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 2,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "CAPA_INVESTIGATE",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0010",
+        "n_cases": 1,
+        "ground_truth_severity": 1,
+        "ground_truth_recommendation": "NO_ACTION",
+        "severity_correct_mean": 0.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 0.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.3333,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 2,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "CAPA_INVESTIGATE",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0012",
+        "n_cases": 1,
+        "ground_truth_severity": 2,
+        "ground_truth_recommendation": "CAPA_INVESTIGATE",
+        "severity_correct_mean": 1.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 1.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.3333,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 2,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "CAPA_INVESTIGATE",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0014",
+        "n_cases": 1,
+        "ground_truth_severity": 2,
+        "ground_truth_recommendation": "CAPA_INVESTIGATE",
+        "severity_correct_mean": 1.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 1.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.5,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 2,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "CAPA_INVESTIGATE",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0016",
+        "n_cases": 1,
+        "ground_truth_severity": 2,
+        "ground_truth_recommendation": "CAPA_INVESTIGATE",
+        "severity_correct_mean": 1.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 1.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.75,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 2,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "CAPA_INVESTIGATE",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0018",
+        "n_cases": 1,
+        "ground_truth_severity": 2,
+        "ground_truth_recommendation": "CAPA_INVESTIGATE",
+        "severity_correct_mean": 1.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 1.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.75,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 2,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "CAPA_INVESTIGATE",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0020",
+        "n_cases": 1,
+        "ground_truth_severity": 2,
+        "ground_truth_recommendation": "CAPA_INVESTIGATE",
+        "severity_correct_mean": 1.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 1.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.6667,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 2,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "CAPA_INVESTIGATE",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0022",
+        "n_cases": 1,
+        "ground_truth_severity": 3,
+        "ground_truth_recommendation": "CAPA_INVESTIGATE",
+        "severity_correct_mean": 1.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 1.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.25,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 3,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "CAPA_INVESTIGATE",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0024",
+        "n_cases": 1,
+        "ground_truth_severity": 3,
+        "ground_truth_recommendation": "CAPA_INVESTIGATE",
+        "severity_correct_mean": 1.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 1.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.5,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 3,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "CAPA_INVESTIGATE",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0026",
+        "n_cases": 1,
+        "ground_truth_severity": 3,
+        "ground_truth_recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+        "severity_correct_mean": 0.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 1.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.5,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 4,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "FIELD_SAFETY_CORRECTIVE_ACTION",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0028",
+        "n_cases": 1,
+        "ground_truth_severity": 3,
+        "ground_truth_recommendation": "CAPA_INVESTIGATE",
+        "severity_correct_mean": 1.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 1.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.5,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 3,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "CAPA_INVESTIGATE",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0030",
+        "n_cases": 1,
+        "ground_truth_severity": 3,
+        "ground_truth_recommendation": "CAPA_INVESTIGATE",
+        "severity_correct_mean": 1.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 1.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.75,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 3,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "CAPA_INVESTIGATE",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0032",
+        "n_cases": 1,
+        "ground_truth_severity": 4,
+        "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+        "severity_correct_mean": 1.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 0.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.6,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 4,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "FIELD_SAFETY_CORRECTIVE_ACTION",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0034",
+        "n_cases": 1,
+        "ground_truth_severity": 4,
+        "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+        "severity_correct_mean": 1.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 0.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.75,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 4,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "FIELD_SAFETY_CORRECTIVE_ACTION",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0036",
+        "n_cases": 1,
+        "ground_truth_severity": 4,
+        "ground_truth_recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+        "severity_correct_mean": 1.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 0.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.75,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 4,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "CAPA_INVESTIGATE",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0038",
+        "n_cases": 1,
+        "ground_truth_severity": 4,
+        "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+        "severity_correct_mean": 1.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 0.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 1.0,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 4,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "FIELD_SAFETY_CORRECTIVE_ACTION",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      },
+      {
+        "base_scenario_id": "SYN-IND-0040",
+        "n_cases": 1,
+        "ground_truth_severity": 4,
+        "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+        "severity_correct_mean": 1.0,
+        "severity_correct_std": 0.0,
+        "recommendation_correct_mean": 0.0,
+        "recommendation_correct_std": 0.0,
+        "citation_hallucination_mean": 0.0,
+        "citation_hallucination_std": 0.0,
+        "claim_grounding_rate_mean": 0.75,
+        "claim_grounding_rate_std": 0.0,
+        "severity_mode": 4,
+        "severity_mode_count": 1,
+        "severity_agreement_rate": 1.0,
+        "recommendation_mode": "FIELD_SAFETY_CORRECTIVE_ACTION",
+        "recommendation_mode_count": 1,
+        "recommendation_agreement_rate": 1.0
+      }
+    ]
+  },
+  "cases": [
+    {
+      "report_id": "SYN-IND-0002",
+      "base_scenario_id": "SYN-IND-0002",
+      "ground_truth_severity": 1,
+      "predicted_severity": 2,
+      "verified_severity": 2,
+      "severity_correct": 0,
+      "verified_severity_correct": 0,
+      "ground_truth_recommendation": "NO_ACTION",
+      "predicted_recommendation": "CAPA_INVESTIGATE",
+      "verified_recommendation": "CAPA_INVESTIGATE",
+      "recommendation_correct": 0,
+      "verified_recommendation_correct": 0,
+      "confidence": 0.75,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 0.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-TESTLOG-0005|ARTIFACT-TESTLOG-0050|CGM-ARTIFACT-VALIDATION-0017|CGM-ARTIFACT-APPROVAL-0020",
+      "expected_artifacts": "ARTIFACT-TESTLOG-2002A",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.3333,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 0,
+      "hallucination_escape_combined": 0,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "The incident narrative describes a software validation finding detected by the CI pipeline for the atrial fibrillation detection pathway. While no patient exposure occurred due to the automated gate, the finding necessitates investigation to prevent recurrence and ensure continued device quality. The test log (ARTIFACT-TESTLOG-0050) confirms a sensitivity drop in VTach detection, triggering the risk-gate block. This indicates a potential technical issue requiring further analysis.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 2,
+        "confidence": 0.75,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "A software validation finding occurred during CI for the atrial fibrillation detection pathway.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "supported",
+            "support_note": "The test log directly confirms a failed validation check that blocked release."
+          },
+          {
+            "claim": "No patient exposure occurred due to the CI gate.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "supported",
+            "support_note": "The test log indicates that the release candidate was blocked, aligning with the narrative's statement of no patient exposure."
+          },
+          {
+            "claim": "The sensitivity of VTach detection decreased.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "supported",
+            "support_note": "Test log shows a drop in sensitivity from 0.97 to 0.89."
+          }
+        ],
+        "requires_human_review": false,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The incident narrative describes a software validation finding detected by the CI pipeline for the atrial fibrillation detection pathway. While no patient exposure occurred due to the automated gate, the finding necessitates investigation to prevent recurrence and ensure continued device quality. The test log (ARTIFACT-TESTLOG-0050) confirms a sensitivity drop in VTach detection, triggering the risk-gate block. This indicates a potential technical issue requiring further analysis."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 2,
+        "confidence": 0.75,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "A software validation finding occurred during CI for the atrial fibrillation detection pathway.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "weakly_supported",
+            "support_note": "The test log directly confirms a failed validation check that blocked release."
+          },
+          {
+            "claim": "No patient exposure occurred due to the CI gate.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "weakly_supported",
+            "support_note": "The test log indicates that the release candidate was blocked, aligning with the narrative's statement of no patient exposure."
+          },
+          {
+            "claim": "The sensitivity of VTach detection decreased.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "supported",
+            "support_note": "Test log shows a drop in sensitivity from 0.97 to 0.89."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The incident narrative describes a software validation finding detected by the CI pipeline for the atrial fibrillation detection pathway. While no patient exposure occurred due to the automated gate, the finding necessitates investigation to prevent recurrence and ensure continued device quality. The test log (ARTIFACT-TESTLOG-0050) confirms a sensitivity drop in VTach detection, triggering the risk-gate block. This indicates a potential technical issue requiring further analysis."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0004",
+      "base_scenario_id": "SYN-IND-0004",
+      "ground_truth_severity": 1,
+      "predicted_severity": 2,
+      "verified_severity": 2,
+      "severity_correct": 0,
+      "verified_severity_correct": 0,
+      "ground_truth_recommendation": "NO_ACTION",
+      "predicted_recommendation": "CAPA_INVESTIGATE",
+      "verified_recommendation": "CAPA_INVESTIGATE",
+      "recommendation_correct": 0,
+      "verified_recommendation_correct": 0,
+      "confidence": 0.7,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 0.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-VALIDATION-0017|CGM-ARTIFACT-METER-0008|CGM-ARTIFACT-LABELING-0004|ARTIFACT-DIFF-0009",
+      "expected_artifacts": "ARTIFACT-TESTLOG-2004A",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.0,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 0,
+      "hallucination_escape_combined": 0,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "The reported incident is a software validation finding related to atrioventricular block detection. While no patient impact occurred and the issue was contained pre-release, any software defect in a medical device requires investigation to prevent recurrence. The narrative references an unrelated deployment log which does not support this case; this suggests potential process deficiencies in incident documentation or tracking. The code diff (ARTIFACT-DIFF-0009) indicates recent changes to severity scoring logic relevant to the detection pathway, potentially contributing to the validation finding.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 2,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "A software defect was identified during validation.",
+            "cited_artifact_id": "CGM-ARTIFACT-VALIDATION-0017",
+            "support_status": "supported",
+            "support_note": "The test log confirms a validation finding."
+          },
+          {
+            "claim": "The defect relates to atrioventricular block detection.",
+            "cited_artifact_id": "CGM-ARTIFACT-VALIDATION-0017",
+            "support_status": "supported",
+            "support_note": "Narrative states the finding is for this pathway."
+          },
+          {
+            "claim": "The defect was contained pre-release and did not impact patients.",
+            "cited_artifact_id": "CGM-ARTIFACT-VALIDATION-0017",
+            "support_status": "supported",
+            "support_note": "Narrative explicitly states this."
+          },
+          {
+            "claim": "Recent code changes may be related to the defect.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "weakly_supported",
+            "support_note": "The diff modifies severity scoring, which is relevant to detection. However, there's no direct link established between the change and the validation failure."
+          }
+        ],
+        "requires_human_review": false,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The reported incident is a software validation finding related to atrioventricular block detection. While no patient impact occurred and the issue was contained pre-release, any software defect in a medical device requires investigation to prevent recurrence. The narrative references an unrelated deployment log which does not support this case; this suggests potential process deficiencies in incident documentation or tracking. The code diff (ARTIFACT-DIFF-0009) indicates recent changes to severity scoring logic relevant to the detection pathway, potentially contributing to the validation finding."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 2,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "A software defect was identified during validation.",
+            "cited_artifact_id": "CGM-ARTIFACT-VALIDATION-0017",
+            "support_status": "weakly_supported",
+            "support_note": "The test log confirms a validation finding."
+          },
+          {
+            "claim": "The defect relates to atrioventricular block detection.",
+            "cited_artifact_id": "CGM-ARTIFACT-VALIDATION-0017",
+            "support_status": "weakly_supported",
+            "support_note": "Narrative states the finding is for this pathway."
+          },
+          {
+            "claim": "The defect was contained pre-release and did not impact patients.",
+            "cited_artifact_id": "CGM-ARTIFACT-VALIDATION-0017",
+            "support_status": "weakly_supported",
+            "support_note": "Narrative explicitly states this."
+          },
+          {
+            "claim": "Recent code changes may be related to the defect.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "weakly_supported",
+            "support_note": "The diff modifies severity scoring, which is relevant to detection. However, there's no direct link established between the change and the validation failure."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The reported incident is a software validation finding related to atrioventricular block detection. While no patient impact occurred and the issue was contained pre-release, any software defect in a medical device requires investigation to prevent recurrence. The narrative references an unrelated deployment log which does not support this case; this suggests potential process deficiencies in incident documentation or tracking. The code diff (ARTIFACT-DIFF-0009) indicates recent changes to severity scoring logic relevant to the detection pathway, potentially contributing to the validation finding."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0006",
+      "base_scenario_id": "SYN-IND-0006",
+      "ground_truth_severity": 1,
+      "predicted_severity": 2,
+      "verified_severity": 2,
+      "severity_correct": 0,
+      "verified_severity_correct": 0,
+      "ground_truth_recommendation": "NO_ACTION",
+      "predicted_recommendation": "CAPA_INVESTIGATE",
+      "verified_recommendation": "CAPA_INVESTIGATE",
+      "recommendation_correct": 0,
+      "verified_recommendation_correct": 0,
+      "confidence": 0.75,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 0.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-APPROVAL-0020|CGM-ARTIFACT-VALIDATION-0017|CGM-ARTIFACT-TESTLOG-0005|ARTIFACT-TESTLOG-0050",
+      "expected_artifacts": "ARTIFACT-TESTLOG-2006A",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.25,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 1,
+      "hallucination_escape_combined": 1,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "The incident narrative describes a software validation finding detected by the CI pipeline for atrial fibrillation detection. While no patient exposure occurred due to pre-release blocking, and the issue was reportedly resolved or deemed non-eventful, the test log (ARTIFACT-TESTLOG-0050) indicates a decrease in VTach sensitivity from 0.97 to 0.89 during CI validation. This change, while within acceptable limits for release, warrants investigation to understand the root cause and prevent potential future regressions that could impact clinical performance. The finding triggered an automated risk gate, demonstrating existing controls are functioning as intended.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 2,
+        "confidence": 0.75,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "A software validation finding occurred during CI testing.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "supported",
+            "support_note": "The test log directly shows a sensitivity drop triggering the risk gate."
+          },
+          {
+            "claim": "No patient exposure occurred.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "supported",
+            "support_note": "The incident narrative explicitly states no patient was exposed."
+          },
+          {
+            "claim": "The issue was contained pre-release.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "supported",
+            "support_note": "The incident narrative states the release candidate was blocked before deployment."
+          },
+          {
+            "claim": "A decrease in VTach sensitivity was observed.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "supported",
+            "support_note": "The test log shows a drop from 0.97 to 0.89."
+          }
+        ],
+        "requires_human_review": false,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The incident narrative describes a software validation finding detected by the CI pipeline for atrial fibrillation detection. While no patient exposure occurred due to pre-release blocking, and the issue was reportedly resolved or deemed non-eventful, the test log (ARTIFACT-TESTLOG-0050) indicates a decrease in VTach sensitivity from 0.97 to 0.89 during CI validation. This change, while within acceptable limits for release, warrants investigation to understand the root cause and prevent potential future regressions that could impact clinical performance. The finding triggered an automated risk gate, demonstrating existing controls are functioning as intended."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 2,
+        "confidence": 0.75,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "A software validation finding occurred during CI testing.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "weakly_supported",
+            "support_note": "The test log directly shows a sensitivity drop triggering the risk gate."
+          },
+          {
+            "claim": "No patient exposure occurred.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "unsupported",
+            "support_note": "Cited ID was not retrieved or is a hallucination trap."
+          },
+          {
+            "claim": "The issue was contained pre-release.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "unsupported",
+            "support_note": "Cited ID was not retrieved or is a hallucination trap."
+          },
+          {
+            "claim": "A decrease in VTach sensitivity was observed.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "supported",
+            "support_note": "The test log shows a drop from 0.97 to 0.89."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The incident narrative describes a software validation finding detected by the CI pipeline for atrial fibrillation detection. While no patient exposure occurred due to pre-release blocking, and the issue was reportedly resolved or deemed non-eventful, the test log (ARTIFACT-TESTLOG-0050) indicates a decrease in VTach sensitivity from 0.97 to 0.89 during CI validation. This change, while within acceptable limits for release, warrants investigation to understand the root cause and prevent potential future regressions that could impact clinical performance. The finding triggered an automated risk gate, demonstrating existing controls are functioning as intended."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0008",
+      "base_scenario_id": "SYN-IND-0008",
+      "ground_truth_severity": 1,
+      "predicted_severity": 2,
+      "verified_severity": 2,
+      "severity_correct": 0,
+      "verified_severity_correct": 0,
+      "ground_truth_recommendation": "NO_ACTION",
+      "predicted_recommendation": "CAPA_INVESTIGATE",
+      "verified_recommendation": "CAPA_INVESTIGATE",
+      "recommendation_correct": 0,
+      "verified_recommendation_correct": 0,
+      "confidence": 0.7,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 0.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-METER-0008|CGM-ARTIFACT-LABELING-0004|ARTIFACT-DIFF-0009|CGM-ARTIFACT-RETRAIN-0007",
+      "expected_artifacts": "ARTIFACT-TESTLOG-2008A",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.5,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 1,
+      "hallucination_escape_combined": 1,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "The reported finding of a software validation issue in the atrioventricular block detection pathway requires investigation to ensure ongoing compliance and prevent potential patient harm. While the incident is described as contained pre-release or resolved as a non-event, any software validation failure necessitates review. The synthetic narrative references an unrelated deployment log which does not support this case; this suggests a process issue in incident documentation.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 2,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "A software validation finding occurred within the atrioventricular block detection pathway.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "supported",
+            "support_note": "Directly stated in the incident narrative."
+          },
+          {
+            "claim": "The finding was contained pre-release or resolved as a non-event.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "supported",
+            "support_note": "Directly stated in the incident narrative."
+          },
+          {
+            "claim": "Changes to severity scoring may impact detection accuracy.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "The code diff modifies the severity-scoring submodule, and the commit message indicates a change related to alert thresholds. This could affect detection performance."
+          },
+          {
+            "claim": "Retraining of hypoglycemia threshold calibration may impact device behavior.",
+            "cited_artifact_id": "CGM-ARTIFACT-RETRAIN-0007",
+            "support_status": "weakly_supported",
+            "support_note": "The model card indicates a change to the calibration, but does not directly link it to this specific incident."
+          }
+        ],
+        "requires_human_review": false,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The reported finding of a software validation issue in the atrioventricular block detection pathway requires investigation to ensure ongoing compliance and prevent potential patient harm. While the incident is described as contained pre-release or resolved as a non-event, any software validation failure necessitates review. The synthetic narrative references an unrelated deployment log which does not support this case; this suggests a process issue in incident documentation."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 2,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "A software validation finding occurred within the atrioventricular block detection pathway.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "unsupported",
+            "support_note": "Cited ID was not retrieved or is a hallucination trap."
+          },
+          {
+            "claim": "The finding was contained pre-release or resolved as a non-event.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "unsupported",
+            "support_note": "Cited ID was not retrieved or is a hallucination trap."
+          },
+          {
+            "claim": "Changes to severity scoring may impact detection accuracy.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "The code diff modifies the severity-scoring submodule, and the commit message indicates a change related to alert thresholds. This could affect detection performance."
+          },
+          {
+            "claim": "Retraining of hypoglycemia threshold calibration may impact device behavior.",
+            "cited_artifact_id": "CGM-ARTIFACT-RETRAIN-0007",
+            "support_status": "supported",
+            "support_note": "The model card indicates a change to the calibration, but does not directly link it to this specific incident."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The reported finding of a software validation issue in the atrioventricular block detection pathway requires investigation to ensure ongoing compliance and prevent potential patient harm. While the incident is described as contained pre-release or resolved as a non-event, any software validation failure necessitates review. The synthetic narrative references an unrelated deployment log which does not support this case; this suggests a process issue in incident documentation."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0010",
+      "base_scenario_id": "SYN-IND-0010",
+      "ground_truth_severity": 1,
+      "predicted_severity": 2,
+      "verified_severity": 2,
+      "severity_correct": 0,
+      "verified_severity_correct": 0,
+      "ground_truth_recommendation": "NO_ACTION",
+      "predicted_recommendation": "CAPA_INVESTIGATE",
+      "verified_recommendation": "CAPA_INVESTIGATE",
+      "recommendation_correct": 0,
+      "verified_recommendation_correct": 0,
+      "confidence": 0.7,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 0.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-VALIDATION-0017|CGM-ARTIFACT-TESTLOG-0005|ARTIFACT-TESTLOG-0050|CGM-ARTIFACT-APPROVAL-0020",
+      "expected_artifacts": "ARTIFACT-TESTLOG-2010A",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.3333,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 0,
+      "hallucination_escape_combined": 0,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "The incident narrative describes a software validation finding detected by the CI pipeline for the atrial fibrillation detection pathway. The automated risk-gate blocked release candidate v3.3.0-rc1 due to a drop in VTach sensitivity (from 0.97 to 0.89) as evidenced by test log ARTIFACT-TESTLOG-0050. Although no patient exposure occurred, the finding requires investigation to understand the root cause of the sensitivity degradation and prevent recurrence. The incident is contained pre-release, mitigating immediate risk.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 2,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "A software validation finding was detected during CI for the atrial fibrillation detection pathway.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "supported",
+            "support_note": "Test log ARTIFACT-TESTLOG-0050 confirms a sensitivity drop during CI validation."
+          },
+          {
+            "claim": "The automated risk-gate blocked the release candidate.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "supported",
+            "support_note": "Test log ARTIFACT-TESTLOG-0050 indicates that the test failure triggered a block in the CI pipeline."
+          },
+          {
+            "claim": "No patients were exposed to the potentially degraded performance.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "supported",
+            "support_note": "The narrative states that the release candidate was blocked before clinical deployment, preventing patient exposure."
+          }
+        ],
+        "requires_human_review": false,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The incident narrative describes a software validation finding detected by the CI pipeline for the atrial fibrillation detection pathway. The automated risk-gate blocked release candidate v3.3.0-rc1 due to a drop in VTach sensitivity (from 0.97 to 0.89) as evidenced by test log ARTIFACT-TESTLOG-0050. Although no patient exposure occurred, the finding requires investigation to understand the root cause of the sensitivity degradation and prevent recurrence. The incident is contained pre-release, mitigating immediate risk."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 2,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "A software validation finding was detected during CI for the atrial fibrillation detection pathway.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "weakly_supported",
+            "support_note": "Test log ARTIFACT-TESTLOG-0050 confirms a sensitivity drop during CI validation."
+          },
+          {
+            "claim": "The automated risk-gate blocked the release candidate.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "supported",
+            "support_note": "Test log ARTIFACT-TESTLOG-0050 indicates that the test failure triggered a block in the CI pipeline."
+          },
+          {
+            "claim": "No patients were exposed to the potentially degraded performance.",
+            "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+            "support_status": "weakly_supported",
+            "support_note": "The narrative states that the release candidate was blocked before clinical deployment, preventing patient exposure."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The incident narrative describes a software validation finding detected by the CI pipeline for the atrial fibrillation detection pathway. The automated risk-gate blocked release candidate v3.3.0-rc1 due to a drop in VTach sensitivity (from 0.97 to 0.89) as evidenced by test log ARTIFACT-TESTLOG-0050. Although no patient exposure occurred, the finding requires investigation to understand the root cause of the sensitivity degradation and prevent recurrence. The incident is contained pre-release, mitigating immediate risk."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0012",
+      "base_scenario_id": "SYN-IND-0012",
+      "ground_truth_severity": 2,
+      "predicted_severity": 2,
+      "verified_severity": 2,
+      "severity_correct": 1,
+      "verified_severity_correct": 1,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "predicted_recommendation": "CAPA_INVESTIGATE",
+      "verified_recommendation": "CAPA_INVESTIGATE",
+      "recommendation_correct": 1,
+      "verified_recommendation_correct": 1,
+      "confidence": 0.7,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 0.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-METER-0008|CGM-ARTIFACT-DOES-NOT-EXIST-9999|CGM-ARTIFACT-VALIDATION-0017|ARTIFACT-DIFF-0009",
+      "expected_artifacts": "ARTIFACT-TESTLOG-2012A",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.3333,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 1,
+      "hallucination_escape_combined": 1,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "The reported ventricular tachycardia-adjacent irregularity, while not resulting in adverse patient outcome *at this time*, constitutes an 'incident' per EU MDR Article 2(64). The lack of a filed clinician note complicates assessment of recurrence and potentially elevates risk. While currently categorized as minor/monitoring level, the potential for escalation to a 'serious incident' (EU MDR Art 2(65)) exists if recurrence occurs or is confirmed via further investigation.  The code change (ARTIFACT-DIFF-0009) modifying severity scoring warrants review in relation to this event; while the commit message suggests intent to *reduce* false alarms, it also introduces a potential for altered risk assessment. The incident report of severe hypoglycemia (CGM-ARTIFACT-METER-0008) is unrelated to the ventricular tachycardia irregularity and does not factor into this assessment.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 2,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "The reported event qualifies as an 'incident' under EU MDR.",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "EU MDR Article 2(64) defines incident broadly enough to encompass the reported irregularity."
+          },
+          {
+            "claim": "The code change may have altered risk assessment.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "The diff modifies severity scoring, which directly impacts how the device assesses and reports potential issues."
+          },
+          {
+            "claim": "Recurrence cannot be ruled out due to missing documentation.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "supported",
+            "support_note": "The narrative explicitly states the retrospective clinician note was not filed, preventing confirmation of recurrence."
+          }
+        ],
+        "requires_human_review": false,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The reported ventricular tachycardia-adjacent irregularity, while not resulting in adverse patient outcome *at this time*, constitutes an 'incident' per EU MDR Article 2(64). The lack of a filed clinician note complicates assessment of recurrence and potentially elevates risk. While currently categorized as minor/monitoring level, the potential for escalation to a 'serious incident' (EU MDR Art 2(65)) exists if recurrence occurs or is confirmed via further investigation.  The code change (ARTIFACT-DIFF-0009) modifying severity scoring warrants review in relation to this event; while the commit message suggests intent to *reduce* false alarms, it also introduces a potential for altered risk assessment. The incident report of severe hypoglycemia (CGM-ARTIFACT-METER-0008) is unrelated to the ventricular tachycardia irregularity and does not factor into this assessment."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 2,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "The reported event qualifies as an 'incident' under EU MDR.",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "EU MDR Article 2(64) defines incident broadly enough to encompass the reported irregularity."
+          },
+          {
+            "claim": "The code change may have altered risk assessment.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "weakly_supported",
+            "support_note": "The diff modifies severity scoring, which directly impacts how the device assesses and reports potential issues."
+          },
+          {
+            "claim": "Recurrence cannot be ruled out due to missing documentation.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "unsupported",
+            "support_note": "Cited ID was not retrieved or is a hallucination trap."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The reported ventricular tachycardia-adjacent irregularity, while not resulting in adverse patient outcome *at this time*, constitutes an 'incident' per EU MDR Article 2(64). The lack of a filed clinician note complicates assessment of recurrence and potentially elevates risk. While currently categorized as minor/monitoring level, the potential for escalation to a 'serious incident' (EU MDR Art 2(65)) exists if recurrence occurs or is confirmed via further investigation.  The code change (ARTIFACT-DIFF-0009) modifying severity scoring warrants review in relation to this event; while the commit message suggests intent to *reduce* false alarms, it also introduces a potential for altered risk assessment. The incident report of severe hypoglycemia (CGM-ARTIFACT-METER-0008) is unrelated to the ventricular tachycardia irregularity and does not factor into this assessment."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0014",
+      "base_scenario_id": "SYN-IND-0014",
+      "ground_truth_severity": 2,
+      "predicted_severity": 2,
+      "verified_severity": 2,
+      "severity_correct": 1,
+      "verified_severity_correct": 1,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "predicted_recommendation": "CAPA_INVESTIGATE",
+      "verified_recommendation": "CAPA_INVESTIGATE",
+      "recommendation_correct": 1,
+      "verified_recommendation_correct": 1,
+      "confidence": 0.6,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 1.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-VALIDATION-0017|ARTIFACT-STATICANALYSIS-0003|CGM-ARTIFACT-METER-0008|ARTIFACT-DIFF-0009",
+      "expected_artifacts": "",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.5,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 1,
+      "hallucination_escape_combined": 1,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "A ventricular fibrillation-adjacent irregularity was reported during device validation. While the incident is described as minor and non-recurrent with no adverse patient outcome, any event potentially related to cardiac function requires investigation per general safety principles. The available documentation does not clearly link this specific event to a confirmed device failure; it appears to be an isolated observation at this time. However, the static analysis report (ARTIFACT-STATICANALYSIS-0003) indicates potential issues with a module touching a safety-critical path and lacking revalidation confirmation. This warrants further investigation to determine if there is any correlation between the irregularity and the flagged code changes.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 2,
+        "confidence": 0.6,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "A potentially cardiac-related event occurred during validation.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "supported",
+            "support_note": "The narrative explicitly states a 'ventricular fibrillation-adjacent irregularity' was observed."
+          },
+          {
+            "claim": "A code change touched a safety-critical path.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "supported",
+            "support_note": "The static analysis report confirms the severity-scoring submodule (modified by ARTIFACT-DIFF-0009) touches a safety-critical path."
+          },
+          {
+            "claim": "Revalidation of the affected module is not confirmed.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "supported",
+            "support_note": "The static analysis report status is 'WARNING \u2014 REVALIDATION NOT CONFIRMED'."
+          },
+          {
+            "claim": "The reported event does not currently constitute a serious incident requiring immediate regulatory notification.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "supported",
+            "support_note": "The narrative states the irregularity was minor, non-recurrent and had no adverse patient outcome."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "A ventricular fibrillation-adjacent irregularity was reported during device validation. While the incident is described as minor and non-recurrent with no adverse patient outcome, any event potentially related to cardiac function requires investigation per general safety principles. The available documentation does not clearly link this specific event to a confirmed device failure; it appears to be an isolated observation at this time. However, the static analysis report (ARTIFACT-STATICANALYSIS-0003) indicates potential issues with a module touching a safety-critical path and lacking revalidation confirmation. This warrants further investigation to determine if there is any correlation between the irregularity and the flagged code changes."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 2,
+        "confidence": 0.6,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "A potentially cardiac-related event occurred during validation.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "unsupported",
+            "support_note": "Cited ID was not retrieved or is a hallucination trap."
+          },
+          {
+            "claim": "A code change touched a safety-critical path.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "supported",
+            "support_note": "The static analysis report confirms the severity-scoring submodule (modified by ARTIFACT-DIFF-0009) touches a safety-critical path."
+          },
+          {
+            "claim": "Revalidation of the affected module is not confirmed.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "supported",
+            "support_note": "The static analysis report status is 'WARNING \u2014 REVALIDATION NOT CONFIRMED'."
+          },
+          {
+            "claim": "The reported event does not currently constitute a serious incident requiring immediate regulatory notification.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "unsupported",
+            "support_note": "Cited ID was not retrieved or is a hallucination trap."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "A ventricular fibrillation-adjacent irregularity was reported during device validation. While the incident is described as minor and non-recurrent with no adverse patient outcome, any event potentially related to cardiac function requires investigation per general safety principles. The available documentation does not clearly link this specific event to a confirmed device failure; it appears to be an isolated observation at this time. However, the static analysis report (ARTIFACT-STATICANALYSIS-0003) indicates potential issues with a module touching a safety-critical path and lacking revalidation confirmation. This warrants further investigation to determine if there is any correlation between the irregularity and the flagged code changes."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0016",
+      "base_scenario_id": "SYN-IND-0016",
+      "ground_truth_severity": 2,
+      "predicted_severity": 2,
+      "verified_severity": 2,
+      "severity_correct": 1,
+      "verified_severity_correct": 1,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "predicted_recommendation": "CAPA_INVESTIGATE",
+      "verified_recommendation": "CAPA_INVESTIGATE",
+      "recommendation_correct": 1,
+      "verified_recommendation_correct": 1,
+      "confidence": 0.7,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 0.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-METER-0008|CGM-ARTIFACT-VALIDATION-0017|CGM-ARTIFACT-DOES-NOT-EXIST-9999|ARTIFACT-DIFF-0009",
+      "expected_artifacts": "ARTIFACT-TESTLOG-2016A",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.75,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 0,
+      "hallucination_escape_combined": 0,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "Telemetry detected a ventricular tachycardia-adjacent irregularity. While no adverse patient outcome was recorded, the lack of a filed clinician note prevents confirmation of resolution and raises concerns about potential recurrence. This constitutes an 'incident' as defined by EU MDR Article 2(64) [mdr-art2-def-risk-incident]. The incident does not currently meet the criteria for a 'serious incident' per EU MDR Article 2(65) [mdr-art2-def-risk-incident] due to the absence of reported harm, but ongoing monitoring is warranted.  The code change modifying severity scoring (commit message: 'tune priority weights for fewer false HIGH alerts') [ARTIFACT-DIFF-0009], occurring three weeks prior, requires investigation to determine if it contributed to this event or altered detection sensitivity. The lack of a linked revalidation test run after the code change is concerning and should be addressed as part of the CAPA.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 2,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "The reported irregularity constitutes an 'incident' under EU MDR Article 2(64).",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "The narrative describes a malfunction in device performance (irregularity), fitting the definition of an 'incident'."
+          },
+          {
+            "claim": "The incident is not currently classified as 'serious' per EU MDR Article 2(65).",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "No death or serious deterioration of health is reported."
+          },
+          {
+            "claim": "The recent code change may have impacted the detection of this irregularity.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "weakly_supported",
+            "support_note": "The commit message suggests a modification to severity scoring, which *could* affect how irregularities are flagged. Further investigation is needed."
+          },
+          {
+            "claim": "Lack of revalidation after the code change is a process gap.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "The artifact description explicitly states no linked revalidation test run."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "Telemetry detected a ventricular tachycardia-adjacent irregularity. While no adverse patient outcome was recorded, the lack of a filed clinician note prevents confirmation of resolution and raises concerns about potential recurrence. This constitutes an 'incident' as defined by EU MDR Article 2(64) [mdr-art2-def-risk-incident]. The incident does not currently meet the criteria for a 'serious incident' per EU MDR Article 2(65) [mdr-art2-def-risk-incident] due to the absence of reported harm, but ongoing monitoring is warranted.  The code change modifying severity scoring (commit message: 'tune priority weights for fewer false HIGH alerts') [ARTIFACT-DIFF-0009], occurring three weeks prior, requires investigation to determine if it contributed to this event or altered detection sensitivity. The lack of a linked revalidation test run after the code change is concerning and should be addressed as part of the CAPA."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 2,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "The reported irregularity constitutes an 'incident' under EU MDR Article 2(64).",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "The narrative describes a malfunction in device performance (irregularity), fitting the definition of an 'incident'."
+          },
+          {
+            "claim": "The incident is not currently classified as 'serious' per EU MDR Article 2(65).",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "No death or serious deterioration of health is reported."
+          },
+          {
+            "claim": "The recent code change may have impacted the detection of this irregularity.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "weakly_supported",
+            "support_note": "The commit message suggests a modification to severity scoring, which *could* affect how irregularities are flagged. Further investigation is needed."
+          },
+          {
+            "claim": "Lack of revalidation after the code change is a process gap.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "The artifact description explicitly states no linked revalidation test run."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "Telemetry detected a ventricular tachycardia-adjacent irregularity. While no adverse patient outcome was recorded, the lack of a filed clinician note prevents confirmation of resolution and raises concerns about potential recurrence. This constitutes an 'incident' as defined by EU MDR Article 2(64) [mdr-art2-def-risk-incident]. The incident does not currently meet the criteria for a 'serious incident' per EU MDR Article 2(65) [mdr-art2-def-risk-incident] due to the absence of reported harm, but ongoing monitoring is warranted.  The code change modifying severity scoring (commit message: 'tune priority weights for fewer false HIGH alerts') [ARTIFACT-DIFF-0009], occurring three weeks prior, requires investigation to determine if it contributed to this event or altered detection sensitivity. The lack of a linked revalidation test run after the code change is concerning and should be addressed as part of the CAPA."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0018",
+      "base_scenario_id": "SYN-IND-0018",
+      "ground_truth_severity": 2,
+      "predicted_severity": 2,
+      "verified_severity": 2,
+      "severity_correct": 1,
+      "verified_severity_correct": 1,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "predicted_recommendation": "CAPA_INVESTIGATE",
+      "verified_recommendation": "CAPA_INVESTIGATE",
+      "recommendation_correct": 1,
+      "verified_recommendation_correct": 1,
+      "confidence": 0.7,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 1.0,
+      "retrieved_artifacts": "ARTIFACT-DIFF-0009|CGM-ARTIFACT-METER-0008|ARTIFACT-STATICANALYSIS-0003|CGM-ARTIFACT-SENSOR-0011",
+      "expected_artifacts": "",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.75,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 0,
+      "hallucination_escape_combined": 0,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "Telemetry unit reported a ventricular fibrillation-adjacent irregularity, which while not resulting in patient harm, warrants investigation due to the potential for serious consequences if it were to escalate or recur. The incident narrative indicates this is currently being monitored, but requires documentation per regulatory requirements. While the event is described as 'minor' and 'non-recurrent', EU MDR Article 88 (mdr-art88-trend-reporting) requires reporting of statistically significant increases in non-serious incidents that *could* have a significant impact on the benefit-risk analysis, especially if they may lead to risks to health or safety. The incident also triggers requirements under 21 CFR \u00a7 820.35 (qmsr-820.35-records) for maintaining complaint records including details of the event and any corrective action taken.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 2,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "The reported irregularity requires documentation as a potential quality issue.",
+            "cited_artifact_id": "qmsr-820.35-records",
+            "support_status": "supported",
+            "support_note": "21 CFR \u00a7 820.35(a) requires records of review, evaluation and investigation for complaints involving possible device failure."
+          },
+          {
+            "claim": "The incident may require trend reporting under EU MDR.",
+            "cited_artifact_id": "mdr-art88-trend-reporting",
+            "support_status": "supported",
+            "support_note": "Article 88(1) requires reporting of increases in non-serious incidents that could impact the benefit-risk analysis."
+          },
+          {
+            "claim": "A recent code change touched a safety-critical path.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "supported",
+            "support_note": "Static analysis report indicates the diff (ARTIFACT-DIFF-0009) touches a safety-critical path."
+          },
+          {
+            "claim": "The code change lacked confirmed revalidation.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "supported",
+            "support_note": "Static analysis report status is 'WARNING \u2014 REVALIDATION NOT CONFIRMED'."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "Telemetry unit reported a ventricular fibrillation-adjacent irregularity, which while not resulting in patient harm, warrants investigation due to the potential for serious consequences if it were to escalate or recur. The incident narrative indicates this is currently being monitored, but requires documentation per regulatory requirements. While the event is described as 'minor' and 'non-recurrent', EU MDR Article 88 (mdr-art88-trend-reporting) requires reporting of statistically significant increases in non-serious incidents that *could* have a significant impact on the benefit-risk analysis, especially if they may lead to risks to health or safety. The incident also triggers requirements under 21 CFR \u00a7 820.35 (qmsr-820.35-records) for maintaining complaint records including details of the event and any corrective action taken."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 2,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "The reported irregularity requires documentation as a potential quality issue.",
+            "cited_artifact_id": "qmsr-820.35-records",
+            "support_status": "weakly_supported",
+            "support_note": "21 CFR \u00a7 820.35(a) requires records of review, evaluation and investigation for complaints involving possible device failure."
+          },
+          {
+            "claim": "The incident may require trend reporting under EU MDR.",
+            "cited_artifact_id": "mdr-art88-trend-reporting",
+            "support_status": "supported",
+            "support_note": "Article 88(1) requires reporting of increases in non-serious incidents that could impact the benefit-risk analysis."
+          },
+          {
+            "claim": "A recent code change touched a safety-critical path.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "supported",
+            "support_note": "Static analysis report indicates the diff (ARTIFACT-DIFF-0009) touches a safety-critical path."
+          },
+          {
+            "claim": "The code change lacked confirmed revalidation.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "supported",
+            "support_note": "Static analysis report status is 'WARNING \u2014 REVALIDATION NOT CONFIRMED'."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "Telemetry unit reported a ventricular fibrillation-adjacent irregularity, which while not resulting in patient harm, warrants investigation due to the potential for serious consequences if it were to escalate or recur. The incident narrative indicates this is currently being monitored, but requires documentation per regulatory requirements. While the event is described as 'minor' and 'non-recurrent', EU MDR Article 88 (mdr-art88-trend-reporting) requires reporting of statistically significant increases in non-serious incidents that *could* have a significant impact on the benefit-risk analysis, especially if they may lead to risks to health or safety. The incident also triggers requirements under 21 CFR \u00a7 820.35 (qmsr-820.35-records) for maintaining complaint records including details of the event and any corrective action taken."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0020",
+      "base_scenario_id": "SYN-IND-0020",
+      "ground_truth_severity": 2,
+      "predicted_severity": 2,
+      "verified_severity": 2,
+      "severity_correct": 1,
+      "verified_severity_correct": 1,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "predicted_recommendation": "CAPA_INVESTIGATE",
+      "verified_recommendation": "CAPA_INVESTIGATE",
+      "recommendation_correct": 1,
+      "verified_recommendation_correct": 1,
+      "confidence": 0.7,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 0.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-METER-0008|CGM-ARTIFACT-VALIDATION-0017|CGM-ARTIFACT-DOES-NOT-EXIST-9999|ARTIFACT-DIFF-0009",
+      "expected_artifacts": "ARTIFACT-TESTLOG-2020A",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.6667,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 0,
+      "hallucination_escape_combined": 0,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "The reported ventricular tachycardia-adjacent irregularity, while currently minor and non-recurrent, constitutes an 'incident' as defined by EU MDR Article 2(64). The lack of a filed clinician note raises concerns about the completeness of event documentation and hinders assessment of recurrence. While not currently classified as a 'serious incident' per Article 2(65), the inability to rule out recurrence necessitates investigation to determine if further events might lead to serious harm. The code change (ARTIFACT-DIFF-0009) impacting severity scoring warrants review in relation to this event, even though it is not directly linked to the irregularity itself.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 2,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "The reported event qualifies as an 'incident' under EU MDR.",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "The narrative describes a malfunction in device performance (ventricular tachycardia-adjacent irregularity), which aligns with the definition of 'incident' in EU MDR Article 2(64)."
+          },
+          {
+            "claim": "Lack of documentation hinders recurrence assessment.",
+            "cited_artifact_id": "CGM-ARTIFACT-VALIDATION-0017",
+            "support_status": "supported",
+            "support_note": "The narrative explicitly states the retrospective clinician note was not filed, preventing confirmation of non-recurrence. The validation packet (CGM-ARTIFACT-VALIDATION-0017) does not contain this artifact."
+          },
+          {
+            "claim": "The code change may be relevant to event severity.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "weakly_supported",
+            "support_note": "The commit message 'tune priority weights for fewer false HIGH alerts' suggests the change impacts how the system classifies events. While not directly causative, it requires review to ensure the tuning did not inadvertently affect detection or reporting of relevant irregularities."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The reported ventricular tachycardia-adjacent irregularity, while currently minor and non-recurrent, constitutes an 'incident' as defined by EU MDR Article 2(64). The lack of a filed clinician note raises concerns about the completeness of event documentation and hinders assessment of recurrence. While not currently classified as a 'serious incident' per Article 2(65), the inability to rule out recurrence necessitates investigation to determine if further events might lead to serious harm. The code change (ARTIFACT-DIFF-0009) impacting severity scoring warrants review in relation to this event, even though it is not directly linked to the irregularity itself."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 2,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "The reported event qualifies as an 'incident' under EU MDR.",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "The narrative describes a malfunction in device performance (ventricular tachycardia-adjacent irregularity), which aligns with the definition of 'incident' in EU MDR Article 2(64)."
+          },
+          {
+            "claim": "Lack of documentation hinders recurrence assessment.",
+            "cited_artifact_id": "CGM-ARTIFACT-VALIDATION-0017",
+            "support_status": "weakly_supported",
+            "support_note": "The narrative explicitly states the retrospective clinician note was not filed, preventing confirmation of non-recurrence. The validation packet (CGM-ARTIFACT-VALIDATION-0017) does not contain this artifact."
+          },
+          {
+            "claim": "The code change may be relevant to event severity.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "The commit message 'tune priority weights for fewer false HIGH alerts' suggests the change impacts how the system classifies events. While not directly causative, it requires review to ensure the tuning did not inadvertently affect detection or reporting of relevant irregularities."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The reported ventricular tachycardia-adjacent irregularity, while currently minor and non-recurrent, constitutes an 'incident' as defined by EU MDR Article 2(64). The lack of a filed clinician note raises concerns about the completeness of event documentation and hinders assessment of recurrence. While not currently classified as a 'serious incident' per Article 2(65), the inability to rule out recurrence necessitates investigation to determine if further events might lead to serious harm. The code change (ARTIFACT-DIFF-0009) impacting severity scoring warrants review in relation to this event, even though it is not directly linked to the irregularity itself."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0022",
+      "base_scenario_id": "SYN-IND-0022",
+      "ground_truth_severity": 3,
+      "predicted_severity": 3,
+      "verified_severity": 3,
+      "severity_correct": 1,
+      "verified_severity_correct": 1,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "predicted_recommendation": "CAPA_INVESTIGATE",
+      "verified_recommendation": "CAPA_INVESTIGATE",
+      "recommendation_correct": 1,
+      "verified_recommendation_correct": 1,
+      "confidence": 0.6,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 0.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-METER-0008|ARTIFACT-DIFF-0009|CGM-ARTIFACT-RETRAIN-0007|CGM-ARTIFACT-TESTLOG-0005",
+      "expected_artifacts": "ARTIFACT-TESTLOG-2022A",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.25,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 1,
+      "hallucination_escape_combined": 1,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "The reported incident involves a failure to detect ventricular fibrillation, a potentially life-threatening arrhythmia. While the episode self-resolved without immediate adverse outcome, the missed detection represents a significant safety concern given the device's intended purpose of real-time monitoring (mdr-art2-def-medical-device). The missing confidence score log for the specific incident window hinders complete verification of the event but does not invalidate the clinical review finding. A recent code modification impacting severity scoring (ARTIFACT-DIFF-0009) raises a potential causal link, especially given the commit message indicating prioritization changes and lack of associated revalidation testing. The high-glucose error in validation testing (CGM-ARTIFACT-TESTLOG-0005) suggests broader issues with signal processing or thresholding that could contribute to missed detections.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 3,
+        "confidence": 0.6,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "The device failed to detect a clinically significant event.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "supported",
+            "support_note": "Incident narrative explicitly states missed ventricular fibrillation."
+          },
+          {
+            "claim": "The incident represents a serious safety concern.",
+            "cited_artifact_id": "mdr-art2-def-medical-device",
+            "support_status": "supported",
+            "support_note": "Device is intended for monitoring, and failure to detect arrhythmia constitutes a risk to patient health."
+          },
+          {
+            "claim": "Recent code changes may have contributed to the incident.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "weakly_supported",
+            "support_note": "Code diff modifies severity scoring, and lack of revalidation is concerning. Causal link not definitively established."
+          },
+          {
+            "claim": "Validation testing revealed other signal processing issues.",
+            "cited_artifact_id": "CGM-ARTIFACT-TESTLOG-0005",
+            "support_status": "supported",
+            "support_note": "Test log shows high-glucose error outside acceptance threshold."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The reported incident involves a failure to detect ventricular fibrillation, a potentially life-threatening arrhythmia. While the episode self-resolved without immediate adverse outcome, the missed detection represents a significant safety concern given the device's intended purpose of real-time monitoring (mdr-art2-def-medical-device). The missing confidence score log for the specific incident window hinders complete verification of the event but does not invalidate the clinical review finding. A recent code modification impacting severity scoring (ARTIFACT-DIFF-0009) raises a potential causal link, especially given the commit message indicating prioritization changes and lack of associated revalidation testing. The high-glucose error in validation testing (CGM-ARTIFACT-TESTLOG-0005) suggests broader issues with signal processing or thresholding that could contribute to missed detections."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 3,
+        "confidence": 0.6,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "The device failed to detect a clinically significant event.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "unsupported",
+            "support_note": "Cited ID was not retrieved or is a hallucination trap."
+          },
+          {
+            "claim": "The incident represents a serious safety concern.",
+            "cited_artifact_id": "mdr-art2-def-medical-device",
+            "support_status": "weakly_supported",
+            "support_note": "Device is intended for monitoring, and failure to detect arrhythmia constitutes a risk to patient health."
+          },
+          {
+            "claim": "Recent code changes may have contributed to the incident.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "Code diff modifies severity scoring, and lack of revalidation is concerning. Causal link not definitively established."
+          },
+          {
+            "claim": "Validation testing revealed other signal processing issues.",
+            "cited_artifact_id": "CGM-ARTIFACT-TESTLOG-0005",
+            "support_status": "weakly_supported",
+            "support_note": "Test log shows high-glucose error outside acceptance threshold."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The reported incident involves a failure to detect ventricular fibrillation, a potentially life-threatening arrhythmia. While the episode self-resolved without immediate adverse outcome, the missed detection represents a significant safety concern given the device's intended purpose of real-time monitoring (mdr-art2-def-medical-device). The missing confidence score log for the specific incident window hinders complete verification of the event but does not invalidate the clinical review finding. A recent code modification impacting severity scoring (ARTIFACT-DIFF-0009) raises a potential causal link, especially given the commit message indicating prioritization changes and lack of associated revalidation testing. The high-glucose error in validation testing (CGM-ARTIFACT-TESTLOG-0005) suggests broader issues with signal processing or thresholding that could contribute to missed detections."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0024",
+      "base_scenario_id": "SYN-IND-0024",
+      "ground_truth_severity": 3,
+      "predicted_severity": 3,
+      "verified_severity": 3,
+      "severity_correct": 1,
+      "verified_severity_correct": 1,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "predicted_recommendation": "CAPA_INVESTIGATE",
+      "verified_recommendation": "CAPA_INVESTIGATE",
+      "recommendation_correct": 1,
+      "verified_recommendation_correct": 1,
+      "confidence": 0.5,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 1.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-METER-0008|ARTIFACT-STATICANALYSIS-0003|ARTIFACT-DIFF-0009|CGM-ARTIFACT-SENSOR-0011",
+      "expected_artifacts": "",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.5,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 1,
+      "hallucination_escape_combined": 1,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "The reported incident of a missed atrial fibrillation episode, while not immediately resulting in harm, raises concerns about the device's ability to accurately detect clinically significant events. This requires investigation to determine root cause and prevent recurrence. The lack of a linked revalidation test run following code changes impacting severity scoring (as indicated by ARTIFACT-DIFF-0009 and ARTIFACT-STATICANALYSIS-0003) is concerning, as it suggests potential gaps in the verification process for safety-critical functionality.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 3,
+        "confidence": 0.5,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "The device failed to detect a clinically significant atrial fibrillation episode.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "supported",
+            "support_note": "Directly stated in the incident narrative."
+          },
+          {
+            "claim": "The code changes related to severity scoring may have impacted detection accuracy.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "Code diff modifies the severity-scoring submodule."
+          },
+          {
+            "claim": "The static analysis identified a potential revalidation requirement that was not confirmed.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "supported",
+            "support_note": "Static analysis report flags the submodule as touching a safety-critical path and requiring Class II revalidation, but status is 'REVALIDATION NOT CONFIRMED'."
+          },
+          {
+            "claim": "A missed atrial fibrillation event could pose a risk to patient health.",
+            "cited_artifact_id": "qmsr-820.10-d-life-sustaining",
+            "support_status": "weakly_supported",
+            "support_note": "While the regulation refers to devices supporting/sustaining life, atrial fibrillation detection is plausibly related to preventing serious injury, but this connection isn't explicitly stated."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The reported incident of a missed atrial fibrillation episode, while not immediately resulting in harm, raises concerns about the device's ability to accurately detect clinically significant events. This requires investigation to determine root cause and prevent recurrence. The lack of a linked revalidation test run following code changes impacting severity scoring (as indicated by ARTIFACT-DIFF-0009 and ARTIFACT-STATICANALYSIS-0003) is concerning, as it suggests potential gaps in the verification process for safety-critical functionality."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 3,
+        "confidence": 0.5,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "The device failed to detect a clinically significant atrial fibrillation episode.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "unsupported",
+            "support_note": "Cited ID was not retrieved or is a hallucination trap."
+          },
+          {
+            "claim": "The code changes related to severity scoring may have impacted detection accuracy.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "Code diff modifies the severity-scoring submodule."
+          },
+          {
+            "claim": "The static analysis identified a potential revalidation requirement that was not confirmed.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "supported",
+            "support_note": "Static analysis report flags the submodule as touching a safety-critical path and requiring Class II revalidation, but status is 'REVALIDATION NOT CONFIRMED'."
+          },
+          {
+            "claim": "A missed atrial fibrillation event could pose a risk to patient health.",
+            "cited_artifact_id": "qmsr-820.10-d-life-sustaining",
+            "support_status": "weakly_supported",
+            "support_note": "While the regulation refers to devices supporting/sustaining life, atrial fibrillation detection is plausibly related to preventing serious injury, but this connection isn't explicitly stated."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The reported incident of a missed atrial fibrillation episode, while not immediately resulting in harm, raises concerns about the device's ability to accurately detect clinically significant events. This requires investigation to determine root cause and prevent recurrence. The lack of a linked revalidation test run following code changes impacting severity scoring (as indicated by ARTIFACT-DIFF-0009 and ARTIFACT-STATICANALYSIS-0003) is concerning, as it suggests potential gaps in the verification process for safety-critical functionality."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0026",
+      "base_scenario_id": "SYN-IND-0026",
+      "ground_truth_severity": 3,
+      "predicted_severity": 4,
+      "verified_severity": 4,
+      "severity_correct": 0,
+      "verified_severity_correct": 0,
+      "ground_truth_recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+      "predicted_recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+      "verified_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "recommendation_correct": 1,
+      "verified_recommendation_correct": 0,
+      "confidence": 0.7,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 0.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-METER-0008|ARTIFACT-DIFF-0009|CGM-ARTIFACT-RETRAIN-0007|CGM-ARTIFACT-TESTLOG-0005",
+      "expected_artifacts": "ARTIFACT-TESTLOG-2026A|ARTIFACT-INCIDENT-2026B",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.5,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 1,
+      "hallucination_escape_combined": 1,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "fsca_without_confirmatory_evidence_downgraded|severity4_or_death_forced_immediate_human_escalation|technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "The reported incident describes a failure to detect ventricular fibrillation, a life-threatening arrhythmia, in two patients. This constitutes a serious incident as defined by EU MDR Article 87 and requires immediate reporting to competent authorities. The recurrence across the deployed population confirms this is not an isolated event. While the confirmatory device confidence score log is missing, independent telemetry reviews and cloud logs corroborate the missed events. A recent code change (code_diff) impacting severity scoring raises a potential causal link, though further investigation is needed to confirm it. The incident requires immediate corrective action, including consideration of withdrawal or recall as per EU MDR Article 10(12).",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 4,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "The device failed to detect a serious medical event (ventricular fibrillation) in two patients.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "supported",
+            "support_note": "Directly stated in the incident narrative."
+          },
+          {
+            "claim": "The failure to detect ventricular fibrillation constitutes a 'serious incident' under EU MDR.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "Article 87 defines serious incidents, and failure to detect life-threatening arrhythmias falls within that definition."
+          },
+          {
+            "claim": "The recurrence of the issue across multiple patients indicates a systemic problem.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "supported",
+            "support_note": "The narrative explicitly states two independent instances."
+          },
+          {
+            "claim": "A recent code change may have contributed to the failure.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "weakly_supported",
+            "support_note": "The commit message suggests a modification of severity scoring, which could impact arrhythmia detection. However, there's no direct evidence linking the change to this specific failure."
+          },
+          {
+            "claim": "Reporting timelines under EU MDR must be followed.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "The regulation outlines reporting requirements for serious incidents."
+          },
+          {
+            "claim": "Corrective action, potentially including recall, may be necessary.",
+            "cited_artifact_id": "mdr-art10-12-corrective-action",
+            "support_status": "supported",
+            "support_note": "Article 10(12) mandates corrective action for non-conforming devices, and a serious risk warrants consideration of withdrawal or recall."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+        "rationale": "The reported incident describes a failure to detect ventricular fibrillation, a life-threatening arrhythmia, in two patients. This constitutes a serious incident as defined by EU MDR Article 87 and requires immediate reporting to competent authorities. The recurrence across the deployed population confirms this is not an isolated event. While the confirmatory device confidence score log is missing, independent telemetry reviews and cloud logs corroborate the missed events. A recent code change (code_diff) impacting severity scoring raises a potential causal link, though further investigation is needed to confirm it. The incident requires immediate corrective action, including consideration of withdrawal or recall as per EU MDR Article 10(12)."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 4,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Causal link between the artifact/change and the observed event.",
+          "Evidence of recurrence or confirmed deployed-population impact.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "The device failed to detect a serious medical event (ventricular fibrillation) in two patients.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "unsupported",
+            "support_note": "Cited ID was not retrieved or is a hallucination trap."
+          },
+          {
+            "claim": "The failure to detect ventricular fibrillation constitutes a 'serious incident' under EU MDR.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "Article 87 defines serious incidents, and failure to detect life-threatening arrhythmias falls within that definition."
+          },
+          {
+            "claim": "The recurrence of the issue across multiple patients indicates a systemic problem.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "unsupported",
+            "support_note": "Cited ID was not retrieved or is a hallucination trap."
+          },
+          {
+            "claim": "A recent code change may have contributed to the failure.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "weakly_supported",
+            "support_note": "The commit message suggests a modification of severity scoring, which could impact arrhythmia detection. However, there's no direct evidence linking the change to this specific failure."
+          },
+          {
+            "claim": "Reporting timelines under EU MDR must be followed.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "The regulation outlines reporting requirements for serious incidents."
+          },
+          {
+            "claim": "Corrective action, potentially including recall, may be necessary.",
+            "cited_artifact_id": "mdr-art10-12-corrective-action",
+            "support_status": "supported",
+            "support_note": "Article 10(12) mandates corrective action for non-conforming devices, and a serious risk warrants consideration of withdrawal or recall."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+        "rationale": "The reported incident describes a failure to detect ventricular fibrillation, a life-threatening arrhythmia, in two patients. This constitutes a serious incident as defined by EU MDR Article 87 and requires immediate reporting to competent authorities. The recurrence across the deployed population confirms this is not an isolated event. While the confirmatory device confidence score log is missing, independent telemetry reviews and cloud logs corroborate the missed events. A recent code change (code_diff) impacting severity scoring raises a potential causal link, though further investigation is needed to confirm it. The incident requires immediate corrective action, including consideration of withdrawal or recall as per EU MDR Article 10(12)."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0028",
+      "base_scenario_id": "SYN-IND-0028",
+      "ground_truth_severity": 3,
+      "predicted_severity": 3,
+      "verified_severity": 3,
+      "severity_correct": 1,
+      "verified_severity_correct": 1,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "predicted_recommendation": "CAPA_INVESTIGATE",
+      "verified_recommendation": "CAPA_INVESTIGATE",
+      "recommendation_correct": 1,
+      "verified_recommendation_correct": 1,
+      "confidence": 0.6,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 1.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-METER-0008|ARTIFACT-DIFF-0009|CGM-ARTIFACT-SENSOR-0011|ARTIFACT-STATICANALYSIS-0003",
+      "expected_artifacts": "",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.5,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 1,
+      "hallucination_escape_combined": 1,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "The reported incident of a missed atrial fibrillation episode, while self-resolved without immediate harm, raises concerns about the device's ability to accurately detect clinically significant events in real time. This may trigger obligations under EU MDR Article 88 regarding trend reporting if similar incidents occur and demonstrate a statistically significant increase in frequency. The lack of a linked revalidation test run following code changes (ARTIFACT-DIFF-0009) impacting the severity-scoring submodule, coupled with the static analysis warning indicating a need for Class II revalidation (ARTIFACT-STATICANALYSIS-0003), suggests potential deficiencies in the verification process. While no immediate serious harm occurred, the incident requires investigation to determine root cause and prevent recurrence.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 3,
+        "confidence": 0.6,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "The device failed to detect a clinically significant event.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "supported",
+            "support_note": "Incident narrative explicitly states the missed atrial fibrillation episode."
+          },
+          {
+            "claim": "Recent code changes impacted a safety-critical submodule.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "Code diff shows modification of the severity-scoring submodule."
+          },
+          {
+            "claim": "The code changes were not adequately revalidated.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "supported",
+            "support_note": "Static analysis report flags the diff as requiring Class II revalidation, with status 'REVALIDATION NOT CONFIRMED'."
+          },
+          {
+            "claim": "A pattern of similar incidents could require trend reporting.",
+            "cited_artifact_id": "mdr-art88-trend-reporting",
+            "support_status": "supported",
+            "support_note": "EU MDR Article 88 outlines requirements for reporting statistically significant increases in incident frequency."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The reported incident of a missed atrial fibrillation episode, while self-resolved without immediate harm, raises concerns about the device's ability to accurately detect clinically significant events in real time. This may trigger obligations under EU MDR Article 88 regarding trend reporting if similar incidents occur and demonstrate a statistically significant increase in frequency. The lack of a linked revalidation test run following code changes (ARTIFACT-DIFF-0009) impacting the severity-scoring submodule, coupled with the static analysis warning indicating a need for Class II revalidation (ARTIFACT-STATICANALYSIS-0003), suggests potential deficiencies in the verification process. While no immediate serious harm occurred, the incident requires investigation to determine root cause and prevent recurrence."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 3,
+        "confidence": 0.6,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "The device failed to detect a clinically significant event.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "unsupported",
+            "support_note": "Cited ID was not retrieved or is a hallucination trap."
+          },
+          {
+            "claim": "Recent code changes impacted a safety-critical submodule.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "Code diff shows modification of the severity-scoring submodule."
+          },
+          {
+            "claim": "The code changes were not adequately revalidated.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "weakly_supported",
+            "support_note": "Static analysis report flags the diff as requiring Class II revalidation, with status 'REVALIDATION NOT CONFIRMED'."
+          },
+          {
+            "claim": "A pattern of similar incidents could require trend reporting.",
+            "cited_artifact_id": "mdr-art88-trend-reporting",
+            "support_status": "supported",
+            "support_note": "EU MDR Article 88 outlines requirements for reporting statistically significant increases in incident frequency."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "The reported incident of a missed atrial fibrillation episode, while self-resolved without immediate harm, raises concerns about the device's ability to accurately detect clinically significant events in real time. This may trigger obligations under EU MDR Article 88 regarding trend reporting if similar incidents occur and demonstrate a statistically significant increase in frequency. The lack of a linked revalidation test run following code changes (ARTIFACT-DIFF-0009) impacting the severity-scoring submodule, coupled with the static analysis warning indicating a need for Class II revalidation (ARTIFACT-STATICANALYSIS-0003), suggests potential deficiencies in the verification process. While no immediate serious harm occurred, the incident requires investigation to determine root cause and prevent recurrence."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0030",
+      "base_scenario_id": "SYN-IND-0030",
+      "ground_truth_severity": 3,
+      "predicted_severity": 3,
+      "verified_severity": 3,
+      "severity_correct": 1,
+      "verified_severity_correct": 1,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "predicted_recommendation": "CAPA_INVESTIGATE",
+      "verified_recommendation": "CAPA_INVESTIGATE",
+      "recommendation_correct": 1,
+      "verified_recommendation_correct": 1,
+      "confidence": 0.6,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 0.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-METER-0008|ARTIFACT-DIFF-0009|CGM-ARTIFACT-TESTLOG-0005|CGM-ARTIFACT-RETRAIN-0007",
+      "expected_artifacts": "ARTIFACT-TESTLOG-2030A",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.75,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 1,
+      "hallucination_escape_combined": 1,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "Post-market surveillance identified a missed ventricular fibrillation episode, which is a serious incident potentially requiring regulatory reporting and investigation. While the event self-resolved without immediate adverse outcome, the failure to detect it in real-time represents a significant safety concern. The missing confidence score log for the specific episode window hinders full validation of the clinical review; this data gap requires attention. A recent code modification (three weeks prior) targeting alert prioritization raises concerns about potential unintended consequences on detection sensitivity.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 3,
+        "confidence": 0.6,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "The device failed to detect a clinically significant event.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "supported",
+            "support_note": "Narrative explicitly states the missed ventricular fibrillation episode."
+          },
+          {
+            "claim": "The incident is potentially serious and requires investigation.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "EU MDR Article 87 defines reporting requirements for serious incidents."
+          },
+          {
+            "claim": "A recent code change may have contributed to the incident.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "weakly_supported",
+            "support_note": "The commit message indicates a tuning of alert prioritization, which could affect detection sensitivity. No linked revalidation test run is available."
+          },
+          {
+            "claim": "Post-market surveillance findings necessitate corrective action.",
+            "cited_artifact_id": "mdr-art83-4-corrective-link",
+            "support_status": "supported",
+            "support_note": "Article 83(4) links PMS findings to the need for preventive or corrective actions."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "Post-market surveillance identified a missed ventricular fibrillation episode, which is a serious incident potentially requiring regulatory reporting and investigation. While the event self-resolved without immediate adverse outcome, the failure to detect it in real-time represents a significant safety concern. The missing confidence score log for the specific episode window hinders full validation of the clinical review; this data gap requires attention. A recent code modification (three weeks prior) targeting alert prioritization raises concerns about potential unintended consequences on detection sensitivity."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 3,
+        "confidence": 0.6,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "The device failed to detect a clinically significant event.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "unsupported",
+            "support_note": "Cited ID was not retrieved or is a hallucination trap."
+          },
+          {
+            "claim": "The incident is potentially serious and requires investigation.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "EU MDR Article 87 defines reporting requirements for serious incidents."
+          },
+          {
+            "claim": "A recent code change may have contributed to the incident.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "The commit message indicates a tuning of alert prioritization, which could affect detection sensitivity. No linked revalidation test run is available."
+          },
+          {
+            "claim": "Post-market surveillance findings necessitate corrective action.",
+            "cited_artifact_id": "mdr-art83-4-corrective-link",
+            "support_status": "supported",
+            "support_note": "Article 83(4) links PMS findings to the need for preventive or corrective actions."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "Post-market surveillance identified a missed ventricular fibrillation episode, which is a serious incident potentially requiring regulatory reporting and investigation. While the event self-resolved without immediate adverse outcome, the failure to detect it in real-time represents a significant safety concern. The missing confidence score log for the specific episode window hinders full validation of the clinical review; this data gap requires attention. A recent code modification (three weeks prior) targeting alert prioritization raises concerns about potential unintended consequences on detection sensitivity."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0032",
+      "base_scenario_id": "SYN-IND-0032",
+      "ground_truth_severity": 4,
+      "predicted_severity": 4,
+      "verified_severity": 4,
+      "severity_correct": 1,
+      "verified_severity_correct": 1,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "predicted_recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+      "verified_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "recommendation_correct": 0,
+      "verified_recommendation_correct": 1,
+      "confidence": 0.7,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 0.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-METER-0008|CGM-ARTIFACT-RETRAIN-0007|ARTIFACT-DIFF-0009|CGM-ARTIFACT-CI-0009",
+      "expected_artifacts": "ARTIFACT-INCIDENT-2032A",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.6,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 0,
+      "hallucination_escape_combined": 0,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "fsca_without_confirmatory_evidence_downgraded|severity4_or_death_forced_immediate_human_escalation|technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "Patient loss of consciousness following ventricular tachycardia is a serious incident as defined by EU MDR Article 2(65) and requires immediate reporting per Article 87. The device's telemetry data during the event is missing, hindering investigation into potential device malfunction or contribution to the adverse event. A code change (ARTIFACT-DIFF-0009) impacting severity scoring occurred shortly before the incident with no associated revalidation testing, raising concerns about unintended consequences and potentially contributing to a failure to detect/flag the tachycardia. The static analysis output (CGM-ARTIFACT-CI-0009) indicates a blocked predeployment regression test related to hypoglycemia sensitivity; while seemingly unrelated to ventricular tachycardia, it highlights potential issues with the device's risk control system and data validation processes.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 4,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "The incident qualifies as a 'serious incident' under EU MDR Article 2(65) due to patient loss of consciousness and resuscitation following ventricular tachycardia.",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "The definition of 'serious incident' explicitly includes events leading to death or serious deterioration in health."
+          },
+          {
+            "claim": "The incident requires immediate reporting under EU MDR Article 87.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "Article 87 mandates immediate reporting for serious incidents, especially those involving death or severe health deterioration."
+          },
+          {
+            "claim": "The missing device confidence log hinders root cause analysis.",
+            "cited_artifact_id": "qmsr-820.35-records",
+            "support_status": "supported",
+            "support_note": "While the complaint record is complete, 21 CFR \u00a7 820.35 requires records of device failure investigations and missing telemetry data prevents a full investigation."
+          },
+          {
+            "claim": "A recent code change may have contributed to the incident.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "weakly_supported",
+            "support_note": "The commit message suggests a tuning of alert thresholds, which *could* impact tachycardia detection. However, the lack of revalidation testing is concerning."
+          },
+          {
+            "claim": "There are potential issues with device risk control and data validation.",
+            "cited_artifact_id": "CGM-ARTIFACT-CI-0009",
+            "support_status": "supported",
+            "support_note": "The blocked regression test indicates a failure in the CI/CD pipeline to validate hypoglycemia sensitivity, suggesting broader issues with risk control."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+        "rationale": "Patient loss of consciousness following ventricular tachycardia is a serious incident as defined by EU MDR Article 2(65) and requires immediate reporting per Article 87. The device's telemetry data during the event is missing, hindering investigation into potential device malfunction or contribution to the adverse event. A code change (ARTIFACT-DIFF-0009) impacting severity scoring occurred shortly before the incident with no associated revalidation testing, raising concerns about unintended consequences and potentially contributing to a failure to detect/flag the tachycardia. The static analysis output (CGM-ARTIFACT-CI-0009) indicates a blocked predeployment regression test related to hypoglycemia sensitivity; while seemingly unrelated to ventricular tachycardia, it highlights potential issues with the device's risk control system and data validation processes."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 4,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Causal link between the artifact/change and the observed event.",
+          "Evidence of recurrence or confirmed deployed-population impact.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "The incident qualifies as a 'serious incident' under EU MDR Article 2(65) due to patient loss of consciousness and resuscitation following ventricular tachycardia.",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "The definition of 'serious incident' explicitly includes events leading to death or serious deterioration in health."
+          },
+          {
+            "claim": "The incident requires immediate reporting under EU MDR Article 87.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "Article 87 mandates immediate reporting for serious incidents, especially those involving death or severe health deterioration."
+          },
+          {
+            "claim": "The missing device confidence log hinders root cause analysis.",
+            "cited_artifact_id": "qmsr-820.35-records",
+            "support_status": "weakly_supported",
+            "support_note": "While the complaint record is complete, 21 CFR \u00a7 820.35 requires records of device failure investigations and missing telemetry data prevents a full investigation."
+          },
+          {
+            "claim": "A recent code change may have contributed to the incident.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "The commit message suggests a tuning of alert thresholds, which *could* impact tachycardia detection. However, the lack of revalidation testing is concerning."
+          },
+          {
+            "claim": "There are potential issues with device risk control and data validation.",
+            "cited_artifact_id": "CGM-ARTIFACT-CI-0009",
+            "support_status": "weakly_supported",
+            "support_note": "The blocked regression test indicates a failure in the CI/CD pipeline to validate hypoglycemia sensitivity, suggesting broader issues with risk control."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+        "rationale": "Patient loss of consciousness following ventricular tachycardia is a serious incident as defined by EU MDR Article 2(65) and requires immediate reporting per Article 87. The device's telemetry data during the event is missing, hindering investigation into potential device malfunction or contribution to the adverse event. A code change (ARTIFACT-DIFF-0009) impacting severity scoring occurred shortly before the incident with no associated revalidation testing, raising concerns about unintended consequences and potentially contributing to a failure to detect/flag the tachycardia. The static analysis output (CGM-ARTIFACT-CI-0009) indicates a blocked predeployment regression test related to hypoglycemia sensitivity; while seemingly unrelated to ventricular tachycardia, it highlights potential issues with the device's risk control system and data validation processes."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0034",
+      "base_scenario_id": "SYN-IND-0034",
+      "ground_truth_severity": 4,
+      "predicted_severity": 4,
+      "verified_severity": 4,
+      "severity_correct": 1,
+      "verified_severity_correct": 1,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "predicted_recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+      "verified_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "recommendation_correct": 0,
+      "verified_recommendation_correct": 1,
+      "confidence": 0.7,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 1.0,
+      "retrieved_artifacts": "ARTIFACT-DIFF-0009|CGM-ARTIFACT-METER-0008|ARTIFACT-STATICANALYSIS-0003|ARTIFACT-DIFF-0031",
+      "expected_artifacts": "",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.75,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 0,
+      "hallucination_escape_combined": 0,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "fsca_without_confirmatory_evidence_downgraded|severity4_or_death_forced_immediate_human_escalation|technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "A patient suffered a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode. This constitutes a 'serious incident' per MDR Article 2(65)(b) \u2013 serious deterioration of health \u2013 and potentially triggers immediate reporting obligations under MDR Article 87, particularly given the potential for death or serious harm. The lack of flagging suggests a failure in the device\u2019s monitoring or alerting capabilities, indicating a risk to patient safety. While the provided code diff (ARTIFACT-DIFF-0009) is unrelated to the specific event, static analysis (ARTIFACT-STATICANALYSIS-0003) identified that this change touched a safety-critical path and lacked confirmed revalidation, raising concerns about potential regressions in functionality. The incident report of severe hypoglycemia (CGM-ARTIFACT-METER-0008) is unrelated to the stroke but highlights the device's monitoring function.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 4,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "The event constitutes a 'serious incident' as defined by EU MDR Article 2(65)(b).",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "The stroke represents a 'serious deterioration of a patient's state of health', directly matching the definition in MDR Article 2(65)(b)."
+          },
+          {
+            "claim": "The incident requires immediate reporting to competent authorities.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "MDR Article 87 mandates reporting of serious incidents, and the stroke falls under this definition."
+          },
+          {
+            "claim": "A potential failure in device monitoring or alerting contributed to the incident.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "supported",
+            "support_note": "The static analysis report indicates a safety-critical path was modified without confirmed revalidation, suggesting potential issues with the device's ability to correctly identify and alert on critical events."
+          },
+          {
+            "claim": "The code change (ARTIFACT-DIFF-0009) may have introduced a regression affecting patient safety.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "weakly_supported",
+            "support_note": "The static analysis report flags the change as touching a safety-critical path, but does not directly confirm a regression. The commit message suggests an attempt to reduce false alerts which could have inadvertently suppressed true positives."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+        "rationale": "A patient suffered a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode. This constitutes a 'serious incident' per MDR Article 2(65)(b) \u2013 serious deterioration of health \u2013 and potentially triggers immediate reporting obligations under MDR Article 87, particularly given the potential for death or serious harm. The lack of flagging suggests a failure in the device\u2019s monitoring or alerting capabilities, indicating a risk to patient safety. While the provided code diff (ARTIFACT-DIFF-0009) is unrelated to the specific event, static analysis (ARTIFACT-STATICANALYSIS-0003) identified that this change touched a safety-critical path and lacked confirmed revalidation, raising concerns about potential regressions in functionality. The incident report of severe hypoglycemia (CGM-ARTIFACT-METER-0008) is unrelated to the stroke but highlights the device's monitoring function."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 4,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Causal link between the artifact/change and the observed event.",
+          "Evidence of recurrence or confirmed deployed-population impact.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "The event constitutes a 'serious incident' as defined by EU MDR Article 2(65)(b).",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "The stroke represents a 'serious deterioration of a patient's state of health', directly matching the definition in MDR Article 2(65)(b)."
+          },
+          {
+            "claim": "The incident requires immediate reporting to competent authorities.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "MDR Article 87 mandates reporting of serious incidents, and the stroke falls under this definition."
+          },
+          {
+            "claim": "A potential failure in device monitoring or alerting contributed to the incident.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "weakly_supported",
+            "support_note": "The static analysis report indicates a safety-critical path was modified without confirmed revalidation, suggesting potential issues with the device's ability to correctly identify and alert on critical events."
+          },
+          {
+            "claim": "The code change (ARTIFACT-DIFF-0009) may have introduced a regression affecting patient safety.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "supported",
+            "support_note": "The static analysis report flags the change as touching a safety-critical path, but does not directly confirm a regression. The commit message suggests an attempt to reduce false alerts which could have inadvertently suppressed true positives."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+        "rationale": "A patient suffered a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode. This constitutes a 'serious incident' per MDR Article 2(65)(b) \u2013 serious deterioration of health \u2013 and potentially triggers immediate reporting obligations under MDR Article 87, particularly given the potential for death or serious harm. The lack of flagging suggests a failure in the device\u2019s monitoring or alerting capabilities, indicating a risk to patient safety. While the provided code diff (ARTIFACT-DIFF-0009) is unrelated to the specific event, static analysis (ARTIFACT-STATICANALYSIS-0003) identified that this change touched a safety-critical path and lacked confirmed revalidation, raising concerns about potential regressions in functionality. The incident report of severe hypoglycemia (CGM-ARTIFACT-METER-0008) is unrelated to the stroke but highlights the device's monitoring function."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0036",
+      "base_scenario_id": "SYN-IND-0036",
+      "ground_truth_severity": 4,
+      "predicted_severity": 4,
+      "verified_severity": 4,
+      "severity_correct": 1,
+      "verified_severity_correct": 1,
+      "ground_truth_recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+      "predicted_recommendation": "CAPA_INVESTIGATE",
+      "verified_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "recommendation_correct": 0,
+      "verified_recommendation_correct": 0,
+      "confidence": 0.7,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 0.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-METER-0008|CGM-ARTIFACT-RETRAIN-0007|ARTIFACT-DIFF-0009|CGM-ARTIFACT-CI-0009",
+      "expected_artifacts": "ARTIFACT-INCIDENT-2036A|ARTIFACT-TESTLOG-2036B",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.75,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 0,
+      "hallucination_escape_combined": 0,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "severity4_or_death_forced_immediate_human_escalation|technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "Patient loss of consciousness following ventricular tachycardia is a serious incident as defined by EU MDR Article 2(65) and requires investigation per EU MDR Article 87. The missing device-side confidence log data hinders complete assessment, but the hospital emergency response record confirms a severe adverse event. While the reported hypoglycemia (CGM-ARTIFACT-METER-0008) is not directly linked to the ventricular tachycardia, the recent code change impacting severity scoring (ARTIFACT-DIFF-0009) introduces potential for altered alert behavior and requires investigation as a contributing factor. The static analysis output blocking a regression test (CGM-ARTIFACT-CI-0009) suggests a known sensitivity issue that was not addressed before deployment.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 4,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "The incident constitutes a serious incident per EU MDR Article 2(65).",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "Patient loss of consciousness and resuscitation clearly fall under 'serious deterioration of a patient's state of health' as defined in Article 2(65)(b)."
+          },
+          {
+            "claim": "The incident requires reporting to competent authorities per EU MDR Article 87.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "Article 87 mandates reporting of serious incidents, and this event qualifies."
+          },
+          {
+            "claim": "The recent code change (ARTIFACT-DIFF-0009) may have contributed to the incident.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "weakly_supported",
+            "support_note": "The commit message indicates a change related to alert prioritization, which *could* affect detection of critical events. However, the link is indirect and requires further investigation."
+          },
+          {
+            "claim": "A known sensitivity issue was not addressed prior to deployment.",
+            "cited_artifact_id": "CGM-ARTIFACT-CI-0009",
+            "support_status": "supported",
+            "support_note": "The static analysis output indicates a blocked regression test related to hypoglycemia sensitivity, suggesting an unresolved issue."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "CAPA_INVESTIGATE",
+        "rationale": "Patient loss of consciousness following ventricular tachycardia is a serious incident as defined by EU MDR Article 2(65) and requires investigation per EU MDR Article 87. The missing device-side confidence log data hinders complete assessment, but the hospital emergency response record confirms a severe adverse event. While the reported hypoglycemia (CGM-ARTIFACT-METER-0008) is not directly linked to the ventricular tachycardia, the recent code change impacting severity scoring (ARTIFACT-DIFF-0009) introduces potential for altered alert behavior and requires investigation as a contributing factor. The static analysis output blocking a regression test (CGM-ARTIFACT-CI-0009) suggests a known sensitivity issue that was not addressed before deployment."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 4,
+        "confidence": 0.7,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "The incident constitutes a serious incident per EU MDR Article 2(65).",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "Patient loss of consciousness and resuscitation clearly fall under 'serious deterioration of a patient's state of health' as defined in Article 2(65)(b)."
+          },
+          {
+            "claim": "The incident requires reporting to competent authorities per EU MDR Article 87.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "Article 87 mandates reporting of serious incidents, and this event qualifies."
+          },
+          {
+            "claim": "The recent code change (ARTIFACT-DIFF-0009) may have contributed to the incident.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "The commit message indicates a change related to alert prioritization, which *could* affect detection of critical events. However, the link is indirect and requires further investigation."
+          },
+          {
+            "claim": "A known sensitivity issue was not addressed prior to deployment.",
+            "cited_artifact_id": "CGM-ARTIFACT-CI-0009",
+            "support_status": "weakly_supported",
+            "support_note": "The static analysis output indicates a blocked regression test related to hypoglycemia sensitivity, suggesting an unresolved issue."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+        "rationale": "Patient loss of consciousness following ventricular tachycardia is a serious incident as defined by EU MDR Article 2(65) and requires investigation per EU MDR Article 87. The missing device-side confidence log data hinders complete assessment, but the hospital emergency response record confirms a severe adverse event. While the reported hypoglycemia (CGM-ARTIFACT-METER-0008) is not directly linked to the ventricular tachycardia, the recent code change impacting severity scoring (ARTIFACT-DIFF-0009) introduces potential for altered alert behavior and requires investigation as a contributing factor. The static analysis output blocking a regression test (CGM-ARTIFACT-CI-0009) suggests a known sensitivity issue that was not addressed before deployment."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0038",
+      "base_scenario_id": "SYN-IND-0038",
+      "ground_truth_severity": 4,
+      "predicted_severity": 4,
+      "verified_severity": 4,
+      "severity_correct": 1,
+      "verified_severity_correct": 1,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "predicted_recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+      "verified_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "recommendation_correct": 0,
+      "verified_recommendation_correct": 1,
+      "confidence": 0.5,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 1.0,
+      "retrieved_artifacts": "ARTIFACT-DIFF-0009|ARTIFACT-STATICANALYSIS-0003|CGM-ARTIFACT-METER-0008|CGM-ARTIFACT-VALIDATION-0017",
+      "expected_artifacts": "",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 1.0,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 0,
+      "hallucination_escape_combined": 0,
+      "claim_grounding_omission": 1,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "fsca_without_confirmatory_evidence_downgraded|severity4_or_death_forced_immediate_human_escalation|technical_incident_missing_technical_evidence|deny:technical_incident_missing_technical_evidence|clinical_shacl_nonconformance_routes_review",
+      "rationale": "A confirmed embolic stroke temporally linked to an unflagged atrial fibrillation episode represents a serious incident requiring immediate action. The EU MDR Article 87 requires reporting of serious incidents and potentially immediate notification depending on the established causal relationship (mdr-art87-reporting-timelines). Given the confirmation of the stroke, a causal relationship is reasonably possible, triggering a reporting obligation. Furthermore, Article 10 mandates corrective action if a device is not in conformity or presents a serious risk (mdr-art10-12-corrective-action), and this incident suggests potential non-conformity related to arrhythmia detection/alerting. The severity of the event (stroke) necessitates consideration of a Field Safety Corrective Action.",
+      "evidence_links": [],
+      "evidence_link_artifact_ids_raw": [],
+      "evidence_link_artifact_ids_normalized": [],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [],
+      "risk_report_pre_opa": {
+        "severity": 4,
+        "confidence": 0.5,
+        "evidence_links": [],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "The reported event is a serious incident per EU MDR definitions.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "Stroke is explicitly covered under the definition of 'serious incident' requiring reporting."
+          },
+          {
+            "claim": "The device may not be in conformity with EU MDR requirements.",
+            "cited_artifact_id": "mdr-art10-12-corrective-action",
+            "support_status": "supported",
+            "support_note": "Failure to detect and alert on a potentially life-threatening arrhythmia suggests non-conformity."
+          },
+          {
+            "claim": "The incident requires immediate investigation and potential corrective action.",
+            "cited_artifact_id": "mdr-art10-12-corrective-action",
+            "support_status": "supported",
+            "support_note": "Article 10 mandates corrective action for non-conforming or high-risk devices."
+          },
+          {
+            "claim": "A code change impacting severity scoring occurred shortly before the incident.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "The diff shows a modification to the severity-scoring submodule."
+          },
+          {
+            "claim": "The code change was flagged as requiring revalidation but confirmation is missing.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "supported",
+            "support_note": "Static analysis identified the diff touching a safety-critical path and needing Class II revalidation, with status 'REVALIDATION NOT CONFIRMED'."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+        "rationale": "A confirmed embolic stroke temporally linked to an unflagged atrial fibrillation episode represents a serious incident requiring immediate action. The EU MDR Article 87 requires reporting of serious incidents and potentially immediate notification depending on the established causal relationship (mdr-art87-reporting-timelines). Given the confirmation of the stroke, a causal relationship is reasonably possible, triggering a reporting obligation. Furthermore, Article 10 mandates corrective action if a device is not in conformity or presents a serious risk (mdr-art10-12-corrective-action), and this incident suggests potential non-conformity related to arrhythmia detection/alerting. The severity of the event (stroke) necessitates consideration of a Field Safety Corrective Action."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 4,
+        "confidence": 0.5,
+        "evidence_links": [],
+        "missing_evidence": [
+          "At least one retrieved technical artifact supporting the incident judgment.",
+          "Causal link between the artifact/change and the observed event.",
+          "Evidence of recurrence or confirmed deployed-population impact.",
+          "Clinical SHACL nonconformance requires human review."
+        ],
+        "claim_support": [
+          {
+            "claim": "The reported event is a serious incident per EU MDR definitions.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "Stroke is explicitly covered under the definition of 'serious incident' requiring reporting."
+          },
+          {
+            "claim": "The device may not be in conformity with EU MDR requirements.",
+            "cited_artifact_id": "mdr-art10-12-corrective-action",
+            "support_status": "supported",
+            "support_note": "Failure to detect and alert on a potentially life-threatening arrhythmia suggests non-conformity."
+          },
+          {
+            "claim": "The incident requires immediate investigation and potential corrective action.",
+            "cited_artifact_id": "mdr-art10-12-corrective-action",
+            "support_status": "supported",
+            "support_note": "Article 10 mandates corrective action for non-conforming or high-risk devices."
+          },
+          {
+            "claim": "A code change impacting severity scoring occurred shortly before the incident.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "The diff shows a modification to the severity-scoring submodule."
+          },
+          {
+            "claim": "The code change was flagged as requiring revalidation but confirmation is missing.",
+            "cited_artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+            "support_status": "supported",
+            "support_note": "Static analysis identified the diff touching a safety-critical path and needing Class II revalidation, with status 'REVALIDATION NOT CONFIRMED'."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+        "rationale": "A confirmed embolic stroke temporally linked to an unflagged atrial fibrillation episode represents a serious incident requiring immediate action. The EU MDR Article 87 requires reporting of serious incidents and potentially immediate notification depending on the established causal relationship (mdr-art87-reporting-timelines). Given the confirmation of the stroke, a causal relationship is reasonably possible, triggering a reporting obligation. Furthermore, Article 10 mandates corrective action if a device is not in conformity or presents a serious risk (mdr-art10-12-corrective-action), and this incident suggests potential non-conformity related to arrhythmia detection/alerting. The severity of the event (stroke) necessitates consideration of a Field Safety Corrective Action."
+      },
+      "clinical_guard_conforms": false,
+      "clinical_guard_violations": [
+        {
+          "shape": "shacl",
+          "message": "RiskReport must link at least one evidence id.",
+          "severity": "Severity: sh:Violation"
+        }
+      ],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    },
+    {
+      "report_id": "SYN-IND-0040",
+      "base_scenario_id": "SYN-IND-0040",
+      "ground_truth_severity": 4,
+      "predicted_severity": 4,
+      "verified_severity": 4,
+      "severity_correct": 1,
+      "verified_severity_correct": 1,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "predicted_recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+      "verified_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "recommendation_correct": 0,
+      "verified_recommendation_correct": 1,
+      "confidence": 0.7,
+      "requires_human_review": true,
+      "artifact_recall_at_4": 0.0,
+      "retrieved_artifacts": "CGM-ARTIFACT-METER-0008|CGM-ARTIFACT-RETRAIN-0007|ARTIFACT-DIFF-0009|CGM-ARTIFACT-RETRAIN-0020",
+      "expected_artifacts": "ARTIFACT-INCIDENT-2040A",
+      "citation_validity": 1.0,
+      "claim_grounding_rate": 0.75,
+      "citation_hallucination": 0,
+      "unsupported_claim_present": 0,
+      "hallucination_escape": 1,
+      "hallucination_escape_combined": 1,
+      "claim_grounding_omission": 0,
+      "policy_engine": "opa",
+      "generation_source": "ollama_real",
+      "policy_actions": "fsca_without_confirmatory_evidence_downgraded|severity4_or_death_forced_immediate_human_escalation",
+      "rationale": "Telemetry data indicates a serious incident \u2013 loss of consciousness requiring resuscitation following ventricular tachycardia (ID: mdr-art2-def-risk-incident). This directly aligns with the definition of a 'serious incident' under EU MDR Article 2(65)(a) and (b), potentially involving death or serious deterioration of health. The lack of retained device confidence logs for the specific episode is concerning, hindering immediate root cause analysis. While the emergency response record exists, it doesn\u2019t replace device-side logging needed to understand device behavior leading up to the event.  The incident necessitates reporting under EU MDR Article 87 within 10 days given the serious health deterioration and potential causal link to the device. Furthermore, 21 CFR \u00a7 820.35 requires maintenance of complaint records including details of the incident and any corrective action taken. A code change impacting severity scoring (ID: ARTIFACT-DIFF-0009) occurred three weeks prior, with a stated goal of reducing false HIGH alerts but without associated revalidation testing; this raises concerns about unintended consequences affecting low-glucose detection sensitivity. The recent retraining packages for hypoglycemia alerting (ID: CGM-ARTIFACT-RETRAIN-0020) and the incident report of severe hypoglycemia (ID: CGM-ARTIFACT-METER-0008) suggest a potential pattern related to alert thresholds, though this is not definitively established by the provided evidence. Given the severity of the event \u2013 loss of consciousness and resuscitation \u2013 and the possibility of device contribution, immediate notification of competent authorities and consideration of recall/withdrawal are warranted under EU MDR Article 10(12).",
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art87-reporting-timelines",
+          "artifact_type": "regulatory",
+          "relevance_note": "Defines reporting timelines for serious incidents."
+        },
+        {
+          "artifact_id": "qmsr-820.35-records",
+          "artifact_type": "regulatory",
+          "relevance_note": "Requires records of complaint review, evaluation and investigation."
+        },
+        {
+          "artifact_id": "mdr-art2-def-risk-incident",
+          "artifact_type": "regulatory",
+          "relevance_note": "Defines 'serious incident' in the context of device risk."
+        },
+        {
+          "artifact_id": "ARTIFACT-DIFF-0009",
+          "artifact_type": "code_diff",
+          "relevance_note": "Recent code change impacting severity scoring, lacking revalidation."
+        },
+        {
+          "artifact_id": "mdr-art10-12-corrective-action",
+          "artifact_type": "regulatory",
+          "relevance_note": "Outlines requirements for corrective action and notification of non-conformity."
+        }
+      ],
+      "evidence_link_artifact_ids_raw": [
+        "mdr-art87-reporting-timelines",
+        "qmsr-820.35-records",
+        "mdr-art2-def-risk-incident",
+        "ARTIFACT-DIFF-0009",
+        "mdr-art10-12-corrective-action"
+      ],
+      "evidence_link_artifact_ids_normalized": [
+        "mdr-art87-reporting-timelines",
+        "qmsr-820.35-records",
+        "mdr-art2-def-risk-incident",
+        "ARTIFACT-DIFF-0009",
+        "mdr-art10-12-corrective-action"
+      ],
+      "hallucinated_citation_ids": [],
+      "hallucinated_citation_ids_normalized": [],
+      "citation_id_audit": [
+        {
+          "raw_artifact_id": "mdr-art87-reporting-timelines",
+          "normalized_artifact_id": "mdr-art87-reporting-timelines",
+          "is_valid_retrieved_context_id": true,
+          "is_hallucinated": false
+        },
+        {
+          "raw_artifact_id": "qmsr-820.35-records",
+          "normalized_artifact_id": "qmsr-820.35-records",
+          "is_valid_retrieved_context_id": true,
+          "is_hallucinated": false
+        },
+        {
+          "raw_artifact_id": "mdr-art2-def-risk-incident",
+          "normalized_artifact_id": "mdr-art2-def-risk-incident",
+          "is_valid_retrieved_context_id": true,
+          "is_hallucinated": false
+        },
+        {
+          "raw_artifact_id": "ARTIFACT-DIFF-0009",
+          "normalized_artifact_id": "ARTIFACT-DIFF-0009",
+          "is_valid_retrieved_context_id": true,
+          "is_hallucinated": false
+        },
+        {
+          "raw_artifact_id": "mdr-art10-12-corrective-action",
+          "normalized_artifact_id": "mdr-art10-12-corrective-action",
+          "is_valid_retrieved_context_id": true,
+          "is_hallucinated": false
+        }
+      ],
+      "risk_report_pre_opa": {
+        "severity": 4,
+        "confidence": 0.7,
+        "evidence_links": [
+          {
+            "artifact_id": "mdr-art87-reporting-timelines",
+            "artifact_type": "regulatory",
+            "relevance_note": "Defines reporting timelines for serious incidents."
+          },
+          {
+            "artifact_id": "qmsr-820.35-records",
+            "artifact_type": "regulatory",
+            "relevance_note": "Requires records of complaint review, evaluation and investigation."
+          },
+          {
+            "artifact_id": "mdr-art2-def-risk-incident",
+            "artifact_type": "regulatory",
+            "relevance_note": "Defines 'serious incident' in the context of device risk."
+          },
+          {
+            "artifact_id": "ARTIFACT-DIFF-0009",
+            "artifact_type": "code_diff",
+            "relevance_note": "Recent code change impacting severity scoring, lacking revalidation."
+          },
+          {
+            "artifact_id": "mdr-art10-12-corrective-action",
+            "artifact_type": "regulatory",
+            "relevance_note": "Outlines requirements for corrective action and notification of non-conformity."
+          }
+        ],
+        "missing_evidence": [],
+        "claim_support": [
+          {
+            "claim": "The incident qualifies as a 'serious incident' under EU MDR.",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "Loss of consciousness and resuscitation directly align with the definition in Article 2(65)."
+          },
+          {
+            "claim": "The incident requires reporting to competent authorities.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "Article 87 outlines timelines for reporting serious incidents."
+          },
+          {
+            "claim": "The code change may have contributed to the incident.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "weakly_supported",
+            "support_note": "Code diff modifies severity scoring, but direct causal link is not established."
+          },
+          {
+            "claim": "Device logs are missing for the incident window.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "supported",
+            "support_note": "The narrative explicitly states device-side confidence log was not retained."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+        "rationale": "Telemetry data indicates a serious incident \u2013 loss of consciousness requiring resuscitation following ventricular tachycardia (ID: mdr-art2-def-risk-incident). This directly aligns with the definition of a 'serious incident' under EU MDR Article 2(65)(a) and (b), potentially involving death or serious deterioration of health. The lack of retained device confidence logs for the specific episode is concerning, hindering immediate root cause analysis. While the emergency response record exists, it doesn\u2019t replace device-side logging needed to understand device behavior leading up to the event.  The incident necessitates reporting under EU MDR Article 87 within 10 days given the serious health deterioration and potential causal link to the device. Furthermore, 21 CFR \u00a7 820.35 requires maintenance of complaint records including details of the incident and any corrective action taken. A code change impacting severity scoring (ID: ARTIFACT-DIFF-0009) occurred three weeks prior, with a stated goal of reducing false HIGH alerts but without associated revalidation testing; this raises concerns about unintended consequences affecting low-glucose detection sensitivity. The recent retraining packages for hypoglycemia alerting (ID: CGM-ARTIFACT-RETRAIN-0020) and the incident report of severe hypoglycemia (ID: CGM-ARTIFACT-METER-0008) suggest a potential pattern related to alert thresholds, though this is not definitively established by the provided evidence. Given the severity of the event \u2013 loss of consciousness and resuscitation \u2013 and the possibility of device contribution, immediate notification of competent authorities and consideration of recall/withdrawal are warranted under EU MDR Article 10(12)."
+      },
+      "verified_risk_report_post_opa": {
+        "severity": 4,
+        "confidence": 0.7,
+        "evidence_links": [
+          {
+            "artifact_id": "mdr-art87-reporting-timelines",
+            "artifact_type": "regulatory",
+            "relevance_note": "Defines reporting timelines for serious incidents."
+          },
+          {
+            "artifact_id": "qmsr-820.35-records",
+            "artifact_type": "regulatory",
+            "relevance_note": "Requires records of complaint review, evaluation and investigation."
+          },
+          {
+            "artifact_id": "mdr-art2-def-risk-incident",
+            "artifact_type": "regulatory",
+            "relevance_note": "Defines 'serious incident' in the context of device risk."
+          },
+          {
+            "artifact_id": "ARTIFACT-DIFF-0009",
+            "artifact_type": "code_diff",
+            "relevance_note": "Recent code change impacting severity scoring, lacking revalidation."
+          },
+          {
+            "artifact_id": "mdr-art10-12-corrective-action",
+            "artifact_type": "regulatory",
+            "relevance_note": "Outlines requirements for corrective action and notification of non-conformity."
+          }
+        ],
+        "missing_evidence": [
+          "Causal link between the artifact/change and the observed event.",
+          "Evidence of recurrence or confirmed deployed-population impact."
+        ],
+        "claim_support": [
+          {
+            "claim": "The incident qualifies as a 'serious incident' under EU MDR.",
+            "cited_artifact_id": "mdr-art2-def-risk-incident",
+            "support_status": "supported",
+            "support_note": "Loss of consciousness and resuscitation directly align with the definition in Article 2(65)."
+          },
+          {
+            "claim": "The incident requires reporting to competent authorities.",
+            "cited_artifact_id": "mdr-art87-reporting-timelines",
+            "support_status": "supported",
+            "support_note": "Article 87 outlines timelines for reporting serious incidents."
+          },
+          {
+            "claim": "The code change may have contributed to the incident.",
+            "cited_artifact_id": "ARTIFACT-DIFF-0009",
+            "support_status": "supported",
+            "support_note": "Code diff modifies severity scoring, but direct causal link is not established."
+          },
+          {
+            "claim": "Device logs are missing for the incident window.",
+            "cited_artifact_id": "SYNTHETIC NARRATIVE",
+            "support_status": "unsupported",
+            "support_note": "Cited ID was not retrieved or is a hallucination trap."
+          }
+        ],
+        "requires_human_review": true,
+        "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+        "rationale": "Telemetry data indicates a serious incident \u2013 loss of consciousness requiring resuscitation following ventricular tachycardia (ID: mdr-art2-def-risk-incident). This directly aligns with the definition of a 'serious incident' under EU MDR Article 2(65)(a) and (b), potentially involving death or serious deterioration of health. The lack of retained device confidence logs for the specific episode is concerning, hindering immediate root cause analysis. While the emergency response record exists, it doesn\u2019t replace device-side logging needed to understand device behavior leading up to the event.  The incident necessitates reporting under EU MDR Article 87 within 10 days given the serious health deterioration and potential causal link to the device. Furthermore, 21 CFR \u00a7 820.35 requires maintenance of complaint records including details of the incident and any corrective action taken. A code change impacting severity scoring (ID: ARTIFACT-DIFF-0009) occurred three weeks prior, with a stated goal of reducing false HIGH alerts but without associated revalidation testing; this raises concerns about unintended consequences affecting low-glucose detection sensitivity. The recent retraining packages for hypoglycemia alerting (ID: CGM-ARTIFACT-RETRAIN-0020) and the incident report of severe hypoglycemia (ID: CGM-ARTIFACT-METER-0008) suggest a potential pattern related to alert thresholds, though this is not definitively established by the provided evidence. Given the severity of the event \u2013 loss of consciousness and resuscitation \u2013 and the possibility of device contribution, immediate notification of competent authorities and consideration of recall/withdrawal are warranted under EU MDR Article 10(12)."
+      },
+      "clinical_guard_conforms": true,
+      "clinical_guard_violations": [],
+      "clinical_facts_bundle": "/root/Desktop/BioDevOps/si_scaling_sweep_2026/biodevops_rag/ontology/clinical_concepts_independent_40.json"
+    }
+  ],
+  "dataset_consistency": [
+    {
+      "base_scenario_id": "SYN-IND-0001",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 1,
+          "recommendation": "NO_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2001A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0002",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 1,
+          "recommendation": "NO_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2002A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0003",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 1,
+          "recommendation": "NO_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2003A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0004",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 1,
+          "recommendation": "NO_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2004A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0005",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 1,
+          "recommendation": "NO_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2005A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0006",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 1,
+          "recommendation": "NO_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2006A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0007",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 1,
+          "recommendation": "NO_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2007A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0008",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 1,
+          "recommendation": "NO_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2008A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0009",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 1,
+          "recommendation": "NO_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2009A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0010",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 1,
+          "recommendation": "NO_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2010A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0011",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 2,
+          "recommendation": "MONITOR"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2011A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0012",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 2,
+          "recommendation": "CAPA_INVESTIGATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2012A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0013",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 2,
+          "recommendation": "MONITOR"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2013A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0014",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 2,
+          "recommendation": "CAPA_INVESTIGATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        []
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0015",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 2,
+          "recommendation": "MONITOR"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2015A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0016",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 2,
+          "recommendation": "CAPA_INVESTIGATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2016A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0017",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 2,
+          "recommendation": "MONITOR"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2017A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0018",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 2,
+          "recommendation": "CAPA_INVESTIGATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        []
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0019",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 2,
+          "recommendation": "MONITOR"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2019A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0020",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 2,
+          "recommendation": "CAPA_INVESTIGATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2020A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0021",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 3,
+          "recommendation": "CAPA_INVESTIGATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2021A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0022",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 3,
+          "recommendation": "CAPA_INVESTIGATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2022A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0023",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 3,
+          "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-INCIDENT-2023B",
+          "ARTIFACT-TESTLOG-2023A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0024",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 3,
+          "recommendation": "CAPA_INVESTIGATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        []
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0025",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 3,
+          "recommendation": "CAPA_INVESTIGATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2025A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0026",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 3,
+          "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-INCIDENT-2026B",
+          "ARTIFACT-TESTLOG-2026A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0027",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 3,
+          "recommendation": "CAPA_INVESTIGATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2027A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0028",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 3,
+          "recommendation": "CAPA_INVESTIGATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        []
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0029",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 3,
+          "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-INCIDENT-2029B",
+          "ARTIFACT-TESTLOG-2029A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0030",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 3,
+          "recommendation": "CAPA_INVESTIGATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-TESTLOG-2030A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0031",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 4,
+          "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-INCIDENT-2031A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0032",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 4,
+          "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-INCIDENT-2032A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0033",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 4,
+          "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-INCIDENT-2033A",
+          "ARTIFACT-TESTLOG-2033B"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0034",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 4,
+          "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        []
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0035",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 4,
+          "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-INCIDENT-2035A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0036",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 4,
+          "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-INCIDENT-2036A",
+          "ARTIFACT-TESTLOG-2036B"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0037",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 4,
+          "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-INCIDENT-2037A"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0038",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 4,
+          "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        []
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0039",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 4,
+          "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-INCIDENT-2039A",
+          "ARTIFACT-TESTLOG-2039B"
+        ]
+      ]
+    },
+    {
+      "base_scenario_id": "SYN-IND-0040",
+      "n_variants": 1,
+      "same_ground_truth": true,
+      "same_linked_artifacts": true,
+      "ground_truth_values": [
+        {
+          "severity": 4,
+          "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE"
+        }
+      ],
+      "linked_artifact_sets": [
+        [
+          "ARTIFACT-INCIDENT-2040A"
+        ]
+      ]
+    }
+  ]
+}

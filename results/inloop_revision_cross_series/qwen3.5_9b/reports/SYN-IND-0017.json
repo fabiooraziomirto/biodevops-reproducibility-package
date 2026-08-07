@@ -1,0 +1,234 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0017",
+    "clinical_inconsistency_class": "concept_severity_undercall",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 1 is below derived clinical floor 2. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [
+    "qmsr-830.1-c-reporting-thresholds"
+  ],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic field service engineering desk reported a minor, non-recurrent complete atrioventricular block-adjacent irregularity with no adverse patient outcome recorded. The bedside monitor log and the cloud-side classifier log disagree on whether the irregularity met the complete atrioventricular block detection threshold, an unresolved discordance. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+  "model_token_counts": {
+    "completion": 572,
+    "prompt": 2192
+  },
+  "raw_content": "{\n  \"severity\": 1,\n  \"confidence\": 0.45,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident describes a non-recurrent discordance between bedside monitor logs and cloud-side classifier logs regarding complete atrioventricular block detection thresholds. No adverse patient outcome was recorded, indicating the event did not result in realized harm or missed clinical alerting that impacted patient safety (Severity Dimension A: None). The narrative explicitly states the case is being handled at a monitoring/investigation level rather than as a confirmed life-threatening event, suggesting containment by existing operational processes before any serious exposure occurred (Severity Dimension C: Contained/Investigated). While there is technical regression evidence in test logs for releases v23 and v27, these represent internal validation artifacts showing the detection failure; without data on patient population size or historical recurrence of similar failures, we cannot confirm broad deployed-population impact. The lack of specific timestamps from bedside monitors or cloud-side decision boundaries prevents a definitive causal link to clinical harm in this specific instance (Severity Dimension B: Unclear potential). Therefore, severity is assigned as 1 because the event was contained/investigated with no patient exposure.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2023A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Provides technical evidence of the missed detection event in release v23, confirming a regression exists but does not confirm patient exposure.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2027A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Provides technical evidence of the missed detection event in release v27, confirming recurrence or persistence of the issue across versions.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-830.1-c-reporting-thresholds\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Indicates that while this event requires investigation, it does not currently meet the explicit reporting criteria for a Field Safety Corrective Action (FSCA) as no serious harm or broad population exposure is confirmed.\"\n    }\n  ],\n  \"missing_evidence\": [\n    \"Bedside monitor log details showing exact timestamps of discordance.\",\n    \"Cloud-side classifier decision boundary logs or threshold settings during incident window.\",\n    \"Patient population size affected by this specific release version (v23/v27).\",\n    \"Historical recurrence data for similar detection failures.\"\n  ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "Missing or contradictory evidence flagged: Bedside monitor log details showing exact timestamps of discordance.; Cloud-side classifier decision boundary logs or threshold settings during incident window.; Patient population size affected by this specific release version (v23/v27).; Historical recurrence data for similar detection failures.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.45,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides technical evidence of the missed detection event in release v23, confirming a regression exists but does not confirm patient exposure."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides technical evidence of the missed detection event in release v27, confirming recurrence or persistence of the issue across versions."
+      },
+      {
+        "artifact_id": "qmsr-830.1-c-reporting-thresholds",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Indicates that while this event requires investigation, it does not currently meet the explicit reporting criteria for a Field Safety Corrective Action (FSCA) as no serious harm or broad population exposure is confirmed."
+      }
+    ],
+    "missing_evidence": [
+      "Bedside monitor log details showing exact timestamps of discordance.",
+      "Cloud-side classifier decision boundary logs or threshold settings during incident window.",
+      "Patient population size affected by this specific release version (v23/v27).",
+      "Historical recurrence data for similar detection failures."
+    ],
+    "rationale": "The incident describes a non-recurrent discordance between bedside monitor logs and cloud-side classifier logs regarding complete atrioventricular block detection thresholds. No adverse patient outcome was recorded, indicating the event did not result in realized harm or missed clinical alerting that impacted patient safety (Severity Dimension A: None). The narrative explicitly states the case is being handled at a monitoring/investigation level rather than as a confirmed life-threatening event, suggesting containment by existing operational processes before any serious exposure occurred (Severity Dimension C: Contained/Investigated). While there is technical regression evidence in test logs for releases v23 and v27, these represent internal validation artifacts showing the detection failure; without data on patient population size or historical recurrence of similar failures, we cannot confirm broad deployed-population impact. The lack of specific timestamps from bedside monitors or cloud-side decision boundaries prevents a definitive causal link to clinical harm in this specific instance (Severity Dimension B: Unclear potential). Therefore, severity is assigned as 1 because the event was contained/investigated with no patient exposure.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 1,
+    "citation_validity": 0.6667,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.8333,
+    "hallucinated_citations": [
+      "qmsr-830.1-c-reporting-thresholds"
+    ],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "deny:risk_report_contains_unresolved_or_trap_citation",
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The incident describes a non-recurrent discordance between bedside monitor logs and cloud-side classifier logs regarding complete atrioventricular block detection thresholds.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "No adverse patient outcome was recorded, indicating the event did not result in realized harm or missed clinical alerting that impacted patient safety (Severity Dimension A: None).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The narrative explicitly states the case is being handled at a monitoring/investigation level rather than as a confirmed life-threatening event, suggesting containment by existing operational processes before any serious exposure occurred (Severity Dimension C: Contained/Investigated).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "While there is technical regression evidence in test logs for releases v23 and v27, these represent internal validation artifacts showing the detection failure; without data on patient population size or historical recurrence of similar failures, we cannot confirm broad deployed-population impact.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The lack of specific timestamps from bedside monitors or cloud-side decision boundaries prevents a definitive causal link to clinical harm in this specific instance (Severity Dimension B: Unclear potential).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "Therefore, severity is assigned as 1 because the event was contained/investigated with no patient exposure.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.45,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "artifact_type": "test_log",
+          "relevance_note": "Provides technical evidence of the missed detection event in release v23, confirming a regression exists but does not confirm patient exposure."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "artifact_type": "test_log",
+          "relevance_note": "Provides technical evidence of the missed detection event in release v27, confirming recurrence or persistence of the issue across versions."
+        },
+        {
+          "artifact_id": "qmsr-830.1-c-reporting-thresholds",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Indicates that while this event requires investigation, it does not currently meet the explicit reporting criteria for a Field Safety Corrective Action (FSCA) as no serious harm or broad population exposure is confirmed."
+        }
+      ],
+      "missing_evidence": [
+        "Bedside monitor log details showing exact timestamps of discordance.",
+        "Cloud-side classifier decision boundary logs or threshold settings during incident window.",
+        "Patient population size affected by this specific release version (v23/v27).",
+        "Historical recurrence data for similar detection failures.",
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident describes a non-recurrent discordance between bedside monitor logs and cloud-side classifier logs regarding complete atrioventricular block detection thresholds. No adverse patient outcome was recorded, indicating the event did not result in realized harm or missed clinical alerting that impacted patient safety (Severity Dimension A: None). The narrative explicitly states the case is being handled at a monitoring/investigation level rather than as a confirmed life-threatening event, suggesting containment by existing operational processes before any serious exposure occurred (Severity Dimension C: Contained/Investigated). While there is technical regression evidence in test logs for releases v23 and v27, these represent internal validation artifacts showing the detection failure; without data on patient population size or historical recurrence of similar failures, we cannot confirm broad deployed-population impact. The lack of specific timestamps from bedside monitors or cloud-side decision boundaries prevents a definitive causal link to clinical harm in this specific instance (Severity Dimension B: Unclear potential). Therefore, severity is assigned as 1 because the event was contained/investigated with no patient exposure.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": [
+      "The lack of specific timestamps from bedside monitors or cloud-side decision boundaries prevents a definitive causal link to clinical harm in this specific instance (Severity Dimension B: Unclear potential)."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The incident describes a non-recurrent discordance between bedside monitor logs and cloud-side classifier logs regarding complete atrioventricular block detection thresholds.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "No adverse patient outcome was recorded, indicating the event did not result in realized harm or missed clinical alerting that impacted patient safety (Severity Dimension A: None).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The narrative explicitly states the case is being handled at a monitoring/investigation level rather than as a confirmed life-threatening event, suggesting containment by existing operational processes before any serious exposure occurred (Severity Dimension C: Contained/Investigated).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "While there is technical regression evidence in test logs for releases v23 and v27, these represent internal validation artifacts showing the detection failure; without data on patient population size or historical recurrence of similar failures, we cannot confirm broad deployed-population impact.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The lack of specific timestamps from bedside monitors or cloud-side decision boundaries prevents a definitive causal link to clinical harm in this specific instance (Severity Dimension B: Unclear potential).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "Therefore, severity is assigned as 1 because the event was contained/investigated with no patient exposure.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.45,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides technical evidence of the missed detection event in release v23, confirming a regression exists but does not confirm patient exposure."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides technical evidence of the missed detection event in release v27, confirming recurrence or persistence of the issue across versions."
+      },
+      {
+        "artifact_id": "qmsr-830.1-c-reporting-thresholds",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Indicates that while this event requires investigation, it does not currently meet the explicit reporting criteria for a Field Safety Corrective Action (FSCA) as no serious harm or broad population exposure is confirmed."
+      }
+    ],
+    "missing_evidence": [
+      "Bedside monitor log details showing exact timestamps of discordance.",
+      "Cloud-side classifier decision boundary logs or threshold settings during incident window.",
+      "Patient population size affected by this specific release version (v23/v27).",
+      "Historical recurrence data for similar detection failures.",
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident describes a non-recurrent discordance between bedside monitor logs and cloud-side classifier logs regarding complete atrioventricular block detection thresholds. No adverse patient outcome was recorded, indicating the event did not result in realized harm or missed clinical alerting that impacted patient safety (Severity Dimension A: None). The narrative explicitly states the case is being handled at a monitoring/investigation level rather than as a confirmed life-threatening event, suggesting containment by existing operational processes before any serious exposure occurred (Severity Dimension C: Contained/Investigated). While there is technical regression evidence in test logs for releases v23 and v27, these represent internal validation artifacts showing the detection failure; without data on patient population size or historical recurrence of similar failures, we cannot confirm broad deployed-population impact. The lack of specific timestamps from bedside monitors or cloud-side decision boundaries prevents a definitive causal link to clinical harm in this specific instance (Severity Dimension B: Unclear potential). Therefore, severity is assigned as 1 because the event was contained/investigated with no patient exposure.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0038",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic device validation lab reported that the patient suffered a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode, confirmed by hospital emergency response records. The only artifact filed against this report is an unrelated code-review diff that predates this device version and does not describe the event.",
+  "model_token_counts": {
+    "completion": 602,
+    "prompt": 2177
+  },
+  "raw_content": "{\n  \"severity\": 4,\n  \"confidence\": 0.95,\n  \"recommendation\": \"FIELD_SAFETY_CORRECTIVE_ACTION\",\n  \"rationale\": \"The incident narrative confirms a realized serious harm (embolic stroke) temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode in a deployed device context. This constitutes 'realized serious harm' and evidence of confirmed recurrence or impact on the deployed population, meeting the criteria for immediate field safety action per FDA QMSR reporting obligations (21 CFR \u00a7 820.45/803) and EU MDR Article 83(1)-(2). The causal link is supported by the narrative's explicit temporal association between the device failure mode (missed detection of arrhythmia leading to stroke) and the adverse event, despite the lack of a specific code diff for this version in the retrieved artifacts. The absence of an artifact directly describing the change does not negate the severity; rather, it highlights a gap in immediate technical evidence that requires human review to reconstruct the failure mode from logs or incident reports.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2023A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Indicates historical testing of similar failure modes (missed AV block), suggesting the device class is prone to such detection failures, though this specific log predates or differs from v27. It supports the technical plausibility of missed arrhythmia events.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2027A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Confirms that similar failure modes (missed complete atrioventricular block) were observed in release v27, supporting the claim of a recurring technical issue affecting safety-critical functions.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.10-b-regulatory-crossrefs\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Cites 21 CFR \u00a7 820.45 and part 803 obligations for reporting complaints meeting criteria, which applies to the confirmed adverse event.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Establishes the obligation under EU MDR Article 83(1)-(2) to actively gather, analyze data on safety and implement corrective actions for confirmed risks.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: fsca_without_confirmatory_evidence_downgraded; severity4_or_death_forced_immediate_human_escalation\nMissing or contradictory evidence flagged: Causal link between the artifact/change and the observed event.; Evidence of recurrence or confirmed deployed-population impact.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Indicates historical testing of similar failure modes (missed AV block), suggesting the device class is prone to such detection failures, though this specific log predates or differs from v27. It supports the technical plausibility of missed arrhythmia events."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Confirms that similar failure modes (missed complete atrioventricular block) were observed in release v27, supporting the claim of a recurring technical issue affecting safety-critical functions."
+      },
+      {
+        "artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Cites 21 CFR \u00a7 820.45 and part 803 obligations for reporting complaints meeting criteria, which applies to the confirmed adverse event."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes the obligation under EU MDR Article 83(1)-(2) to actively gather, analyze data on safety and implement corrective actions for confirmed risks."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident narrative confirms a realized serious harm (embolic stroke) temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode in a deployed device context. This constitutes 'realized serious harm' and evidence of confirmed recurrence or impact on the deployed population, meeting the criteria for immediate field safety action per FDA QMSR reporting obligations (21 CFR \u00a7 820.45/803) and EU MDR Article 83(1)-(2). The causal link is supported by the narrative's explicit temporal association between the device failure mode (missed detection of arrhythmia leading to stroke) and the adverse event, despite the lack of a specific code diff for this version in the retrieved artifacts. The absence of an artifact directly describing the change does not negate the severity; rather, it highlights a gap in immediate technical evidence that requires human review to reconstruct the failure mode from logs or incident reports.",
+    "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "requires_human_review": true,
+    "severity": 4
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.5,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [
+      "severity4_or_death_forced_immediate_human_escalation"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The incident narrative confirms a realized serious harm (embolic stroke) temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode in a deployed device context.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "This constitutes 'realized serious harm' and evidence of confirmed recurrence or impact on the deployed population, meeting the criteria for immediate field safety action per FDA QMSR reporting obligations (21 CFR \u00a7 820.45/803) and EU MDR Article 83(1)-(2).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The causal link is supported by the narrative's explicit temporal association between the device failure mode (missed detection of arrhythmia leading to stroke) and the adverse event, despite the lack of a specific code diff for this version in the retrieved artifacts.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The absence of an artifact directly describing the change does not negate the severity; rather, it highlights a gap in immediate technical evidence that requires human review to reconstruct the failure mode from logs or incident reports.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "artifact_type": "test_log",
+          "relevance_note": "Indicates historical testing of similar failure modes (missed AV block), suggesting the device class is prone to such detection failures, though this specific log predates or differs from v27. It supports the technical plausibility of missed arrhythmia events."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "artifact_type": "test_log",
+          "relevance_note": "Confirms that similar failure modes (missed complete atrioventricular block) were observed in release v27, supporting the claim of a recurring technical issue affecting safety-critical functions."
+        },
+        {
+          "artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Cites 21 CFR \u00a7 820.45 and part 803 obligations for reporting complaints meeting criteria, which applies to the confirmed adverse event."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Establishes the obligation under EU MDR Article 83(1)-(2) to actively gather, analyze data on safety and implement corrective actions for confirmed risks."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The incident narrative confirms a realized serious harm (embolic stroke) temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode in a deployed device context. This constitutes 'realized serious harm' and evidence of confirmed recurrence or impact on the deployed population, meeting the criteria for immediate field safety action per FDA QMSR reporting obligations (21 CFR \u00a7 820.45/803) and EU MDR Article 83(1)-(2). The causal link is supported by the narrative's explicit temporal association between the device failure mode (missed detection of arrhythmia leading to stroke) and the adverse event, despite the lack of a specific code diff for this version in the retrieved artifacts. The absence of an artifact directly describing the change does not negate the severity; rather, it highlights a gap in immediate technical evidence that requires human review to reconstruct the failure mode from logs or incident reports.",
+      "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "requires_human_review": true,
+      "severity": 4
+    },
+    "weakly_supported_claims": [
+      "The incident narrative confirms a realized serious harm (embolic stroke) temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode in a deployed device context.",
+      "This constitutes 'realized serious harm' and evidence of confirmed recurrence or impact on the deployed population, meeting the criteria for immediate field safety action per FDA QMSR reporting obligations (21 CFR \u00a7 820.45/803) and EU MDR Article 83(1)-(2)."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The incident narrative confirms a realized serious harm (embolic stroke) temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode in a deployed device context.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "This constitutes 'realized serious harm' and evidence of confirmed recurrence or impact on the deployed population, meeting the criteria for immediate field safety action per FDA QMSR reporting obligations (21 CFR \u00a7 820.45/803) and EU MDR Article 83(1)-(2).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The causal link is supported by the narrative's explicit temporal association between the device failure mode (missed detection of arrhythmia leading to stroke) and the adverse event, despite the lack of a specific code diff for this version in the retrieved artifacts.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The absence of an artifact directly describing the change does not negate the severity; rather, it highlights a gap in immediate technical evidence that requires human review to reconstruct the failure mode from logs or incident reports.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Indicates historical testing of similar failure modes (missed AV block), suggesting the device class is prone to such detection failures, though this specific log predates or differs from v27. It supports the technical plausibility of missed arrhythmia events."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Confirms that similar failure modes (missed complete atrioventricular block) were observed in release v27, supporting the claim of a recurring technical issue affecting safety-critical functions."
+      },
+      {
+        "artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Cites 21 CFR \u00a7 820.45 and part 803 obligations for reporting complaints meeting criteria, which applies to the confirmed adverse event."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes the obligation under EU MDR Article 83(1)-(2) to actively gather, analyze data on safety and implement corrective actions for confirmed risks."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident narrative confirms a realized serious harm (embolic stroke) temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode in a deployed device context. This constitutes 'realized serious harm' and evidence of confirmed recurrence or impact on the deployed population, meeting the criteria for immediate field safety action per FDA QMSR reporting obligations (21 CFR \u00a7 820.45/803) and EU MDR Article 83(1)-(2). The causal link is supported by the narrative's explicit temporal association between the device failure mode (missed detection of arrhythmia leading to stroke) and the adverse event, despite the lack of a specific code diff for this version in the retrieved artifacts. The absence of an artifact directly describing the change does not negate the severity; rather, it highlights a gap in immediate technical evidence that requires human review to reconstruct the failure mode from logs or incident reports.",
+    "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+    "requires_human_review": true,
+    "severity": 4
+  }
+}

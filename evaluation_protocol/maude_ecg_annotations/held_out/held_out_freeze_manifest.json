@@ -1,0 +1,8 @@
+{
+  "purpose": "Frozen held-out governance-reference labels; not clinical ground truth.",
+  "merged_annotations_sha256": "78c878ad4f5eed4aa3082c263d522c9af09dd7037b5e49c51b4ec4170e70ed4c",
+  "adjudication_decisions_sha256": "4ef49007664e41126e72a60be3e5c382b5c68b18add7aa6bdbe6747891e8bd9c",
+  "final_labels_sha256": "65b3dd8e34e636a4e02e5b7f887fe6461a412d1628c543d030ed1b8bd97b6800",
+  "policy_sha256": "08288bd940cd017ff33ff762e89c8b3d407fc92fc904313ec2f72c75a76d3542",
+  "ontology_sha256": "49e38ef56a818dc9af62952de20cb311e788ba6796f80d0e9a96bc37d8274adf"
+}

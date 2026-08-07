@@ -1,0 +1,188 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0022",
+    "clinical_inconsistency_class": "none",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic ambulatory monitoring clinic reported that the device failed to flag a clinically significant ventricular fibrillation episode in real time. A retrospective clinician review confirms a single missed, sustained ventricular fibrillation episode that self-resolved with no recorded adverse outcome; no second occurrence has yet been confirmed. The confirmatory device confidence-score log for the exact episode window is missing from the file, though the clinical review stands.",
+  "model_token_counts": {
+    "completion": 775,
+    "prompt": 2316
+  },
+  "raw_content": "{\n  \"severity\": 3,\n  \"confidence\": 0.45,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident involves a missed detection of sustained ventricular fibrillation (VF), which is a life-threatening arrhythmia requiring immediate intervention. Although the specific episode self-resolved with no recorded adverse outcome in this single instance, VF represents a serious potential patient-safety risk where failure to detect could lead to death or severe neurological injury if not treated promptly. The missing confidence-score log for the exact window prevents full root cause analysis of why the algorithm failed (e.g., signal artifact misclassification vs. threshold setting), creating uncertainty about recurrence probability in similar conditions. This constitutes a serious potential patient-safety risk in a safety-critical function, warranting Severity 3 per rubric dimension (b) 'potential harm if evolved differently' and (c) lack of full containment evidence due to missing logs.\",\n  \"claim_support\": [\n    {\n      \"claim\": \"The device failed to flag a clinically significant ventricular fibrillation episode in real time, representing a safety-critical function failure with potential for serious harm.\",\n      \"cited_artifact_id\": \"\",\n      \"support_status\": \"weakly_supported\",\n      \"support_note\": \"Supported by the incident narrative stating 'device failed to flag... sustained ventricular fibrillation'. Severity 3 is justified because VF carries high mortality risk if untreated, even without realized harm in this specific case.\"\n    },\n    {\n      \"claim\": \"The confirmatory device confidence-score log for the exact episode window is missing from the file.\",\n      \"cited_artifact_id\": \"\",\n      \"support_status\": \"supported\",\n      \"support_note\": \"Explicitly stated in incident narrative: 'confirmatory device confidence-score log... is missing'. This limits investigation capability and increases uncertainty.\"\n    },\n    {\n      \"claim\": \"Regulatory obligations under 21 CFR \u00a7 820.10(c) require design controls to ensure the software performs as intended, including detection of critical events like VF.\",\n      \"cited_artifact_id\": \"qmsr-820.10-c-design-development\",\n      \"support_status\": \"supported\",\n      \"support_note\": \"Cites 21 CFR \u00a7 820.10(c) requiring compliance with Design and Development (ISO 13485 Clause 7.3). The failure suggests a potential design control gap or validation insufficiency regarding VF detection logic.\"\n    },\n    {\n      \"claim\": \"Post-market surveillance system obligations under EU MDR Article 83 require analysis of such events to determine corrective actions.\",\n      \"cited_artifact_id\": \"mdr-art83-pms-system\",\n      \"support_status\": \"supported\",\n      \"support_note\": \"Cites EU MDR Art. 83 requiring PMS systems to analyze relevant data on safety/performance and implement preventive/corrective actions.\"\n    },\n    {\n      \"claim\": \"Missing logs prevent full traceability analysis required by ISO 13485 Clause 7.5.9.1.\",\n      \"cited_artifact_id\": \"\",\n      \"support_status\": \"weakly_supported\",\n      \"support_note\": \"Inferred from regulatory context qmsr-820.10-b-regulatory-crossrefs regarding traceability (Clause 7.5.9.1), but no specific artifact proves the log gap violates this; however, it hinders compliance.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: The specific confidence-score log for the exact ventricular fibrillation episode window is missing.; Static analysis or code diffs specifically addressing the VF detection algorithm's failure mode are not provided (provided static analyses are unrelated).; Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (concept_severity_undercall) Predicted severity 2 is below derived clinical floor 3. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.\n- (concept_severity_undercall) concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+  "risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "",
+        "claim": "The device failed to flag a clinically significant ventricular fibrillation episode in real time, representing a safety-critical function failure with potential for serious harm.",
+        "support_note": "Supported by the incident narrative stating 'device failed to flag... sustained ventricular fibrillation'. Severity 3 is justified because VF carries high mortality risk if untreated, even without realized harm in this specific case.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "The confirmatory device confidence-score log for the exact episode window is missing from the file.",
+        "support_note": "Explicitly stated in incident narrative: 'confirmatory device confidence-score log... is missing'. This limits investigation capability and increases uncertainty.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "Regulatory obligations under 21 CFR \u00a7 820.10(c) require design controls to ensure the software performs as intended, including detection of critical events like VF.",
+        "support_note": "Cites 21 CFR \u00a7 820.10(c) requiring compliance with Design and Development (ISO 13485 Clause 7.3). The failure suggests a potential design control gap or validation insufficiency regarding VF detection logic.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art83-pms-system",
+        "claim": "Post-market surveillance system obligations under EU MDR Article 83 require analysis of such events to determine corrective actions.",
+        "support_note": "Cites EU MDR Art. 83 requiring PMS systems to analyze relevant data on safety/performance and implement preventive/corrective actions.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "Missing logs prevent full traceability analysis required by ISO 13485 Clause 7.5.9.1.",
+        "support_note": "Inferred from regulatory context qmsr-820.10-b-regulatory-crossrefs regarding traceability (Clause 7.5.9.1), but no specific artifact proves the log gap violates this; however, it hinders compliance.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.45,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "The incident involves a missed detection of sustained ventricular fibrillation (VF), which is a life-threatening arrhythmia requiring immediate intervention. Although the specific episode self-resolved with no recorded adverse outcome in this single instance, VF represents a serious potential patient-safety risk where failure to detect could lead to death or severe neurological injury if not treated promptly. The missing confidence-score log for the exact window prevents full root cause analysis of why the algorithm failed (e.g., signal artifact misclassification vs. threshold setting), creating uncertainty about recurrence probability in similar conditions. This constitutes a serious potential patient-safety risk in a safety-critical function, warranting Severity 3 per rubric dimension (b) 'potential harm if evolved differently' and (c) lack of full containment evidence due to missing logs.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.4,
+    "hallucinated_citations": [],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence",
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "The device failed to flag a clinically significant ventricular fibrillation episode in real time, representing a safety-critical function failure with potential for serious harm.",
+      "The confirmatory device confidence-score log for the exact episode window is missing from the file.",
+      "Missing logs prevent full traceability analysis required by ISO 13485 Clause 7.5.9.1."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "",
+          "claim": "The device failed to flag a clinically significant ventricular fibrillation episode in real time, representing a safety-critical function failure with potential for serious harm.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "The confirmatory device confidence-score log for the exact episode window is missing from the file.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-c-design-development",
+          "claim": "Regulatory obligations under 21 CFR \u00a7 820.10(c) require design controls to ensure the software performs as intended, including detection of critical events like VF.",
+          "support_note": "Cites 21 CFR \u00a7 820.10(c) requiring compliance with Design and Development (ISO 13485 Clause 7.3). The failure suggests a potential design control gap or validation insufficiency regarding VF detection logic.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "Post-market surveillance system obligations under EU MDR Article 83 require analysis of such events to determine corrective actions.",
+          "support_note": "Cites EU MDR Art. 83 requiring PMS systems to analyze relevant data on safety/performance and implement preventive/corrective actions.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "Missing logs prevent full traceability analysis required by ISO 13485 Clause 7.5.9.1.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        }
+      ],
+      "confidence": 0.45,
+      "evidence_links": [],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment.",
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident involves a missed detection of sustained ventricular fibrillation (VF), which is a life-threatening arrhythmia requiring immediate intervention. Although the specific episode self-resolved with no recorded adverse outcome in this single instance, VF represents a serious potential patient-safety risk where failure to detect could lead to death or severe neurological injury if not treated promptly. The missing confidence-score log for the exact window prevents full root cause analysis of why the algorithm failed (e.g., signal artifact misclassification vs. threshold setting), creating uncertainty about recurrence probability in similar conditions. This constitutes a serious potential patient-safety risk in a safety-critical function, warranting Severity 3 per rubric dimension (b) 'potential harm if evolved differently' and (c) lack of full containment evidence due to missing logs.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "weakly_supported_claims": []
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "",
+        "claim": "The device failed to flag a clinically significant ventricular fibrillation episode in real time, representing a safety-critical function failure with potential for serious harm.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "The confirmatory device confidence-score log for the exact episode window is missing from the file.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "Regulatory obligations under 21 CFR \u00a7 820.10(c) require design controls to ensure the software performs as intended, including detection of critical events like VF.",
+        "support_note": "Cites 21 CFR \u00a7 820.10(c) requiring compliance with Design and Development (ISO 13485 Clause 7.3). The failure suggests a potential design control gap or validation insufficiency regarding VF detection logic.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art83-pms-system",
+        "claim": "Post-market surveillance system obligations under EU MDR Article 83 require analysis of such events to determine corrective actions.",
+        "support_note": "Cites EU MDR Art. 83 requiring PMS systems to analyze relevant data on safety/performance and implement preventive/corrective actions.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "Missing logs prevent full traceability analysis required by ISO 13485 Clause 7.5.9.1.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      }
+    ],
+    "confidence": 0.45,
+    "evidence_links": [],
+    "missing_evidence": [
+      "At least one retrieved technical artifact supporting the incident judgment.",
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident involves a missed detection of sustained ventricular fibrillation (VF), which is a life-threatening arrhythmia requiring immediate intervention. Although the specific episode self-resolved with no recorded adverse outcome in this single instance, VF represents a serious potential patient-safety risk where failure to detect could lead to death or severe neurological injury if not treated promptly. The missing confidence-score log for the exact window prevents full root cause analysis of why the algorithm failed (e.g., signal artifact misclassification vs. threshold setting), creating uncertainty about recurrence probability in similar conditions. This constitutes a serious potential patient-safety risk in a safety-critical function, warranting Severity 3 per rubric dimension (b) 'potential harm if evolved differently' and (c) lack of full containment evidence due to missing logs.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  }
+}

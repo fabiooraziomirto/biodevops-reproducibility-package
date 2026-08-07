@@ -1,0 +1,127 @@
+@prefix cgm: <https://biodevops.local/ontology/cgm#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cgm: a owl:Ontology ;
+    rdfs:comment "This extension introduces a second clinical domain solely to demonstrate architectural transferability. It does not modify or replace the published arrhythmia benchmark, and no new scientific performance claims are introduced." .
+
+cgm:ClinicalConcept a owl:Class .
+cgm:CGMConcept a owl:Class ; rdfs:subClassOf cgm:ClinicalConcept .
+cgm:RiskReport a owl:Class .
+cgm:FHIRCase a owl:Class .
+cgm:Recommendation a owl:Class .
+
+cgm:Hypoglycemia a cgm:CGMConcept ;
+    cgm:snomedCode "302866003" ;
+    cgm:riskClass "serious" .
+
+cgm:Hyperglycemia a cgm:CGMConcept ;
+    cgm:snomedCode "80394007" ;
+    cgm:riskClass "serious" .
+
+cgm:Type1Diabetes a cgm:CGMConcept ;
+    cgm:snomedCode "46635009" ;
+    cgm:riskClass "chronic_condition" .
+
+cgm:Type2Diabetes a cgm:CGMConcept ;
+    cgm:snomedCode "44054006" ;
+    cgm:riskClass "chronic_condition" .
+
+cgm:SevereHypoglycemia a cgm:CGMConcept ;
+    cgm:snomedCode "237637005" ;
+    cgm:riskClass "life_threatening" .
+
+cgm:LossOfConsciousness a cgm:CGMConcept ;
+    cgm:snomedCode "419045004" ;
+    cgm:riskClass "life_threatening" .
+
+cgm:InsulinTherapy a cgm:CGMConcept ;
+    cgm:snomedCode "182840001" ;
+    cgm:riskClass "therapy_context" .
+
+cgm:NO_ACTION a cgm:Recommendation .
+cgm:MONITOR a cgm:Recommendation .
+cgm:CAPA_INVESTIGATE a cgm:Recommendation .
+cgm:FIELD_SAFETY_CORRECTIVE_ACTION a cgm:Recommendation .
+cgm:ESCALATE_TO_HUMAN_IMMEDIATE a cgm:Recommendation .
+
+cgm:reportConcept a owl:ObjectProperty .
+cgm:recommendation a owl:ObjectProperty .
+cgm:hasEvidenceId a owl:DatatypeProperty .
+cgm:predictedSeverity a owl:DatatypeProperty .
+cgm:hasGlucoseEvidence a owl:DatatypeProperty .
+cgm:hasSensorFailure a owl:DatatypeProperty .
+cgm:hasConflictingObservations a owl:DatatypeProperty .
+cgm:hasHumanApproval a owl:DatatypeProperty .
+cgm:fhirResourceType a owl:DatatypeProperty .
+cgm:fhirSystem a owl:DatatypeProperty .
+cgm:fhirCode a owl:DatatypeProperty .
+
+cgm:RiskReportShape a sh:NodeShape ;
+    sh:targetClass cgm:RiskReport ;
+    sh:property [
+        sh:path cgm:reportConcept ;
+        sh:minCount 1 ;
+        sh:in ( cgm:Hypoglycemia cgm:Hyperglycemia cgm:Type1Diabetes cgm:Type2Diabetes cgm:SevereHypoglycemia cgm:LossOfConsciousness cgm:InsulinTherapy ) ;
+        sh:message "CGM clinical concept must be one of the mapped synthetic SNOMED concepts."
+    ] ;
+    sh:property [
+        sh:path cgm:hasEvidenceId ;
+        sh:minCount 1 ;
+        sh:message "CGM RiskReport must link at least one evidence id."
+    ] ;
+    sh:sparql [
+        sh:message "documented_severe_hypoglycemia_cannot_produce_no_action: severe hypoglycemia or loss of consciousness cannot produce NO_ACTION or MONITOR." ;
+        sh:select """
+            PREFIX cgm: <https://biodevops.local/ontology/cgm#>
+            SELECT $this WHERE {
+                $this cgm:reportConcept ?concept ;
+                      cgm:recommendation ?rec .
+                FILTER (?concept IN (cgm:SevereHypoglycemia, cgm:LossOfConsciousness))
+                FILTER (?rec IN (cgm:NO_ACTION, cgm:MONITOR))
+            }
+        """
+    ] ;
+    sh:sparql [
+        sh:message "missing_glucose_evidence_triggers_review: missing glucose evidence cannot be accepted as NO_ACTION." ;
+        sh:select """
+            PREFIX cgm: <https://biodevops.local/ontology/cgm#>
+            SELECT $this WHERE {
+                $this cgm:hasGlucoseEvidence false ;
+                      cgm:recommendation cgm:NO_ACTION .
+            }
+        """
+    ] ;
+    sh:sparql [
+        sh:message "sensor_failure_cannot_be_clinically_normal: sensor failure cannot be classified as clinically normal." ;
+        sh:select """
+            PREFIX cgm: <https://biodevops.local/ontology/cgm#>
+            SELECT $this WHERE {
+                $this cgm:hasSensorFailure true ;
+                      cgm:recommendation cgm:NO_ACTION .
+            }
+        """
+    ] ;
+    sh:sparql [
+        sh:message "conflicting_observations_require_review: conflicting observations require review or CAPA investigation." ;
+        sh:select """
+            PREFIX cgm: <https://biodevops.local/ontology/cgm#>
+            SELECT $this WHERE {
+                $this cgm:hasConflictingObservations true ;
+                      cgm:recommendation ?rec .
+                FILTER (?rec IN (cgm:NO_ACTION, cgm:MONITOR))
+            }
+        """
+    ] .
+
+cgm:FHIRResourceShape a sh:NodeShape ;
+    sh:targetClass cgm:FHIRCase ;
+    sh:property [
+        sh:path cgm:fhirResourceType ;
+        sh:minCount 1 ;
+        sh:in ( "Patient" "Observation" "Device" "Condition" "MedicationStatement" "DetectedIssue" "DiagnosticReport" ) ;
+        sh:message "CGM extension uses Patient, Observation, Device, Condition, MedicationStatement, DetectedIssue, and DiagnosticReport resources."
+    ] .

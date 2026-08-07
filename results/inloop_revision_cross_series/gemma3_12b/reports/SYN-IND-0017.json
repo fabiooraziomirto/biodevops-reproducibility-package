@@ -1,0 +1,146 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0017",
+    "clinical_inconsistency_class": "none",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic field service engineering desk reported a minor, non-recurrent complete atrioventricular block-adjacent irregularity with no adverse patient outcome recorded. The bedside monitor log and the cloud-side classifier log disagree on whether the irregularity met the complete atrioventricular block detection threshold, an unresolved discordance. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+  "model_token_counts": {
+    "completion": 232,
+    "prompt": 1810
+  },
+  "raw_content": "{\n  \"severity\": 2,\n  \"confidence\": 0.75,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident narrative describes a non-recurrent irregularity detected during field service engineering, which was not life-threatening and is being managed through monitoring/investigation. While the disagreement between bedside monitor logs and cloud-side classifier logs represents an unresolved discordance that warrants investigation, there's no indication of realized harm or potential for immediate patient safety risk beyond what\u2019s already being addressed. The incident does trigger obligations under EU MDR Annex I, Section 17.1 regarding repeatability, reliability, and performance of electronic programmable systems, as well as Section 17.2 concerning the software development lifecycle and cybersecurity. Furthermore, given that the device incorporates computer software, it falls under the scope of 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485.\",\n  \"requires_human_review\": true\n  \t    \t\t   \t    \t\t }",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2025A",
+    "ARTIFACT-TESTLOG-2029A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.10-c-design-development",
+    "mdr-annexI-sec17.1-electronic-programmable",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.75,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a non-recurrent irregularity detected during field service engineering, which was not life-threatening and is being managed through monitoring/investigation. While the disagreement between bedside monitor logs and cloud-side classifier logs represents an unresolved discordance that warrants investigation, there's no indication of realized harm or potential for immediate patient safety risk beyond what\u2019s already being addressed. The incident does trigger obligations under EU MDR Annex I, Section 17.1 regarding repeatability, reliability, and performance of electronic programmable systems, as well as Section 17.2 concerning the software development lifecycle and cybersecurity. Furthermore, given that the device incorporates computer software, it falls under the scope of 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence",
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "The incident narrative describes a non-recurrent irregularity detected during field service engineering, which was not life-threatening and is being managed through monitoring/investigation.",
+      "While the disagreement between bedside monitor logs and cloud-side classifier logs represents an unresolved discordance that warrants investigation, there's no indication of realized harm or potential for immediate patient safety risk beyond what\u2019s already being addressed.",
+      "The incident does trigger obligations under EU MDR Annex I, Section 17.1 regarding repeatability, reliability, and performance of electronic programmable systems, as well as Section 17.2 concerning the software development lifecycle and cybersecurity.",
+      "Furthermore, given that the device incorporates computer software, it falls under the scope of 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "",
+          "claim": "The incident narrative describes a non-recurrent irregularity detected during field service engineering, which was not life-threatening and is being managed through monitoring/investigation.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "While the disagreement between bedside monitor logs and cloud-side classifier logs represents an unresolved discordance that warrants investigation, there's no indication of realized harm or potential for immediate patient safety risk beyond what\u2019s already being addressed.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "The incident does trigger obligations under EU MDR Annex I, Section 17.1 regarding repeatability, reliability, and performance of electronic programmable systems, as well as Section 17.2 concerning the software development lifecycle and cybersecurity.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "Furthermore, given that the device incorporates computer software, it falls under the scope of 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment.",
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident narrative describes a non-recurrent irregularity detected during field service engineering, which was not life-threatening and is being managed through monitoring/investigation. While the disagreement between bedside monitor logs and cloud-side classifier logs represents an unresolved discordance that warrants investigation, there's no indication of realized harm or potential for immediate patient safety risk beyond what\u2019s already being addressed. The incident does trigger obligations under EU MDR Annex I, Section 17.1 regarding repeatability, reliability, and performance of electronic programmable systems, as well as Section 17.2 concerning the software development lifecycle and cybersecurity. Furthermore, given that the device incorporates computer software, it falls under the scope of 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": []
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "",
+        "claim": "The incident narrative describes a non-recurrent irregularity detected during field service engineering, which was not life-threatening and is being managed through monitoring/investigation.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "While the disagreement between bedside monitor logs and cloud-side classifier logs represents an unresolved discordance that warrants investigation, there's no indication of realized harm or potential for immediate patient safety risk beyond what\u2019s already being addressed.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "The incident does trigger obligations under EU MDR Annex I, Section 17.1 regarding repeatability, reliability, and performance of electronic programmable systems, as well as Section 17.2 concerning the software development lifecycle and cybersecurity.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "Furthermore, given that the device incorporates computer software, it falls under the scope of 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [],
+    "missing_evidence": [
+      "At least one retrieved technical artifact supporting the incident judgment.",
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident narrative describes a non-recurrent irregularity detected during field service engineering, which was not life-threatening and is being managed through monitoring/investigation. While the disagreement between bedside monitor logs and cloud-side classifier logs represents an unresolved discordance that warrants investigation, there's no indication of realized harm or potential for immediate patient safety risk beyond what\u2019s already being addressed. The incident does trigger obligations under EU MDR Annex I, Section 17.1 regarding repeatability, reliability, and performance of electronic programmable systems, as well as Section 17.2 concerning the software development lifecycle and cybersecurity. Furthermore, given that the device incorporates computer software, it falls under the scope of 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0011",
+    "clinical_inconsistency_class": "none",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic home telemetry program reported a minor, non-recurrent atrial fibrillation-adjacent irregularity with no adverse patient outcome recorded. Device logs and a retrospective clinician review both confirm a brief, self-resolving atrial fibrillation-adjacent irregularity with no adverse outcome; recurrence risk is being tracked. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+  "model_token_counts": {
+    "completion": 239,
+    "prompt": 1803
+  },
+  "raw_content": "{\n  \"severity\": 2,\n  \"confidence\": 0.75,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident narrative describes a non-recurrent atrial fibrillation-adjacent irregularity detected by the synthetic home telemetry program. While no adverse patient outcome was recorded and the event self-resolved, the recurrence risk is being tracked, indicating an ongoing investigation. This requires review under EU MDR Annex I, Section 17.1 regarding electronic programmable systems ensuring repeatability, reliability, and performance in line with intended use. The incident also triggers obligations under EU MDR Annex I, Section 17.2 concerning software development lifecycle, risk management, and verification/validation. Furthermore, as the device incorporates computer software, it falls under 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485. The fact that a recurrence risk is being tracked necessitates a CAPA investigation to understand the root cause and prevent future occurrences.\",\n  \"requires_human_review\": true\n  \t    \t\t   \t    \t\t }",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2025A",
+    "ARTIFACT-TESTLOG-2029A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.10-c-design-development",
+    "mdr-annexI-sec17.1-electronic-programmable",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.75,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a non-recurrent atrial fibrillation-adjacent irregularity detected by the synthetic home telemetry program. While no adverse patient outcome was recorded and the event self-resolved, the recurrence risk is being tracked, indicating an ongoing investigation. This requires review under EU MDR Annex I, Section 17.1 regarding electronic programmable systems ensuring repeatability, reliability, and performance in line with intended use. The incident also triggers obligations under EU MDR Annex I, Section 17.2 concerning software development lifecycle, risk management, and verification/validation. Furthermore, as the device incorporates computer software, it falls under 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485. The fact that a recurrence risk is being tracked necessitates a CAPA investigation to understand the root cause and prevent future occurrences.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence",
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "The incident narrative describes a non-recurrent atrial fibrillation-adjacent irregularity detected by the synthetic home telemetry program.",
+      "While no adverse patient outcome was recorded and the event self-resolved, the recurrence risk is being tracked, indicating an ongoing investigation.",
+      "This requires review under EU MDR Annex I, Section 17.1 regarding electronic programmable systems ensuring repeatability, reliability, and performance in line with intended use.",
+      "The incident also triggers obligations under EU MDR Annex I, Section 17.2 concerning software development lifecycle, risk management, and verification/validation.",
+      "Furthermore, as the device incorporates computer software, it falls under 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485.",
+      "The fact that a recurrence risk is being tracked necessitates a CAPA investigation to understand the root cause and prevent future occurrences."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "",
+          "claim": "The incident narrative describes a non-recurrent atrial fibrillation-adjacent irregularity detected by the synthetic home telemetry program.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "While no adverse patient outcome was recorded and the event self-resolved, the recurrence risk is being tracked, indicating an ongoing investigation.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "This requires review under EU MDR Annex I, Section 17.1 regarding electronic programmable systems ensuring repeatability, reliability, and performance in line with intended use.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "The incident also triggers obligations under EU MDR Annex I, Section 17.2 concerning software development lifecycle, risk management, and verification/validation.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "Furthermore, as the device incorporates computer software, it falls under 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "The fact that a recurrence risk is being tracked necessitates a CAPA investigation to understand the root cause and prevent future occurrences.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment.",
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident narrative describes a non-recurrent atrial fibrillation-adjacent irregularity detected by the synthetic home telemetry program. While no adverse patient outcome was recorded and the event self-resolved, the recurrence risk is being tracked, indicating an ongoing investigation. This requires review under EU MDR Annex I, Section 17.1 regarding electronic programmable systems ensuring repeatability, reliability, and performance in line with intended use. The incident also triggers obligations under EU MDR Annex I, Section 17.2 concerning software development lifecycle, risk management, and verification/validation. Furthermore, as the device incorporates computer software, it falls under 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485. The fact that a recurrence risk is being tracked necessitates a CAPA investigation to understand the root cause and prevent future occurrences.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": []
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "",
+        "claim": "The incident narrative describes a non-recurrent atrial fibrillation-adjacent irregularity detected by the synthetic home telemetry program.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "While no adverse patient outcome was recorded and the event self-resolved, the recurrence risk is being tracked, indicating an ongoing investigation.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "This requires review under EU MDR Annex I, Section 17.1 regarding electronic programmable systems ensuring repeatability, reliability, and performance in line with intended use.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "The incident also triggers obligations under EU MDR Annex I, Section 17.2 concerning software development lifecycle, risk management, and verification/validation.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "Furthermore, as the device incorporates computer software, it falls under 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "The fact that a recurrence risk is being tracked necessitates a CAPA investigation to understand the root cause and prevent future occurrences.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [],
+    "missing_evidence": [
+      "At least one retrieved technical artifact supporting the incident judgment.",
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident narrative describes a non-recurrent atrial fibrillation-adjacent irregularity detected by the synthetic home telemetry program. While no adverse patient outcome was recorded and the event self-resolved, the recurrence risk is being tracked, indicating an ongoing investigation. This requires review under EU MDR Annex I, Section 17.1 regarding electronic programmable systems ensuring repeatability, reliability, and performance in line with intended use. The incident also triggers obligations under EU MDR Annex I, Section 17.2 concerning software development lifecycle, risk management, and verification/validation. Furthermore, as the device incorporates computer software, it falls under 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485. The fact that a recurrence risk is being tracked necessitates a CAPA investigation to understand the root cause and prevent future occurrences.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  }
+}

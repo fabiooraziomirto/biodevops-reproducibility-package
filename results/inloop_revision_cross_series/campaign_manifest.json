@@ -1,0 +1,34 @@
+{
+  "campaign": "SHACL-Informed In-Loop Revision -- cross-series extension",
+  "date_utc": "2026-08-06",
+  "panel_frozen_at": "2026-08-06",
+  "protocol": "matched to qwen2.5:3b baseline: independent 40-scenario benchmark, all_combined retrieval, temperature=0.0, max_revisions=1, no fallback generation",
+  "baseline_reference_campaign": "/root/Desktop/BioDevOps/results/inloop_revision_campaign_rerun_20260805 (qwen2.5:3b, digest 357c53fb659c) -- FROZEN, not modified, numbers match published paper text",
+  "new_campaigns": {
+    "qwen3.5:9b": {
+      "digest": "6488c96fa5fa",
+      "output_dir": "/root/Desktop/BioDevOps/results/inloop_revision_cross_series_20260806/qwen3.5_9b",
+      "command": "cd /root/Desktop/BioDevOps/biodevops_rag/scripts && BIODEVOPS_OLLAMA_TIMEOUT_SECONDS=300 BIODEVOPS_CHROMA_DB=/root/Desktop/BioDevOps/biodevops_rag/chroma_db_independent_40 /root/Desktop/BioDevOps/biodevops_rag/venv/bin/python run_bounded_arm_inloop_revision.py --dataset /root/Desktop/BioDevOps/biodevops_rag/corpus/synthetic_maude_arrhythmia_independent_40.json --clinical-facts-bundle /root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json --campaign-dir /root/Desktop/BioDevOps/results/inloop_revision_cross_series_20260806/qwen3.5_9b --campaign-id inloop_revision_qwen3.5_9b_20260806 --model qwen3.5:9b --model-digest 6488c96fa5fa"
+    },
+    "gemma3:12b": {
+      "digest": "f4031aab637d",
+      "output_dir": "/root/Desktop/BioDevOps/results/inloop_revision_cross_series_20260806/gemma3_12b",
+      "command": "cd /root/Desktop/BioDevOps/biodevops_rag/scripts && BIODEVOPS_OLLAMA_TIMEOUT_SECONDS=300 BIODEVOPS_CHROMA_DB=/root/Desktop/BioDevOps/biodevops_rag/chroma_db_independent_40 /root/Desktop/BioDevOps/biodevops_rag/venv/bin/python run_bounded_arm_inloop_revision.py --dataset /root/Desktop/BioDevOps/biodevops_rag/corpus/synthetic_maude_arrhythmia_independent_40.json --clinical-facts-bundle /root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json --campaign-dir /root/Desktop/BioDevOps/results/inloop_revision_cross_series_20260806/gemma3_12b --campaign-id inloop_revision_gemma3_12b_20260806 --model gemma3:12b --model-digest f4031aab637d"
+    }
+  },
+  "config_sha256": {
+    "dataset": "b70dccc46a866d5351adc2cdb8acdbe56b1c56bf5db1bdfb2bf3330123aeb98e",
+    "clinical_facts_bundle": "facc8e4652baa65e833f0e4aa5d8f3096f6b79ad64157e6ee0e8c9f200080685",
+    "opa_policy": "3688fc7f9cc06813ab8c0c381a0052077a6a2b696f49e9c743d699589114e20b",
+    "shacl_ontology": "49e38ef56a818dc9af62952de20cb311e788ba6796f80d0e9a96bc37d8274adf",
+    "runner_script": "7f0bee0deaad26512e12944c82d1a8d6a25f77eaceee124e70fdd3b355339d24",
+    "bounded_agent": "07a7c2b34a47a53bd92986adecbcea9e8ef9159edebd75644ec0640883cb77c4"
+  },
+  "seed": 20260803,
+  "temperature": 0.0,
+  "retrieval_mode": "all_combined",
+  "max_revisions": 1,
+  "execution_order": "sequential (qwen3.5:9b then gemma3:12b), never concurrent, to avoid GPU interference",
+  "no_model_substitution": "model names and digests as pulled via ollama, verified against ollama list output",
+  "no_fallback_used": "all rows eligible=True (generation_source == ollama_real) for all three models; fallback_events=0, mock_events=0 (see cross_series_metrics.json)"
+}

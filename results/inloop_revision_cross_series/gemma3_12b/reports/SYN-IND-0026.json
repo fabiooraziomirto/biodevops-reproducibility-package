@@ -1,0 +1,152 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0026",
+    "clinical_inconsistency_class": "none",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic cardiology ward reported that the device failed to flag a clinically significant ventricular fibrillation episode in real time. Two independent overnight telemetry reviews and the cloud-side classifier log all confirm a documented, sustained ventricular fibrillation episode that was missed at the time; a second, structurally identical miss was confirmed in a separate patient on the same software version, establishing recurrence across the deployed population. The confirmatory device confidence-score log for the exact episode window is missing from the file, though the clinical review stands.",
+  "model_token_counts": {
+    "completion": 464,
+    "prompt": 2032
+  },
+  "raw_content": "{\n  \"severity\": 4,\n  \"confidence\": 0.75,\n  \"recommendation\": \"FIELD_SAFETY_CORRECTIVE_ACTION\",\n  \"rationale\": \"The incident narrative describes a confirmed recurrence of missed detection of clinically significant ventricular fibrillation episodes across the deployed population. This represents a realized serious patient-safety risk (severity 3) due to the potential for harm and the fact that it was not detected in real time, leading to delayed intervention. The confirmation of recurrence elevates this to severity 4, triggering an immediate field safety corrective action obligation.  The narrative explicitly states 'Two independent overnight telemetry reviews... all confirm a documented, sustained ventricular fibrillation episode that was missed at the time; a second, structurally identical miss was confirmed in a separate patient on the same software version, establishing recurrence across the deployed population.' This confirms both realized harm (missed detection) and broad deployed-population impact. The missing confidence-score log is concerning but does not negate the confirmed clinical events.\",\n  \"claim_support\": [\n    {\n      \"claim\": \"The incident represents a realized serious patient-safety risk due to missed detection of ventricular fibrillation.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2025A\",\n      \"support_status\": \"supported\",\"support_note\":\"Device confidence score log for the missed episode.\"\n    },\n    {\n      \"claim\": \"The incident demonstrates recurrence across the deployed population.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2029A\",\n      \"support_status\": \"supported\",\n      \"support_note\":\"Device confidence score log for the missed episode, confirming a second instance.\"\n    },\n    {\n      \"claim\": \"The incident requires immediate field safety corrective action due to confirmed recurrence and potential for serious harm.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2025A\",\n      \"support_status\": \"supported\",\n      \"support_note\":\"Device confidence score log for the missed episode.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2025A",
+    "ARTIFACT-TESTLOG-2029A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.10-c-design-development",
+    "mdr-annexI-sec17.1-electronic-programmable",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: fsca_without_confirmatory_evidence_downgraded; severity4_or_death_forced_immediate_human_escalation; technical_incident_missing_technical_evidence; deny:technical_incident_missing_technical_evidence; clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: At least one retrieved technical artifact supporting the incident judgment.; Causal link between the artifact/change and the observed event.; Evidence of recurrence or confirmed deployed-population impact.; Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (shacl) RiskReport must link at least one evidence id.",
+  "risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "The incident represents a realized serious patient-safety risk due to missed detection of ventricular fibrillation.",
+        "support_note": "Device confidence score log for the missed episode.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2029A",
+        "claim": "The incident demonstrates recurrence across the deployed population.",
+        "support_note": "Device confidence score log for the missed episode, confirming a second instance.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "The incident requires immediate field safety corrective action due to confirmed recurrence and potential for serious harm.",
+        "support_note": "Device confidence score log for the missed episode.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a confirmed recurrence of missed detection of clinically significant ventricular fibrillation episodes across the deployed population. This represents a realized serious patient-safety risk (severity 3) due to the potential for harm and the fact that it was not detected in real time, leading to delayed intervention. The confirmation of recurrence elevates this to severity 4, triggering an immediate field safety corrective action obligation.  The narrative explicitly states 'Two independent overnight telemetry reviews... all confirm a documented, sustained ventricular fibrillation episode that was missed at the time; a second, structurally identical miss was confirmed in a separate patient on the same software version, establishing recurrence across the deployed population.' This confirms both realized harm (missed detection) and broad deployed-population impact. The missing confidence-score log is concerning but does not negate the confirmed clinical events.",
+    "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "requires_human_review": true,
+    "severity": 4
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.3333,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [
+      "severity4_or_death_forced_immediate_human_escalation",
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence",
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+          "claim": "The incident represents a realized serious patient-safety risk due to missed detection of ventricular fibrillation.",
+          "support_note": "Device confidence score log for the missed episode.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2029A",
+          "claim": "The incident demonstrates recurrence across the deployed population.",
+          "support_note": "Device confidence score log for the missed episode, confirming a second instance.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+          "claim": "The incident requires immediate field safety corrective action due to confirmed recurrence and potential for serious harm.",
+          "support_note": "Device confidence score log for the missed episode.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment.",
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident narrative describes a confirmed recurrence of missed detection of clinically significant ventricular fibrillation episodes across the deployed population. This represents a realized serious patient-safety risk (severity 3) due to the potential for harm and the fact that it was not detected in real time, leading to delayed intervention. The confirmation of recurrence elevates this to severity 4, triggering an immediate field safety corrective action obligation.  The narrative explicitly states 'Two independent overnight telemetry reviews... all confirm a documented, sustained ventricular fibrillation episode that was missed at the time; a second, structurally identical miss was confirmed in a separate patient on the same software version, establishing recurrence across the deployed population.' This confirms both realized harm (missed detection) and broad deployed-population impact. The missing confidence-score log is concerning but does not negate the confirmed clinical events.",
+      "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "requires_human_review": true,
+      "severity": 4
+    },
+    "weakly_supported_claims": [
+      "The incident demonstrates recurrence across the deployed population.",
+      "The incident requires immediate field safety corrective action due to confirmed recurrence and potential for serious harm."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "The incident represents a realized serious patient-safety risk due to missed detection of ventricular fibrillation.",
+        "support_note": "Device confidence score log for the missed episode.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2029A",
+        "claim": "The incident demonstrates recurrence across the deployed population.",
+        "support_note": "Device confidence score log for the missed episode, confirming a second instance.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "The incident requires immediate field safety corrective action due to confirmed recurrence and potential for serious harm.",
+        "support_note": "Device confidence score log for the missed episode.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [],
+    "missing_evidence": [
+      "At least one retrieved technical artifact supporting the incident judgment.",
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident narrative describes a confirmed recurrence of missed detection of clinically significant ventricular fibrillation episodes across the deployed population. This represents a realized serious patient-safety risk (severity 3) due to the potential for harm and the fact that it was not detected in real time, leading to delayed intervention. The confirmation of recurrence elevates this to severity 4, triggering an immediate field safety corrective action obligation.  The narrative explicitly states 'Two independent overnight telemetry reviews... all confirm a documented, sustained ventricular fibrillation episode that was missed at the time; a second, structurally identical miss was confirmed in a separate patient on the same software version, establishing recurrence across the deployed population.' This confirms both realized harm (missed detection) and broad deployed-population impact. The missing confidence-score log is concerning but does not negate the confirmed clinical events.",
+    "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+    "requires_human_review": true,
+    "severity": 4
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "generated_at_utc": "2026-08-06T19:39:12Z",
+  "scope_note": "This probe covers ONLY the matched-strict protocol. qwen3.5:9b also appears in the in-loop revision campaign and the 2,000-run matched campaign; a clean matched-strict comparison is evidence of stability for this protocol only, not proof those other campaigns are unaffected by the digest drift found on 2026-08-06 -- do not generalize beyond matched-strict.",
+  "instrumented_code_disclosure": "This probe ran on evaluate_batch.py as instrumented for provenance capture (Task 3b, 2026-08-06). Verified before running: constructed Ollama chat_kwargs are byte-identical pre/post instrumentation; only the model's own stochastic sampled content differs run-to-run, which is expected and unrelated to instrumentation.",
+  "comparisons": [
+    {
+      "model": "qwen3.5_2b",
+      "status": "compared",
+      "old": {
+        "n": 40,
+        "severity_exact": "13/40=0.325",
+        "union_yield": "29/40=0.725",
+        "citation_hallucination": "9/40=0.225",
+        "genuine_incremental_shacl_value": "12/40=0.300",
+        "structurally_redundant_share_of_union": "15/29=0.517"
+      },
+      "new": {
+        "n": 40,
+        "severity_exact": "10/40=0.250",
+        "union_yield": "34/40=0.850",
+        "citation_hallucination": "8/40=0.200",
+        "genuine_incremental_shacl_value": "11/40=0.275",
+        "structurally_redundant_share_of_union": "19/34=0.559"
+      },
+      "schema_validation_failures_old": 1,
+      "schema_validation_failures_new": 4,
+      "scenario_level_disagreements": [],
+      "n_scenario_disagreements": 0,
+      "n_scenarios_compared": 40
+    },
+    {
+      "model": "qwen3.5_9b",
+      "status": "compared",
+      "old": {
+        "n": 40,
+        "severity_exact": "23/40=0.575",
+        "union_yield": "32/40=0.800",
+        "citation_hallucination": "2/40=0.050",
+        "genuine_incremental_shacl_value": "5/40=0.125",
+        "structurally_redundant_share_of_union": "20/32=0.625"
+      },
+      "new": {
+        "n": 40,
+        "severity_exact": "22/40=0.550",
+        "union_yield": "33/40=0.825",
+        "citation_hallucination": "1/40=0.025",
+        "genuine_incremental_shacl_value": "8/40=0.200",
+        "structurally_redundant_share_of_union": "20/33=0.606"
+      },
+      "schema_validation_failures_old": 0,
+      "schema_validation_failures_new": 0,
+      "scenario_level_disagreements": [
+        "SYN-IND-0037"
+      ],
+      "n_scenario_disagreements": 1,
+      "n_scenarios_compared": 40
+    },
+    {
+      "model": "gemma3_4b",
+      "status": "compared",
+      "old": {
+        "n": 40,
+        "severity_exact": "19/40=0.475",
+        "union_yield": "28/40=0.700",
+        "citation_hallucination": "12/40=0.300",
+        "genuine_incremental_shacl_value": "14/40=0.350",
+        "structurally_redundant_share_of_union": "3/28=0.107"
+      },
+      "new": {
+        "n": 40,
+        "severity_exact": "19/40=0.475",
+        "union_yield": "26/40=0.650",
+        "citation_hallucination": "7/40=0.175",
+        "genuine_incremental_shacl_value": "12/40=0.300",
+        "structurally_redundant_share_of_union": "7/26=0.269"
+      },
+      "schema_validation_failures_old": 2,
+      "schema_validation_failures_new": 1,
+      "scenario_level_disagreements": [],
+      "n_scenario_disagreements": 0,
+      "n_scenarios_compared": 40
+    },
+    {
+      "model": "gemma3_27b",
+      "status": "compared",
+      "old": {
+        "n": 40,
+        "severity_exact": "30/40=0.750",
+        "union_yield": "40/40=1.000",
+        "citation_hallucination": "0/40=0.000",
+        "genuine_incremental_shacl_value": "3/40=0.075",
+        "structurally_redundant_share_of_union": "35/40=0.875"
+      },
+      "new": {
+        "n": 40,
+        "severity_exact": "29/40=0.725",
+        "union_yield": "40/40=1.000",
+        "citation_hallucination": "0/40=0.000",
+        "genuine_incremental_shacl_value": "3/40=0.075",
+        "structurally_redundant_share_of_union": "36/40=0.900"
+      },
+      "schema_validation_failures_old": 0,
+      "schema_validation_failures_new": 0,
+      "scenario_level_disagreements": [],
+      "n_scenario_disagreements": 0,
+      "n_scenarios_compared": 40
+    }
+  ],
+  "qwen3.5_0.8b_failure_mode": {
+    "model": "qwen3.5_0.8b",
+    "failed_marker_present": true,
+    "done_marker_present": false,
+    "old_failed_marker_present": true,
+    "failure_text_excerpt": "failed after 3 attempts: Schema validation failed: 1 validation error for RiskReport",
+    "reproduces_known_signature": true,
+    "note": "qwen3.5:0.8b did not complete the protocol on 2026-08-03 either (persistent schema-validation failures, RuntimeError after MAX_GENERATION_ATTEMPTS). Reported here as a failure-mode check only -- never folded into the qwen3.5_2b/9b or gemma3_4b/27b delta comparison."
+  }
+}

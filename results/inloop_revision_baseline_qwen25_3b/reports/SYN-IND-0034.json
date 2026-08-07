@@ -1,0 +1,148 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0034",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic remote monitoring center reported that the patient suffered a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode, confirmed by hospital emergency response records. The only artifact filed against this report is an unrelated code-review diff that predates this device version and does not describe the event.",
+  "model_token_counts": {
+    "completion": 268,
+    "prompt": 1824
+  },
+  "raw_content": "{\n    \"severity\": 2,\n    \"confidence\": 0.4,\n    \"recommendation\": \"CAPA_INVESTIGATE\",\n    \"rationale\": \"The incident report does not provide sufficient information to determine if the device version v33 or v37 was compromised by a security vulnerability that could have led to an unflagged atrial fibrillation episode resulting in a confirmed embolic stroke. The static analysis reports for unrelated firmware modules do not support this claim and there is no evidence of patient exposure. However, given the severity of the potential impact (a life-threatening event), it is prudent to investigate further.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2033A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"Confirms a life-threatening complete atrioventricular block event, but does not provide information on the device version or security.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2037A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"Confirms a life-threatening complete atrioventricular block event, but does not provide information on the device version or security.\"\n        }\n    ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.4,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms a life-threatening complete atrioventricular block event, but does not provide information on the device version or security."
+      },
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms a life-threatening complete atrioventricular block event, but does not provide information on the device version or security."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident report does not provide sufficient information to determine if the device version v33 or v37 was compromised by a security vulnerability that could have led to an unflagged atrial fibrillation episode resulting in a confirmed embolic stroke. The static analysis reports for unrelated firmware modules do not support this claim and there is no evidence of patient exposure. However, given the severity of the potential impact (a life-threatening event), it is prudent to investigate further.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 2
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.6667,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "The incident report does not provide sufficient information to determine if the device version v33 or v37 was compromised by a security vulnerability that could have led to an unflagged atrial fibrillation episode resulting in a confirmed embolic stroke.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "The static analysis reports for unrelated firmware modules do not support this claim and there is no evidence of patient exposure.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "However, given the severity of the potential impact (a life-threatening event), it is prudent to investigate further.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.4,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Confirms a life-threatening complete atrioventricular block event, but does not provide information on the device version or security."
+        },
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Confirms a life-threatening complete atrioventricular block event, but does not provide information on the device version or security."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The incident report does not provide sufficient information to determine if the device version v33 or v37 was compromised by a security vulnerability that could have led to an unflagged atrial fibrillation episode resulting in a confirmed embolic stroke. The static analysis reports for unrelated firmware modules do not support this claim and there is no evidence of patient exposure. However, given the severity of the potential impact (a life-threatening event), it is prudent to investigate further.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": [
+      "The static analysis reports for unrelated firmware modules do not support this claim and there is no evidence of patient exposure."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "The incident report does not provide sufficient information to determine if the device version v33 or v37 was compromised by a security vulnerability that could have led to an unflagged atrial fibrillation episode resulting in a confirmed embolic stroke.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "The static analysis reports for unrelated firmware modules do not support this claim and there is no evidence of patient exposure.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "However, given the severity of the potential impact (a life-threatening event), it is prudent to investigate further.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.4,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms a life-threatening complete atrioventricular block event, but does not provide information on the device version or security."
+      },
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms a life-threatening complete atrioventricular block event, but does not provide information on the device version or security."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident report does not provide sufficient information to determine if the device version v33 or v37 was compromised by a security vulnerability that could have led to an unflagged atrial fibrillation episode resulting in a confirmed embolic stroke. The static analysis reports for unrelated firmware modules do not support this claim and there is no evidence of patient exposure. However, given the severity of the potential impact (a life-threatening event), it is prudent to investigate further.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  }
+}

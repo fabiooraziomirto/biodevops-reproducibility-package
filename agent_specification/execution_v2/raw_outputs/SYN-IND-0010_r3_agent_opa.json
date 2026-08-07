@@ -1,0 +1,205 @@
+{
+  "arm": "agent_opa",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 0,
+  "model_token_counts": {
+    "completion": null,
+    "prompt": null
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "NO_ACTION"
+  },
+  "opa_actions": [],
+  "raw_model_output": null,
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "NO_ACTION",
+    "scenario_id": "SYN-IND-0010"
+  },
+  "replicate": 3,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+        "claim": "The issue was blocked or contained by an automatic control before clinical deployment or use.",
+        "support_note": "The CI/CD quality gate detected the regression and blocked the release candidate.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The test log shows a VTach sensitivity drop, triggering the automated risk-gate block."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 83(1)-(2) requires manufacturers to establish a post-market surveillance system as part of the quality management system."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 10(9) requires manufacturers to implement a post-market surveillance system as part of the quality management system."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway, which was fully contained pre-release by the automated CI validation gate. No patient exposure occurred and the regression is blocked before any clinical deployment.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  },
+  "scenario_id": "SYN-IND-0010",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The test log shows a VTach sensitivity drop, triggering the automated risk-gate block."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 83(1)-(2) requires manufacturers to establish a post-market surveillance system as part of the quality management system."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 10(9) requires manufacturers to implement a post-market surveillance system as part of the quality management system."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": false,
+    "evidence_gaps": [],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+          "claim": "The issue was blocked or contained by an automatic control before clinical deployment or use.",
+          "support_note": "The CI/CD quality gate detected the regression and blocked the release candidate.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The test log shows a VTach sensitivity drop, triggering the automated risk-gate block."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Article 83(1)-(2) requires manufacturers to establish a post-market surveillance system as part of the quality management system."
+        },
+        {
+          "artifact_id": "mdr-art10-9-qms-elements",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Article 10(9) requires manufacturers to implement a post-market surveillance system as part of the quality management system."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway, which was fully contained pre-release by the automated CI validation gate. No patient exposure occurred and the regression is blocked before any clinical deployment.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "final_report_sha256": "3300e552407a659e5b4bc2e0021d96c5e80eac073e6e5edff799db429267a2d5",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [],
+    "recommendation": "NO_ACTION",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0010",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0010_r3",
+    "scenario_id": "SYN-IND-0010",
+    "schema_version": "2.1.0",
+    "severity": 1,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "advisory_complete",
+    "timestamp_utc": "2026-08-03T09:25:38.027103Z",
+    "total_steps": 3,
+    "trace_id": "42c0b82a-37d5-46e7-ba0d-b818b193b55b"
+  },
+  "trace_path": "traces/SYN-IND-0010_r3.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+          "claim": "The issue was blocked or contained by an automatic control before clinical deployment or use.",
+          "support_note": "The CI/CD quality gate detected the regression and blocked the release candidate.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The test log shows a VTach sensitivity drop, triggering the automated risk-gate block."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Article 83(1)-(2) requires manufacturers to establish a post-market surveillance system as part of the quality management system."
+        },
+        {
+          "artifact_id": "mdr-art10-9-qms-elements",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Article 10(9) requires manufacturers to implement a post-market surveillance system as part of the quality management system."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway, which was fully contained pre-release by the automated CI validation gate. No patient exposure occurred and the regression is blocked before any clinical deployment.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": [
+      "The issue was blocked or contained by an automatic control before clinical deployment or use."
+    ]
+  }
+}

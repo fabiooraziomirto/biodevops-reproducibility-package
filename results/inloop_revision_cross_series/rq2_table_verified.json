@@ -1,0 +1,232 @@
+[
+  {
+    "model": "qwen2.5_7b",
+    "compl_d": "100/100",
+    "compl_h": "100/100",
+    "best_d": 15,
+    "raw_d": 25,
+    "raw_d_n": 100,
+    "opa_d": 25,
+    "opa_d_n": 100,
+    "best_h": 0,
+    "raw_h": 0,
+    "raw_h_n": 100,
+    "opa_h": 10,
+    "opa_h_n": 100,
+    "wilson_agent_opa_dev": [
+      0.1754509400372426,
+      0.3430464637007583
+    ],
+    "wilson_agent_opa_held": [
+      0.05522854161313613,
+      0.1743673043676654
+    ]
+  },
+  {
+    "model": "qwen3.5_0.8b",
+    "compl_d": "100/100",
+    "compl_h": "100/100",
+    "best_d": 15,
+    "raw_d": 20,
+    "raw_d_n": 100,
+    "opa_d": 20,
+    "opa_d_n": 100,
+    "best_h": 0,
+    "raw_h": 0,
+    "raw_h_n": 100,
+    "opa_h": 0,
+    "opa_h_n": 100,
+    "wilson_agent_opa_dev": [
+      0.1333659225590988,
+      0.28883096192650237
+    ],
+    "wilson_agent_opa_held": [
+      0.0,
+      0.03699480747600191
+    ]
+  },
+  {
+    "model": "gemma3_1b",
+    "compl_d": "100/100",
+    "compl_h": "100/100",
+    "best_d": 15,
+    "raw_d": 14,
+    "raw_d_n": 100,
+    "opa_d": 14,
+    "opa_d_n": 100,
+    "best_h": 0,
+    "raw_h": 0,
+    "raw_h_n": 100,
+    "opa_h": 0,
+    "opa_h_n": 100,
+    "wilson_agent_opa_dev": [
+      0.08526265754464905,
+      0.22137360383807236
+    ],
+    "wilson_agent_opa_held": [
+      0.0,
+      0.03699480747600191
+    ]
+  },
+  {
+    "model": "qwen3.5_2b",
+    "compl_d": "70/100",
+    "compl_h": "77/100",
+    "best_d": 10,
+    "raw_d": 10,
+    "raw_d_n": 70,
+    "opa_d": 10,
+    "opa_d_n": 70,
+    "best_h": 0,
+    "raw_h": 0,
+    "raw_h_n": 77,
+    "opa_h": 0,
+    "opa_h_n": 77,
+    "wilson_agent_opa_dev": [
+      0.07948856360443703,
+      0.24338634701505113
+    ],
+    "wilson_agent_opa_held": [
+      3.469446951953614e-18,
+      0.047520088667220836
+    ]
+  },
+  {
+    "model": "gemma3_4b",
+    "compl_d": "100/100",
+    "compl_h": "100/100",
+    "best_d": 15,
+    "raw_d": 10,
+    "raw_d_n": 100,
+    "opa_d": 5,
+    "opa_d_n": 100,
+    "best_h": 0,
+    "raw_h": 0,
+    "raw_h_n": 100,
+    "opa_h": 10,
+    "opa_h_n": 100,
+    "wilson_agent_opa_dev": [
+      0.02154336145631356,
+      0.11175196527208817
+    ],
+    "wilson_agent_opa_held": [
+      0.05522854161313613,
+      0.1743673043676654
+    ]
+  },
+  {
+    "model": "qwen3.5_4b",
+    "compl_d": "100/100",
+    "compl_h": "100/100",
+    "best_d": 15,
+    "raw_d": 25,
+    "raw_d_n": 100,
+    "opa_d": 20,
+    "opa_d_n": 100,
+    "best_h": 0,
+    "raw_h": 0,
+    "raw_h_n": 100,
+    "opa_h": 5,
+    "opa_h_n": 100,
+    "wilson_agent_opa_dev": [
+      0.1333659225590988,
+      0.28883096192650237
+    ],
+    "wilson_agent_opa_held": [
+      0.02154336145631356,
+      0.11175196527208817
+    ]
+  },
+  {
+    "model": "qwen3.5_9b",
+    "compl_d": "100/100",
+    "compl_h": "100/100",
+    "best_d": 15,
+    "raw_d": 28,
+    "raw_d_n": 100,
+    "opa_d": 14,
+    "opa_d_n": 100,
+    "best_h": 0,
+    "raw_h": 13,
+    "raw_h_n": 100,
+    "opa_h": 8,
+    "opa_h_n": 100,
+    "wilson_agent_opa_dev": [
+      0.08526265754464905,
+      0.22137360383807236
+    ],
+    "wilson_agent_opa_held": [
+      0.04109296948581091,
+      0.14998266879403072
+    ]
+  },
+  {
+    "model": "gemma3_12b",
+    "compl_d": "100/100",
+    "compl_h": "100/100",
+    "best_d": 15,
+    "raw_d": 30,
+    "raw_d_n": 100,
+    "opa_d": 25,
+    "opa_d_n": 100,
+    "best_h": 0,
+    "raw_h": 0,
+    "raw_h_n": 100,
+    "opa_h": 9,
+    "opa_h_n": 100,
+    "wilson_agent_opa_dev": [
+      0.1754509400372426,
+      0.3430464637007583
+    ],
+    "wilson_agent_opa_held": [
+      0.04807199516388488,
+      0.16226374696643667
+    ]
+  },
+  {
+    "model": "gemma3_27b",
+    "compl_d": "100/100",
+    "compl_h": "100/100",
+    "best_d": 15,
+    "raw_d": 30,
+    "raw_d_n": 100,
+    "opa_d": 20,
+    "opa_d_n": 100,
+    "best_h": 0,
+    "raw_h": 0,
+    "raw_h_n": 100,
+    "opa_h": 5,
+    "opa_h_n": 100,
+    "wilson_agent_opa_dev": [
+      0.1333659225590988,
+      0.28883096192650237
+    ],
+    "wilson_agent_opa_held": [
+      0.02154336145631356,
+      0.11175196527208817
+    ]
+  },
+  {
+    "model": "qwen3.5_27b",
+    "compl_d": "100/100",
+    "compl_h": "100/100",
+    "best_d": 15,
+    "raw_d": 25,
+    "raw_d_n": 100,
+    "opa_d": 30,
+    "opa_d_n": 100,
+    "best_h": 0,
+    "raw_h": 0,
+    "raw_h_n": 100,
+    "opa_h": 0,
+    "opa_h_n": 100,
+    "wilson_agent_opa_dev": [
+      0.21894753866228117,
+      0.39585038432811953
+    ],
+    "wilson_agent_opa_held": [
+      0.0,
+      0.03699480747600191
+    ]
+  }
+]

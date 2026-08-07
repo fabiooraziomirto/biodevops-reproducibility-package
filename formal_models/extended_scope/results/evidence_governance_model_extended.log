@@ -1,0 +1,16 @@
+==============================================================================
+BioDevOps -- Evidence-Mediated Governance BFS cross-check
+==============================================================================
+Risk signals: ['r1', 'r2', 'r3', 'r4', 'r5']
+Invariant: pending unreviewed risk => not authorized
+
+Strict model
+  Reachable states: 275
+  Safety violations: 0
+
+Negative control
+  Reachable states: 486
+  Safety violations: 747
+  Example violation: State(pending_risk=frozenset({'r1'}), reviewed=(False, False, False, False, False), authorized=False) --BrokenGrantAuthorization--> State(pending_risk=frozenset({'r1'}), reviewed=(False, False, False, False, False), authorized=True)
+
+RESULT: PASS

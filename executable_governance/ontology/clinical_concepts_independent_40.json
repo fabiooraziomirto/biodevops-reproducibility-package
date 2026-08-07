@@ -1,0 +1,1112 @@
+{
+  "metadata": {
+    "dataset_scope": "Synthetic BioDevOps arrhythmia scenarios SYN-IND-0001..0040 (independent 40-scenario benchmark).",
+    "severity_scale": "1=no harm, 2=minor harm/process exposure risk, 3=serious harm or clinically serious exposed event with no recorded harm, 4=life-threatening/death.",
+    "snomed_system": "http://snomed.info/sct",
+    "mapping_status": "Signed off for all 40 independent scenarios."
+  },
+  "concepts": {
+    "25569003": {
+      "label": "ventricular tachycardia",
+      "lethality_class": "life_threatening",
+      "clinical_note": "ventricular tachycardia mapped as life_threatening for this benchmark."
+    },
+    "71908006": {
+      "label": "ventricular fibrillation",
+      "lethality_class": "life_threatening",
+      "clinical_note": "ventricular fibrillation mapped as life_threatening for this benchmark."
+    },
+    "27885002": {
+      "label": "complete atrioventricular block",
+      "lethality_class": "life_threatening",
+      "clinical_note": "complete atrioventricular block mapped as life_threatening for this benchmark."
+    },
+    "49436004": {
+      "label": "atrial fibrillation",
+      "lethality_class": "serious",
+      "clinical_note": "atrial fibrillation mapped as serious for this benchmark."
+    }
+  },
+  "scenarios": {
+    "SYN-IND-0001": {
+      "snomed_code": "25569003",
+      "clinical_event_occurred": false,
+      "patient_exposed": false,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent correctly assigns severity 1 / NoAction for a genuinely low-risk ventricular tachycardia pathway finding under complete evidence, and whether the no issue safe case probe embedded in this row is handled without over-escalation.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0001",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25569003",
+              "display": "ventricular tachycardia"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0002": {
+      "snomed_code": "49436004",
+      "clinical_event_occurred": false,
+      "patient_exposed": false,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent correctly assigns severity 1 / NoAction for a genuinely low-risk atrial fibrillation pathway finding under missing evidence, and whether the no issue safe case probe embedded in this row is handled without over-escalation.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0002",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "atrial fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0003": {
+      "snomed_code": "71908006",
+      "clinical_event_occurred": false,
+      "patient_exposed": false,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent correctly assigns severity 1 / NoAction for a genuinely low-risk ventricular fibrillation pathway finding under contradictory evidence, and whether the citation failure probe embedded in this row is handled without over-escalation.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0003",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71908006",
+              "display": "ventricular fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0004": {
+      "snomed_code": "27885002",
+      "clinical_event_occurred": false,
+      "patient_exposed": false,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent correctly assigns severity 1 / NoAction for a genuinely low-risk complete atrioventricular block pathway finding under unsupported evidence, and whether the no issue safe case probe embedded in this row is handled without over-escalation.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0004",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27885002",
+              "display": "complete atrioventricular block"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0005": {
+      "snomed_code": "25569003",
+      "clinical_event_occurred": false,
+      "patient_exposed": false,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent correctly assigns severity 1 / NoAction for a genuinely low-risk ventricular tachycardia pathway finding under complete evidence, and whether the missing evidence probe embedded in this row is handled without over-escalation.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0005",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25569003",
+              "display": "ventricular tachycardia"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0006": {
+      "snomed_code": "49436004",
+      "clinical_event_occurred": false,
+      "patient_exposed": false,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent correctly assigns severity 1 / NoAction for a genuinely low-risk atrial fibrillation pathway finding under missing evidence, and whether the no issue safe case probe embedded in this row is handled without over-escalation.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0006",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "atrial fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0007": {
+      "snomed_code": "71908006",
+      "clinical_event_occurred": false,
+      "patient_exposed": false,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent correctly assigns severity 1 / NoAction for a genuinely low-risk ventricular fibrillation pathway finding under contradictory evidence, and whether the unsupported field action probe embedded in this row is handled without over-escalation.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0007",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71908006",
+              "display": "ventricular fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0008": {
+      "snomed_code": "27885002",
+      "clinical_event_occurred": false,
+      "patient_exposed": false,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent correctly assigns severity 1 / NoAction for a genuinely low-risk complete atrioventricular block pathway finding under unsupported evidence, and whether the no issue safe case probe embedded in this row is handled without over-escalation.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0008",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27885002",
+              "display": "complete atrioventricular block"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0009": {
+      "snomed_code": "25569003",
+      "clinical_event_occurred": false,
+      "patient_exposed": false,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent correctly assigns severity 1 / NoAction for a genuinely low-risk ventricular tachycardia pathway finding under complete evidence, and whether the negated or mention only probe embedded in this row is handled without over-escalation.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0009",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25569003",
+              "display": "ventricular tachycardia"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0010": {
+      "snomed_code": "49436004",
+      "clinical_event_occurred": false,
+      "patient_exposed": false,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent correctly assigns severity 1 / NoAction for a genuinely low-risk atrial fibrillation pathway finding under missing evidence, and whether the no issue safe case probe embedded in this row is handled without over-escalation.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0010",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "atrial fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0011": {
+      "snomed_code": "49436004",
+      "clinical_event_occurred": false,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent assigns severity 2 and recommendation MONITOR for a minor atrial fibrillation-adjacent finding under complete evidence, probing the missing evidence failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0011",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "atrial fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0012": {
+      "snomed_code": "25569003",
+      "clinical_event_occurred": false,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent assigns severity 2 and recommendation CAPA_INVESTIGATE for a minor ventricular tachycardia-adjacent finding under missing evidence, probing the under escalation failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0012",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25569003",
+              "display": "ventricular tachycardia"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0013": {
+      "snomed_code": "27885002",
+      "clinical_event_occurred": false,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent assigns severity 2 and recommendation MONITOR for a minor complete atrioventricular block-adjacent finding under contradictory evidence, probing the negated or mention only failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0013",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27885002",
+              "display": "complete atrioventricular block"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0014": {
+      "snomed_code": "71908006",
+      "clinical_event_occurred": false,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent assigns severity 2 and recommendation CAPA_INVESTIGATE for a minor ventricular fibrillation-adjacent finding under unsupported evidence, probing the citation failure failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0014",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71908006",
+              "display": "ventricular fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0015": {
+      "snomed_code": "49436004",
+      "clinical_event_occurred": false,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent assigns severity 2 and recommendation MONITOR for a minor atrial fibrillation-adjacent finding under complete evidence, probing the no issue safe case failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0015",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "atrial fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0016": {
+      "snomed_code": "25569003",
+      "clinical_event_occurred": false,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent assigns severity 2 and recommendation CAPA_INVESTIGATE for a minor ventricular tachycardia-adjacent finding under missing evidence, probing the unsupported field action failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0016",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25569003",
+              "display": "ventricular tachycardia"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0017": {
+      "snomed_code": "27885002",
+      "clinical_event_occurred": false,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent assigns severity 2 and recommendation MONITOR for a minor complete atrioventricular block-adjacent finding under contradictory evidence, probing the missing evidence failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0017",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27885002",
+              "display": "complete atrioventricular block"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0018": {
+      "snomed_code": "71908006",
+      "clinical_event_occurred": false,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent assigns severity 2 and recommendation CAPA_INVESTIGATE for a minor ventricular fibrillation-adjacent finding under unsupported evidence, probing the under escalation failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0018",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71908006",
+              "display": "ventricular fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0019": {
+      "snomed_code": "49436004",
+      "clinical_event_occurred": false,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent assigns severity 2 and recommendation MONITOR for a minor atrial fibrillation-adjacent finding under complete evidence, probing the negated or mention only failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0019",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "atrial fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0020": {
+      "snomed_code": "25569003",
+      "clinical_event_occurred": false,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests whether the agent assigns severity 2 and recommendation CAPA_INVESTIGATE for a minor ventricular tachycardia-adjacent finding under missing evidence, probing the citation failure failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0020",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25569003",
+              "display": "ventricular tachycardia"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "no_confirmed_event"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0021": {
+      "snomed_code": "25569003",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests severity-3 escalation for a missed ventricular tachycardia detection under complete evidence (recommendation CAPA_INVESTIGATE); probes the under escalation failure mode, including whether FIELD_SAFETY_CORRECTIVE_ACTION is only accepted when recurrence/deployed-population evidence is present.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0021",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25569003",
+              "display": "ventricular tachycardia"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0022": {
+      "snomed_code": "71908006",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests severity-3 escalation for a missed ventricular fibrillation detection under missing evidence (recommendation CAPA_INVESTIGATE); probes the ontology contradiction failure mode, including whether FIELD_SAFETY_CORRECTIVE_ACTION is only accepted when recurrence/deployed-population evidence is present.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0022",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71908006",
+              "display": "ventricular fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0023": {
+      "snomed_code": "27885002",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests severity-3 escalation for a missed complete atrioventricular block detection under contradictory evidence (recommendation FIELD_SAFETY_CORRECTIVE_ACTION); probes the missing evidence failure mode, including whether FIELD_SAFETY_CORRECTIVE_ACTION is only accepted when recurrence/deployed-population evidence is present.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0023",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27885002",
+              "display": "complete atrioventricular block"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0024": {
+      "snomed_code": "49436004",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests severity-3 escalation for a missed atrial fibrillation detection under unsupported evidence (recommendation CAPA_INVESTIGATE); probes the unsupported field action failure mode, including whether FIELD_SAFETY_CORRECTIVE_ACTION is only accepted when recurrence/deployed-population evidence is present.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0024",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "atrial fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "event_documented"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0025": {
+      "snomed_code": "25569003",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests severity-3 escalation for a missed ventricular tachycardia detection under complete evidence (recommendation CAPA_INVESTIGATE); probes the citation failure failure mode, including whether FIELD_SAFETY_CORRECTIVE_ACTION is only accepted when recurrence/deployed-population evidence is present.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0025",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25569003",
+              "display": "ventricular tachycardia"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0026": {
+      "snomed_code": "71908006",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests severity-3 escalation for a missed ventricular fibrillation detection under missing evidence (recommendation FIELD_SAFETY_CORRECTIVE_ACTION); probes the under escalation failure mode, including whether FIELD_SAFETY_CORRECTIVE_ACTION is only accepted when recurrence/deployed-population evidence is present.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0026",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71908006",
+              "display": "ventricular fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0027": {
+      "snomed_code": "27885002",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests severity-3 escalation for a missed complete atrioventricular block detection under contradictory evidence (recommendation CAPA_INVESTIGATE); probes the ontology contradiction failure mode, including whether FIELD_SAFETY_CORRECTIVE_ACTION is only accepted when recurrence/deployed-population evidence is present.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0027",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27885002",
+              "display": "complete atrioventricular block"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0028": {
+      "snomed_code": "49436004",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests severity-3 escalation for a missed atrial fibrillation detection under unsupported evidence (recommendation CAPA_INVESTIGATE); probes the missing evidence failure mode, including whether FIELD_SAFETY_CORRECTIVE_ACTION is only accepted when recurrence/deployed-population evidence is present.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0028",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "atrial fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "event_documented"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0029": {
+      "snomed_code": "25569003",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests severity-3 escalation for a missed ventricular tachycardia detection under complete evidence (recommendation FIELD_SAFETY_CORRECTIVE_ACTION); probes the unsupported field action failure mode, including whether FIELD_SAFETY_CORRECTIVE_ACTION is only accepted when recurrence/deployed-population evidence is present.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0029",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25569003",
+              "display": "ventricular tachycardia"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0030": {
+      "snomed_code": "71908006",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Tests severity-3 escalation for a missed ventricular fibrillation detection under missing evidence (recommendation CAPA_INVESTIGATE); probes the citation failure failure mode, including whether FIELD_SAFETY_CORRECTIVE_ACTION is only accepted when recurrence/deployed-population evidence is present.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0030",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71908006",
+              "display": "ventricular fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0031": {
+      "snomed_code": "71908006",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "harm",
+      "note": "Tests severity-4 escalation for a confirmed life-threatening ventricular fibrillation event under complete evidence (recommendation ESCALATE_TO_HUMAN_IMMEDIATE); the derived ontology severity floor must force escalation regardless of what the generated report claims, probing the under escalation failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0031",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71908006",
+              "display": "ventricular fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0032": {
+      "snomed_code": "25569003",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "harm",
+      "note": "Tests severity-4 escalation for a confirmed life-threatening ventricular tachycardia event under missing evidence (recommendation ESCALATE_TO_HUMAN_IMMEDIATE); the derived ontology severity floor must force escalation regardless of what the generated report claims, probing the ontology contradiction failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0032",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25569003",
+              "display": "ventricular tachycardia"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0033": {
+      "snomed_code": "27885002",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "harm",
+      "note": "Tests severity-4 escalation for a confirmed life-threatening complete atrioventricular block event under contradictory evidence (recommendation FIELD_SAFETY_CORRECTIVE_ACTION); the derived ontology severity floor must force escalation regardless of what the generated report claims, probing the negated or mention only failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0033",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27885002",
+              "display": "complete atrioventricular block"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0034": {
+      "snomed_code": "49436004",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "harm",
+      "note": "Tests severity-4 escalation for a confirmed life-threatening atrial fibrillation event under unsupported evidence (recommendation ESCALATE_TO_HUMAN_IMMEDIATE); the derived ontology severity floor must force escalation regardless of what the generated report claims, probing the missing evidence failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0034",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "atrial fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "event_documented"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0035": {
+      "snomed_code": "71908006",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "harm",
+      "note": "Tests severity-4 escalation for a confirmed life-threatening ventricular fibrillation event under complete evidence (recommendation ESCALATE_TO_HUMAN_IMMEDIATE); the derived ontology severity floor must force escalation regardless of what the generated report claims, probing the citation failure failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0035",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71908006",
+              "display": "ventricular fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0036": {
+      "snomed_code": "25569003",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "harm",
+      "note": "Tests severity-4 escalation for a confirmed life-threatening ventricular tachycardia event under missing evidence (recommendation FIELD_SAFETY_CORRECTIVE_ACTION); the derived ontology severity floor must force escalation regardless of what the generated report claims, probing the under escalation failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0036",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25569003",
+              "display": "ventricular tachycardia"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0037": {
+      "snomed_code": "27885002",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "harm",
+      "note": "Tests severity-4 escalation for a confirmed life-threatening complete atrioventricular block event under contradictory evidence (recommendation ESCALATE_TO_HUMAN_IMMEDIATE); the derived ontology severity floor must force escalation regardless of what the generated report claims, probing the ontology contradiction failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0037",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27885002",
+              "display": "complete atrioventricular block"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0038": {
+      "snomed_code": "49436004",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "harm",
+      "note": "Tests severity-4 escalation for a confirmed life-threatening atrial fibrillation event under unsupported evidence (recommendation ESCALATE_TO_HUMAN_IMMEDIATE); the derived ontology severity floor must force escalation regardless of what the generated report claims, probing the negated or mention only failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0038",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "atrial fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "event_documented"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0039": {
+      "snomed_code": "71908006",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "harm",
+      "note": "Tests severity-4 escalation for a confirmed life-threatening ventricular fibrillation event under complete evidence (recommendation FIELD_SAFETY_CORRECTIVE_ACTION); the derived ontology severity floor must force escalation regardless of what the generated report claims, probing the missing evidence failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0039",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71908006",
+              "display": "ventricular fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-IND-0040": {
+      "snomed_code": "25569003",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "harm",
+      "note": "Tests severity-4 escalation for a confirmed life-threatening ventricular tachycardia event under missing evidence (recommendation ESCALATE_TO_HUMAN_IMMEDIATE); the derived ontology severity floor must force escalation regardless of what the generated report claims, probing the citation failure failure mode.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-ind-0040",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25569003",
+              "display": "ventricular tachycardia"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    }
+  }
+}

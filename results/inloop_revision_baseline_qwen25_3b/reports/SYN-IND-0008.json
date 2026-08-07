@@ -1,0 +1,179 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0008",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic ambulatory monitoring clinic reported a routine software validation finding for the complete atrioventricular block detection pathway. The synthetic incident narrative references a prior unrelated deployment log as if it supported this case; that citation does not actually describe this device or this event. No patient-facing exposure occurred and the engineering finding was fully contained pre-release or resolved as a non-event.",
+  "model_token_counts": {
+    "completion": 368,
+    "prompt": 1830
+  },
+  "raw_content": "{\n    \"severity\": 1,\n    \"confidence\": 0.95,\n    \"recommendation\": \"NO_ACTION\",\n    \"rationale\": \"The synthetic incident narrative describes a routine software validation finding for the complete atrioventricular block detection pathway, which was contained pre-release and caused no patient exposure. The regulatory context supports that manufacturers must document and maintain procedures to ensure labeling and packaging integrity, including accuracy prior to release or storage where applicable. No patient-facing exposure occurred in this case, and the engineering finding was fully contained before clinical deployment.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"mdr-annexI-sec17.4-it-security\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements\"\n        },\n        {\n            \"artifact_id\": \"qmsr-820.45-labeling\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls\"\n        },\n        {\n            \"artifact_id\": \"mdr-art83-pms-system\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer\"\n        },\n        {\n            \"artifact_id\": \"mdr-annexI-sec17.2-software-lifecycle\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity\"\n        }\n    ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements"
+      },
+      {
+        "artifact_id": "qmsr-820.45-labeling",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls"
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer"
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity"
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic incident narrative describes a routine software validation finding for the complete atrioventricular block detection pathway, which was contained pre-release and caused no patient exposure. The regulatory context supports that manufacturers must document and maintain procedures to ensure labeling and packaging integrity, including accuracy prior to release or storage where applicable. No patient-facing exposure occurred in this case, and the engineering finding was fully contained before clinical deployment.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.3333,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+          "claim": "The synthetic incident narrative describes a routine software validation finding for the complete atrioventricular block detection pathway, which was contained pre-release and caused no patient exposure.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+          "claim": "The regulatory context supports that manufacturers must document and maintain procedures to ensure labeling and packaging integrity, including accuracy prior to release or storage where applicable.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+          "claim": "No patient-facing exposure occurred in this case, and the engineering finding was fully contained before clinical deployment.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-annexI-sec17.4-it-security",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements"
+        },
+        {
+          "artifact_id": "qmsr-820.45-labeling",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls"
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer"
+        },
+        {
+          "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity"
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic incident narrative describes a routine software validation finding for the complete atrioventricular block detection pathway, which was contained pre-release and caused no patient exposure. The regulatory context supports that manufacturers must document and maintain procedures to ensure labeling and packaging integrity, including accuracy prior to release or storage where applicable. No patient-facing exposure occurred in this case, and the engineering finding was fully contained before clinical deployment.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": [
+      "The synthetic incident narrative describes a routine software validation finding for the complete atrioventricular block detection pathway, which was contained pre-release and caused no patient exposure.",
+      "No patient-facing exposure occurred in this case, and the engineering finding was fully contained before clinical deployment."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+        "claim": "The synthetic incident narrative describes a routine software validation finding for the complete atrioventricular block detection pathway, which was contained pre-release and caused no patient exposure.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+        "claim": "The regulatory context supports that manufacturers must document and maintain procedures to ensure labeling and packaging integrity, including accuracy prior to release or storage where applicable.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+        "claim": "No patient-facing exposure occurred in this case, and the engineering finding was fully contained before clinical deployment.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements"
+      },
+      {
+        "artifact_id": "qmsr-820.45-labeling",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls"
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer"
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity"
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic incident narrative describes a routine software validation finding for the complete atrioventricular block detection pathway, which was contained pre-release and caused no patient exposure. The regulatory context supports that manufacturers must document and maintain procedures to ensure labeling and packaging integrity, including accuracy prior to release or storage where applicable. No patient-facing exposure occurred in this case, and the engineering finding was fully contained before clinical deployment.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

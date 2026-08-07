@@ -1,0 +1,43 @@
+{
+  "sources": {
+    "/root/Desktop/BioDevOps/si_scaling_sweep_2026/results/redundancy_audit/qwen25_decomposition.json": "c80f376c415ab093dbe810fcaefa3922a149f79498290db9fc273559f7e3f4bb"
+  },
+  "rows": [
+    {
+      "model": "qwen2.5:1.5b",
+      "status": "OK",
+      "opa_only": 16,
+      "shacl_only": 4,
+      "overlap": 13,
+      "neither": 7,
+      "overlap_structural": 12,
+      "overlap_genuine": 1,
+      "raw_union_yield": "33/40=0.825",
+      "genuine_incremental_shacl_value": "5/40=0.125"
+    },
+    {
+      "model": "qwen2.5:3b",
+      "status": "OK",
+      "opa_only": 16,
+      "shacl_only": 6,
+      "overlap": 3,
+      "neither": 15,
+      "overlap_structural": 2,
+      "overlap_genuine": 1,
+      "raw_union_yield": "25/40=0.625",
+      "genuine_incremental_shacl_value": "7/40=0.175"
+    },
+    {
+      "model": "qwen2.5:7b",
+      "status": "OK",
+      "opa_only": 14,
+      "shacl_only": 12,
+      "overlap": 10,
+      "neither": 4,
+      "overlap_structural": 4,
+      "overlap_genuine": 0,
+      "raw_union_yield": "36/40=0.900",
+      "genuine_incremental_shacl_value": "12/40=0.300"
+    }
+  ]
+}

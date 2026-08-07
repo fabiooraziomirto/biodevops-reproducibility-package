@@ -1,0 +1,28 @@
+---Trace---
+------State 0 (loop)-------
+univ={HumanActor$0, Stage$0, Component$0, Gate2$0, Gate2$1, Time$0, Time$1, Time$2, Time$3, Time$4, Time$5, Time$6, Time$7, Time$8, Time$9, Time$10, Time$11, SystemState$0, SystemState$1, SystemState$2, SystemState$3, SystemState$4, SystemState$5, SystemState$6, SystemState$7, SystemState$8, SystemState$9, SystemState$10, SystemState$11, ordering/Ord$0, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
+Int={-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
+seq/Int={0, 1, 2, 3}
+String={}
+none={}
+this/Agent={}
+this/HumanActor={HumanActor$0}
+this/Actor={HumanActor$0}
+this/Stage={Stage$0}
+this/Component={Component$0}
+this/Gate2={Gate2$0, Gate2$1}
+this/Time={Time$0, Time$1, Time$2, Time$3, Time$4, Time$5, Time$6, Time$7, Time$8, Time$9, Time$10, Time$11}
+this/SystemState={SystemState$0, SystemState$1, SystemState$2, SystemState$3, SystemState$4, SystemState$5, SystemState$6, SystemState$7, SystemState$8, SystemState$9, SystemState$10, SystemState$11}
+this/SystemState<:time={SystemState$0->Time$1, SystemState$1->Time$0, SystemState$2->Time$11, SystemState$3->Time$10, SystemState$4->Time$9, SystemState$5->Time$8, SystemState$6->Time$7, SystemState$7->Time$6, SystemState$8->Time$5, SystemState$9->Time$3, SystemState$10->Time$2, SystemState$11->Time$4}
+this/SystemState<:canExecute={SystemState$2->HumanActor$0->Stage$0, SystemState$3->HumanActor$0->Stage$0, SystemState$4->HumanActor$0->Stage$0, SystemState$5->HumanActor$0->Stage$0, SystemState$6->HumanActor$0->Stage$0, SystemState$7->HumanActor$0->Stage$0, SystemState$8->HumanActor$0->Stage$0, SystemState$11->HumanActor$0->Stage$0}
+this/SystemState<:canDeploy={SystemState$2->HumanActor$0->Component$0, SystemState$3->HumanActor$0->Component$0, SystemState$4->HumanActor$0->Component$0, SystemState$5->HumanActor$0->Component$0, SystemState$6->HumanActor$0->Component$0, SystemState$7->HumanActor$0->Component$0, SystemState$8->HumanActor$0->Component$0, SystemState$11->HumanActor$0->Component$0}
+this/SystemState<:gateApproved={SystemState$2->Gate2$1, SystemState$3->Gate2$1, SystemState$4->Gate2$1, SystemState$5->Gate2$1, SystemState$6->Gate2$1, SystemState$7->Gate2$1, SystemState$8->Gate2$1, SystemState$9->Gate2$1, SystemState$10->Gate2$1, SystemState$11->Gate2$1}
+this/SystemState<:recommended={SystemState$0->HumanActor$0->Gate2$0, SystemState$2->HumanActor$0->Gate2$0, SystemState$3->HumanActor$0->Gate2$0, SystemState$4->HumanActor$0->Gate2$0, SystemState$5->HumanActor$0->Gate2$0, SystemState$6->HumanActor$0->Gate2$0, SystemState$7->HumanActor$0->Gate2$0, SystemState$8->HumanActor$0->Gate2$0, SystemState$9->HumanActor$0->Gate2$0, SystemState$10->HumanActor$0->Gate2$0, SystemState$11->HumanActor$0->Gate2$0}
+ordering/Ord={ordering/Ord$0}
+ordering/Ord<:First={ordering/Ord$0->Time$0}
+ordering/Ord<:Next={ordering/Ord$0->Time$0->Time$1, ordering/Ord$0->Time$1->Time$2, ordering/Ord$0->Time$2->Time$3, ordering/Ord$0->Time$3->Time$4, ordering/Ord$0->Time$4->Time$5, ordering/Ord$0->Time$5->Time$6, ordering/Ord$0->Time$6->Time$7, ordering/Ord$0->Time$7->Time$8, ordering/Ord$0->Time$8->Time$9, ordering/Ord$0->Time$9->Time$10, ordering/Ord$0->Time$10->Time$11}
+skolem $sanityChainIsNontrivial_t={Time$11}
+skolem $sanityChainIsNontrivial_s={SystemState$11}
+skolem $sanityChainIsNontrivial_h={HumanActor$0}
+skolem $sanityChainIsNontrivial_st={Stage$0}
+

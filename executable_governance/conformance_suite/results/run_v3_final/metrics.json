@@ -1,0 +1,378 @@
+{
+  "class_level_primary": {
+    "opa": {
+      "sensitivity": {
+        "class_units": 3,
+        "estimate": 1.0,
+        "successful_classes": 3,
+        "wilson_95": [
+          0.4385,
+          1.0
+        ]
+      },
+      "specificity": {
+        "class_units": 5,
+        "estimate": 1.0,
+        "successful_classes": 5,
+        "wilson_95": [
+          0.5655,
+          1.0
+        ]
+      }
+    },
+    "shacl": {
+      "sensitivity": {
+        "class_units": 4,
+        "estimate": 1.0,
+        "successful_classes": 4,
+        "wilson_95": [
+          0.5101,
+          1.0
+        ]
+      },
+      "specificity": {
+        "class_units": 6,
+        "estimate": 1.0,
+        "successful_classes": 6,
+        "wilson_95": [
+          0.6097,
+          1.0
+        ]
+      }
+    }
+  },
+  "method": {
+    "opa_positive": "deny, policy action, or recommendation override; default human review excluded",
+    "primary": "class-level all-rows-correct Wilson; correlated rows within a class",
+    "secondary": "row-level descriptive Wilson",
+    "shacl_positive": "ontology_conforms == false excluding informational-only messages"
+  },
+  "per_class_row_level": {
+    "1": {
+      "opa": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 0,
+        "TP": 0,
+        "negative_denominator": 0,
+        "positive_denominator": 0,
+        "sensitivity": null,
+        "sensitivity_wilson_95": null,
+        "specificity": null,
+        "specificity_wilson_95": null
+      },
+      "shacl": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 2,
+        "TP": 4,
+        "negative_denominator": 2,
+        "positive_denominator": 4,
+        "sensitivity": 1.0,
+        "sensitivity_wilson_95": [
+          0.5101,
+          1.0
+        ],
+        "specificity": 1.0,
+        "specificity_wilson_95": [
+          0.3424,
+          1.0
+        ]
+      }
+    },
+    "2": {
+      "opa": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 6,
+        "TP": 0,
+        "negative_denominator": 6,
+        "positive_denominator": 0,
+        "sensitivity": null,
+        "sensitivity_wilson_95": null,
+        "specificity": 1.0,
+        "specificity_wilson_95": [
+          0.6097,
+          1.0
+        ]
+      },
+      "shacl": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 6,
+        "TP": 0,
+        "negative_denominator": 6,
+        "positive_denominator": 0,
+        "sensitivity": null,
+        "sensitivity_wilson_95": null,
+        "specificity": 1.0,
+        "specificity_wilson_95": [
+          0.6097,
+          1.0
+        ]
+      }
+    },
+    "3": {
+      "opa": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 6,
+        "TP": 0,
+        "negative_denominator": 6,
+        "positive_denominator": 0,
+        "sensitivity": null,
+        "sensitivity_wilson_95": null,
+        "specificity": 1.0,
+        "specificity_wilson_95": [
+          0.6097,
+          1.0
+        ]
+      },
+      "shacl": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 6,
+        "TP": 0,
+        "negative_denominator": 6,
+        "positive_denominator": 0,
+        "sensitivity": null,
+        "sensitivity_wilson_95": null,
+        "specificity": 1.0,
+        "specificity_wilson_95": [
+          0.6097,
+          1.0
+        ]
+      }
+    },
+    "4": {
+      "opa": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 2,
+        "TP": 4,
+        "negative_denominator": 2,
+        "positive_denominator": 4,
+        "sensitivity": 1.0,
+        "sensitivity_wilson_95": [
+          0.5101,
+          1.0
+        ],
+        "specificity": 1.0,
+        "specificity_wilson_95": [
+          0.3424,
+          1.0
+        ]
+      },
+      "shacl": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 0,
+        "TP": 0,
+        "negative_denominator": 0,
+        "positive_denominator": 0,
+        "sensitivity": null,
+        "sensitivity_wilson_95": null,
+        "specificity": null,
+        "specificity_wilson_95": null
+      }
+    },
+    "5": {
+      "opa": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 0,
+        "TP": 0,
+        "negative_denominator": 0,
+        "positive_denominator": 0,
+        "sensitivity": null,
+        "sensitivity_wilson_95": null,
+        "specificity": null,
+        "specificity_wilson_95": null
+      },
+      "shacl": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 2,
+        "TP": 4,
+        "negative_denominator": 2,
+        "positive_denominator": 4,
+        "sensitivity": 1.0,
+        "sensitivity_wilson_95": [
+          0.5101,
+          1.0
+        ],
+        "specificity": 1.0,
+        "specificity_wilson_95": [
+          0.3424,
+          1.0
+        ]
+      }
+    },
+    "6": {
+      "opa": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 0,
+        "TP": 0,
+        "negative_denominator": 0,
+        "positive_denominator": 0,
+        "sensitivity": null,
+        "sensitivity_wilson_95": null,
+        "specificity": null,
+        "specificity_wilson_95": null
+      },
+      "shacl": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 2,
+        "TP": 4,
+        "negative_denominator": 2,
+        "positive_denominator": 4,
+        "sensitivity": 1.0,
+        "sensitivity_wilson_95": [
+          0.5101,
+          1.0
+        ],
+        "specificity": 1.0,
+        "specificity_wilson_95": [
+          0.3424,
+          1.0
+        ]
+      }
+    },
+    "7": {
+      "opa": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 2,
+        "TP": 4,
+        "negative_denominator": 2,
+        "positive_denominator": 4,
+        "sensitivity": 1.0,
+        "sensitivity_wilson_95": [
+          0.5101,
+          1.0
+        ],
+        "specificity": 1.0,
+        "specificity_wilson_95": [
+          0.3424,
+          1.0
+        ]
+      },
+      "shacl": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 0,
+        "TP": 0,
+        "negative_denominator": 0,
+        "positive_denominator": 0,
+        "sensitivity": null,
+        "sensitivity_wilson_95": null,
+        "specificity": null,
+        "specificity_wilson_95": null
+      }
+    },
+    "8": {
+      "opa": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 0,
+        "TP": 0,
+        "negative_denominator": 0,
+        "positive_denominator": 0,
+        "sensitivity": null,
+        "sensitivity_wilson_95": null,
+        "specificity": null,
+        "specificity_wilson_95": null
+      },
+      "shacl": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 2,
+        "TP": 4,
+        "negative_denominator": 2,
+        "positive_denominator": 4,
+        "sensitivity": 1.0,
+        "sensitivity_wilson_95": [
+          0.5101,
+          1.0
+        ],
+        "specificity": 1.0,
+        "specificity_wilson_95": [
+          0.3424,
+          1.0
+        ]
+      }
+    },
+    "9": {
+      "opa": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 2,
+        "TP": 4,
+        "negative_denominator": 2,
+        "positive_denominator": 4,
+        "sensitivity": 1.0,
+        "sensitivity_wilson_95": [
+          0.5101,
+          1.0
+        ],
+        "specificity": 1.0,
+        "specificity_wilson_95": [
+          0.3424,
+          1.0
+        ]
+      },
+      "shacl": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 0,
+        "TP": 0,
+        "negative_denominator": 0,
+        "positive_denominator": 0,
+        "sensitivity": null,
+        "sensitivity_wilson_95": null,
+        "specificity": null,
+        "specificity_wilson_95": null
+      }
+    }
+  },
+  "row_level": {
+    "opa": {
+      "FN": 0,
+      "FP": 0,
+      "TN": 18,
+      "TP": 12,
+      "negative_denominator": 18,
+      "positive_denominator": 12,
+      "sensitivity": 1.0,
+      "sensitivity_wilson_95": [
+        0.7575,
+        1.0
+      ],
+      "specificity": 1.0,
+      "specificity_wilson_95": [
+        0.8241,
+        1.0
+      ]
+    },
+    "shacl": {
+      "FN": 0,
+      "FP": 0,
+      "TN": 20,
+      "TP": 16,
+      "negative_denominator": 20,
+      "positive_denominator": 16,
+      "sensitivity": 1.0,
+      "sensitivity_wilson_95": [
+        0.8064,
+        1.0
+      ],
+      "specificity": 1.0,
+      "specificity_wilson_95": [
+        0.8389,
+        1.0
+      ]
+    }
+  }
+}

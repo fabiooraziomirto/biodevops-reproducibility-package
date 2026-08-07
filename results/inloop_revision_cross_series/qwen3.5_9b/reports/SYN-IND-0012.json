@@ -1,0 +1,243 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0012",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic regional hospital ICU reported a minor, non-recurrent ventricular tachycardia-adjacent irregularity with no adverse patient outcome recorded. The retrospective clinician note documenting this ventricular tachycardia-adjacent irregularity was never filed, so recurrence cannot yet be ruled out from the record alone. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+  "model_token_counts": {
+    "completion": 824,
+    "prompt": 2200
+  },
+  "raw_content": "{\n  \"severity\": 2,\n  \"confidence\": 0.45,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident describes a 'minor' irregularity with no adverse outcome recorded; however, the narrative explicitly states that clinician notes were never filed and recurrence cannot be ruled out from records alone. This lack of documentation prevents verification of whether the event was truly isolated or part of a pattern (missing evidence: EHR logs). Furthermore, there is no retrieved test log specifically validating device performance during 'ventricular tachycardia-adjacent irregularities' for relevant releases; only unrelated static analysis and logs for 'missed complete atrioventricular block' are available. Due to the inability to confirm non-recurrence or validate specific V-Tach adjacent handling, a formal investigation is required under Design Controls (qmsr-820.10-c-design-development) and Post-Market Surveillance obligations (mdr-art83-pms-system). The severity remains 2 because no harm was realized and the event appears contained to monitoring/investigation levels pending further data collection, rather than escalating immediately to field action without confirmed recurrence or serious impact.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-STATICANALYSIS-2014A\",\n      \"artifact_type\": \"static_analysis_output\",\n      \"relevance_note\": \"Cited to demonstrate the absence of relevant static analysis data for this specific event; the retrieved artifact is explicitly noted as unrelated.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-STATICANALYSIS-2018A\",\n      \"artifact_type\": \"static_analysis_output\",\n      \"relevance_note\": \"Cited to demonstrate the absence of relevant static analysis data for this specific event; the retrieved artifact is explicitly noted as unrelated.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2023A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Cited to highlight that available test logs pertain only to 'missed complete atrioventricular block' and do not validate performance for the reported 'ventricular tachycardia-adjacent irregularity', representing a gap in validation evidence.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2027A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Cited to highlight that available test logs pertain only to 'missed complete atrioventricular block' and do not validate performance for the reported 'ventricular tachycardia-adjacent irregularity', representing a gap in validation evidence.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.10-c-design-development\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Supports the requirement to document design controls and investigate issues that may affect device safety, necessitating a CAPA investigation due to missing documentation.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Supports the obligation to actively gather and analyze relevant data on device safety throughout its lifetime, justifying the need for further investigation given incomplete records.\"\n    }\n  ],\n  \"missing_evidence\": [\n    \"Original clinician notes or electronic health record (EHR) logs for the specific ICU case in question to verify if the event was truly non-recurrent.\",\n    \"Test results specifically validating the device's performance during ventricular tachycardia-adjacent irregularities for releases prior to and including the current version.\"\n  ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "Missing or contradictory evidence flagged: Original clinician notes or electronic health record (EHR) logs for the specific ICU case in question to verify if the event was truly non-recurrent.; Test results specifically validating the device's performance during ventricular tachycardia-adjacent irregularities for releases prior to and including the current version.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.45,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Cited to demonstrate the absence of relevant static analysis data for this specific event; the retrieved artifact is explicitly noted as unrelated."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Cited to demonstrate the absence of relevant static analysis data for this specific event; the retrieved artifact is explicitly noted as unrelated."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Cited to highlight that available test logs pertain only to 'missed complete atrioventricular block' and do not validate performance for the reported 'ventricular tachycardia-adjacent irregularity', representing a gap in validation evidence."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Cited to highlight that available test logs pertain only to 'missed complete atrioventricular block' and do not validate performance for the reported 'ventricular tachycardia-adjacent irregularity', representing a gap in validation evidence."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the requirement to document design controls and investigate issues that may affect device safety, necessitating a CAPA investigation due to missing documentation."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the obligation to actively gather and analyze relevant data on device safety throughout its lifetime, justifying the need for further investigation given incomplete records."
+      }
+    ],
+    "missing_evidence": [
+      "Original clinician notes or electronic health record (EHR) logs for the specific ICU case in question to verify if the event was truly non-recurrent.",
+      "Test results specifically validating the device's performance during ventricular tachycardia-adjacent irregularities for releases prior to and including the current version."
+    ],
+    "rationale": "The incident describes a 'minor' irregularity with no adverse outcome recorded; however, the narrative explicitly states that clinician notes were never filed and recurrence cannot be ruled out from records alone. This lack of documentation prevents verification of whether the event was truly isolated or part of a pattern (missing evidence: EHR logs). Furthermore, there is no retrieved test log specifically validating device performance during 'ventricular tachycardia-adjacent irregularities' for relevant releases; only unrelated static analysis and logs for 'missed complete atrioventricular block' are available. Due to the inability to confirm non-recurrence or validate specific V-Tach adjacent handling, a formal investigation is required under Design Controls (qmsr-820.10-c-design-development) and Post-Market Surveillance obligations (mdr-art83-pms-system). The severity remains 2 because no harm was realized and the event appears contained to monitoring/investigation levels pending further data collection, rather than escalating immediately to field action without confirmed recurrence or serious impact.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 2
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.4,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "claim": "The incident describes a 'minor' irregularity with no adverse outcome recorded; however, the narrative explicitly states that clinician notes were never filed and recurrence cannot be ruled out from records alone.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "claim": "This lack of documentation prevents verification of whether the event was truly isolated or part of a pattern (missing evidence: EHR logs).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "claim": "Furthermore, there is no retrieved test log specifically validating device performance during 'ventricular tachycardia-adjacent irregularities' for relevant releases; only unrelated static analysis and logs for 'missed complete atrioventricular block' are available.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "claim": "Due to the inability to confirm non-recurrence or validate specific V-Tach adjacent handling, a formal investigation is required under Design Controls (qmsr-820.10-c-design-development) and Post-Market Surveillance obligations (mdr-art83-pms-system).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "claim": "The severity remains 2 because no harm was realized and the event appears contained to monitoring/investigation levels pending further data collection, rather than escalating immediately to field action without confirmed recurrence or serious impact.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.45,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "artifact_type": "static_analysis_output",
+          "relevance_note": "Cited to demonstrate the absence of relevant static analysis data for this specific event; the retrieved artifact is explicitly noted as unrelated."
+        },
+        {
+          "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+          "artifact_type": "static_analysis_output",
+          "relevance_note": "Cited to demonstrate the absence of relevant static analysis data for this specific event; the retrieved artifact is explicitly noted as unrelated."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "artifact_type": "test_log",
+          "relevance_note": "Cited to highlight that available test logs pertain only to 'missed complete atrioventricular block' and do not validate performance for the reported 'ventricular tachycardia-adjacent irregularity', representing a gap in validation evidence."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "artifact_type": "test_log",
+          "relevance_note": "Cited to highlight that available test logs pertain only to 'missed complete atrioventricular block' and do not validate performance for the reported 'ventricular tachycardia-adjacent irregularity', representing a gap in validation evidence."
+        },
+        {
+          "artifact_id": "qmsr-820.10-c-design-development",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Supports the requirement to document design controls and investigate issues that may affect device safety, necessitating a CAPA investigation due to missing documentation."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Supports the obligation to actively gather and analyze relevant data on device safety throughout its lifetime, justifying the need for further investigation given incomplete records."
+        }
+      ],
+      "missing_evidence": [
+        "Original clinician notes or electronic health record (EHR) logs for the specific ICU case in question to verify if the event was truly non-recurrent.",
+        "Test results specifically validating the device's performance during ventricular tachycardia-adjacent irregularities for releases prior to and including the current version."
+      ],
+      "rationale": "The incident describes a 'minor' irregularity with no adverse outcome recorded; however, the narrative explicitly states that clinician notes were never filed and recurrence cannot be ruled out from records alone. This lack of documentation prevents verification of whether the event was truly isolated or part of a pattern (missing evidence: EHR logs). Furthermore, there is no retrieved test log specifically validating device performance during 'ventricular tachycardia-adjacent irregularities' for relevant releases; only unrelated static analysis and logs for 'missed complete atrioventricular block' are available. Due to the inability to confirm non-recurrence or validate specific V-Tach adjacent handling, a formal investigation is required under Design Controls (qmsr-820.10-c-design-development) and Post-Market Surveillance obligations (mdr-art83-pms-system). The severity remains 2 because no harm was realized and the event appears contained to monitoring/investigation levels pending further data collection, rather than escalating immediately to field action without confirmed recurrence or serious impact.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": [
+      "The incident describes a 'minor' irregularity with no adverse outcome recorded; however, the narrative explicitly states that clinician notes were never filed and recurrence cannot be ruled out from records alone.",
+      "This lack of documentation prevents verification of whether the event was truly isolated or part of a pattern (missing evidence: EHR logs).",
+      "Due to the inability to confirm non-recurrence or validate specific V-Tach adjacent handling, a formal investigation is required under Design Controls (qmsr-820.10-c-design-development) and Post-Market Surveillance obligations (mdr-art83-pms-system)."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "claim": "The incident describes a 'minor' irregularity with no adverse outcome recorded; however, the narrative explicitly states that clinician notes were never filed and recurrence cannot be ruled out from records alone.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "claim": "This lack of documentation prevents verification of whether the event was truly isolated or part of a pattern (missing evidence: EHR logs).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "claim": "Furthermore, there is no retrieved test log specifically validating device performance during 'ventricular tachycardia-adjacent irregularities' for relevant releases; only unrelated static analysis and logs for 'missed complete atrioventricular block' are available.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "claim": "Due to the inability to confirm non-recurrence or validate specific V-Tach adjacent handling, a formal investigation is required under Design Controls (qmsr-820.10-c-design-development) and Post-Market Surveillance obligations (mdr-art83-pms-system).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "claim": "The severity remains 2 because no harm was realized and the event appears contained to monitoring/investigation levels pending further data collection, rather than escalating immediately to field action without confirmed recurrence or serious impact.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.45,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Cited to demonstrate the absence of relevant static analysis data for this specific event; the retrieved artifact is explicitly noted as unrelated."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Cited to demonstrate the absence of relevant static analysis data for this specific event; the retrieved artifact is explicitly noted as unrelated."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Cited to highlight that available test logs pertain only to 'missed complete atrioventricular block' and do not validate performance for the reported 'ventricular tachycardia-adjacent irregularity', representing a gap in validation evidence."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Cited to highlight that available test logs pertain only to 'missed complete atrioventricular block' and do not validate performance for the reported 'ventricular tachycardia-adjacent irregularity', representing a gap in validation evidence."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the requirement to document design controls and investigate issues that may affect device safety, necessitating a CAPA investigation due to missing documentation."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the obligation to actively gather and analyze relevant data on device safety throughout its lifetime, justifying the need for further investigation given incomplete records."
+      }
+    ],
+    "missing_evidence": [
+      "Original clinician notes or electronic health record (EHR) logs for the specific ICU case in question to verify if the event was truly non-recurrent.",
+      "Test results specifically validating the device's performance during ventricular tachycardia-adjacent irregularities for releases prior to and including the current version."
+    ],
+    "rationale": "The incident describes a 'minor' irregularity with no adverse outcome recorded; however, the narrative explicitly states that clinician notes were never filed and recurrence cannot be ruled out from records alone. This lack of documentation prevents verification of whether the event was truly isolated or part of a pattern (missing evidence: EHR logs). Furthermore, there is no retrieved test log specifically validating device performance during 'ventricular tachycardia-adjacent irregularities' for relevant releases; only unrelated static analysis and logs for 'missed complete atrioventricular block' are available. Due to the inability to confirm non-recurrence or validate specific V-Tach adjacent handling, a formal investigation is required under Design Controls (qmsr-820.10-c-design-development) and Post-Market Surveillance obligations (mdr-art83-pms-system). The severity remains 2 because no harm was realized and the event appears contained to monitoring/investigation levels pending further data collection, rather than escalating immediately to field action without confirmed recurrence or serious impact.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  }
+}

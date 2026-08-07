@@ -1,0 +1,187 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0020",
+    "clinical_inconsistency_class": "none",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic remote monitoring center reported a minor, non-recurrent ventricular tachycardia-adjacent irregularity with no adverse patient outcome recorded. The retrospective clinician note documenting this ventricular tachycardia-adjacent irregularity was never filed, so recurrence cannot yet be ruled out from the record alone. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+  "model_token_counts": {
+    "completion": 901,
+    "prompt": 2231
+  },
+  "raw_content": "{\n  \"severity\": 2,\n  \"confidence\": 0.45,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident narrative describes a 'minor, non-recurrent ventricular tachycardia-adjacent irregularity' with no adverse outcome recorded and the clinician note never filed. This indicates low patient-safety impact (Severity 2) rather than realized harm or serious potential failure in a safety-critical function that would warrant Severity 3/4 without further evidence of recurrence or population exposure. However, because the retrospective record is incomplete ('never filed') and it cannot be ruled out from records alone, there is uncertainty regarding whether this was a true detection failure, noise artifact, or benign variant. The retrieved technical artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) document 'missed complete atrioventricular block' episodes in different releases but do not explicitly describe the specific 'ventricular tachycardia-adjacent irregularity' event mentioned in the narrative. Therefore, we cannot ground a definitive technical causality or validation judgment solely on these unrelated logs without risking fabricating evidence links for an unmentioned artifact type (e.g., incident_report). The regulatory context confirms obligations to document complaints and analyze data (qmsr-820.10-b-regulatory-crossrefs; mdr-art83-pms-system), but does not override the need for specific technical grounding of this particular event's nature.\",\n  \"claim_support\": [\n    {\n      \"claim\": \"The incident involves a minor irregularity with no adverse outcome recorded, suggesting low immediate patient-safety impact.\",\n      \"cited_artifact_id\": \"\",\n      \"support_status\": \"weakly_supported\",\n      \"support_note\": \"Supported by the input narrative text itself; however, regulatory context (qmsr-820.10-b-regulatory-crossrefs) requires analysis of such complaints but does not confirm severity without technical grounding.\"\n    },\n    {\n      \"claim\": \"The retrospective clinician note was never filed, creating uncertainty about recurrence or event nature.\",\n      \"cited_artifact_id\": \"\",\n      \"support_status\": \"supported\",\n      \"support_note\": \"Directly stated in the input narrative; no technical artifact exists to confirm if this is a data gap vs. non-event.\"\n    },\n    {\n      \"claim\": \"Retrieved test logs (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) describe missed complete atrioventricular block episodes but do not explicitly document the 'ventricular tachycardia-adjacent irregularity' event.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2023A\",\n      \"support_status\": \"weakly_supported\",\n      \"support_note\": \"The artifact exists and is relevant to device performance testing, but its content (missed AV block) does not match the specific event type in the narrative. Citing it supports general need for monitoring missed events but cannot ground a claim about this specific irregularity.\"\n    },\n    {\n      \"claim\": \"Regulatory requirements mandate analysis of such complaints and data gathering throughout device lifetime.\",\n      \"cited_artifact_id\": \"qmsr-820.10-b-regulatory-crossrefs\",\n      \"support_status\": \"supported\",\n      \"support_note\": \"Explicitly requires notification for reporting criteria (part 803) and handling of advisory notices; also references ISO 13485 Clause 7.5.9.1 on traceability which may apply if this event needs unique ID tracking.\"\n    },\n    {\n      \"claim\": \"Post-market surveillance system must actively gather, record, and analyze relevant data to determine corrective actions.\",\n      \"cited_artifact_id\": \"mdr-art83-pms-system\",\n      \"support_status\": \"supported\",\n      \"support_note\": \"Mandates systematic analysis of safety/performance data; supports the need for CAPA investigation given incomplete records.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: technical_incident_missing_technical_evidence; deny:technical_incident_missing_technical_evidence\nMissing or contradictory evidence flagged: A specific incident report or test log documenting this exact 'ventricular tachycardia-adjacent irregularity' event.; Clinical data confirming whether the reported irregularity was a true device detection failure, an artifact of noise, or a benign physiological variant.; At least one retrieved technical artifact supporting the incident judgment.",
+  "risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "",
+        "claim": "The incident involves a minor irregularity with no adverse outcome recorded, suggesting low immediate patient-safety impact.",
+        "support_note": "Supported by the input narrative text itself; however, regulatory context (qmsr-820.10-b-regulatory-crossrefs) requires analysis of such complaints but does not confirm severity without technical grounding.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "The retrospective clinician note was never filed, creating uncertainty about recurrence or event nature.",
+        "support_note": "Directly stated in the input narrative; no technical artifact exists to confirm if this is a data gap vs. non-event.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "Retrieved test logs (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) describe missed complete atrioventricular block episodes but do not explicitly document the 'ventricular tachycardia-adjacent irregularity' event.",
+        "support_note": "The artifact exists and is relevant to device performance testing, but its content (missed AV block) does not match the specific event type in the narrative. Citing it supports general need for monitoring missed events but cannot ground a claim about this specific irregularity.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+        "claim": "Regulatory requirements mandate analysis of such complaints and data gathering throughout device lifetime.",
+        "support_note": "Explicitly requires notification for reporting criteria (part 803) and handling of advisory notices; also references ISO 13485 Clause 7.5.9.1 on traceability which may apply if this event needs unique ID tracking.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art83-pms-system",
+        "claim": "Post-market surveillance system must actively gather, record, and analyze relevant data to determine corrective actions.",
+        "support_note": "Mandates systematic analysis of safety/performance data; supports the need for CAPA investigation given incomplete records.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.45,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a 'minor, non-recurrent ventricular tachycardia-adjacent irregularity' with no adverse outcome recorded and the clinician note never filed. This indicates low patient-safety impact (Severity 2) rather than realized harm or serious potential failure in a safety-critical function that would warrant Severity 3/4 without further evidence of recurrence or population exposure. However, because the retrospective record is incomplete ('never filed') and it cannot be ruled out from records alone, there is uncertainty regarding whether this was a true detection failure, noise artifact, or benign variant. The retrieved technical artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) document 'missed complete atrioventricular block' episodes in different releases but do not explicitly describe the specific 'ventricular tachycardia-adjacent irregularity' event mentioned in the narrative. Therefore, we cannot ground a definitive technical causality or validation judgment solely on these unrelated logs without risking fabricating evidence links for an unmentioned artifact type (e.g., incident_report). The regulatory context confirms obligations to document complaints and analyze data (qmsr-820.10-b-regulatory-crossrefs; mdr-art83-pms-system), but does not override the need for specific technical grounding of this particular event's nature.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.6,
+    "hallucinated_citations": [],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence",
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "The incident involves a minor irregularity with no adverse outcome recorded, suggesting low immediate patient-safety impact.",
+      "The retrospective clinician note was never filed, creating uncertainty about recurrence or event nature."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "",
+          "claim": "The incident involves a minor irregularity with no adverse outcome recorded, suggesting low immediate patient-safety impact.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "The retrospective clinician note was never filed, creating uncertainty about recurrence or event nature.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "Retrieved test logs (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) describe missed complete atrioventricular block episodes but do not explicitly document the 'ventricular tachycardia-adjacent irregularity' event.",
+          "support_note": "The artifact exists and is relevant to device performance testing, but its content (missed AV block) does not match the specific event type in the narrative. Citing it supports general need for monitoring missed events but cannot ground a claim about this specific irregularity.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+          "claim": "Regulatory requirements mandate analysis of such complaints and data gathering throughout device lifetime.",
+          "support_note": "Explicitly requires notification for reporting criteria (part 803) and handling of advisory notices; also references ISO 13485 Clause 7.5.9.1 on traceability which may apply if this event needs unique ID tracking.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "Post-market surveillance system must actively gather, record, and analyze relevant data to determine corrective actions.",
+          "support_note": "Mandates systematic analysis of safety/performance data; supports the need for CAPA investigation given incomplete records.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.45,
+      "evidence_links": [],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment.",
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident narrative describes a 'minor, non-recurrent ventricular tachycardia-adjacent irregularity' with no adverse outcome recorded and the clinician note never filed. This indicates low patient-safety impact (Severity 2) rather than realized harm or serious potential failure in a safety-critical function that would warrant Severity 3/4 without further evidence of recurrence or population exposure. However, because the retrospective record is incomplete ('never filed') and it cannot be ruled out from records alone, there is uncertainty regarding whether this was a true detection failure, noise artifact, or benign variant. The retrieved technical artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) document 'missed complete atrioventricular block' episodes in different releases but do not explicitly describe the specific 'ventricular tachycardia-adjacent irregularity' event mentioned in the narrative. Therefore, we cannot ground a definitive technical causality or validation judgment solely on these unrelated logs without risking fabricating evidence links for an unmentioned artifact type (e.g., incident_report). The regulatory context confirms obligations to document complaints and analyze data (qmsr-820.10-b-regulatory-crossrefs; mdr-art83-pms-system), but does not override the need for specific technical grounding of this particular event's nature.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": []
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "",
+        "claim": "The incident involves a minor irregularity with no adverse outcome recorded, suggesting low immediate patient-safety impact.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "The retrospective clinician note was never filed, creating uncertainty about recurrence or event nature.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "Retrieved test logs (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) describe missed complete atrioventricular block episodes but do not explicitly document the 'ventricular tachycardia-adjacent irregularity' event.",
+        "support_note": "The artifact exists and is relevant to device performance testing, but its content (missed AV block) does not match the specific event type in the narrative. Citing it supports general need for monitoring missed events but cannot ground a claim about this specific irregularity.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+        "claim": "Regulatory requirements mandate analysis of such complaints and data gathering throughout device lifetime.",
+        "support_note": "Explicitly requires notification for reporting criteria (part 803) and handling of advisory notices; also references ISO 13485 Clause 7.5.9.1 on traceability which may apply if this event needs unique ID tracking.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art83-pms-system",
+        "claim": "Post-market surveillance system must actively gather, record, and analyze relevant data to determine corrective actions.",
+        "support_note": "Mandates systematic analysis of safety/performance data; supports the need for CAPA investigation given incomplete records.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.45,
+    "evidence_links": [],
+    "missing_evidence": [
+      "At least one retrieved technical artifact supporting the incident judgment.",
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident narrative describes a 'minor, non-recurrent ventricular tachycardia-adjacent irregularity' with no adverse outcome recorded and the clinician note never filed. This indicates low patient-safety impact (Severity 2) rather than realized harm or serious potential failure in a safety-critical function that would warrant Severity 3/4 without further evidence of recurrence or population exposure. However, because the retrospective record is incomplete ('never filed') and it cannot be ruled out from records alone, there is uncertainty regarding whether this was a true detection failure, noise artifact, or benign variant. The retrieved technical artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) document 'missed complete atrioventricular block' episodes in different releases but do not explicitly describe the specific 'ventricular tachycardia-adjacent irregularity' event mentioned in the narrative. Therefore, we cannot ground a definitive technical causality or validation judgment solely on these unrelated logs without risking fabricating evidence links for an unmentioned artifact type (e.g., incident_report). The regulatory context confirms obligations to document complaints and analyze data (qmsr-820.10-b-regulatory-crossrefs; mdr-art83-pms-system), but does not override the need for specific technical grounding of this particular event's nature.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  }
+}

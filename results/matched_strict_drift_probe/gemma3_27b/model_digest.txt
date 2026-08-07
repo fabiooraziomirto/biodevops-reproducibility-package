@@ -1,0 +1,1 @@
+gemma3:27b digest(modelfile_sha256)=d0a80260c8975af3ebce4ed857055c26821dbada80aaed326b1dc1f1efa467a6

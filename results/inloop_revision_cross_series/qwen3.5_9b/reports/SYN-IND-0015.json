@@ -1,0 +1,207 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0015",
+    "clinical_inconsistency_class": "concept_severity_undercall",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 1 is below derived clinical floor 2. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic ambulatory monitoring clinic reported a minor, non-recurrent atrial fibrillation-adjacent irregularity with no adverse patient outcome recorded. Device logs and a retrospective clinician review both confirm a brief, self-resolving atrial fibrillation-adjacent irregularity with no adverse outcome; recurrence risk is being tracked. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+  "model_token_counts": {
+    "completion": 502,
+    "prompt": 2079
+  },
+  "raw_content": "{\n  \"severity\": 1,\n  \"confidence\": 0.92,\n  \"recommendation\": \"NO_ACTION\",\n  \"rationale\": \"The incident narrative describes a minor, non-recurrent atrial fibrillation-adjacent irregularity with no adverse patient outcome and confirmed self-resolution via logs and clinician review. The event was contained before any serious harm could occur (Severity 1). No technical artifacts directly describe this specific clinical event; the retrieved static analysis reports (ARTIFACT-STATICANALYSIS-2014A, ARTIFACT-STATICANALYSIS-2018A) and test logs (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) are explicitly noted as synthetic or unrelated to this specific incident. Therefore, no technical causality can be grounded in the provided artifacts for this narrative. The handling aligns with regulatory obligations under qmsr-820.10-b-regulatory-crossrefs (Clause 8.2.3 Reporting and Clause 7.5.9 Traceability) to document complaints or events proportionate to risk, but since no reporting criteria were met (no serious harm), immediate field action is not required.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"qmsr-820.10-b-regulatory-crossrefs\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Supports the obligation to document complaints and traceability for events, though no reporting threshold was met in this case.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.10-c-design-development\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Establishes the design controls context under which such events are evaluated, though no specific failure in this event required CAPA.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Supports the requirement for a post-market surveillance system to gather and analyze data on device safety, which is being utilized here via retrospective review.\"\n    }\n  ],\n  \"requires_human_review\": false\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.92,
+    "evidence_links": [
+      {
+        "artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the obligation to document complaints and traceability for events, though no reporting threshold was met in this case."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes the design controls context under which such events are evaluated, though no specific failure in this event required CAPA."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the requirement for a post-market surveillance system to gather and analyze data on device safety, which is being utilized here via retrospective review."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a minor, non-recurrent atrial fibrillation-adjacent irregularity with no adverse patient outcome and confirmed self-resolution via logs and clinician review. The event was contained before any serious harm could occur (Severity 1). No technical artifacts directly describe this specific clinical event; the retrieved static analysis reports (ARTIFACT-STATICANALYSIS-2014A, ARTIFACT-STATICANALYSIS-2018A) and test logs (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) are explicitly noted as synthetic or unrelated to this specific incident. Therefore, no technical causality can be grounded in the provided artifacts for this narrative. The handling aligns with regulatory obligations under qmsr-820.10-b-regulatory-crossrefs (Clause 8.2.3 Reporting and Clause 7.5.9 Traceability) to document complaints or events proportionate to risk, but since no reporting criteria were met (no serious harm), immediate field action is not required.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.2,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+          "claim": "The incident narrative describes a minor, non-recurrent atrial fibrillation-adjacent irregularity with no adverse patient outcome and confirmed self-resolution via logs and clinician review.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+          "claim": "The event was contained before any serious harm could occur (Severity 1).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+          "claim": "No technical artifacts directly describe this specific clinical event; the retrieved static analysis reports (ARTIFACT-STATICANALYSIS-2014A, ARTIFACT-STATICANALYSIS-2018A) and test logs (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) are explicitly noted as synthetic or unrelated to this specific incident.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+          "claim": "Therefore, no technical causality can be grounded in the provided artifacts for this narrative.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+          "claim": "The handling aligns with regulatory obligations under qmsr-820.10-b-regulatory-crossrefs (Clause 8.2.3 Reporting and Clause 7.5.9 Traceability) to document complaints or events proportionate to risk, but since no reporting criteria were met (no serious harm), immediate field action is not required.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.92,
+      "evidence_links": [
+        {
+          "artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Supports the obligation to document complaints and traceability for events, though no reporting threshold was met in this case."
+        },
+        {
+          "artifact_id": "qmsr-820.10-c-design-development",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Establishes the design controls context under which such events are evaluated, though no specific failure in this event required CAPA."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Supports the requirement for a post-market surveillance system to gather and analyze data on device safety, which is being utilized here via retrospective review."
+        }
+      ],
+      "missing_evidence": [
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident narrative describes a minor, non-recurrent atrial fibrillation-adjacent irregularity with no adverse patient outcome and confirmed self-resolution via logs and clinician review. The event was contained before any serious harm could occur (Severity 1). No technical artifacts directly describe this specific clinical event; the retrieved static analysis reports (ARTIFACT-STATICANALYSIS-2014A, ARTIFACT-STATICANALYSIS-2018A) and test logs (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) are explicitly noted as synthetic or unrelated to this specific incident. Therefore, no technical causality can be grounded in the provided artifacts for this narrative. The handling aligns with regulatory obligations under qmsr-820.10-b-regulatory-crossrefs (Clause 8.2.3 Reporting and Clause 7.5.9 Traceability) to document complaints or events proportionate to risk, but since no reporting criteria were met (no serious harm), immediate field action is not required.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": [
+      "The incident narrative describes a minor, non-recurrent atrial fibrillation-adjacent irregularity with no adverse patient outcome and confirmed self-resolution via logs and clinician review.",
+      "The event was contained before any serious harm could occur (Severity 1).",
+      "No technical artifacts directly describe this specific clinical event; the retrieved static analysis reports (ARTIFACT-STATICANALYSIS-2014A, ARTIFACT-STATICANALYSIS-2018A) and test logs (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) are explicitly noted as synthetic or unrelated to this specific incident.",
+      "Therefore, no technical causality can be grounded in the provided artifacts for this narrative."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+        "claim": "The incident narrative describes a minor, non-recurrent atrial fibrillation-adjacent irregularity with no adverse patient outcome and confirmed self-resolution via logs and clinician review.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+        "claim": "The event was contained before any serious harm could occur (Severity 1).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+        "claim": "No technical artifacts directly describe this specific clinical event; the retrieved static analysis reports (ARTIFACT-STATICANALYSIS-2014A, ARTIFACT-STATICANALYSIS-2018A) and test logs (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) are explicitly noted as synthetic or unrelated to this specific incident.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+        "claim": "Therefore, no technical causality can be grounded in the provided artifacts for this narrative.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+        "claim": "The handling aligns with regulatory obligations under qmsr-820.10-b-regulatory-crossrefs (Clause 8.2.3 Reporting and Clause 7.5.9 Traceability) to document complaints or events proportionate to risk, but since no reporting criteria were met (no serious harm), immediate field action is not required.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.92,
+    "evidence_links": [
+      {
+        "artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the obligation to document complaints and traceability for events, though no reporting threshold was met in this case."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes the design controls context under which such events are evaluated, though no specific failure in this event required CAPA."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the requirement for a post-market surveillance system to gather and analyze data on device safety, which is being utilized here via retrospective review."
+      }
+    ],
+    "missing_evidence": [
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident narrative describes a minor, non-recurrent atrial fibrillation-adjacent irregularity with no adverse patient outcome and confirmed self-resolution via logs and clinician review. The event was contained before any serious harm could occur (Severity 1). No technical artifacts directly describe this specific clinical event; the retrieved static analysis reports (ARTIFACT-STATICANALYSIS-2014A, ARTIFACT-STATICANALYSIS-2018A) and test logs (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) are explicitly noted as synthetic or unrelated to this specific incident. Therefore, no technical causality can be grounded in the provided artifacts for this narrative. The handling aligns with regulatory obligations under qmsr-820.10-b-regulatory-crossrefs (Clause 8.2.3 Reporting and Clause 7.5.9 Traceability) to document complaints or events proportionate to risk, but since no reporting criteria were met (no serious harm), immediate field action is not required.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

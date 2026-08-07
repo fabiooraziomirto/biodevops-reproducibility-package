@@ -1,0 +1,44 @@
+{
+  "n_logical_outputs": 400,
+  "n_paired_units": 100,
+  "comparisons": {
+    "direct_vs_rag": {
+      "n_scenarios": 20,
+      "mean_difference": 0.0,
+      "bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "discordant_scenarios": {
+        "left_only": 0,
+        "right_only": 0
+      }
+    },
+    "rag_vs_agent_raw": {
+      "n_scenarios": 20,
+      "mean_difference": 0.0,
+      "bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "discordant_scenarios": {
+        "left_only": 0,
+        "right_only": 0
+      }
+    },
+    "agent_raw_vs_agent_opa": {
+      "n_scenarios": 20,
+      "mean_difference": 0.1,
+      "bootstrap_ci95": [
+        0.0,
+        0.25
+      ],
+      "discordant_scenarios": {
+        "left_only": 0,
+        "right_only": 2
+      }
+    }
+  },
+  "agent_completion": 100,
+  "agent_completion_gate_pass": true
+}

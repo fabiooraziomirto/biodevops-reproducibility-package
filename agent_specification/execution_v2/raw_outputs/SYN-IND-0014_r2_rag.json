@@ -1,0 +1,140 @@
+{
+  "arm": "rag",
+  "artifact_recall": null,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 9456.692,
+  "model_token_counts": {
+    "completion": 373,
+    "prompt": 2079
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n    \"severity\": 1,\n    \"confidence\": 0.85,\n    \"recommendation\": \"CAPA_INVESTIGATE\",\n    \"rationale\": \"The synthetic telemetry classifier change did not result in patient exposure or clinical alerting, and the regression was blocked by CI/CD quality controls before deployment.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"CGM-ARTIFACT-VALIDATION-0017\",\n            \"artifact_type\": \"test_log\",\n            \"relevance_note\": \"The validation test log confirms that the synthetic telemetry classifier change was detected and blocked by CI/CD quality controls.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-DIFF-0009\",\n            \"artifact_type\": \"code_diff\",\n            \"relevance_note\": \"The code diff modifying the severity-scoring submodule was detected and blocked before clinical deployment, preventing patient exposure to a potential safety issue.\"\n        }\n    ],\n    \"claim_support\": [\n        {\n            \"claim\": \"No patient exposure or clinical alerting occurred.\",\n            \"cited_artifact_id\": \"CGM-ARTIFACT-METER-0008\",\n            \"support_status\": \"supported\"\n       ,\n        \"support_note\": \"The external meter record confirms severe hypoglycemia, but this event is unrelated to the synthetic telemetry classifier change.\"\n        },\n        {\n            \"claim\": \"The regression was blocked by CI/CD quality controls.\",\n            \"cited_artifact_id\": \"CGM-ARTIFACT-VALIDATION-0017\",\n            \"support_status\": \"supported\"\n        ,\n        \"support_note\": \"The validation test log indicates that the synthetic telemetry classifier change was detected and blocked before deployment.\"\n        }\n    ]\n}",
+  "reference": {
+    "citation_unresolved": true,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE",
+    "scenario_id": "SYN-IND-0014"
+  },
+  "replicate": 2,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "CGM-ARTIFACT-METER-0008",
+        "claim": "No patient exposure or clinical alerting occurred.",
+        "support_note": "The external meter record confirms severe hypoglycemia, but this event is unrelated to the synthetic telemetry classifier change.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "CGM-ARTIFACT-VALIDATION-0017",
+        "claim": "The regression was blocked by CI/CD quality controls.",
+        "support_note": "The validation test log indicates that the synthetic telemetry classifier change was detected and blocked before deployment.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "CGM-ARTIFACT-VALIDATION-0017",
+        "artifact_type": "test_log",
+        "relevance_note": "The validation test log confirms that the synthetic telemetry classifier change was detected and blocked by CI/CD quality controls."
+      },
+      {
+        "artifact_id": "ARTIFACT-DIFF-0009",
+        "artifact_type": "code_diff",
+        "relevance_note": "The code diff modifying the severity-scoring submodule was detected and blocked before clinical deployment, preventing patient exposure to a potential safety issue."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic telemetry classifier change did not result in patient exposure or clinical alerting, and the regression was blocked by CI/CD quality controls before deployment.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "scenario_id": "SYN-IND-0014",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 1 is below derived clinical floor 2. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {},
+  "trace_path": null,
+  "unsupported_claim_count": 0,
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.5,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "CGM-ARTIFACT-METER-0008",
+          "claim": "No patient exposure or clinical alerting occurred.",
+          "support_note": "The external meter record confirms severe hypoglycemia, but this event is unrelated to the synthetic telemetry classifier change.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "CGM-ARTIFACT-VALIDATION-0017",
+          "claim": "The regression was blocked by CI/CD quality controls.",
+          "support_note": "The validation test log indicates that the synthetic telemetry classifier change was detected and blocked before deployment.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "CGM-ARTIFACT-VALIDATION-0017",
+          "artifact_type": "test_log",
+          "relevance_note": "The validation test log confirms that the synthetic telemetry classifier change was detected and blocked by CI/CD quality controls."
+        },
+        {
+          "artifact_id": "ARTIFACT-DIFF-0009",
+          "artifact_type": "code_diff",
+          "relevance_note": "The code diff modifying the severity-scoring submodule was detected and blocked before clinical deployment, preventing patient exposure to a potential safety issue."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic telemetry classifier change did not result in patient exposure or clinical alerting, and the regression was blocked by CI/CD quality controls before deployment.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": [
+      "No patient exposure or clinical alerting occurred."
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "arm": "agent_raw",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 18136.895,
+  "model_token_counts": {
+    "completion": 439,
+    "prompt": 1985
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "NO_ACTION"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n  \"severity\": 1,\n  \"confidence\": 0.95,\n  \"recommendation\": \"NO_ACTION\",\n  \"rationale\": \"The synthetic ambulatory monitoring clinic reported a routine software validation finding for the complete atrioventricular block detection pathway, which was fully contained pre-release or resolved as a non-event. No patient-facing exposure occurred.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"The test log shows the VTach sensitivity drop was detected and blocked by the CI/CD quality gate, preventing clinical deployment.\"\n    },\n    {\n      \"artifact_id\": \"CGM-ARTIFACT-APPROVAL-0020\",\n      \"artifact_type\": \"approval_record\",\n      \"relevance_note\": \"The release checklist is missing authorized human approval, indicating a procedural gap but not patient exposure or safety risk.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"No patient exposure occurred.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"support_status\": \"supported\"\n   ,\n    \"support_note\": \"The regression was detected and blocked by the CI/CD quality gate before any clinical deployment.\"\n    },\n    {\n      \"claim\": \"Technical finding contained pre-release.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"support_status\": \"supported\"\n    ,\n    \"support_note\": \"The test log shows the regression was detected and blocked by the CI/CD quality gate.\"\n    },\n    {\n      \"claim\": \"Procedural gap in release checklist.\",\n      \"cited_artifact_id\": \"CGM-ARTIFACT-APPROVAL-0020\",\n      \"support_status\": \"weakly_supported\"\n    ,\n    \"support_note\": \"The approval record indicates a procedural gap but does not demonstrate patient exposure or safety risk.\"\n    }\n  ]\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "NO_ACTION",
+    "scenario_id": "SYN-IND-0008"
+  },
+  "replicate": 5,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+        "claim": "No patient exposure occurred.",
+        "support_note": "The regression was detected and blocked by the CI/CD quality gate before any clinical deployment.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+        "claim": "Technical finding contained pre-release.",
+        "support_note": "The test log shows the regression was detected and blocked by the CI/CD quality gate.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "claim": "Procedural gap in release checklist.",
+        "support_note": "The approval record indicates a procedural gap but does not demonstrate patient exposure or safety risk.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The test log shows the VTach sensitivity drop was detected and blocked by the CI/CD quality gate, preventing clinical deployment."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The release checklist is missing authorized human approval, indicating a procedural gap but not patient exposure or safety risk."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic ambulatory monitoring clinic reported a routine software validation finding for the complete atrioventricular block detection pathway, which was fully contained pre-release or resolved as a non-event. No patient-facing exposure occurred.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "scenario_id": "SYN-IND-0008",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The test log shows the VTach sensitivity drop was detected and blocked by the CI/CD quality gate, preventing clinical deployment."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The release checklist is missing authorized human approval, indicating a procedural gap but not patient exposure or safety risk."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": false,
+    "evidence_gaps": [],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+          "claim": "No patient exposure occurred.",
+          "support_note": "The regression was detected and blocked by the CI/CD quality gate before any clinical deployment.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+          "claim": "Technical finding contained pre-release.",
+          "support_note": "The test log shows the regression was detected and blocked by the CI/CD quality gate.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+          "claim": "Procedural gap in release checklist.",
+          "support_note": "The approval record indicates a procedural gap but does not demonstrate patient exposure or safety risk.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The test log shows the VTach sensitivity drop was detected and blocked by the CI/CD quality gate, preventing clinical deployment."
+        },
+        {
+          "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+          "artifact_type": "approval_record",
+          "relevance_note": "The release checklist is missing authorized human approval, indicating a procedural gap but not patient exposure or safety risk."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic ambulatory monitoring clinic reported a routine software validation finding for the complete atrioventricular block detection pathway, which was fully contained pre-release or resolved as a non-event. No patient-facing exposure occurred.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "final_report_sha256": "aa3a89ba8e3e2c7e9f0a102bc1c5d186a1c6aa60f28ec7a85644d6472cbd9d24",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [],
+    "recommendation": "NO_ACTION",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0008",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0008_r5",
+    "scenario_id": "SYN-IND-0008",
+    "schema_version": "2.1.0",
+    "severity": 1,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "advisory_complete",
+    "timestamp_utc": "2026-08-03T09:50:31.821932Z",
+    "total_steps": 3,
+    "trace_id": "8838205e-a36d-423d-a08a-a82debe17f19"
+  },
+  "trace_path": "traces/SYN-IND-0008_r5.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {}
+}

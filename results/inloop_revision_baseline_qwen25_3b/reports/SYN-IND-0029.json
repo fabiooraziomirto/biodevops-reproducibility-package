@@ -1,0 +1,150 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0029",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic regional hospital ICU reported that the device failed to flag a clinically significant ventricular tachycardia episode in real time. Two independent overnight telemetry reviews and the cloud-side classifier log all confirm a documented, sustained ventricular tachycardia episode that was missed at the time; a second, structurally identical miss was confirmed in a separate patient on the same software version, establishing recurrence across the deployed population. The device confidence-score log, the retrospective clinician read, and the raw waveform export are all consistent.",
+  "model_token_counts": {
+    "completion": 299,
+    "prompt": 1966
+  },
+  "raw_content": "{\n    \"severity\": 3,\n    \"confidence\": 0.75,\n    \"recommendation\": \"CAPA_INVESTIGATE\",\n    \"rationale\": \"The incident report indicates that a clinically significant ventricular tachycardia episode was missed by the device, leading to recurrence across the deployed population and potential serious harm. The regulatory context emphasizes the importance of IT security measures, software development lifecycle, and post-market surveillance system in ensuring the integrity and safety of medical devices. Although no technical artifacts directly support this incident judgment, the severity is high due to the documented missed episode and its recurrence across multiple patients.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2033A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"Confirms a life-threatening complete atrioventricular block event, which may trigger obligations under EU MDR Article 83(1)-(2) and Annex I, Section 17.4.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2037A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"Confirms a life-threatening complete atrioventricular block event, which may trigger obligations under EU MDR Article 83(1)-(2) and Annex I, Section 17.4.\"\n        }\n    ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: technical_incident_missing_technical_evidence; deny:technical_incident_missing_technical_evidence\nMissing or contradictory evidence flagged: At least one retrieved technical artifact supporting the incident judgment.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms a life-threatening complete atrioventricular block event, which may trigger obligations under EU MDR Article 83(1)-(2) and Annex I, Section 17.4."
+      },
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms a life-threatening complete atrioventricular block event, which may trigger obligations under EU MDR Article 83(1)-(2) and Annex I, Section 17.4."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident report indicates that a clinically significant ventricular tachycardia episode was missed by the device, leading to recurrence across the deployed population and potential serious harm. The regulatory context emphasizes the importance of IT security measures, software development lifecycle, and post-market surveillance system in ensuring the integrity and safety of medical devices. Although no technical artifacts directly support this incident judgment, the severity is high due to the documented missed episode and its recurrence across multiple patients.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 3
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "The incident report indicates that a clinically significant ventricular tachycardia episode was missed by the device, leading to recurrence across the deployed population and potential serious harm.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "The regulatory context emphasizes the importance of IT security measures, software development lifecycle, and post-market surveillance system in ensuring the integrity and safety of medical devices.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "Although no technical artifacts directly support this incident judgment, the severity is high due to the documented missed episode and its recurrence across multiple patients.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Confirms a life-threatening complete atrioventricular block event, which may trigger obligations under EU MDR Article 83(1)-(2) and Annex I, Section 17.4."
+        },
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Confirms a life-threatening complete atrioventricular block event, which may trigger obligations under EU MDR Article 83(1)-(2) and Annex I, Section 17.4."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The incident report indicates that a clinically significant ventricular tachycardia episode was missed by the device, leading to recurrence across the deployed population and potential serious harm. The regulatory context emphasizes the importance of IT security measures, software development lifecycle, and post-market surveillance system in ensuring the integrity and safety of medical devices. Although no technical artifacts directly support this incident judgment, the severity is high due to the documented missed episode and its recurrence across multiple patients.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "weakly_supported_claims": [
+      "The incident report indicates that a clinically significant ventricular tachycardia episode was missed by the device, leading to recurrence across the deployed population and potential serious harm.",
+      "The regulatory context emphasizes the importance of IT security measures, software development lifecycle, and post-market surveillance system in ensuring the integrity and safety of medical devices.",
+      "Although no technical artifacts directly support this incident judgment, the severity is high due to the documented missed episode and its recurrence across multiple patients."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "The incident report indicates that a clinically significant ventricular tachycardia episode was missed by the device, leading to recurrence across the deployed population and potential serious harm.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "The regulatory context emphasizes the importance of IT security measures, software development lifecycle, and post-market surveillance system in ensuring the integrity and safety of medical devices.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "Although no technical artifacts directly support this incident judgment, the severity is high due to the documented missed episode and its recurrence across multiple patients.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms a life-threatening complete atrioventricular block event, which may trigger obligations under EU MDR Article 83(1)-(2) and Annex I, Section 17.4."
+      },
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms a life-threatening complete atrioventricular block event, which may trigger obligations under EU MDR Article 83(1)-(2) and Annex I, Section 17.4."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident report indicates that a clinically significant ventricular tachycardia episode was missed by the device, leading to recurrence across the deployed population and potential serious harm. The regulatory context emphasizes the importance of IT security measures, software development lifecycle, and post-market surveillance system in ensuring the integrity and safety of medical devices. Although no technical artifacts directly support this incident judgment, the severity is high due to the documented missed episode and its recurrence across multiple patients.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  }
+}

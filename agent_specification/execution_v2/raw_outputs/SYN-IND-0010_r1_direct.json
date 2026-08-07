@@ -1,0 +1,96 @@
+{
+  "arm": "direct",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 3078.581,
+  "model_token_counts": {
+    "completion": 118,
+    "prompt": 1174
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "NO_ACTION"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n  \"severity\": 1,\n  \"confidence\": 0.95,\n  \"recommendation\": \"NO_ACTION\",\n  \"rationale\": \"The synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway, but no confirmatory clinician note is on file. The automated CI/CD quality gate blocked the release candidate before any clinical deployment, ensuring that no patient was exposed and the issue was contained pre-release or resolved as a non-event.\",\n  \"evidence_links\": [],\n  \"requires_human_review\": false\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "NO_ACTION",
+    "scenario_id": "SYN-IND-0010"
+  },
+  "replicate": 1,
+  "report": {
+    "claim_support": [],
+    "confidence": 0.95,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "The synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway, but no confirmatory clinician note is on file. The automated CI/CD quality gate blocked the release candidate before any clinical deployment, ensuring that no patient was exposed and the issue was contained pre-release or resolved as a non-event.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "scenario_id": "SYN-IND-0010",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {},
+  "trace_path": null,
+  "unsupported_claim_count": 2,
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "The synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway, but no confirmatory clinician note is on file.",
+      "The automated CI/CD quality gate blocked the release candidate before any clinical deployment, ensuring that no patient was exposed and the issue was contained pre-release or resolved as a non-event."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "",
+          "claim": "The synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway, but no confirmatory clinician note is on file.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "The automated CI/CD quality gate blocked the release candidate before any clinical deployment, ensuring that no patient was exposed and the issue was contained pre-release or resolved as a non-event.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [],
+      "missing_evidence": [],
+      "rationale": "The synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway, but no confirmatory clinician note is on file. The automated CI/CD quality gate blocked the release candidate before any clinical deployment, ensuring that no patient was exposed and the issue was contained pre-release or resolved as a non-event.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": []
+  }
+}

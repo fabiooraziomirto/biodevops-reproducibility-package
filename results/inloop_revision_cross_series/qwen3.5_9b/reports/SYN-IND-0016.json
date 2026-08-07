@@ -1,0 +1,200 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0016",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic overnight telemetry pool reported a minor, non-recurrent ventricular tachycardia-adjacent irregularity with no adverse patient outcome recorded. The retrospective clinician note documenting this ventricular tachycardia-adjacent irregularity was never filed, so recurrence cannot yet be ruled out from the record alone. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+  "model_token_counts": {
+    "completion": 688,
+    "prompt": 2228
+  },
+  "raw_content": "{\n  \"severity\": 2,\n  \"confidence\": 0.45,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident describes a 'minor, non-recurrent' irregularity with no adverse outcome recorded; however, the retrospective clinician note was never filed, preventing statistical validation of recurrence or definitive exclusion from records. This creates uncertainty regarding whether this is an isolated noise event (Severity 1) or part of a pattern requiring investigation before it could escalate to patient harm (potential Severity 3). The lack of formal documentation for the 'non-recurrent' claim and missing clinician notes means we cannot confirm containment without further review, necessitating a CAPA investigation. No retrieved technical artifact directly describes this specific event; available artifacts are unrelated or describe different episodes (missed AV block), leaving the causal link ungrounded in provided evidence.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2023A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Retrieved as a technical artifact example of device confidence scoring for missed events, though this specific log pertains to 'missed complete atrioventricular block' rather than the reported ventricular tachycardia-adjacent irregularity. Cited here only to demonstrate that relevant test logs exist in the retrieval set but do not directly support the current incident's causality or containment status.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2027A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Retrieved as a technical artifact example of device confidence scoring for missed events, though this specific log pertains to 'missed complete atrioventricular block' rather than the reported ventricular tachycardia-adjacent irregularity. Cited here only to demonstrate that relevant test logs exist in the retrieval set but do not directly support the current incident's causality or containment status.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.10-b-regulatory-crossrefs\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Supports the obligation to document procedures for traceability (Clause 7.5.9.1) and reporting complaints meeting part 803 criteria, which is relevant given the missing clinician note that hinders proper documentation of this event.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Supports the requirement for a post-market surveillance system to actively gather and analyze data on device safety, which is triggered by this unconfirmed irregularity requiring further investigation.\"\n    }\n  ],\n  \"missing_evidence\": [\n    \"A specific incident report or CAPA log detailing the steps taken to investigate this 'non-recurrent' irregularity.\",\n    \"Confirmation that the absence of a clinician note has been statistically validated over time rather than assumed anecdotally.\"\n  ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: technical_incident_missing_technical_evidence; deny:technical_incident_missing_technical_evidence\nMissing or contradictory evidence flagged: A specific incident report or CAPA log detailing the investigation steps taken for this irregularity.; Confirmation of whether the 'non-recurrent' nature has been statistically validated over time rather than just anecdotally observed in a single record.; At least one retrieved technical artifact supporting the incident judgment.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.45,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Retrieved as a technical artifact example of device confidence scoring for missed events, though this specific log pertains to 'missed complete atrioventricular block' rather than the reported ventricular tachycardia-adjacent irregularity. Cited here only to demonstrate that relevant test logs exist in the retrieval set but do not directly support the current incident's causality or containment status."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Retrieved as a technical artifact example of device confidence scoring for missed events, though this specific log pertains to 'missed complete atrioventricular block' rather than the reported ventricular tachycardia-adjacent irregularity. Cited here only to demonstrate that relevant test logs exist in the retrieval set but do not directly support the current incident's causality or containment status."
+      },
+      {
+        "artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the obligation to document procedures for traceability (Clause 7.5.9.1) and reporting complaints meeting part 803 criteria, which is relevant given the missing clinician note that hinders proper documentation of this event."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the requirement for a post-market surveillance system to actively gather and analyze data on device safety, which is triggered by this unconfirmed irregularity requiring further investigation."
+      }
+    ],
+    "missing_evidence": [
+      "A specific incident report or CAPA log detailing the steps taken to investigate this 'non-recurrent' irregularity.",
+      "Confirmation that the absence of a clinician note has been statistically validated over time rather than assumed anecdotally."
+    ],
+    "rationale": "The incident describes a 'minor, non-recurrent' irregularity with no adverse outcome recorded; however, the retrospective clinician note was never filed, preventing statistical validation of recurrence or definitive exclusion from records. This creates uncertainty regarding whether this is an isolated noise event (Severity 1) or part of a pattern requiring investigation before it could escalate to patient harm (potential Severity 3). The lack of formal documentation for the 'non-recurrent' claim and missing clinician notes means we cannot confirm containment without further review, necessitating a CAPA investigation. No retrieved technical artifact directly describes this specific event; available artifacts are unrelated or describe different episodes (missed AV block), leaving the causal link ungrounded in provided evidence.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 2
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.5,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The incident describes a 'minor, non-recurrent' irregularity with no adverse outcome recorded; however, the retrospective clinician note was never filed, preventing statistical validation of recurrence or definitive exclusion from records.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "This creates uncertainty regarding whether this is an isolated noise event (Severity 1) or part of a pattern requiring investigation before it could escalate to patient harm (potential Severity 3).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The lack of formal documentation for the 'non-recurrent' claim and missing clinician notes means we cannot confirm containment without further review, necessitating a CAPA investigation.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "No retrieved technical artifact directly describes this specific event; available artifacts are unrelated or describe different episodes (missed AV block), leaving the causal link ungrounded in provided evidence.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.45,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "artifact_type": "test_log",
+          "relevance_note": "Retrieved as a technical artifact example of device confidence scoring for missed events, though this specific log pertains to 'missed complete atrioventricular block' rather than the reported ventricular tachycardia-adjacent irregularity. Cited here only to demonstrate that relevant test logs exist in the retrieval set but do not directly support the current incident's causality or containment status."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "artifact_type": "test_log",
+          "relevance_note": "Retrieved as a technical artifact example of device confidence scoring for missed events, though this specific log pertains to 'missed complete atrioventricular block' rather than the reported ventricular tachycardia-adjacent irregularity. Cited here only to demonstrate that relevant test logs exist in the retrieval set but do not directly support the current incident's causality or containment status."
+        },
+        {
+          "artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Supports the obligation to document procedures for traceability (Clause 7.5.9.1) and reporting complaints meeting part 803 criteria, which is relevant given the missing clinician note that hinders proper documentation of this event."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Supports the requirement for a post-market surveillance system to actively gather and analyze data on device safety, which is triggered by this unconfirmed irregularity requiring further investigation."
+        }
+      ],
+      "missing_evidence": [
+        "A specific incident report or CAPA log detailing the steps taken to investigate this 'non-recurrent' irregularity.",
+        "Confirmation that the absence of a clinician note has been statistically validated over time rather than assumed anecdotally."
+      ],
+      "rationale": "The incident describes a 'minor, non-recurrent' irregularity with no adverse outcome recorded; however, the retrospective clinician note was never filed, preventing statistical validation of recurrence or definitive exclusion from records. This creates uncertainty regarding whether this is an isolated noise event (Severity 1) or part of a pattern requiring investigation before it could escalate to patient harm (potential Severity 3). The lack of formal documentation for the 'non-recurrent' claim and missing clinician notes means we cannot confirm containment without further review, necessitating a CAPA investigation. No retrieved technical artifact directly describes this specific event; available artifacts are unrelated or describe different episodes (missed AV block), leaving the causal link ungrounded in provided evidence.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": [
+      "This creates uncertainty regarding whether this is an isolated noise event (Severity 1) or part of a pattern requiring investigation before it could escalate to patient harm (potential Severity 3).",
+      "The lack of formal documentation for the 'non-recurrent' claim and missing clinician notes means we cannot confirm containment without further review, necessitating a CAPA investigation."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The incident describes a 'minor, non-recurrent' irregularity with no adverse outcome recorded; however, the retrospective clinician note was never filed, preventing statistical validation of recurrence or definitive exclusion from records.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "This creates uncertainty regarding whether this is an isolated noise event (Severity 1) or part of a pattern requiring investigation before it could escalate to patient harm (potential Severity 3).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The lack of formal documentation for the 'non-recurrent' claim and missing clinician notes means we cannot confirm containment without further review, necessitating a CAPA investigation.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "No retrieved technical artifact directly describes this specific event; available artifacts are unrelated or describe different episodes (missed AV block), leaving the causal link ungrounded in provided evidence.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.45,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Retrieved as a technical artifact example of device confidence scoring for missed events, though this specific log pertains to 'missed complete atrioventricular block' rather than the reported ventricular tachycardia-adjacent irregularity. Cited here only to demonstrate that relevant test logs exist in the retrieval set but do not directly support the current incident's causality or containment status."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Retrieved as a technical artifact example of device confidence scoring for missed events, though this specific log pertains to 'missed complete atrioventricular block' rather than the reported ventricular tachycardia-adjacent irregularity. Cited here only to demonstrate that relevant test logs exist in the retrieval set but do not directly support the current incident's causality or containment status."
+      },
+      {
+        "artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the obligation to document procedures for traceability (Clause 7.5.9.1) and reporting complaints meeting part 803 criteria, which is relevant given the missing clinician note that hinders proper documentation of this event."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the requirement for a post-market surveillance system to actively gather and analyze data on device safety, which is triggered by this unconfirmed irregularity requiring further investigation."
+      }
+    ],
+    "missing_evidence": [
+      "A specific incident report or CAPA log detailing the steps taken to investigate this 'non-recurrent' irregularity.",
+      "Confirmation that the absence of a clinician note has been statistically validated over time rather than assumed anecdotally."
+    ],
+    "rationale": "The incident describes a 'minor, non-recurrent' irregularity with no adverse outcome recorded; however, the retrospective clinician note was never filed, preventing statistical validation of recurrence or definitive exclusion from records. This creates uncertainty regarding whether this is an isolated noise event (Severity 1) or part of a pattern requiring investigation before it could escalate to patient harm (potential Severity 3). The lack of formal documentation for the 'non-recurrent' claim and missing clinician notes means we cannot confirm containment without further review, necessitating a CAPA investigation. No retrieved technical artifact directly describes this specific event; available artifacts are unrelated or describe different episodes (missed AV block), leaving the causal link ungrounded in provided evidence.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  }
+}

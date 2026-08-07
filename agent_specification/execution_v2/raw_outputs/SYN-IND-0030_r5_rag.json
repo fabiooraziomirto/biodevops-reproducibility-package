@@ -1,0 +1,168 @@
+{
+  "arm": "rag",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 14170.087,
+  "model_token_counts": {
+    "completion": 548,
+    "prompt": 1966
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": true,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [
+    "technical_incident_missing_technical_evidence",
+    "deny:technical_incident_missing_technical_evidence"
+  ],
+  "raw_model_output": "{\n  \"severity\": 2,\n  \"confidence\": 0.75,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The device failed to flag a clinically significant ventricular fibrillation episode, which may trigger obligations under EU MDR Article 87(1)-(2) for reporting serious incidents. However, no patient was exposed and the incident did not result in any adverse outcome. The confirmatory device confidence-score log is missing, which weakens the evidence supporting this claim.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"mdr-art87-reporting-timelines\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The incident may require immediate reporting due to its severity.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art10-12-corrective-action\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"Immediate corrective action is required if the device presents a serious risk, which it potentially does given the missed ventricular fibrillation episode.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-4-corrective-link\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The post-market surveillance findings may necessitate reporting in accordance with Article 87 if a serious incident is identified.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"Requires review under EU MDR Article 87(1)-(2)\",\n      \"cited_artifact_id\": \"mdr-art87-reporting-timelines\",\n      \"support_status\": \"weakly_supported\"\n   ,\n      \"support_note\": \"The confirmatory device confidence-score log is missing, which weakens the evidence supporting this claim.\"\n    },\n    {\n      \"claim\": \"Requires review under EU MDR Article 10(12)\",\n      \"cited_artifact_id\": \"mdr-art10-12-corrective-action\",\n      \"support_status\": \"weakly_supported\"\n    ,\n      \"support_note\": \"The confirmatory device confidence-score log is missing, which weakens the evidence supporting this claim.\"\n    },\n    {\n      \"claim\": \"Requires review under EU MDR Article 83(4)\",\n      \"cited_artifact_id\": \"mdr-art83-4-corrective-link\",\n      \"support_status\": \"weakly_supported\"\n    ,\n      \"support_note\": \"The confirmatory device confidence-score log is missing, which weakens the evidence supporting this claim.\"\n    }\n  ]\n}",
+  "reference": {
+    "citation_unresolved": true,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE",
+    "scenario_id": "SYN-IND-0030"
+  },
+  "replicate": 5,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-art87-reporting-timelines",
+        "claim": "Requires review under EU MDR Article 87(1)-(2)",
+        "support_note": "The confirmatory device confidence-score log is missing, which weakens the evidence supporting this claim.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art10-12-corrective-action",
+        "claim": "Requires review under EU MDR Article 10(12)",
+        "support_note": "The confirmatory device confidence-score log is missing, which weakens the evidence supporting this claim.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art83-4-corrective-link",
+        "claim": "Requires review under EU MDR Article 83(4)",
+        "support_note": "The confirmatory device confidence-score log is missing, which weakens the evidence supporting this claim.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art87-reporting-timelines",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The incident may require immediate reporting due to its severity."
+      },
+      {
+        "artifact_id": "mdr-art10-12-corrective-action",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Immediate corrective action is required if the device presents a serious risk, which it potentially does given the missed ventricular fibrillation episode."
+      },
+      {
+        "artifact_id": "mdr-art83-4-corrective-link",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The post-market surveillance findings may necessitate reporting in accordance with Article 87 if a serious incident is identified."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The device failed to flag a clinically significant ventricular fibrillation episode, which may trigger obligations under EU MDR Article 87(1)-(2) for reporting serious incidents. However, no patient was exposed and the incident did not result in any adverse outcome. The confirmatory device confidence-score log is missing, which weakens the evidence supporting this claim.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 2
+  },
+  "scenario_id": "SYN-IND-0030",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 2 is below derived clinical floor 3. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {},
+  "trace_path": null,
+  "unsupported_claim_count": 0,
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 1.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art87-reporting-timelines",
+          "claim": "Requires review under EU MDR Article 87(1)-(2)",
+          "support_note": "The confirmatory device confidence-score log is missing, which weakens the evidence supporting this claim.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art10-12-corrective-action",
+          "claim": "Requires review under EU MDR Article 10(12)",
+          "support_note": "The confirmatory device confidence-score log is missing, which weakens the evidence supporting this claim.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art83-4-corrective-link",
+          "claim": "Requires review under EU MDR Article 83(4)",
+          "support_note": "The confirmatory device confidence-score log is missing, which weakens the evidence supporting this claim.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art87-reporting-timelines",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The incident may require immediate reporting due to its severity."
+        },
+        {
+          "artifact_id": "mdr-art10-12-corrective-action",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "Immediate corrective action is required if the device presents a serious risk, which it potentially does given the missed ventricular fibrillation episode."
+        },
+        {
+          "artifact_id": "mdr-art83-4-corrective-link",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The post-market surveillance findings may necessitate reporting in accordance with Article 87 if a serious incident is identified."
+        }
+      ],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment."
+      ],
+      "rationale": "The device failed to flag a clinically significant ventricular fibrillation episode, which may trigger obligations under EU MDR Article 87(1)-(2) for reporting serious incidents. However, no patient was exposed and the incident did not result in any adverse outcome. The confirmatory device confidence-score log is missing, which weakens the evidence supporting this claim.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": []
+  }
+}

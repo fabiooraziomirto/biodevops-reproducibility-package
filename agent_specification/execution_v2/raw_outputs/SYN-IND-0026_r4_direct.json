@@ -1,0 +1,144 @@
+{
+  "arm": "direct",
+  "artifact_recall": 0.0,
+  "citation_resolution": 0,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 9515.594,
+  "model_token_counts": {
+    "completion": 381,
+    "prompt": 1203
+  },
+  "observed_governance": {
+    "citation_unresolved": true,
+    "evidence_insufficient": false,
+    "policy_contradiction": true,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [
+    "technical_incident_missing_technical_evidence",
+    "deny:risk_report_contains_unresolved_or_trap_citation",
+    "deny:technical_incident_missing_technical_evidence"
+  ],
+  "raw_model_output": "{\n  \"severity\": 3,\n  \"confidence\": 0.85,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident involves a serious potential patient-safety risk, as the device failed to flag two clinically significant ventricular fibrillation episodes in real time across the deployed population. This may trigger obligations under FDA QMSR and EU MDR for post-market surveillance and corrective actions.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"EXACT_ID_OF_VENTRICULAR_FIBRILLATION_LOG\",\n      \"artifact_type\": \"confirmatory_device_confidence-score_log\",\n      \"relevance_note\": \"Confirms the missed ventricular fibrillation episodes in two separate patients.\"\n    },\n    {\n      \"artifact_id\": \"EXACT_ID_OF_TELEMETRY_REVIEW\",\n      \"artifact_type\": \"clinical_review\",\n      \"relevance_note\": \"Independent confirmation of the missed ventricular fibrillation episodes by overnight telemetry reviews.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"The device failed to flag clinically significant ventricular fibrillation episodes in real time.\",\n      \"cited_artifact_id\": \"EXACT_ID_OF_VENTRICULAR_FIBRILLATION_LOG\",\n      \"support_status\": \"supported\"\n   ,\n    \"support_note\": \"The confirmatory device confidence-score log and clinical review support the claim.\"\n    },\n    {\n      \"claim\": \"Recurrence across the deployed population was confirmed.\",\n      \"cited_artifact_id\": \"EXACT_ID_OF_TELEMETRY_REVIEW\",\n      \"support_status\": \"supported\"\n    ,\n    \"support_note\": \"Two structurally identical misses were confirmed in separate patients on the same software version.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "scenario_id": "SYN-IND-0026"
+  },
+  "replicate": 4,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "EXACT_ID_OF_VENTRICULAR_FIBRILLATION_LOG",
+        "claim": "The device failed to flag clinically significant ventricular fibrillation episodes in real time.",
+        "support_note": "The confirmatory device confidence-score log and clinical review support the claim.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "EXACT_ID_OF_TELEMETRY_REVIEW",
+        "claim": "Recurrence across the deployed population was confirmed.",
+        "support_note": "Two structurally identical misses were confirmed in separate patients on the same software version.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "EXACT_ID_OF_VENTRICULAR_FIBRILLATION_LOG",
+        "artifact_type": "confirmatory_device_confidence-score_log",
+        "relevance_note": "Confirms the missed ventricular fibrillation episodes in two separate patients."
+      },
+      {
+        "artifact_id": "EXACT_ID_OF_TELEMETRY_REVIEW",
+        "artifact_type": "clinical_review",
+        "relevance_note": "Independent confirmation of the missed ventricular fibrillation episodes by overnight telemetry reviews."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident involves a serious potential patient-safety risk, as the device failed to flag two clinically significant ventricular fibrillation episodes in real time across the deployed population. This may trigger obligations under FDA QMSR and EU MDR for post-market surveillance and corrective actions.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  },
+  "scenario_id": "SYN-IND-0026",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {},
+  "trace_path": null,
+  "unsupported_claim_count": 2,
+  "verification": {
+    "citation_hallucination": 1,
+    "citation_validity": 0.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [
+      "EXACT_ID_OF_VENTRICULAR_FIBRILLATION_LOG",
+      "EXACT_ID_OF_TELEMETRY_REVIEW"
+    ],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "technical_incident_missing_technical_evidence",
+      "deny:risk_report_contains_unresolved_or_trap_citation",
+      "deny:technical_incident_missing_technical_evidence"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "The device failed to flag clinically significant ventricular fibrillation episodes in real time.",
+      "Recurrence across the deployed population was confirmed."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "EXACT_ID_OF_VENTRICULAR_FIBRILLATION_LOG",
+          "claim": "The device failed to flag clinically significant ventricular fibrillation episodes in real time.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "EXACT_ID_OF_TELEMETRY_REVIEW",
+          "claim": "Recurrence across the deployed population was confirmed.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "EXACT_ID_OF_VENTRICULAR_FIBRILLATION_LOG",
+          "artifact_type": "confirmatory_device_confidence-score_log",
+          "relevance_note": "Confirms the missed ventricular fibrillation episodes in two separate patients."
+        },
+        {
+          "artifact_id": "EXACT_ID_OF_TELEMETRY_REVIEW",
+          "artifact_type": "clinical_review",
+          "relevance_note": "Independent confirmation of the missed ventricular fibrillation episodes by overnight telemetry reviews."
+        }
+      ],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment."
+      ],
+      "rationale": "The incident involves a serious potential patient-safety risk, as the device failed to flag two clinically significant ventricular fibrillation episodes in real time across the deployed population. This may trigger obligations under FDA QMSR and EU MDR for post-market surveillance and corrective actions.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "weakly_supported_claims": []
+  }
+}

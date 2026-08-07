@@ -1,0 +1,13 @@
+suite: arrhythmia_factorial_v1
+rows_per_class: 6
+total_rows: 48
+fractional_schedule: [A1xB1, A2xB2, A3xB3, A4xB4, A1xB2, A2xB1]
+classes:
+  - {id: 1, axes: [snomed_concept, report_alignment], target: shacl}
+  - {id: 2, axes: [snomed_concept, mention_wording, safe_posture], target: [opa, shacl]}
+  - {id: 3, axes: [snomed_concept, negation_wording, safe_posture], target: [opa, shacl]}
+  - {id: 4, axes: [technical_artifact, recurrence_basis], target: opa}
+  - {id: 5, axes: [snomed_concept, risk_tag_state], target: shacl}
+  - {id: 6, axes: [snomed_concept, coding_state], target: shacl}
+  - {id: 7, axes: [technical_artifact, citation_state], target: opa}
+  - {id: 8, axes: [snomed_concept, recommendation_state], target: shacl}

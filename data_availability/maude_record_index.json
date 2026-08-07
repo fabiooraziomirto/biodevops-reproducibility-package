@@ -1,0 +1,370 @@
+{
+  "dataset_id": "maude_ecg_40_v1",
+  "source_export_sha256": {
+    "maudeExcelReport16.csv": "e902eee3dafebdced9e884fa2bdde3f028f51ac3a054b796157b79a8c8006e7f",
+    "maudeExcelReport25.csv": "cce029ae9befe158156c775552ac29000693ca1a569d5404f9bd0aab4925584f",
+    "maudeExcelReport5.csv": "21097a1731ae8be931d5a6ffb60f02aeb52dc186cc80000c03e3c3340ef1d198"
+  },
+  "records": [
+    {
+      "report_id": "MAUDE-ECG-0001",
+      "source_record_id": "1000341190-2025-00006",
+      "source_record_sha256": "067d211df3a7bb644a744375ca3aa742c00514556da9d3a676689e7e485b9fd6",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=23240813&pc=DPS",
+      "event_type": "Death",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0002",
+      "source_record_id": "1218950-2025-000355",
+      "source_record_sha256": "530d2d049c96b754cb1712a47bcc2a8e39b2dadfe547257717c00d366aef7539",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=22204481&pc=DPS",
+      "event_type": "Death",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0003",
+      "source_record_id": "1218950-2026-100131",
+      "source_record_sha256": "e644ac186b051b87fcee2d9988635d11b3aac71a9568e926a0157aaf1a5eb196",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=24575052&pc=DPS",
+      "event_type": "Malfunction",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0004",
+      "source_record_id": "1218950-2026-100282",
+      "source_record_sha256": "2c97956e950de007ad704ac9bffb3a598083ec76689ba40559ae0bd0449224c3",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=25082328&pc=DPS",
+      "event_type": "Malfunction",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0005",
+      "source_record_id": "1218950-2026-100364",
+      "source_record_sha256": "54d917a46d71bf5ae56ee285005d4d41d01d193f892ee05cd1e4ab1b776fe5ce",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=25348588&pc=DPS",
+      "event_type": "Malfunction",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0006",
+      "source_record_id": "1218950-2026-100394",
+      "source_record_sha256": "a7ae94aa8b3fddeedff7780c66d38ec2745c7a048ba3f7d14f77bfb1ed0775bf",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=25462216&pc=DPS",
+      "event_type": "Injury",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0007",
+      "source_record_id": "1417592-2026-02389",
+      "source_record_sha256": "dd86b7aa7e760214dce9152c6786f6ea76331d8791f0d5df1fd40a916aca232f",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=25474116&pc=DPS",
+      "event_type": "Injury",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0008",
+      "source_record_id": "20310396",
+      "source_record_sha256": "a1794e14bd853a4d6f8522b674747c2ef6f807ad6b2db7dafb88951428d05df4",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=20310396&pc=DPS",
+      "event_type": "Malfunction",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0009",
+      "source_record_id": "20630315",
+      "source_record_sha256": "62df41c830ac7dafa57e20c8f9dbe63f2c5b46d1560e64512b80b71444c13b1b",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=20630315&pc=DPS",
+      "event_type": "Malfunction",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0010",
+      "source_record_id": "2183461-2023-00014",
+      "source_record_sha256": "70f79baa0d5c11379773e21512cfebb9b2f72757549f613d8aa3beb442e88957",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=17297136&pc=DPS",
+      "event_type": "Malfunction",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0011",
+      "source_record_id": "2183461-2024-00040",
+      "source_record_sha256": "0f13437998873338d1f9e3151061958b9a73191129f755f843dbfb4182105696",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=20556405&pc=DPS",
+      "event_type": "Malfunction",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0012",
+      "source_record_id": "2183461-2025-00003",
+      "source_record_sha256": "c60892ab4ba3ce51234fecd671b7ae891967a4c392c456bf2b66e07bd98510ed",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=21898010&pc=DPS",
+      "event_type": "Malfunction",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0013",
+      "source_record_id": "2183461-2025-00021",
+      "source_record_sha256": "a8b766dd2235a9c1336f797b1677e4d3230da0f8a136ff8eb8482e7cc07e10bb",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=23642927&pc=DPS",
+      "event_type": "Injury",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0014",
+      "source_record_id": "9610816-2026-100159",
+      "source_record_sha256": "76c3f504c0c80cdf304503e9a59dbe0576a4d92cf28b92548d509605917e3d22",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=24218312&pc=DPS",
+      "event_type": "Malfunction",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0015",
+      "source_record_id": "9610816-2026-100844",
+      "source_record_sha256": "870efbf523e6ddd957acdff4d4ecef3a35dcc5105960594e2b16e36ae55f8dc1",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=25067159&pc=DPS",
+      "event_type": "Malfunction",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0016",
+      "source_record_id": "MW5137960",
+      "source_record_sha256": "cc6af9f802e23dcd2866adfc28fd40715f076938ffa52a824c702251b0216192",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=17531044&pc=DPS",
+      "event_type": "Malfunction",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0017",
+      "source_record_id": "MW5187880",
+      "source_record_sha256": "ee239ad4671098b7398928e3ee0bc2785f48c3052312c9d3440d0bcac6b3a0b2",
+      "source_file": "maudeExcelReport16.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=25114212&pc=DPS",
+      "event_type": "Injury",
+      "product_code": "DPS"
+    },
+    {
+      "report_id": "MAUDE-ECG-0018",
+      "source_record_id": "1218950-2024-00076",
+      "source_record_sha256": "bfa2f03ce5d6f20322d52cce8ccbb046ab1f0c6a7472ee895cda0711abfce1cf",
+      "source_file": "maudeExcelReport5.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=18632142&pc=MLO",
+      "event_type": "Malfunction",
+      "product_code": "MLO"
+    },
+    {
+      "report_id": "MAUDE-ECG-0019",
+      "source_record_id": "1218950-2024-00242",
+      "source_record_sha256": "15617d209d66307cc1b05bc5b5315239a5a324241e57bb56b97090b076769ea0",
+      "source_file": "maudeExcelReport5.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=19053774&pc=MLO",
+      "event_type": "Malfunction",
+      "product_code": "MLO"
+    },
+    {
+      "report_id": "MAUDE-ECG-0020",
+      "source_record_id": "2183461-2026-00001",
+      "source_record_sha256": "8ea4f1fd9a8c992317f437d8656baa6f0ac72a565aa0718ffaadecd03058b935",
+      "source_file": "maudeExcelReport5.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=24338651&pc=MLO",
+      "event_type": "Malfunction",
+      "product_code": "MLO"
+    },
+    {
+      "report_id": "MAUDE-ECG-0021",
+      "source_record_id": "3011937459-2025-03527",
+      "source_record_sha256": "3428796707ce0de1d2a26a5674b4c19860e8a53a81432217bf250418c6570b4f",
+      "source_file": "maudeExcelReport5.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=23386929&pc=MLO",
+      "event_type": "Malfunction",
+      "product_code": "MLO"
+    },
+    {
+      "report_id": "MAUDE-ECG-0022",
+      "source_record_id": "MW5165356",
+      "source_record_sha256": "5fc45815f8b5dddb7ed87ff14cf26d2e7a7aaa86839870109af43e07431c0871",
+      "source_file": "maudeExcelReport5.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=21256485&pc=MLO",
+      "event_type": "Injury",
+      "product_code": "MLO"
+    },
+    {
+      "report_id": "MAUDE-ECG-0023",
+      "source_record_id": "MW5169622",
+      "source_record_sha256": "d4707e08dfb83c36e5d3751314892fc4b385ac136d77b0b715602789deab25af",
+      "source_file": "maudeExcelReport5.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=21927118&pc=MLO",
+      "event_type": "Injury",
+      "product_code": "MLO"
+    },
+    {
+      "report_id": "MAUDE-ECG-0024",
+      "source_record_id": "MW5174152",
+      "source_record_sha256": "cdcf8355146373b86e412eeec3ea810c942ba2f35e7c03636d961e396248a700",
+      "source_file": "maudeExcelReport5.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=22737943&pc=MLO",
+      "event_type": "Injury",
+      "product_code": "MLO"
+    },
+    {
+      "report_id": "MAUDE-ECG-0025",
+      "source_record_id": "1000165971-2025-00691",
+      "source_record_sha256": "bf597ab748a80496f5415296f877bf1f3adc81628b84284aab578bb942214ada",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=23413717&pc=MWJ",
+      "event_type": "Malfunction",
+      "product_code": "MWJ"
+    },
+    {
+      "report_id": "MAUDE-ECG-0026",
+      "source_record_id": "1218950-2025-000306",
+      "source_record_sha256": "4b1643b07d18ed8a65e9d02fe50f21550b889b253827c993a63b6df115c5b538",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=22038693&pc=MWJ",
+      "event_type": "Injury",
+      "product_code": "MWJ"
+    },
+    {
+      "report_id": "MAUDE-ECG-0027",
+      "source_record_id": "19434596",
+      "source_record_sha256": "43b5b74e32ee48c93fbffff87e397ce21eaa5fd9fa75d22da6f6048e9c3dc538",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=19434596&pc=MWJ",
+      "event_type": "Malfunction",
+      "product_code": "MWJ"
+    },
+    {
+      "report_id": "MAUDE-ECG-0028",
+      "source_record_id": "2183461-2024-00045",
+      "source_record_sha256": "e6acf92d8481fa4e696211cf2b91000130d44b053dc4d79a5aa1f022cd97271c",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=20746456&pc=MWJ",
+      "event_type": "Malfunction",
+      "product_code": "MWJ"
+    },
+    {
+      "report_id": "MAUDE-ECG-0029",
+      "source_record_id": "2183461-2025-00023",
+      "source_record_sha256": "f47d1f2c6ccf241003261db8daf1cf4089d8656752cd7d57f3552835c2dd1412",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=23741091&pc=MWJ",
+      "event_type": "Malfunction",
+      "product_code": "MWJ"
+    },
+    {
+      "report_id": "MAUDE-ECG-0030",
+      "source_record_id": "22564237",
+      "source_record_sha256": "9cc42903cdfd843c234702f243d48512029d248134dc17e260507f387ca394d0",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=22564237&pc=MWJ",
+      "event_type": "Malfunction",
+      "product_code": "MWJ"
+    },
+    {
+      "report_id": "MAUDE-ECG-0031",
+      "source_record_id": "22737635",
+      "source_record_sha256": "9fa35d0146cd5ccd16b9c25efee66251db6dee2f19b3b0f4a5fe17da46ea4e66",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=22737635&pc=MWJ",
+      "event_type": "Malfunction",
+      "product_code": "MWJ"
+    },
+    {
+      "report_id": "MAUDE-ECG-0032",
+      "source_record_id": "23335138",
+      "source_record_sha256": "dac7ac7108337c351468b22447409983a13e3a3afa5b9a67c28bcb87b46e681d",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=23335138&pc=MWJ",
+      "event_type": "Malfunction",
+      "product_code": "MWJ"
+    },
+    {
+      "report_id": "MAUDE-ECG-0033",
+      "source_record_id": "MW5130533",
+      "source_record_sha256": "572df8aa0fd483f0a8653e2a10d2bb8c16dcfd96e2e021c3bcb50cd77f55d025",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=17523585&pc=MWJ",
+      "event_type": "Malfunction",
+      "product_code": "MWJ"
+    },
+    {
+      "report_id": "MAUDE-ECG-0034",
+      "source_record_id": "MW5141804",
+      "source_record_sha256": "0a0a6c85745344e7038679c260a5b749f34eef439bc07892d3f3bd8144804206",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=17534904&pc=MWJ",
+      "event_type": "Injury",
+      "product_code": "MWJ"
+    },
+    {
+      "report_id": "MAUDE-ECG-0035",
+      "source_record_id": "MW5143304",
+      "source_record_sha256": "127c1384ae0e22f274ce38e207e78e8fef7c0d130c75121fd772020c648ffb9f",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=17536416&pc=MWJ",
+      "event_type": "Malfunction",
+      "product_code": "MWJ"
+    },
+    {
+      "report_id": "MAUDE-ECG-0036",
+      "source_record_id": "MW5159797",
+      "source_record_sha256": "f44b21b33d3a4a1d62f7f575b43cf4f19967059dce80a65d0cd526a9ded0714d",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=20269000&pc=MWJ",
+      "event_type": "Injury",
+      "product_code": "MWJ"
+    },
+    {
+      "report_id": "MAUDE-ECG-0037",
+      "source_record_id": "MW5164264",
+      "source_record_sha256": "76433626483fbf4dd997b6488bcc696561d12aacb52241e1f6763480a271c018",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=21071458&pc=MWJ",
+      "event_type": "Injury",
+      "product_code": "MWJ"
+    },
+    {
+      "report_id": "MAUDE-ECG-0038",
+      "source_record_id": "MW5168567",
+      "source_record_sha256": "fc302d0afd4686d04e72cd24060f5f97d750ee1b12808bf485ce4eb6bdcc182a",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=21763707&pc=MWJ",
+      "event_type": "Injury",
+      "product_code": "MWJ"
+    },
+    {
+      "report_id": "MAUDE-ECG-0039",
+      "source_record_id": "MW5184815",
+      "source_record_sha256": "44713a941f9fb67c9619dd62a65948c275fbfeb951614596d813f469a6060be1",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=24521813&pc=MWJ",
+      "event_type": "Other",
+      "product_code": "MWJ"
+    },
+    {
+      "report_id": "MAUDE-ECG-0040",
+      "source_record_id": "MW5189854",
+      "source_record_sha256": "d54b8989b0450bfd5e9bb1cac39dbd18bb16ae221840636ab84a649ff0981466",
+      "source_file": "maudeExcelReport25.csv",
+      "web_address": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/Detail.CFM?MDRFOI__ID=25607719&pc=MWJ",
+      "event_type": "Malfunction",
+      "product_code": "MWJ"
+    }
+  ]
+}

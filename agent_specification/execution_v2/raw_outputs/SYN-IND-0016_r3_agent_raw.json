@@ -1,0 +1,222 @@
+{
+  "arm": "agent_raw",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 25932.663,
+  "model_token_counts": {
+    "completion": 749,
+    "prompt": 1999
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n  \"severity\": 2,\n  \"confidence\": 0.85,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The synthetic overnight telemetry pool reported a minor irregularity that did not result in patient harm, but the retrospective clinician note was missing, indicating potential for recurrence. The issue may trigger obligations under EU MDR Article 10(2) and Article 83.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The post-market surveillance system is required to actively gather, record, and analyze relevant data on the quality, performance, and safety of devices.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art10-9-qms-elements\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The quality management system must include setting up, implementing, and maintaining a post-market surveillance system as described in Article 83.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"The synthetic CI test log shows the VTach sensitivity drop from 0.97 to 0.89, triggering an automated risk-gate block.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-0042\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"The unit test log shows the VTach classifier validation suite passing at 0.94, indicating a coverage gap that was not caught by existing tests.\"\n    },\n    {\n      \"artifact_id\": \"CGM-ARTIFACT-APPROVAL-0020\",\n      \"artifact_type\": \"approval_record\",\n      \"relevance_note\": \"The synthetic release checklist is missing authorized human approval, suggesting potential procedural issues in the quality management system.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"Potential for recurrence of ventricular tachycardia-adjacent irregularities.\",\n      \"cited_artifact_id\": \"mdr-art83-pms-system\",\n      \"support_status\": \"weakly_supported\"\n   ,\n    \"support_note\": \"The missing clinician note may indicate a risk of undetected recurrence.\"\n    },\n    {\n      \"claim\": \"Technical regression in the VTach classifier.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"support_status\": \"supported\"\n    ,\n    \"support_note\": \"The synthetic CI test log shows a significant drop in sensitivity, indicating a technical issue.\"\n    },\n    {\n      \"claim\": \"Coverage gap in the VTach classifier validation suite.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-0042\",\n      \"support_status\": \"supported\"\n    ,\n    \"support_note\": \"The unit test log shows passing results at 0.94, suggesting a coverage gap that was not caught by existing tests.\"\n    },\n    {\n      \"claim\": \"Procedural issues in the quality management system.\",\n      \"cited_artifact_id\": \"CGM-ARTIFACT-APPROVAL-0020\",\n      \"support_status\": \"supported\"\n    ,\n    \"support_note\": \"The synthetic release checklist is missing authorized human approval, indicating potential procedural lapses.\"\n    }\n  ]\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE",
+    "scenario_id": "SYN-IND-0016"
+  },
+  "replicate": 3,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-art83-pms-system",
+        "claim": "Potential for recurrence of ventricular tachycardia-adjacent irregularities.",
+        "support_note": "The missing clinician note may indicate a risk of undetected recurrence.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+        "claim": "Technical regression in the VTach classifier.",
+        "support_note": "The synthetic CI test log shows a significant drop in sensitivity, indicating a technical issue.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-0042",
+        "claim": "Coverage gap in the VTach classifier validation suite.",
+        "support_note": "The unit test log shows passing results at 0.94, suggesting a coverage gap that was not caught by existing tests.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "claim": "Procedural issues in the quality management system.",
+        "support_note": "The synthetic release checklist is missing authorized human approval, indicating potential procedural lapses.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The post-market surveillance system is required to actively gather, record, and analyze relevant data on the quality, performance, and safety of devices."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The quality management system must include setting up, implementing, and maintaining a post-market surveillance system as described in Article 83."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic CI test log shows the VTach sensitivity drop from 0.97 to 0.89, triggering an automated risk-gate block."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The unit test log shows the VTach classifier validation suite passing at 0.94, indicating a coverage gap that was not caught by existing tests."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The synthetic release checklist is missing authorized human approval, suggesting potential procedural issues in the quality management system."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic overnight telemetry pool reported a minor irregularity that did not result in patient harm, but the retrospective clinician note was missing, indicating potential for recurrence. The issue may trigger obligations under EU MDR Article 10(2) and Article 83.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 2
+  },
+  "scenario_id": "SYN-IND-0016",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The post-market surveillance system is required to actively gather, record, and analyze relevant data on the quality, performance, and safety of devices."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The quality management system must include setting up, implementing, and maintaining a post-market surveillance system as described in Article 83."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic CI test log shows the VTach sensitivity drop from 0.97 to 0.89, triggering an automated risk-gate block."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The unit test log shows the VTach classifier validation suite passing at 0.94, indicating a coverage gap that was not caught by existing tests."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The synthetic release checklist is missing authorized human approval, suggesting potential procedural issues in the quality management system."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": false,
+    "evidence_gaps": [],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "Potential for recurrence of ventricular tachycardia-adjacent irregularities.",
+          "support_note": "The missing clinician note may indicate a risk of undetected recurrence.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+          "claim": "Technical regression in the VTach classifier.",
+          "support_note": "The synthetic CI test log shows a significant drop in sensitivity, indicating a technical issue.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0042",
+          "claim": "Coverage gap in the VTach classifier validation suite.",
+          "support_note": "The unit test log shows passing results at 0.94, suggesting a coverage gap that was not caught by existing tests.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+          "claim": "Procedural issues in the quality management system.",
+          "support_note": "The synthetic release checklist is missing authorized human approval, indicating potential procedural lapses.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The post-market surveillance system is required to actively gather, record, and analyze relevant data on the quality, performance, and safety of devices."
+        },
+        {
+          "artifact_id": "mdr-art10-9-qms-elements",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The quality management system must include setting up, implementing, and maintaining a post-market surveillance system as described in Article 83."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The synthetic CI test log shows the VTach sensitivity drop from 0.97 to 0.89, triggering an automated risk-gate block."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0042",
+          "artifact_type": "test_log",
+          "relevance_note": "The unit test log shows the VTach classifier validation suite passing at 0.94, indicating a coverage gap that was not caught by existing tests."
+        },
+        {
+          "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+          "artifact_type": "approval_record",
+          "relevance_note": "The synthetic release checklist is missing authorized human approval, suggesting potential procedural issues in the quality management system."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic overnight telemetry pool reported a minor irregularity that did not result in patient harm, but the retrospective clinician note was missing, indicating potential for recurrence. The issue may trigger obligations under EU MDR Article 10(2) and Article 83.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "final_report_sha256": "62a5e08c3353196677653539971d974884c47e7c926d989f95fe1fa168722866",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [],
+    "recommendation": "CAPA_INVESTIGATE",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0016",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0016_r3",
+    "scenario_id": "SYN-IND-0016",
+    "schema_version": "2.1.0",
+    "severity": 2,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "advisory_complete",
+    "timestamp_utc": "2026-08-03T09:27:23.347240Z",
+    "total_steps": 3,
+    "trace_id": "c10af780-c084-4064-8127-60ef1bc4bea2"
+  },
+  "trace_path": "traces/SYN-IND-0016_r3.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {}
+}

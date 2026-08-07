@@ -1,0 +1,26 @@
+---Trace---
+------State 0 (loop)-------
+univ={HumanActor$0, HumanActor$1, HumanActor$2, Agent$0, Agent$1, Agent$2, Component$0, Gate2$0, Time$0, Time$1, Time$2, Time$3, Time$4, Time$5, Time$6, Time$7, Time$8, Time$9, Time$10, Time$11, SystemState$0, SystemState$1, SystemState$2, SystemState$3, SystemState$4, SystemState$5, SystemState$6, SystemState$7, SystemState$8, SystemState$9, SystemState$10, SystemState$11, ordering/Ord$0, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
+Int={-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
+seq/Int={0, 1, 2, 3}
+String={}
+none={}
+this/Agent={Agent$0, Agent$1, Agent$2}
+this/HumanActor={HumanActor$0, HumanActor$1, HumanActor$2}
+this/Actor={HumanActor$0, HumanActor$1, HumanActor$2, Agent$0, Agent$1, Agent$2}
+this/Stage={}
+this/Component={Component$0}
+this/Gate2={Gate2$0}
+this/Time={Time$0, Time$1, Time$2, Time$3, Time$4, Time$5, Time$6, Time$7, Time$8, Time$9, Time$10, Time$11}
+this/SystemState={SystemState$0, SystemState$1, SystemState$2, SystemState$3, SystemState$4, SystemState$5, SystemState$6, SystemState$7, SystemState$8, SystemState$9, SystemState$10, SystemState$11}
+this/SystemState<:time={SystemState$0->Time$9, SystemState$1->Time$8, SystemState$2->Time$7, SystemState$3->Time$6, SystemState$4->Time$5, SystemState$5->Time$4, SystemState$6->Time$3, SystemState$7->Time$2, SystemState$8->Time$1, SystemState$9->Time$0, SystemState$10->Time$10, SystemState$11->Time$11}
+this/SystemState<:canExecute={}
+this/SystemState<:canDeploy={SystemState$11->Agent$2->Component$0}
+this/SystemState<:gateApproved={SystemState$10->Gate2$0, SystemState$11->Gate2$0}
+this/SystemState<:recommended={SystemState$10->HumanActor$0->Gate2$0, SystemState$11->HumanActor$0->Gate2$0}
+ordering/Ord={ordering/Ord$0}
+ordering/Ord<:First={ordering/Ord$0->Time$0}
+ordering/Ord<:Next={ordering/Ord$0->Time$0->Time$1, ordering/Ord$0->Time$1->Time$2, ordering/Ord$0->Time$2->Time$3, ordering/Ord$0->Time$3->Time$4, ordering/Ord$0->Time$4->Time$5, ordering/Ord$0->Time$5->Time$6, ordering/Ord$0->Time$6->Time$7, ordering/Ord$0->Time$7->Time$8, ordering/Ord$0->Time$8->Time$9, ordering/Ord$0->Time$9->Time$10, ordering/Ord$0->Time$10->Time$11}
+skolem $negativeControlCanViolate_s={SystemState$11}
+skolem $negativeControlCanViolate_a={Agent$2}
+

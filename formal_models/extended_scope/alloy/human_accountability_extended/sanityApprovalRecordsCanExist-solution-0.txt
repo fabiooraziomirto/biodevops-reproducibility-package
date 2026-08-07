@@ -1,0 +1,22 @@
+---Trace---
+------State 0 (loop)-------
+univ={HumanActor$0, Agent$0, Agent$1, HumanActor$1, ApprovalRecord$0, Code$0, TestResult$0, ValidationEvidence$0, Artifact$0, Artifact$1, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
+Int={-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
+seq/Int={0, 1, 2, 3}
+String={}
+none={}
+this/Agent={Agent$0, Agent$1}
+this/HumanActor={HumanActor$0, HumanActor$1}
+this/Actor={HumanActor$0, Agent$0, Agent$1, HumanActor$1}
+this/ApprovalRecord={ApprovalRecord$0}
+this/Code={Code$0}
+this/TestResult={TestResult$0}
+this/ValidationEvidence={ValidationEvidence$0}
+this/ArtifactKind={ApprovalRecord$0, Code$0, TestResult$0, ValidationEvidence$0}
+this/Artifact={Artifact$0, Artifact$1}
+this/Artifact<:kind={Artifact$0->Code$0, Artifact$1->ApprovalRecord$0}
+this/Artifact<:creator={Artifact$0->HumanActor$1, Artifact$1->HumanActor$1}
+this/AuthorizedHuman={HumanActor$1}
+skolem $sanityApprovalRecordsCanExist_a={Artifact$1}
+skolem $sanityApprovalRecordsCanExist_h={HumanActor$1}
+

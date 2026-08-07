@@ -1,0 +1,47 @@
+TLC2 Version 2026.05.26.235334 (rev: 4ba7d88)
+Warning: Please run the Java VM, which executes TLC with a throughput optimized garbage collector, by passing the "-XX:+UseParallelGC" property.
+(Use the -nowarning option to disable this warning.)
+Running breadth-first search Model-Checking with fp 17 and seed -3263973831472573946 with 1 worker on 16 cores with 30688MB heap and 64MB offheap memory [pid: 3808545] (Linux 6.8.12-18-pve amd64, Ubuntu 17.0.19 64bit, MSBDiskFPSet, DiskStateQueue).
+Parsing file /root/Desktop/BioDevOps/si_scaling_sweep_2026/formal_verification_extended/tla/EvidenceMediatedGovernance_Broken.tla
+Parsing file /tmp/tlc-6263501008320569412/Naturals.tla (jar:file:/root/Desktop/BioDevOps/formal_artifacts/tools/tla2tools.jar!/tla2sany/StandardModules/Naturals.tla)
+Parsing file /tmp/tlc-6263501008320569412/FiniteSets.tla (jar:file:/root/Desktop/BioDevOps/formal_artifacts/tools/tla2tools.jar!/tla2sany/StandardModules/FiniteSets.tla)
+Parsing file /tmp/tlc-6263501008320569412/TLC.tla (jar:file:/root/Desktop/BioDevOps/formal_artifacts/tools/tla2tools.jar!/tla2sany/StandardModules/TLC.tla)
+Parsing file /tmp/tlc-6263501008320569412/_TLCTrace.tla (jar:file:/root/Desktop/BioDevOps/formal_artifacts/tools/tla2tools.jar!/tla2sany/StandardModules/_TLCTrace.tla)
+Parsing file /tmp/tlc-6263501008320569412/Sequences.tla (jar:file:/root/Desktop/BioDevOps/formal_artifacts/tools/tla2tools.jar!/tla2sany/StandardModules/Sequences.tla)
+Parsing file /tmp/tlc-6263501008320569412/TLCExt.tla (jar:file:/root/Desktop/BioDevOps/formal_artifacts/tools/tla2tools.jar!/tla2sany/StandardModules/TLCExt.tla)
+Parsing file /tmp/tlc-6263501008320569412/Integers.tla (jar:file:/root/Desktop/BioDevOps/formal_artifacts/tools/tla2tools.jar!/tla2sany/StandardModules/Integers.tla)
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Integers
+Semantic processing of module TLCExt
+Semantic processing of module _TLCTrace
+Semantic processing of module EvidenceMediatedGovernance_Broken
+Linting of module TLCExt
+Linting of module _TLCTrace
+Linting of module EvidenceMediatedGovernance_Broken
+Starting... (2026-08-03 23:09:00)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-08-03 23:09:01.
+Error: Invariant EvidenceMediationSafetyAsInvariant is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ reviewed = (r1 :> FALSE @@ r2 :> FALSE @@ r3 :> FALSE @@ r4 :> FALSE @@ r5 :> FALSE)
+/\ authorized = FALSE
+/\ pendingRisk = {}
+
+State 2: <RiskArrives(r1) line 38, col 5 to line 42, col 26 of module EvidenceMediatedGovernance_Broken>
+/\ reviewed = (r1 :> FALSE @@ r2 :> FALSE @@ r3 :> FALSE @@ r4 :> FALSE @@ r5 :> FALSE)
+/\ authorized = FALSE
+/\ pendingRisk = {r1}
+
+State 3: <GrantAuthorization_Broken line 60, col 5 to line 62, col 27 of module EvidenceMediatedGovernance_Broken>
+/\ reviewed = (r1 :> FALSE @@ r2 :> FALSE @@ r3 :> FALSE @@ r4 :> FALSE @@ r5 :> FALSE)
+/\ authorized = TRUE
+/\ pendingRisk = {r1}
+
+14 states generated, 13 distinct states found, 10 states left on queue.
+The depth of the complete state graph search is 3.
+Finished in 00s at (2026-08-03 23:09:01)
+Trace exploration spec path: ./EvidenceMediatedGovernance_Broken_TTrace_1785791340.tla

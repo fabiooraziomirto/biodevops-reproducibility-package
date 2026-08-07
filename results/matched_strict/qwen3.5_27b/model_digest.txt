@@ -1,0 +1,1 @@
+qwen3.5:27b digest(modelfile_sha256)=b0ee5df6512a497ea360648a48992609c8d23a7d7713506a95eebbdcbf918390

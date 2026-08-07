@@ -1,0 +1,13 @@
+{
+  "purpose": "Blinded dual annotation of clinical guard inputs; not annotation of benchmark labels.",
+  "dataset_sha256": "b70dccc46a866d5351adc2cdb8acdbe56b1c56bf5db1bdfb2bf3330123aeb98e",
+  "n_cases": 40,
+  "masked_fields": [
+    "ground_truth_severity",
+    "ground_truth_recommendation",
+    "expected_failure_mode",
+    "fhir_fragment",
+    "existing_clinical_facts",
+    "model_outputs"
+  ]
+}

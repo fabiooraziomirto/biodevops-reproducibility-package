@@ -1,0 +1,153 @@
+{
+  "arm": "agent_raw",
+  "artifact_recall": null,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 16023.193,
+  "model_token_counts": {
+    "completion": 350,
+    "prompt": 1996
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n  \"severity\": 2,\n  \"confidence\": 0.8,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The synthetic telemetry classifier change reduced sensitivity in an internal validation test, but the regression was blocked by the CI/CD quality gate before any patient exposure occurred.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"The synthetic test log shows a drop in VTach sensitivity, triggering the automated risk-gate block.\"\n    },\n    {\n      \"artifact_id\": \"CGM-ARTIFACT-APPROVAL-0020\",\n      \"artifact_type\": \"approval_record\",\n      \"relevance_note\": \"The release checklist was missing authorized human approval, indicating a procedural gap in quality control.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"Technical regression detected and blocked before patient exposure.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"support_status\": \"supported\"\n   ,\n    \"support_note\": \"The synthetic test log shows the regression was caught by the CI/CD quality gate.\"\n    },\n    {\n      \"claim\": \"Procedural gap in release approval process.\",\n      \"cited_artifact_id\": \"CGM-ARTIFACT-APPROVAL-0020\",\n      \"support_status\": \"supported\"\n    ,\n    \"support_note\": \"The synthetic approval record indicates the release checklist was missing authorized human approval.\"\n    }\n  ]\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE",
+    "scenario_id": "SYN-IND-0018"
+  },
+  "replicate": 1,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+        "claim": "Technical regression detected and blocked before patient exposure.",
+        "support_note": "The synthetic test log shows the regression was caught by the CI/CD quality gate.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "claim": "Procedural gap in release approval process.",
+        "support_note": "The synthetic approval record indicates the release checklist was missing authorized human approval.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.8,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic test log shows a drop in VTach sensitivity, triggering the automated risk-gate block."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The release checklist was missing authorized human approval, indicating a procedural gap in quality control."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic telemetry classifier change reduced sensitivity in an internal validation test, but the regression was blocked by the CI/CD quality gate before any patient exposure occurred.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 2
+  },
+  "scenario_id": "SYN-IND-0018",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic test log shows a drop in VTach sensitivity, triggering the automated risk-gate block."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The release checklist was missing authorized human approval, indicating a procedural gap in quality control."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": false,
+    "evidence_gaps": [],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+          "claim": "Technical regression detected and blocked before patient exposure.",
+          "support_note": "The synthetic test log shows the regression was caught by the CI/CD quality gate.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+          "claim": "Procedural gap in release approval process.",
+          "support_note": "The synthetic approval record indicates the release checklist was missing authorized human approval.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.8,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The synthetic test log shows a drop in VTach sensitivity, triggering the automated risk-gate block."
+        },
+        {
+          "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+          "artifact_type": "approval_record",
+          "relevance_note": "The release checklist was missing authorized human approval, indicating a procedural gap in quality control."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic telemetry classifier change reduced sensitivity in an internal validation test, but the regression was blocked by the CI/CD quality gate before any patient exposure occurred.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "final_report_sha256": "8014ba934ac2da4817f08a04b0ad9ffbb1ec720b893f72a6695d5b8b65042591",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [],
+    "recommendation": "CAPA_INVESTIGATE",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0018",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0018_r1",
+    "scenario_id": "SYN-IND-0018",
+    "schema_version": "2.1.0",
+    "severity": 2,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "advisory_complete",
+    "timestamp_utc": "2026-08-03T09:02:24.520590Z",
+    "total_steps": 3,
+    "trace_id": "f88dc692-2a57-4335-8c5c-e9d3290a8250"
+  },
+  "trace_path": "traces/SYN-IND-0018_r1.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {}
+}

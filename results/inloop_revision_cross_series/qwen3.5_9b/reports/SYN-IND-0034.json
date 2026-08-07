@@ -1,0 +1,165 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0034",
+    "clinical_inconsistency_class": "none",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic remote monitoring center reported that the patient suffered a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode, confirmed by hospital emergency response records. The only artifact filed against this report is an unrelated code-review diff that predates this device version and does not describe the event.",
+  "model_token_counts": {
+    "completion": 187,
+    "prompt": 2256
+  },
+  "raw_content": "{\n  \"severity\": 4,\n  \"confidence\": 0.95,\n  \"recommendation\": \"FIELD_SAFETY_CORRECTIVE_ACTION\",\n  \"rationale\": \"The incident narrative describes a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode in a patient. This constitutes realized serious harm (death or severe injury) and broad deployed-population exposure risk, meeting the criteria for Severity 4 per the rubric ('realized serious harm... evidence supporting immediate field safety action'). The event involves a failure of a safety-critical function (missed detection/flagging), which aligns with 'serious potential patient-safety risk' even if no prior block occurred. Given the confirmed clinical outcome, this requires an immediate Field Safety Corrective Action rather than internal CAPA.\",\n  \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: fsca_without_confirmatory_evidence_downgraded; severity4_or_death_forced_immediate_human_escalation; technical_incident_missing_technical_evidence; deny:technical_incident_missing_technical_evidence; clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: At least one retrieved technical artifact supporting the incident judgment.; Causal link between the artifact/change and the observed event.; Evidence of recurrence or confirmed deployed-population impact.; Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (shacl) RiskReport must link at least one evidence id.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.95,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode in a patient. This constitutes realized serious harm (death or severe injury) and broad deployed-population exposure risk, meeting the criteria for Severity 4 per the rubric ('realized serious harm... evidence supporting immediate field safety action'). The event involves a failure of a safety-critical function (missed detection/flagging), which aligns with 'serious potential patient-safety risk' even if no prior block occurred. Given the confirmed clinical outcome, this requires an immediate Field Safety Corrective Action rather than internal CAPA.",
+    "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "requires_human_review": true,
+    "severity": 4
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "fsca_without_confirmatory_evidence_downgraded",
+      "severity4_or_death_forced_immediate_human_escalation",
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence",
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "The incident narrative describes a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode in a patient.",
+      "This constitutes realized serious harm (death or severe injury) and broad deployed-population exposure risk, meeting the criteria for Severity 4 per the rubric ('realized serious harm...",
+      "evidence supporting immediate field safety action').",
+      "The event involves a failure of a safety-critical function (missed detection/flagging), which aligns with 'serious potential patient-safety risk' even if no prior block occurred.",
+      "Given the confirmed clinical outcome, this requires an immediate Field Safety Corrective Action rather than internal CAPA."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "",
+          "claim": "The incident narrative describes a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode in a patient.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "This constitutes realized serious harm (death or severe injury) and broad deployed-population exposure risk, meeting the criteria for Severity 4 per the rubric ('realized serious harm...",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "evidence supporting immediate field safety action').",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "The event involves a failure of a safety-critical function (missed detection/flagging), which aligns with 'serious potential patient-safety risk' even if no prior block occurred.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "Given the confirmed clinical outcome, this requires an immediate Field Safety Corrective Action rather than internal CAPA.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment.",
+        "Causal link between the artifact/change and the observed event.",
+        "Evidence of recurrence or confirmed deployed-population impact.",
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident narrative describes a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode in a patient. This constitutes realized serious harm (death or severe injury) and broad deployed-population exposure risk, meeting the criteria for Severity 4 per the rubric ('realized serious harm... evidence supporting immediate field safety action'). The event involves a failure of a safety-critical function (missed detection/flagging), which aligns with 'serious potential patient-safety risk' even if no prior block occurred. Given the confirmed clinical outcome, this requires an immediate Field Safety Corrective Action rather than internal CAPA.",
+      "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "requires_human_review": true,
+      "severity": 4
+    },
+    "weakly_supported_claims": []
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "",
+        "claim": "The incident narrative describes a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode in a patient.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "This constitutes realized serious harm (death or severe injury) and broad deployed-population exposure risk, meeting the criteria for Severity 4 per the rubric ('realized serious harm...",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "evidence supporting immediate field safety action').",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "The event involves a failure of a safety-critical function (missed detection/flagging), which aligns with 'serious potential patient-safety risk' even if no prior block occurred.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "Given the confirmed clinical outcome, this requires an immediate Field Safety Corrective Action rather than internal CAPA.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [],
+    "missing_evidence": [
+      "At least one retrieved technical artifact supporting the incident judgment.",
+      "Causal link between the artifact/change and the observed event.",
+      "Evidence of recurrence or confirmed deployed-population impact.",
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident narrative describes a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode in a patient. This constitutes realized serious harm (death or severe injury) and broad deployed-population exposure risk, meeting the criteria for Severity 4 per the rubric ('realized serious harm... evidence supporting immediate field safety action'). The event involves a failure of a safety-critical function (missed detection/flagging), which aligns with 'serious potential patient-safety risk' even if no prior block occurred. Given the confirmed clinical outcome, this requires an immediate Field Safety Corrective Action rather than internal CAPA.",
+    "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+    "requires_human_review": true,
+    "severity": 4
+  }
+}

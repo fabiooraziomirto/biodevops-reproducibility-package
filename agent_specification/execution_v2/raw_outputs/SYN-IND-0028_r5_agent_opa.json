@@ -1,0 +1,251 @@
+{
+  "arm": "agent_opa",
+  "artifact_recall": null,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 0,
+  "model_token_counts": {
+    "completion": null,
+    "prompt": null
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [],
+  "raw_model_output": null,
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE",
+    "scenario_id": "SYN-IND-0028"
+  },
+  "replicate": 5,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-art83-pms-system",
+        "claim": "Requires review under EU MDR Article 10(9) for post-market surveillance.",
+        "support_note": "The incident may trigger obligations under the manufacturer's post-market surveillance system as per EU MDR Article 10(9).",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+        "claim": "Technical regression in VTach sensitivity detected by CI/CD quality gate.",
+        "support_note": "The synthetic CI test log shows a significant drop in VTach sensitivity, which was blocked before deployment.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Requires review under EU MDR Article 10(9) for post-market surveillance system."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Requires review under EU MDR Article 10(9) for the quality management system elements, including post-market surveillance."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic CI test log shows a significant drop in VTach sensitivity from 0.97 to 0.89, triggering the automated risk-gate block."
+      },
+      {
+        "artifact_id": "ARTIFACT-DEPLOYLOG-0006",
+        "artifact_type": "deployment_log",
+        "relevance_note": "The update was pushed outside the documented maintenance window without a corresponding change-approval ticket ID, indicating potential process issues."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The device failed to flag a clinically significant atrial fibrillation episode, which may trigger obligations under EU MDR Article 10(9) and Article 83 for post-market surveillance. However, no patient was exposed, and the issue was blocked before deployment.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  },
+  "scenario_id": "SYN-IND-0028",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 2 is below derived clinical floor 3. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Requires review under EU MDR Article 10(9) for post-market surveillance system."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Requires review under EU MDR Article 10(9) for the quality management system elements, including post-market surveillance."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic CI test log shows a significant drop in VTach sensitivity from 0.97 to 0.89, triggering the automated risk-gate block."
+      },
+      {
+        "artifact_id": "ARTIFACT-DEPLOYLOG-0006",
+        "artifact_type": "deployment_log",
+        "relevance_note": "The update was pushed outside the documented maintenance window without a corresponding change-approval ticket ID, indicating potential process issues."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": false,
+    "evidence_gaps": [],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "Requires review under EU MDR Article 10(9) for post-market surveillance.",
+          "support_note": "The incident may trigger obligations under the manufacturer's post-market surveillance system as per EU MDR Article 10(9).",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+          "claim": "Technical regression in VTach sensitivity detected by CI/CD quality gate.",
+          "support_note": "The synthetic CI test log shows a significant drop in VTach sensitivity, which was blocked before deployment.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "Requires review under EU MDR Article 10(9) for post-market surveillance system."
+        },
+        {
+          "artifact_id": "mdr-art10-9-qms-elements",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "Requires review under EU MDR Article 10(9) for the quality management system elements, including post-market surveillance."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The synthetic CI test log shows a significant drop in VTach sensitivity from 0.97 to 0.89, triggering the automated risk-gate block."
+        },
+        {
+          "artifact_id": "ARTIFACT-DEPLOYLOG-0006",
+          "artifact_type": "deployment_log",
+          "relevance_note": "The update was pushed outside the documented maintenance window without a corresponding change-approval ticket ID, indicating potential process issues."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The device failed to flag a clinically significant atrial fibrillation episode, which may trigger obligations under EU MDR Article 10(9) and Article 83 for post-market surveillance. However, no patient was exposed, and the issue was blocked before deployment.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "final_report_sha256": "0a3131742d49c18a7e8908839d7a3ba4a10250df370be9799fdb571175320ae1",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [],
+    "recommendation": "CAPA_INVESTIGATE",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0028",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0028_r5",
+    "scenario_id": "SYN-IND-0028",
+    "schema_version": "2.1.0",
+    "severity": 2,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "advisory_complete",
+    "timestamp_utc": "2026-08-03T09:56:40.052005Z",
+    "total_steps": 3,
+    "trace_id": "bf7ad9a1-156c-4624-93ac-e292795be720"
+  },
+  "trace_path": "traces/SYN-IND-0028_r5.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 1.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "Requires review under EU MDR Article 10(9) for post-market surveillance.",
+          "support_note": "The incident may trigger obligations under the manufacturer's post-market surveillance system as per EU MDR Article 10(9).",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+          "claim": "Technical regression in VTach sensitivity detected by CI/CD quality gate.",
+          "support_note": "The synthetic CI test log shows a significant drop in VTach sensitivity, which was blocked before deployment.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "Requires review under EU MDR Article 10(9) for post-market surveillance system."
+        },
+        {
+          "artifact_id": "mdr-art10-9-qms-elements",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "Requires review under EU MDR Article 10(9) for the quality management system elements, including post-market surveillance."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The synthetic CI test log shows a significant drop in VTach sensitivity from 0.97 to 0.89, triggering the automated risk-gate block."
+        },
+        {
+          "artifact_id": "ARTIFACT-DEPLOYLOG-0006",
+          "artifact_type": "deployment_log",
+          "relevance_note": "The update was pushed outside the documented maintenance window without a corresponding change-approval ticket ID, indicating potential process issues."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The device failed to flag a clinically significant atrial fibrillation episode, which may trigger obligations under EU MDR Article 10(9) and Article 83 for post-market surveillance. However, no patient was exposed, and the issue was blocked before deployment.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": []
+  }
+}

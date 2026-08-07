@@ -1,0 +1,22 @@
+{
+  "sources": {
+    "/root/Desktop/BioDevOps/si_scaling_sweep_2026/results/formal_verification_extended/autonomy_transition_model_extended.log": "747dc054b269d2bf0e420eb9029f0b2aa4841f4bf6ac1ee10cb63f36f953941e",
+    "/root/Desktop/BioDevOps/si_scaling_sweep_2026/results/formal_verification_extended/evidence_governance_model_extended.log": "8788b2c92bc85d18c22caa94d0acbac845456f9507775b7c8eaef472412dc01a",
+    "/root/Desktop/BioDevOps/si_scaling_sweep_2026/results/formal_verification_extended/human_accountability_model_extended.log": "66d3059bfbf0dcbe248790785cca49f320604446ed95571b00ffa6943ed9a533",
+    "/root/Desktop/BioDevOps/si_scaling_sweep_2026/results/formal_verification_extended/tlc_extended.log": "fa4780f8f712c9d302b44afbf5c434020b9cb48b7496153759022dbd5f92848d",
+    "/root/Desktop/BioDevOps/si_scaling_sweep_2026/results/formal_verification_extended/tlc_broken_extended.log": "27086aad215b83729f26f680b1f1ba3becaeaad252e6cf928abd3135672918ae",
+    "/root/Desktop/BioDevOps/si_scaling_sweep_2026/results/formal_verification_extended/alloy_autonomy_check.log": "035b0ec302df3b7cbed095ad4ab411e3ebd6994b949cf7118cec96ad07392c50",
+    "/root/Desktop/BioDevOps/si_scaling_sweep_2026/results/formal_verification_extended/alloy_autonomy_negctrl.log": "8f7dcaa484d7ef5112741de09f6a0036747bcfb025b8da4419e57e740553a80d",
+    "/root/Desktop/BioDevOps/si_scaling_sweep_2026/results/formal_verification_extended/alloy_autonomy_sanity.log": "327528e3f90109952760e5553e93a680736826249f2f4a7357f0d88d29b6580e"
+  },
+  "rows": {
+    "python_autonomy_states": "12,292",
+    "python_autonomy_violations": "0",
+    "python_evidence_states": "275",
+    "python_human_acct_states": "625",
+    "python_human_acct_violations": "0",
+    "tlc_distinct_states": "275",
+    "tlc_error_found": true,
+    "alloy_autonomy_check_status": "UNSAT (holds, no counterexample)"
+  }
+}

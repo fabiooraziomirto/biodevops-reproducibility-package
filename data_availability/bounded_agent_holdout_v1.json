@@ -1,0 +1,369 @@
+{
+  "dataset_id": "bounded_agent_holdout_v1",
+  "status": "pre-inference-freeze",
+  "label_definition": "Developer-authored governance reference, not clinical ground truth.",
+  "n_scenarios": 40,
+  "scenarios": [
+    {
+      "scenario_id": "BA-HOLDOUT-001",
+      "narrative": "Synthetic telemetry ward scenario: missed sustained ventricular tachycardia with no confirmed harm. Case variation 1 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-002",
+      "narrative": "Synthetic telemetry ward scenario: confirmed patient death after a low-priority arrhythmia alert. Case variation 2 contains only the stated evidence.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-003",
+      "narrative": "Synthetic telemetry ward scenario: pre-release sensitivity regression blocked before patient exposure. Case variation 3 contains only the stated evidence.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-004",
+      "narrative": "Synthetic telemetry ward scenario: recurrent false-positive alerts without reported harm. Case variation 4 contains only the stated evidence.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-005",
+      "narrative": "Synthetic telemetry ward scenario: unvalidated deployed classifier change with incomplete test evidence. Case variation 5 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "developer_governance_reference": true,
+      "evidence_status": "incomplete",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-006",
+      "narrative": "Synthetic remote monitoring service scenario: missed sustained ventricular tachycardia with no confirmed harm. Case variation 6 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-007",
+      "narrative": "Synthetic remote monitoring service scenario: confirmed patient death after a low-priority arrhythmia alert. Case variation 7 contains only the stated evidence.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-008",
+      "narrative": "Synthetic remote monitoring service scenario: pre-release sensitivity regression blocked before patient exposure. Case variation 8 contains only the stated evidence.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-009",
+      "narrative": "Synthetic remote monitoring service scenario: recurrent false-positive alerts without reported harm. Case variation 9 contains only the stated evidence.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-010",
+      "narrative": "Synthetic remote monitoring service scenario: unvalidated deployed classifier change with incomplete test evidence. Case variation 10 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "developer_governance_reference": true,
+      "evidence_status": "incomplete",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-011",
+      "narrative": "Synthetic validation laboratory scenario: missed sustained ventricular tachycardia with no confirmed harm. Case variation 11 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-012",
+      "narrative": "Synthetic validation laboratory scenario: confirmed patient death after a low-priority arrhythmia alert. Case variation 12 contains only the stated evidence.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-013",
+      "narrative": "Synthetic validation laboratory scenario: pre-release sensitivity regression blocked before patient exposure. Case variation 13 contains only the stated evidence.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-014",
+      "narrative": "Synthetic validation laboratory scenario: recurrent false-positive alerts without reported harm. Case variation 14 contains only the stated evidence.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-015",
+      "narrative": "Synthetic validation laboratory scenario: unvalidated deployed classifier change with incomplete test evidence. Case variation 15 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "developer_governance_reference": true,
+      "evidence_status": "incomplete",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-016",
+      "narrative": "Synthetic post-market review scenario: missed sustained ventricular tachycardia with no confirmed harm. Case variation 16 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-017",
+      "narrative": "Synthetic post-market review scenario: confirmed patient death after a low-priority arrhythmia alert. Case variation 17 contains only the stated evidence.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-018",
+      "narrative": "Synthetic post-market review scenario: pre-release sensitivity regression blocked before patient exposure. Case variation 18 contains only the stated evidence.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-019",
+      "narrative": "Synthetic post-market review scenario: recurrent false-positive alerts without reported harm. Case variation 19 contains only the stated evidence.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-020",
+      "narrative": "Synthetic post-market review scenario: unvalidated deployed classifier change with incomplete test evidence. Case variation 20 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "developer_governance_reference": true,
+      "evidence_status": "incomplete",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-021",
+      "narrative": "Synthetic overnight review scenario: missed sustained ventricular tachycardia with no confirmed harm. Case variation 21 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-022",
+      "narrative": "Synthetic overnight review scenario: confirmed patient death after a low-priority arrhythmia alert. Case variation 22 contains only the stated evidence.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-023",
+      "narrative": "Synthetic overnight review scenario: pre-release sensitivity regression blocked before patient exposure. Case variation 23 contains only the stated evidence.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-024",
+      "narrative": "Synthetic overnight review scenario: recurrent false-positive alerts without reported harm. Case variation 24 contains only the stated evidence.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-025",
+      "narrative": "Synthetic overnight review scenario: unvalidated deployed classifier change with incomplete test evidence. Case variation 25 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "developer_governance_reference": true,
+      "evidence_status": "incomplete",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-026",
+      "narrative": "Synthetic quality investigation scenario: missed sustained ventricular tachycardia with no confirmed harm. Case variation 26 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-027",
+      "narrative": "Synthetic quality investigation scenario: confirmed patient death after a low-priority arrhythmia alert. Case variation 27 contains only the stated evidence.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-028",
+      "narrative": "Synthetic quality investigation scenario: pre-release sensitivity regression blocked before patient exposure. Case variation 28 contains only the stated evidence.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-029",
+      "narrative": "Synthetic quality investigation scenario: recurrent false-positive alerts without reported harm. Case variation 29 contains only the stated evidence.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-030",
+      "narrative": "Synthetic quality investigation scenario: unvalidated deployed classifier change with incomplete test evidence. Case variation 30 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "developer_governance_reference": true,
+      "evidence_status": "incomplete",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-031",
+      "narrative": "Synthetic device maintenance window scenario: missed sustained ventricular tachycardia with no confirmed harm. Case variation 31 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-032",
+      "narrative": "Synthetic device maintenance window scenario: confirmed patient death after a low-priority arrhythmia alert. Case variation 32 contains only the stated evidence.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-033",
+      "narrative": "Synthetic device maintenance window scenario: pre-release sensitivity regression blocked before patient exposure. Case variation 33 contains only the stated evidence.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-034",
+      "narrative": "Synthetic device maintenance window scenario: recurrent false-positive alerts without reported harm. Case variation 34 contains only the stated evidence.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-035",
+      "narrative": "Synthetic device maintenance window scenario: unvalidated deployed classifier change with incomplete test evidence. Case variation 35 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "developer_governance_reference": true,
+      "evidence_status": "incomplete",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-036",
+      "narrative": "Synthetic clinical engineering queue scenario: missed sustained ventricular tachycardia with no confirmed harm. Case variation 36 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-037",
+      "narrative": "Synthetic clinical engineering queue scenario: confirmed patient death after a low-priority arrhythmia alert. Case variation 37 contains only the stated evidence.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-038",
+      "narrative": "Synthetic clinical engineering queue scenario: pre-release sensitivity regression blocked before patient exposure. Case variation 38 contains only the stated evidence.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-039",
+      "narrative": "Synthetic clinical engineering queue scenario: recurrent false-positive alerts without reported harm. Case variation 39 contains only the stated evidence.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "developer_governance_reference": true,
+      "evidence_status": "available",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    },
+    {
+      "scenario_id": "BA-HOLDOUT-040",
+      "narrative": "Synthetic clinical engineering queue scenario: unvalidated deployed classifier change with incomplete test evidence. Case variation 40 contains only the stated evidence.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "developer_governance_reference": true,
+      "evidence_status": "incomplete",
+      "disclosure": "Synthetic governance fixture; not a patient, device, or MAUDE record."
+    }
+  ],
+  "content_sha256": "96141b63c4b4d098584dcd5112d2d8a689937f07ee3aa6be9a2d97a218823ecc"
+}

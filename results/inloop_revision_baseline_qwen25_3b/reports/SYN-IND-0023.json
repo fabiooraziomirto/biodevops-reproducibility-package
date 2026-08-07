@@ -1,0 +1,162 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0023",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic overnight telemetry pool reported that the device failed to flag a clinically significant complete atrioventricular block episode in real time. Two independent overnight telemetry reviews and the cloud-side classifier log all confirm a documented, sustained complete atrioventricular block episode that was missed at the time; a second, structurally identical miss was confirmed in a separate patient on the same software version, establishing recurrence across the deployed population. The device's own confidence-score log and the clinician's retrospective read disagree on episode duration, an unresolved discrepancy.",
+  "model_token_counts": {
+    "completion": 287,
+    "prompt": 1863
+  },
+  "raw_content": "{\n    \"severity\": 3,\n    \"confidence\": 0.75,\n    \"recommendation\": \"CAPA_INVESTIGATE\",\n    \"rationale\": \"The incident report confirms the occurrence of a life-threatening complete atrioventricular block event in two separate patients on the same software version (v33 and v37). This recurrence across the deployed population indicates a serious potential patient-safety risk, as it may have led to serious harm. The regulatory context emphasizes the importance of post-market surveillance systems for actively gathering data on device quality, performance, and safety. Given that this event was missed by the system and resulted in two confirmed cases, immediate containment measures are necessary.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2033A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"Confirms the occurrence of a life-threatening complete atrioventricular block event in patient on software version v33.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2037A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"Confirms the occurrence of a life-threatening complete atrioventricular block event in patient on software version v37.\"\n        }\n    ],\n    \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event in patient on software version v33."
+      },
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event in patient on software version v37."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident report confirms the occurrence of a life-threatening complete atrioventricular block event in two separate patients on the same software version (v33 and v37). This recurrence across the deployed population indicates a serious potential patient-safety risk, as it may have led to serious harm. The regulatory context emphasizes the importance of post-market surveillance systems for actively gathering data on device quality, performance, and safety. Given that this event was missed by the system and resulted in two confirmed cases, immediate containment measures are necessary.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.25,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "The incident report confirms the occurrence of a life-threatening complete atrioventricular block event in two separate patients on the same software version (v33 and v37).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "This recurrence across the deployed population indicates a serious potential patient-safety risk, as it may have led to serious harm.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "The regulatory context emphasizes the importance of post-market surveillance systems for actively gathering data on device quality, performance, and safety.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "Given that this event was missed by the system and resulted in two confirmed cases, immediate containment measures are necessary.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event in patient on software version v33."
+        },
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event in patient on software version v37."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The incident report confirms the occurrence of a life-threatening complete atrioventricular block event in two separate patients on the same software version (v33 and v37). This recurrence across the deployed population indicates a serious potential patient-safety risk, as it may have led to serious harm. The regulatory context emphasizes the importance of post-market surveillance systems for actively gathering data on device quality, performance, and safety. Given that this event was missed by the system and resulted in two confirmed cases, immediate containment measures are necessary.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "weakly_supported_claims": [
+      "This recurrence across the deployed population indicates a serious potential patient-safety risk, as it may have led to serious harm.",
+      "The regulatory context emphasizes the importance of post-market surveillance systems for actively gathering data on device quality, performance, and safety.",
+      "Given that this event was missed by the system and resulted in two confirmed cases, immediate containment measures are necessary."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "The incident report confirms the occurrence of a life-threatening complete atrioventricular block event in two separate patients on the same software version (v33 and v37).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "This recurrence across the deployed population indicates a serious potential patient-safety risk, as it may have led to serious harm.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "The regulatory context emphasizes the importance of post-market surveillance systems for actively gathering data on device quality, performance, and safety.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "Given that this event was missed by the system and resulted in two confirmed cases, immediate containment measures are necessary.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event in patient on software version v33."
+      },
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event in patient on software version v37."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident report confirms the occurrence of a life-threatening complete atrioventricular block event in two separate patients on the same software version (v33 and v37). This recurrence across the deployed population indicates a serious potential patient-safety risk, as it may have led to serious harm. The regulatory context emphasizes the importance of post-market surveillance systems for actively gathering data on device quality, performance, and safety. Given that this event was missed by the system and resulted in two confirmed cases, immediate containment measures are necessary.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  }
+}

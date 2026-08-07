@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this package, please cite the associated manuscript."
+type: software
+title: "BioDevOps reproducibility package: An Assurance Architecture for Bounded Agentic Evidence Assembly in Medical-Device Governance"
+authors:
+  - family-names: "Author"
+    given-names: "First A."
+  - family-names: "Author"
+    given-names: "Second B."
+  - family-names: "Author"
+    given-names: "Third C."
+license: CC-BY-4.0
+repository: "PENDING: replace with the Zenodo DOI/URL once the record is minted"
+preferred-citation:
+  type: article
+  title: "BioDevOps: An Assurance Architecture for Bounded Agentic Evidence Assembly in Medical-Device Governance"
+  authors:
+    - family-names: "Author"
+      given-names: "First A."
+    - family-names: "Author"
+      given-names: "Second B."
+    - family-names: "Author"
+      given-names: "Third C."
+  journal: "IEEE Journal of Biomedical and Health Informatics"
+  year: 2026
+  status: "in-review"

@@ -1,0 +1,179 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0040",
+    "clinical_inconsistency_class": "concept_severity_undercall",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 3 is below derived clinical floor 4. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic overnight telemetry pool reported that the patient lost consciousness and required emergency resuscitation following an unflagged ventricular tachycardia episode, confirmed by hospital emergency response records. The device-side confidence log for the exact episode window was not retained, though the emergency-response record is complete.",
+  "model_token_counts": {
+    "completion": 289,
+    "prompt": 2010
+  },
+  "raw_content": "{\n  \"severity\": 3,\n  \"confidence\": 0.65,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident report confirms a life-threatening complete atrioventricular block event, which may trigger obligations under EU MDR Article 83(1)-(2) for post-market surveillance system planning and implementation. The regulatory context emphasizes the importance of maintaining detailed procedures for labeling and packaging to ensure accuracy prior to release or storage. However, there is no evidence linking this specific incident to a software development lifecycle issue or IT security breach as per the static analysis reports provided. Therefore, while the event may trigger obligations under EU MDR Article 83(1)-(2), it does not necessarily indicate a technical failure that requires immediate containment beyond monitoring and review.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-INCIDENT-2037A\",\n      \"artifact_type\": \"incident_report\",\n      \"relevance_note\": \"Confirms the occurrence of a life-threatening complete atrioventricular block event.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"EU MDR Article 83(1)-(2) post-market surveillance system obligations are discussed.\"\n    }\n  ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (concept_severity_undercall) Predicted severity 3 is below derived clinical floor 4. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.\n- (concept_severity_undercall) concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.65,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 83(1)-(2) post-market surveillance system obligations are discussed."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident report confirms a life-threatening complete atrioventricular block event, which may trigger obligations under EU MDR Article 83(1)-(2) for post-market surveillance system planning and implementation. The regulatory context emphasizes the importance of maintaining detailed procedures for labeling and packaging to ensure accuracy prior to release or storage. However, there is no evidence linking this specific incident to a software development lifecycle issue or IT security breach as per the static analysis reports provided. Therefore, while the event may trigger obligations under EU MDR Article 83(1)-(2), it does not necessarily indicate a technical failure that requires immediate containment beyond monitoring and review.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 3
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.25,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The incident report confirms a life-threatening complete atrioventricular block event, which may trigger obligations under EU MDR Article 83(1)-(2) for post-market surveillance system planning and implementation.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The regulatory context emphasizes the importance of maintaining detailed procedures for labeling and packaging to ensure accuracy prior to release or storage.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "However, there is no evidence linking this specific incident to a software development lifecycle issue or IT security breach as per the static analysis reports provided.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "Therefore, while the event may trigger obligations under EU MDR Article 83(1)-(2), it does not necessarily indicate a technical failure that requires immediate containment beyond monitoring and review.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.65,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Article 83(1)-(2) post-market surveillance system obligations are discussed."
+        }
+      ],
+      "missing_evidence": [
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident report confirms a life-threatening complete atrioventricular block event, which may trigger obligations under EU MDR Article 83(1)-(2) for post-market surveillance system planning and implementation. The regulatory context emphasizes the importance of maintaining detailed procedures for labeling and packaging to ensure accuracy prior to release or storage. However, there is no evidence linking this specific incident to a software development lifecycle issue or IT security breach as per the static analysis reports provided. Therefore, while the event may trigger obligations under EU MDR Article 83(1)-(2), it does not necessarily indicate a technical failure that requires immediate containment beyond monitoring and review.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "weakly_supported_claims": [
+      "The regulatory context emphasizes the importance of maintaining detailed procedures for labeling and packaging to ensure accuracy prior to release or storage.",
+      "However, there is no evidence linking this specific incident to a software development lifecycle issue or IT security breach as per the static analysis reports provided.",
+      "Therefore, while the event may trigger obligations under EU MDR Article 83(1)-(2), it does not necessarily indicate a technical failure that requires immediate containment beyond monitoring and review."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The incident report confirms a life-threatening complete atrioventricular block event, which may trigger obligations under EU MDR Article 83(1)-(2) for post-market surveillance system planning and implementation.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The regulatory context emphasizes the importance of maintaining detailed procedures for labeling and packaging to ensure accuracy prior to release or storage.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "However, there is no evidence linking this specific incident to a software development lifecycle issue or IT security breach as per the static analysis reports provided.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "Therefore, while the event may trigger obligations under EU MDR Article 83(1)-(2), it does not necessarily indicate a technical failure that requires immediate containment beyond monitoring and review.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.65,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 83(1)-(2) post-market surveillance system obligations are discussed."
+      }
+    ],
+    "missing_evidence": [
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident report confirms a life-threatening complete atrioventricular block event, which may trigger obligations under EU MDR Article 83(1)-(2) for post-market surveillance system planning and implementation. The regulatory context emphasizes the importance of maintaining detailed procedures for labeling and packaging to ensure accuracy prior to release or storage. However, there is no evidence linking this specific incident to a software development lifecycle issue or IT security breach as per the static analysis reports provided. Therefore, while the event may trigger obligations under EU MDR Article 83(1)-(2), it does not necessarily indicate a technical failure that requires immediate containment beyond monitoring and review.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  }
+}

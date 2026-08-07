@@ -1,0 +1,140 @@
+{
+  "arm": "rag",
+  "artifact_recall": null,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 10682.92,
+  "model_token_counts": {
+    "completion": 418,
+    "prompt": 2010
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n  \"severity\": 2,\n  \"confidence\": 0.75,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The device failed to flag a clinically significant atrial fibrillation episode, which may trigger obligations under EU MDR Article 88(1) for trend reporting due to the potential impact on patient safety. However, no harm was realized, and the issue was contained before clinical deployment.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"mdr-art88-trend-reporting\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The incident may require trend reporting due to the potential impact on patient safety.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-DIFF-0009\",\n      \"artifact_type\": \"code_diff\",\n      \"relevance_note\": \"A code change in a severity-scoring submodule, which may have impacted the atrial fibrillation detection algorithm, was made three weeks before the incident.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"The device failed to flag a clinically significant atrial fibrillation episode.\",\n      \"cited_artifact_id\": \"mdr-art88-trend-reporting\",\n      \"support_status\": \"supported\"\n   ,\n    \"support_note\": \"The incident may trigger obligations under EU MDR Article 88(1) for trend reporting due to the potential impact on patient safety.\"\n    },\n    {\n      \"claim\": \"A code change in a severity-scoring submodule may have impacted the atrial fibrillation detection algorithm.\",\n      \"cited_artifact_id\": \"ARTIFACT-DIFF-0009\",\n      \"support_status\": \"weakly_supported\"\n    ,\n    \"support_note\": \"The code diff modifies a safety-critical path, but no revalidation test run was linked to confirm the impact.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE",
+    "scenario_id": "SYN-IND-0024"
+  },
+  "replicate": 3,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-art88-trend-reporting",
+        "claim": "The device failed to flag a clinically significant atrial fibrillation episode.",
+        "support_note": "The incident may trigger obligations under EU MDR Article 88(1) for trend reporting due to the potential impact on patient safety.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-DIFF-0009",
+        "claim": "A code change in a severity-scoring submodule may have impacted the atrial fibrillation detection algorithm.",
+        "support_note": "The code diff modifies a safety-critical path, but no revalidation test run was linked to confirm the impact.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art88-trend-reporting",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The incident may require trend reporting due to the potential impact on patient safety."
+      },
+      {
+        "artifact_id": "ARTIFACT-DIFF-0009",
+        "artifact_type": "code_diff",
+        "relevance_note": "A code change in a severity-scoring submodule, which may have impacted the atrial fibrillation detection algorithm, was made three weeks before the incident."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The device failed to flag a clinically significant atrial fibrillation episode, which may trigger obligations under EU MDR Article 88(1) for trend reporting due to the potential impact on patient safety. However, no harm was realized, and the issue was contained before clinical deployment.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  },
+  "scenario_id": "SYN-IND-0024",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 2 is below derived clinical floor 3. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {},
+  "trace_path": null,
+  "unsupported_claim_count": 0,
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.5,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art88-trend-reporting",
+          "claim": "The device failed to flag a clinically significant atrial fibrillation episode.",
+          "support_note": "The incident may trigger obligations under EU MDR Article 88(1) for trend reporting due to the potential impact on patient safety.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-DIFF-0009",
+          "claim": "A code change in a severity-scoring submodule may have impacted the atrial fibrillation detection algorithm.",
+          "support_note": "The code diff modifies a safety-critical path, but no revalidation test run was linked to confirm the impact.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art88-trend-reporting",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The incident may require trend reporting due to the potential impact on patient safety."
+        },
+        {
+          "artifact_id": "ARTIFACT-DIFF-0009",
+          "artifact_type": "code_diff",
+          "relevance_note": "A code change in a severity-scoring submodule, which may have impacted the atrial fibrillation detection algorithm, was made three weeks before the incident."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The device failed to flag a clinically significant atrial fibrillation episode, which may trigger obligations under EU MDR Article 88(1) for trend reporting due to the potential impact on patient safety. However, no harm was realized, and the issue was contained before clinical deployment.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": [
+      "The device failed to flag a clinically significant atrial fibrillation episode."
+    ]
+  }
+}

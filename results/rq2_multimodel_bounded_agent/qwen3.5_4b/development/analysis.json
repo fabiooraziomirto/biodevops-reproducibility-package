@@ -1,0 +1,43 @@
+{
+  "n_logical_outputs": 400,
+  "n_paired_units": 100,
+  "comparisons": {
+    "direct_vs_rag": {
+      "n_scenarios": 20,
+      "mean_difference": -0.13,
+      "bootstrap_ci95": [
+        -0.29,
+        0.01
+      ]
+    },
+    "rag_vs_agent_raw": {
+      "n_scenarios": 20,
+      "mean_difference": 0.23,
+      "bootstrap_ci95": [
+        0.04,
+        0.43
+      ]
+    },
+    "agent_raw_vs_agent_opa": {
+      "n_scenarios": 20,
+      "mean_difference": -0.05,
+      "bootstrap_ci95": [
+        -0.2,
+        0.08
+      ]
+    }
+  },
+  "agent_completion": 100,
+  "agent_completion_denominator": 100,
+  "errors_by_arm": {
+    "direct": 0,
+    "rag": 0,
+    "agent_raw": 0,
+    "agent_opa": 0
+  },
+  "agent_raw_termination_reasons": {
+    "advisory_complete": 31,
+    "human escalation or invalid transition": 69
+  },
+  "agent_raw_total_invalid_proposals": 69
+}

@@ -1,0 +1,40 @@
+MAUDE ECG governance annotation — development split
+
+Purpose
+-------
+Apply a pre-specified operational-governance rubric to public FDA MAUDE
+narratives. This is NOT a clinical diagnosis, causal attribution, therapeutic
+recommendation, or estimate of event frequency.
+
+Independence
+------------
+Work alone. Do not discuss individual cases, compare labels, edit policies,
+prompts, ontology, or the JSON source. Save your completed CSV using your own
+name, for example: maude_ecg_40_development_annotations_author_A.csv.
+
+For every row
+-------------
+1. Read source_narrative.
+2. Copy the strongest safety-relevant sentence into assertion_text.
+3. Set assertion_status_rater[1|2] to exactly one of: confirmed, suspected,
+   negated, mention-only, absent.
+4. Set routing_action_rater[1|2] to exactly one of: NO_ACTION, MONITOR,
+   CAPA_INVESTIGATE, FIELD_SAFETY_CORRECTIVE_ACTION,
+   ESCALATE_TO_HUMAN_IMMEDIATE.
+5. Set evidence_insufficient_rater[1|2] to yes if the narrative lacks enough
+   explicit information to support the routing action; otherwise no.
+6. Set citation_unresolved_rater[1|2] and policy_contradiction_rater[1|2] to
+   not_assessable. Those constructs apply only after an agent produces a
+   cited RiskReport; this packet contains source narratives only.
+
+Conservatism
+------------
+Do not infer facts absent from the narrative. A statement is confirmed only
+when the report explicitly asserts it. When uncertain, choose the more
+conservative routing action and briefly state why in adjudication_note.
+
+Return
+------
+Return only your renamed CSV. Do not alter report IDs or rows. The coordinator
+will merge the two independent files and calculate agreement before any
+adjudication. The held-out cases will be released only after policy freeze.

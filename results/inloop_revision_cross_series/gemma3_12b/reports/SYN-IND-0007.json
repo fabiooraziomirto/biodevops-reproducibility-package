@@ -1,0 +1,199 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0007",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic device validation lab reported a routine software validation finding for the ventricular fibrillation detection pathway. An automated log flagged a transient signal artifact resembling ventricular fibrillation, but the paired raw-waveform export and bedside monitor cross-check both show a clean sinus trace for the same window, resolving the apparent conflict as a non-event. No patient-facing exposure occurred and the engineering finding was fully contained pre-release or resolved as a non-event.",
+  "model_token_counts": {
+    "completion": 716,
+    "prompt": 1812
+  },
+  "raw_content": "{\n  \"severity\": 1,\n  \"confidence\": 0.85,\n  \"recommendation\": \"NO_ACTION\",\n  \"rationale\": \"The incident narrative describes a software validation finding related to ventricular fibrillation detection that was resolved as a non-event due to conflicting data from raw waveform exports and bedside monitor cross-checks. Crucially, the narrative explicitly states 'No patient-facing exposure occurred' and that the engineering finding was 'fully contained pre-release or resolved as a non-event.' This indicates containment before any clinical deployment or use, aligning with a Severity 1 classification. While the device incorporates software, and therefore falls under regulatory requirements related to software development lifecycle (mdr-annexI-sec17.2), the finding did not result in patient harm or compromise device performance. The incident highlights the importance of robust validation procedures and data verification, which are consistent with principles outlined in EU MDR Annex I sections 17.1 (electronic programmable systems) and 17.2 (software lifecycle).\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"mdr-annexI-sec17.2-software-lifecycle\",\n      \"artifact_type\": \"regulatory citation\",\n      \"relevance_note\": \"Provides context for software development requirements.\"\n    },\n    {\n      \"artifact_id\": \"mdr-annexI-sec17.1-electronic-programmable\",\n      \"artifact_type\": \"regulatory citation\",\n      \"relevance_note\": \"Highlights the need for reliability and performance in electronic programmable systems.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2025A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Provides context of prior testing, although not directly related to the current finding.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2029A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Provides context of prior testing, although not directly related to the current finding.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"The incident resulted in no patient exposure.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2025A\",\n      \"support_status\": \"supported\",\"support_note\":\"Narrative explicitly states 'No patient-facing exposure occurred'.\"\n    },\n    {\n      \"claim\": \"The finding was contained before clinical deployment.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2029A\",\n      \"support_status\": \"supported\",\"support_note\":\"Narrative explicitly states 'fully contained pre-release or resolved as a non-event'.\"\n    },\n    {\n      \"claim\": \"The incident highlights the importance of robust validation procedures.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.2-software-lifecycle\",\n      \"support_status\": \"weakly_supported\",\"support_note\":\"General principle from regulatory context.\"\n    }\n  ],\n  \"requires_human_review\": false\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2025A",
+    "ARTIFACT-TESTLOG-2029A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.10-c-design-development",
+    "mdr-annexI-sec17.1-electronic-programmable",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "The incident resulted in no patient exposure.",
+        "support_note": "Narrative explicitly states 'No patient-facing exposure occurred'.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2029A",
+        "claim": "The finding was contained before clinical deployment.",
+        "support_note": "Narrative explicitly states 'fully contained pre-release or resolved as a non-event'.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "claim": "The incident highlights the importance of robust validation procedures.",
+        "support_note": "General principle from regulatory context.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Provides context for software development requirements."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Highlights the need for reliability and performance in electronic programmable systems."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides context of prior testing, although not directly related to the current finding."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2029A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides context of prior testing, although not directly related to the current finding."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a software validation finding related to ventricular fibrillation detection that was resolved as a non-event due to conflicting data from raw waveform exports and bedside monitor cross-checks. Crucially, the narrative explicitly states 'No patient-facing exposure occurred' and that the engineering finding was 'fully contained pre-release or resolved as a non-event.' This indicates containment before any clinical deployment or use, aligning with a Severity 1 classification. While the device incorporates software, and therefore falls under regulatory requirements related to software development lifecycle (mdr-annexI-sec17.2), the finding did not result in patient harm or compromise device performance. The incident highlights the importance of robust validation procedures and data verification, which are consistent with principles outlined in EU MDR Annex I sections 17.1 (electronic programmable systems) and 17.2 (software lifecycle).",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+          "claim": "The incident resulted in no patient exposure.",
+          "support_note": "Narrative explicitly states 'No patient-facing exposure occurred'.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2029A",
+          "claim": "The finding was contained before clinical deployment.",
+          "support_note": "Narrative explicitly states 'fully contained pre-release or resolved as a non-event'.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+          "claim": "The incident highlights the importance of robust validation procedures.",
+          "support_note": "General principle from regulatory context.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+          "artifact_type": "regulatory citation",
+          "relevance_note": "Provides context for software development requirements."
+        },
+        {
+          "artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+          "artifact_type": "regulatory citation",
+          "relevance_note": "Highlights the need for reliability and performance in electronic programmable systems."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2025A",
+          "artifact_type": "test_log",
+          "relevance_note": "Provides context of prior testing, although not directly related to the current finding."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2029A",
+          "artifact_type": "test_log",
+          "relevance_note": "Provides context of prior testing, although not directly related to the current finding."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The incident narrative describes a software validation finding related to ventricular fibrillation detection that was resolved as a non-event due to conflicting data from raw waveform exports and bedside monitor cross-checks. Crucially, the narrative explicitly states 'No patient-facing exposure occurred' and that the engineering finding was 'fully contained pre-release or resolved as a non-event.' This indicates containment before any clinical deployment or use, aligning with a Severity 1 classification. While the device incorporates software, and therefore falls under regulatory requirements related to software development lifecycle (mdr-annexI-sec17.2), the finding did not result in patient harm or compromise device performance. The incident highlights the importance of robust validation procedures and data verification, which are consistent with principles outlined in EU MDR Annex I sections 17.1 (electronic programmable systems) and 17.2 (software lifecycle).",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": [
+      "The incident resulted in no patient exposure.",
+      "The finding was contained before clinical deployment.",
+      "The incident highlights the importance of robust validation procedures."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "The incident resulted in no patient exposure.",
+        "support_note": "Narrative explicitly states 'No patient-facing exposure occurred'.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2029A",
+        "claim": "The finding was contained before clinical deployment.",
+        "support_note": "Narrative explicitly states 'fully contained pre-release or resolved as a non-event'.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "claim": "The incident highlights the importance of robust validation procedures.",
+        "support_note": "General principle from regulatory context.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Provides context for software development requirements."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Highlights the need for reliability and performance in electronic programmable systems."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides context of prior testing, although not directly related to the current finding."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2029A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides context of prior testing, although not directly related to the current finding."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a software validation finding related to ventricular fibrillation detection that was resolved as a non-event due to conflicting data from raw waveform exports and bedside monitor cross-checks. Crucially, the narrative explicitly states 'No patient-facing exposure occurred' and that the engineering finding was 'fully contained pre-release or resolved as a non-event.' This indicates containment before any clinical deployment or use, aligning with a Severity 1 classification. While the device incorporates software, and therefore falls under regulatory requirements related to software development lifecycle (mdr-annexI-sec17.2), the finding did not result in patient harm or compromise device performance. The incident highlights the importance of robust validation procedures and data verification, which are consistent with principles outlined in EU MDR Annex I sections 17.1 (electronic programmable systems) and 17.2 (software lifecycle).",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

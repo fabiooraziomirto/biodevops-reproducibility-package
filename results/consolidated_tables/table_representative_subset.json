@@ -1,0 +1,79 @@
+{
+  "sources": {
+    "/root/Desktop/BioDevOps/si_scaling_sweep_2026/results/representative_subset_analysis/representative_subset_summary.json": "5bfa09ffa8ce804f5d836c0a1863dd38dcbc1d9a26ae0af0bbf1327bbd0fcaf6"
+  },
+  "rows": [
+    {
+      "slot": "qwen3.5_small",
+      "model": "qwen3.5_2b",
+      "maude_under_routing": 0.15,
+      "maude_over_routing": 0.55,
+      "cgm_escalation_safety": 1.0,
+      "cgm_severity_accuracy": 0.15,
+      "paraphrase_status": "MISSING",
+      "paraphrase_union_yield": null,
+      "paraphrase_structural_share": null
+    },
+    {
+      "slot": "qwen3.5_medium",
+      "model": "qwen3.5_4b",
+      "maude_under_routing": 0.125,
+      "maude_over_routing": 0.6,
+      "cgm_escalation_safety": 1.0,
+      "cgm_severity_accuracy": 0.2167,
+      "paraphrase_status": "OK",
+      "paraphrase_union_yield": "37/40=0.925",
+      "paraphrase_structural_share": "37/37=1.000"
+    },
+    {
+      "slot": "qwen3.5_large",
+      "model": "qwen3.5_27b",
+      "maude_under_routing": 0.0,
+      "maude_over_routing": 0.775,
+      "cgm_escalation_safety": 1.0,
+      "cgm_severity_accuracy": 0.2333,
+      "paraphrase_status": "OK",
+      "paraphrase_union_yield": "17/40=0.425",
+      "paraphrase_structural_share": "0/17=0.000"
+    },
+    {
+      "slot": "gemma3_small",
+      "model": "gemma3_1b",
+      "maude_under_routing": 0.125,
+      "maude_over_routing": 0.8,
+      "cgm_escalation_safety": 1.0,
+      "cgm_severity_accuracy": 0.3333,
+      "paraphrase_status": "OK",
+      "paraphrase_union_yield": "40/40=1.000",
+      "paraphrase_structural_share": "34/40=0.850"
+    },
+    {
+      "slot": "gemma3_medium",
+      "model": "gemma3_12b",
+      "maude_under_routing": 0.1,
+      "maude_over_routing": 0.625,
+      "cgm_escalation_safety": 1.0,
+      "cgm_severity_accuracy": 0.4,
+      "paraphrase_status": "OK",
+      "paraphrase_union_yield": "27/40=0.675",
+      "paraphrase_structural_share": "15/27=0.556"
+    },
+    {
+      "slot": "gemma3_large",
+      "model": "gemma3_27b",
+      "maude_under_routing": 0.075,
+      "maude_over_routing": 0.55,
+      "cgm_escalation_safety": 1.0,
+      "cgm_severity_accuracy": 0.8167,
+      "paraphrase_status": "OK",
+      "paraphrase_union_yield": "34/40=0.850",
+      "paraphrase_structural_share": "34/34=1.000"
+    }
+  ],
+  "qwen3.5_0.8b_failure_note": {
+    "model": "qwen3.5_0.8b",
+    "note": "Failed every Phase B protocol (MAUDE dev+held-out, all 3 CGM replicates, paraphrase) under --paper-grade; not used in any representative slot. See results/representative_subset_analysis/README.md.",
+    "maude_status": null,
+    "cgm_runs_completed": 0
+  }
+}

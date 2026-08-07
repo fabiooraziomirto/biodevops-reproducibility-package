@@ -1,0 +1,214 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0016",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [
+    "ID: mdr-annexI-sec17.2-software-lifecycle",
+    "ID: mdr-annexI-sec17.4-it-security",
+    "ID: qmsr-820.45-labeling"
+  ],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic overnight telemetry pool reported a minor, non-recurrent ventricular tachycardia-adjacent irregularity with no adverse patient outcome recorded. The retrospective clinician note documenting this ventricular tachycardia-adjacent irregularity was never filed, so recurrence cannot yet be ruled out from the record alone. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+  "model_token_counts": {
+    "completion": 535,
+    "prompt": 1844
+  },
+  "raw_content": "{\n    \"severity\": 2,\n    \"confidence\": 0.75,\n    \"recommendation\": \"CAPA_INVESTIGATE\",\n    \"rationale\": \"The incident involved a minor ventricular tachycardia-adjacent irregularity with no adverse patient outcome, which is classified as a monitoring/investigation level case rather than a confirmed life-threatening event. However, the retrospective clinician note was not filed, and recurrence cannot yet be ruled out from the record alone. This may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements for software development lifecycle and cybersecurity. The incident also highlights a potential issue with labeling and packaging controls as detailed in QMSR \u00a7820.45, which requires documentation of activities to ensure the integrity, inspection, storage, and operations for labeling and packaging. Given these regulatory obligations, it is recommended that a CAPA investigation be initiated to address any issues related to software development lifecycle, IT security measures, and labeling and packaging controls.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2037A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"Confirms the occurrence of a life-threatening complete atrioventricular block event, which is not related to this incident but provides context for the overall quality and safety management system.\"\n        },\n        {\n            \"artifact_id\": \"ID: mdr-annexI-sec17.2-software-lifecycle\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"Regulatory citation supporting the need to develop and manufacture software in accordance with the state of the art, including principles of development lifecycle, risk management, verification and validation.\"\n        },\n        {\n            \"artifact_id\": \"ID: mdr-annexI-sec17.4-it-security\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"Regulatory citation supporting the need for minimum IT security requirements for software development lifecycle and cybersecurity, which may be applicable to this incident.\"\n        },\n        {\n            \"artifact_id\": \"ID: qmsr-820.45-labeling\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"Regulatory citation supporting the need for detailed procedures to ensure the integrity, inspection, storage, and operations for labeling and packaging, including accuracy of unique device identifier (UDI), expiration date, handling instructions, etc.\"\n        }\n    ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event, which is not related to this incident but provides context for the overall quality and safety management system."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Regulatory citation supporting the need to develop and manufacture software in accordance with the state of the art, including principles of development lifecycle, risk management, verification and validation."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Regulatory citation supporting the need for minimum IT security requirements for software development lifecycle and cybersecurity, which may be applicable to this incident."
+      },
+      {
+        "artifact_id": "ID: qmsr-820.45-labeling",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Regulatory citation supporting the need for detailed procedures to ensure the integrity, inspection, storage, and operations for labeling and packaging, including accuracy of unique device identifier (UDI), expiration date, handling instructions, etc."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident involved a minor ventricular tachycardia-adjacent irregularity with no adverse patient outcome, which is classified as a monitoring/investigation level case rather than a confirmed life-threatening event. However, the retrospective clinician note was not filed, and recurrence cannot yet be ruled out from the record alone. This may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements for software development lifecycle and cybersecurity. The incident also highlights a potential issue with labeling and packaging controls as detailed in QMSR \u00a7820.45, which requires documentation of activities to ensure the integrity, inspection, storage, and operations for labeling and packaging. Given these regulatory obligations, it is recommended that a CAPA investigation be initiated to address any issues related to software development lifecycle, IT security measures, and labeling and packaging controls.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 2
+  },
+  "verification": {
+    "citation_hallucination": 1,
+    "citation_validity": 0.25,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.4,
+    "hallucinated_citations": [
+      "ID: mdr-annexI-sec17.2-software-lifecycle",
+      "ID: mdr-annexI-sec17.4-it-security",
+      "ID: qmsr-820.45-labeling"
+    ],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "deny:risk_report_contains_unresolved_or_trap_citation"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The incident involved a minor ventricular tachycardia-adjacent irregularity with no adverse patient outcome, which is classified as a monitoring/investigation level case rather than a confirmed life-threatening event.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "However, the retrospective clinician note was not filed, and recurrence cannot yet be ruled out from the record alone.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "This may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements for software development lifecycle and cybersecurity.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The incident also highlights a potential issue with labeling and packaging controls as detailed in QMSR \u00a7820.45, which requires documentation of activities to ensure the integrity, inspection, storage, and operations for labeling and packaging.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "Given these regulatory obligations, it is recommended that a CAPA investigation be initiated to address any issues related to software development lifecycle, IT security measures, and labeling and packaging controls.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event, which is not related to this incident but provides context for the overall quality and safety management system."
+        },
+        {
+          "artifact_id": "ID: mdr-annexI-sec17.2-software-lifecycle",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "Regulatory citation supporting the need to develop and manufacture software in accordance with the state of the art, including principles of development lifecycle, risk management, verification and validation."
+        },
+        {
+          "artifact_id": "ID: mdr-annexI-sec17.4-it-security",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "Regulatory citation supporting the need for minimum IT security requirements for software development lifecycle and cybersecurity, which may be applicable to this incident."
+        },
+        {
+          "artifact_id": "ID: qmsr-820.45-labeling",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "Regulatory citation supporting the need for detailed procedures to ensure the integrity, inspection, storage, and operations for labeling and packaging, including accuracy of unique device identifier (UDI), expiration date, handling instructions, etc."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The incident involved a minor ventricular tachycardia-adjacent irregularity with no adverse patient outcome, which is classified as a monitoring/investigation level case rather than a confirmed life-threatening event. However, the retrospective clinician note was not filed, and recurrence cannot yet be ruled out from the record alone. This may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements for software development lifecycle and cybersecurity. The incident also highlights a potential issue with labeling and packaging controls as detailed in QMSR \u00a7820.45, which requires documentation of activities to ensure the integrity, inspection, storage, and operations for labeling and packaging. Given these regulatory obligations, it is recommended that a CAPA investigation be initiated to address any issues related to software development lifecycle, IT security measures, and labeling and packaging controls.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": [
+      "However, the retrospective clinician note was not filed, and recurrence cannot yet be ruled out from the record alone.",
+      "This may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements for software development lifecycle and cybersecurity.",
+      "Given these regulatory obligations, it is recommended that a CAPA investigation be initiated to address any issues related to software development lifecycle, IT security measures, and labeling and packaging controls."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The incident involved a minor ventricular tachycardia-adjacent irregularity with no adverse patient outcome, which is classified as a monitoring/investigation level case rather than a confirmed life-threatening event.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "However, the retrospective clinician note was not filed, and recurrence cannot yet be ruled out from the record alone.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "This may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements for software development lifecycle and cybersecurity.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The incident also highlights a potential issue with labeling and packaging controls as detailed in QMSR \u00a7820.45, which requires documentation of activities to ensure the integrity, inspection, storage, and operations for labeling and packaging.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "Given these regulatory obligations, it is recommended that a CAPA investigation be initiated to address any issues related to software development lifecycle, IT security measures, and labeling and packaging controls.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event, which is not related to this incident but provides context for the overall quality and safety management system."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Regulatory citation supporting the need to develop and manufacture software in accordance with the state of the art, including principles of development lifecycle, risk management, verification and validation."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Regulatory citation supporting the need for minimum IT security requirements for software development lifecycle and cybersecurity, which may be applicable to this incident."
+      },
+      {
+        "artifact_id": "ID: qmsr-820.45-labeling",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Regulatory citation supporting the need for detailed procedures to ensure the integrity, inspection, storage, and operations for labeling and packaging, including accuracy of unique device identifier (UDI), expiration date, handling instructions, etc."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident involved a minor ventricular tachycardia-adjacent irregularity with no adverse patient outcome, which is classified as a monitoring/investigation level case rather than a confirmed life-threatening event. However, the retrospective clinician note was not filed, and recurrence cannot yet be ruled out from the record alone. This may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements for software development lifecycle and cybersecurity. The incident also highlights a potential issue with labeling and packaging controls as detailed in QMSR \u00a7820.45, which requires documentation of activities to ensure the integrity, inspection, storage, and operations for labeling and packaging. Given these regulatory obligations, it is recommended that a CAPA investigation be initiated to address any issues related to software development lifecycle, IT security measures, and labeling and packaging controls.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  }
+}

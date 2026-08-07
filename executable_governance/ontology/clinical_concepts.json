@@ -1,0 +1,226 @@
+{
+  "metadata": {
+    "dataset_scope": "Synthetic BioDevOps arrhythmia scenarios SYN-MAUDE-0001..0005 plus append-only extension scenarios SYN-MAUDE-0006..0007.",
+    "severity_scale": "1=no harm, 2=minor harm/process exposure risk, 3=serious harm or clinically serious exposed event with no recorded harm, 4=life-threatening/death.",
+    "snomed_system": "http://snomed.info/sct",
+    "mapping_status": "Signed off for the five curated scenarios; no full SNOMED-CT import is performed."
+  },
+  "concepts": {
+    "25569003": {
+      "label": "Ventricular tachycardia",
+      "lethality_class": "life_threatening",
+      "clinical_note": "VTach is intrinsically life_threatening because it can degenerate to ventricular fibrillation."
+    },
+    "71908006": {
+      "label": "Ventricular fibrillation",
+      "lethality_class": "life_threatening",
+      "clinical_note": "VFib is intrinsically life_threatening because it is a malignant ventricular rhythm associated with loss of effective cardiac output."
+    },
+    "27885002": {
+      "label": "Complete atrioventricular block",
+      "lethality_class": "life_threatening",
+      "clinical_note": "Complete AV block with prolonged ventricular pause is treated as life_threatening in this mapping because missed detection can permit syncope, arrest, or death."
+    },
+    "49436004": {
+      "label": "Atrial fibrillation",
+      "lethality_class": "serious",
+      "clinical_note": "AFib is serious but not intrinsically life_threatening in this mapping; its danger is indirect, such as stroke or rapid ventricular response."
+    },
+    "698247007": {
+      "label": "Cardiac arrhythmia",
+      "lethality_class": "serious",
+      "clinical_note": "Candidate monitored-target code for the outage scenario. In SYN-MAUDE-0005 it is not an observed arrhythmia; the clinical floor comes from process/exposure risk."
+    }
+  },
+  "scenarios": {
+    "SYN-MAUDE-0001": {
+      "snomed_code": "25569003",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Missed sustained VTach occurred in an exposed patient with no adverse patient outcome recorded.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-maude-0001",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25569003",
+              "display": "Ventricular tachycardia"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred"
+          }
+        ]
+      }
+    },
+    "SYN-MAUDE-0002": {
+      "snomed_code": "49436004",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "death",
+      "note": "AFib episode was documented and the patient died; the severity floor is driven by documented death, not intrinsic AFib lethality.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-maude-0002",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "Atrial fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "documented_death"
+          }
+        ]
+      }
+    },
+    "SYN-MAUDE-0003": {
+      "snomed_code": "49436004",
+      "clinical_event_occurred": false,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "False-positive AFib alerts exposed a patient to alert-fatigue process risk; no AFib clinical event occurred.",
+      "fhir_fragment": {
+        "resourceType": "DetectedIssue",
+        "id": "issue-syn-maude-0003",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "Atrial fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "patient_exposed_no_event"
+          }
+        ]
+      }
+    },
+    "SYN-MAUDE-0004": {
+      "snomed_code": "25569003",
+      "clinical_event_occurred": false,
+      "patient_exposed": false,
+      "harm_outcome": "none",
+      "note": "Pre-release VTach sensitivity regression was blocked before patient exposure.",
+      "fhir_fragment": {
+        "resourceType": "DetectedIssue",
+        "id": "issue-syn-maude-0004",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25569003",
+              "display": "Ventricular tachycardia"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "predeployment_no_exposure"
+          }
+        ]
+      }
+    },
+    "SYN-MAUDE-0005": {
+      "snomed_code": "698247007",
+      "clinical_event_occurred": false,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "The code is the monitored target of an outage, not an observed arrhythmia; floor comes from process/exposure risk.",
+      "fhir_fragment": {
+        "resourceType": "DetectedIssue",
+        "id": "issue-syn-maude-0005",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "698247007",
+              "display": "Cardiac arrhythmia"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "outage_patient_exposed_no_event"
+          }
+        ]
+      }
+    },
+    "SYN-MAUDE-0006": {
+      "snomed_code": "71908006",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Missed brief self-terminating VFib occurred in an exposed patient with no adverse patient outcome recorded; the malfunction was found retrospectively after the classifier confidence remained just below the configured alarm threshold.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-maude-0006",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71908006",
+              "display": "Ventricular fibrillation"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred_no_harm"
+          }
+        ]
+      }
+    },
+    "SYN-MAUDE-0007": {
+      "snomed_code": "27885002",
+      "clinical_event_occurred": true,
+      "patient_exposed": true,
+      "harm_outcome": "none",
+      "note": "Missed transient complete AV block with prolonged ventricular pause occurred in an exposed patient with no adverse patient outcome recorded; the malfunction was found retrospectively after the pause duration sat just below the configured alarm threshold.",
+      "fhir_fragment": {
+        "resourceType": "Observation",
+        "id": "obs-syn-maude-0007",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27885002",
+              "display": "Complete atrioventricular block"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://biodevops.local/fhir/StructureDefinition/clinical-risk-tag",
+            "valueCode": "life_threatening_event_occurred_no_harm"
+          }
+        ]
+      }
+    }
+  }
+}

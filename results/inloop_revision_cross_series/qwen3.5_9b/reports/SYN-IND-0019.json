@@ -1,0 +1,183 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0019",
+    "clinical_inconsistency_class": "concept_severity_undercall",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 1 is below derived clinical floor 2. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic cardiology ward reported a minor, non-recurrent atrial fibrillation-adjacent irregularity with no adverse patient outcome recorded. Device logs and a retrospective clinician review both confirm a brief, self-resolving atrial fibrillation-adjacent irregularity with no adverse outcome; recurrence risk is being tracked. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+  "model_token_counts": {
+    "completion": 412,
+    "prompt": 2078
+  },
+  "raw_content": "{\n  \"severity\": 1,\n  \"confidence\": 0.92,\n  \"recommendation\": \"NO_ACTION\",\n  \"rationale\": \"The incident narrative describes a 'minor, non-recurrent' event with 'no adverse patient outcome recorded.' The logs confirm the irregularity was 'self-resolving' and there is no evidence of serious harm or failure in a safety-critical function that led to injury. This aligns with Severity 1 criteria: no patient exposure or impact; the issue was contained (resolved) before causing harm.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2023A\",\n      \"artifact_type\": \"test_log\",\"relevance_note\":\"Provides context on device confidence scoring for similar missed episode scenarios, though the specific incident is non-recurrent and self-resolving.\"},\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2027A\",\n      \"artifact_type\": \"test_log\",\"relevance_note\":\"Provides context on device confidence scoring for similar missed episode scenarios, though the specific incident is non-recurrent and self-resolving.\"},\n    {\n      \"artifact_id\": \"qmsr-820.10-c-design-development\",\n      \"artifact_type\": \"regulatory_citation\",\"relevance_note\":\"Establishes that design controls (ISO 13485 Clause 7.3) apply to the device, ensuring quality management processes are in place for such events.\"},\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_citation\",\"relevance_note\":\"Supports the requirement that post-market surveillance systems gather and analyze data on device safety, which is currently being done via monitoring/investigation as stated in the narrative.\"}\n    ]\n  }",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.92,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides context on device confidence scoring for similar missed episode scenarios, though the specific incident is non-recurrent and self-resolving."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides context on device confidence scoring for similar missed episode scenarios, though the specific incident is non-recurrent and self-resolving."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes that design controls (ISO 13485 Clause 7.3) apply to the device, ensuring quality management processes are in place for such events."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the requirement that post-market surveillance systems gather and analyze data on device safety, which is currently being done via monitoring/investigation as stated in the narrative."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a 'minor, non-recurrent' event with 'no adverse patient outcome recorded.' The logs confirm the irregularity was 'self-resolving' and there is no evidence of serious harm or failure in a safety-critical function that led to injury. This aligns with Severity 1 criteria: no patient exposure or impact; the issue was contained (resolved) before causing harm.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.5,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The incident narrative describes a 'minor, non-recurrent' event with 'no adverse patient outcome recorded.' The logs confirm the irregularity was 'self-resolving' and there is no evidence of serious harm or failure in a safety-critical function that led to injury.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "This aligns with Severity 1 criteria: no patient exposure or impact; the issue was contained (resolved) before causing harm.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.92,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "artifact_type": "test_log",
+          "relevance_note": "Provides context on device confidence scoring for similar missed episode scenarios, though the specific incident is non-recurrent and self-resolving."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "artifact_type": "test_log",
+          "relevance_note": "Provides context on device confidence scoring for similar missed episode scenarios, though the specific incident is non-recurrent and self-resolving."
+        },
+        {
+          "artifact_id": "qmsr-820.10-c-design-development",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Establishes that design controls (ISO 13485 Clause 7.3) apply to the device, ensuring quality management processes are in place for such events."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Supports the requirement that post-market surveillance systems gather and analyze data on device safety, which is currently being done via monitoring/investigation as stated in the narrative."
+        }
+      ],
+      "missing_evidence": [
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident narrative describes a 'minor, non-recurrent' event with 'no adverse patient outcome recorded.' The logs confirm the irregularity was 'self-resolving' and there is no evidence of serious harm or failure in a safety-critical function that led to injury. This aligns with Severity 1 criteria: no patient exposure or impact; the issue was contained (resolved) before causing harm.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": [
+      "This aligns with Severity 1 criteria: no patient exposure or impact; the issue was contained (resolved) before causing harm."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The incident narrative describes a 'minor, non-recurrent' event with 'no adverse patient outcome recorded.' The logs confirm the irregularity was 'self-resolving' and there is no evidence of serious harm or failure in a safety-critical function that led to injury.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "This aligns with Severity 1 criteria: no patient exposure or impact; the issue was contained (resolved) before causing harm.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.92,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides context on device confidence scoring for similar missed episode scenarios, though the specific incident is non-recurrent and self-resolving."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides context on device confidence scoring for similar missed episode scenarios, though the specific incident is non-recurrent and self-resolving."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes that design controls (ISO 13485 Clause 7.3) apply to the device, ensuring quality management processes are in place for such events."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the requirement that post-market surveillance systems gather and analyze data on device safety, which is currently being done via monitoring/investigation as stated in the narrative."
+      }
+    ],
+    "missing_evidence": [
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident narrative describes a 'minor, non-recurrent' event with 'no adverse patient outcome recorded.' The logs confirm the irregularity was 'self-resolving' and there is no evidence of serious harm or failure in a safety-critical function that led to injury. This aligns with Severity 1 criteria: no patient exposure or impact; the issue was contained (resolved) before causing harm.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "arm": "agent_raw",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 24531.855,
+  "model_token_counts": {
+    "completion": 698,
+    "prompt": 1972
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n  \"severity\": 3,\n  \"confidence\": 0.85,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident involves a critical safety function (VTach classifier) that failed to flag an episode leading to patient harm, despite internal validation tests showing a significant drop in sensitivity. This event requires immediate investigation and corrective action.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"The CI test log shows the VTach classifier sensitivity drop from 0.97 to 0.89, triggering an automated risk-gate block.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-0042\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"The unit test log shows the VTach classifier validation suite passing at 0.94 sensitivity, indicating a coverage gap that allowed the regression to pass undetected.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The post-market surveillance system is required to actively gather and analyze relevant data on device safety, which was not effectively performed in this case.\"\n    },\n    {\n      \"artifact_id\": \"mdr-annexI-sec17.4-it-security\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The IT security requirements for the VTach classifier were not met, potentially contributing to the failure of internal validation tests.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"The VTach classifier regression may have led to patient harm.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"support_status\": \"supported\"\n   ,\n    \"support_note\": \"The test log shows a significant drop in sensitivity, which could have missed critical episodes.\"\n    },\n    {\n      \"claim\": \"There is a coverage gap in the VTach classifier validation suite.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-0042\",\n      \"support_status\": \"supported\"\n    ,\n    \"support_note\": \"The unit test log shows passing results at 0.94 sensitivity, indicating that the regression was not caught by existing tests.\"\n    },\n    {\n      \"claim\": \"The post-market surveillance system is inadequate.\",\n      \"cited_artifact_id\": \"mdr-art83-pms-system\",\n      \"support_status\": \"weakly_supported\"\n    ,\n    \"support_note\": \"While the regulatory context indicates a requirement for an effective post-market surveillance system, the evidence does not directly link this to the specific incident.\"\n    },\n    {\n      \"claim\": \"IT security measures were insufficient.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.4-it-security\",\n      \"support_status\": \"weakly_supported\"\n    ,\n    \"support_note\": \"The regulatory context highlights IT security requirements, but the specific impact on this incident is not directly supported.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "scenario_id": "SYN-IND-0036"
+  },
+  "replicate": 2,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+        "claim": "The VTach classifier regression may have led to patient harm.",
+        "support_note": "The test log shows a significant drop in sensitivity, which could have missed critical episodes.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-0042",
+        "claim": "There is a coverage gap in the VTach classifier validation suite.",
+        "support_note": "The unit test log shows passing results at 0.94 sensitivity, indicating that the regression was not caught by existing tests.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art83-pms-system",
+        "claim": "The post-market surveillance system is inadequate.",
+        "support_note": "While the regulatory context indicates a requirement for an effective post-market surveillance system, the evidence does not directly link this to the specific incident.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+        "claim": "IT security measures were insufficient.",
+        "support_note": "The regulatory context highlights IT security requirements, but the specific impact on this incident is not directly supported.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The CI test log shows the VTach classifier sensitivity drop from 0.97 to 0.89, triggering an automated risk-gate block."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The unit test log shows the VTach classifier validation suite passing at 0.94 sensitivity, indicating a coverage gap that allowed the regression to pass undetected."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The post-market surveillance system is required to actively gather and analyze relevant data on device safety, which was not effectively performed in this case."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The IT security requirements for the VTach classifier were not met, potentially contributing to the failure of internal validation tests."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident involves a critical safety function (VTach classifier) that failed to flag an episode leading to patient harm, despite internal validation tests showing a significant drop in sensitivity. This event requires immediate investigation and corrective action.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  },
+  "scenario_id": "SYN-IND-0036",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 3 is below derived clinical floor 4. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The CI test log shows the VTach classifier sensitivity drop from 0.97 to 0.89, triggering an automated risk-gate block."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The unit test log shows the VTach classifier validation suite passing at 0.94 sensitivity, indicating a coverage gap that allowed the regression to pass undetected."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The post-market surveillance system is required to actively gather and analyze relevant data on device safety, which was not effectively performed in this case."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The IT security requirements for the VTach classifier were not met, potentially contributing to the failure of internal validation tests."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": false,
+    "evidence_gaps": [],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+          "claim": "The VTach classifier regression may have led to patient harm.",
+          "support_note": "The test log shows a significant drop in sensitivity, which could have missed critical episodes.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0042",
+          "claim": "There is a coverage gap in the VTach classifier validation suite.",
+          "support_note": "The unit test log shows passing results at 0.94 sensitivity, indicating that the regression was not caught by existing tests.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "The post-market surveillance system is inadequate.",
+          "support_note": "While the regulatory context indicates a requirement for an effective post-market surveillance system, the evidence does not directly link this to the specific incident.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+          "claim": "IT security measures were insufficient.",
+          "support_note": "The regulatory context highlights IT security requirements, but the specific impact on this incident is not directly supported.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The CI test log shows the VTach classifier sensitivity drop from 0.97 to 0.89, triggering an automated risk-gate block."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0042",
+          "artifact_type": "test_log",
+          "relevance_note": "The unit test log shows the VTach classifier validation suite passing at 0.94 sensitivity, indicating a coverage gap that allowed the regression to pass undetected."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The post-market surveillance system is required to actively gather and analyze relevant data on device safety, which was not effectively performed in this case."
+        },
+        {
+          "artifact_id": "mdr-annexI-sec17.4-it-security",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The IT security requirements for the VTach classifier were not met, potentially contributing to the failure of internal validation tests."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The incident involves a critical safety function (VTach classifier) that failed to flag an episode leading to patient harm, despite internal validation tests showing a significant drop in sensitivity. This event requires immediate investigation and corrective action.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "final_report_sha256": "16198095308711e1e00b2d127700b02e12c7870f49fba97a6acda60ce62839b8",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [],
+    "recommendation": "CAPA_INVESTIGATE",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0036",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0036_r2",
+    "scenario_id": "SYN-IND-0036",
+    "schema_version": "2.1.0",
+    "severity": 3,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "advisory_complete",
+    "timestamp_utc": "2026-08-03T09:21:47.934720Z",
+    "total_steps": 3,
+    "trace_id": "92975a5f-57b4-4c1f-ac67-9dfae81e7f0d"
+  },
+  "trace_path": "traces/SYN-IND-0036_r2.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {}
+}

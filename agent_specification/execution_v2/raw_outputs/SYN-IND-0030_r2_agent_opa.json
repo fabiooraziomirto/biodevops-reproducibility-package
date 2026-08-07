@@ -1,0 +1,254 @@
+{
+  "arm": "agent_opa",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 0,
+  "model_token_counts": {
+    "completion": null,
+    "prompt": null
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [],
+  "raw_model_output": null,
+  "reference": {
+    "citation_unresolved": true,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE",
+    "scenario_id": "SYN-IND-0030"
+  },
+  "replicate": 2,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-art83-pms-system",
+        "claim": "The device may have failed to detect a clinically significant event.",
+        "support_note": "The post-market surveillance system is required to actively and systematically gather, record, and analyze relevant data on the quality, performance, and safety of a device.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art10-9-qms-elements",
+        "claim": "There is a risk of recurrence given the missing confirmatory device confidence-score log.",
+        "support_note": "While the quality management system must include setting up, implementing, and maintaining a post-market surveillance system as described in Article 83, the specific missing log is not directly cited.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The post-market surveillance system is required to actively and systematically gather, record, and analyze relevant data on the quality, performance, and safety of a device."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The quality management system must include setting up, implementing, and maintaining a post-market surveillance system as described in Article 83."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The CI test log shows VTach sensitivity drop from 0.97 to 0.89, triggering the automated risk-gate block."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The unit test log shows VTach classifier validation suite passing at the time of release, indicating a coverage gap that allowed the regression to pass."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The device failed to flag a clinically significant ventricular fibrillation episode in real time, which may trigger obligations under EU MDR Article 10(2) and Article 83(1)-(2). The issue was contained by the CI/CD quality gate before clinical deployment. However, there is a risk of recurrence given the missing confirmatory device confidence-score log for the exact episode window.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  },
+  "scenario_id": "SYN-IND-0030",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 2 is below derived clinical floor 3. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The post-market surveillance system is required to actively and systematically gather, record, and analyze relevant data on the quality, performance, and safety of a device."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The quality management system must include setting up, implementing, and maintaining a post-market surveillance system as described in Article 83."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The CI test log shows VTach sensitivity drop from 0.97 to 0.89, triggering the automated risk-gate block."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The unit test log shows VTach classifier validation suite passing at the time of release, indicating a coverage gap that allowed the regression to pass."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": false,
+    "evidence_gaps": [],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "The device may have failed to detect a clinically significant event.",
+          "support_note": "The post-market surveillance system is required to actively and systematically gather, record, and analyze relevant data on the quality, performance, and safety of a device.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art10-9-qms-elements",
+          "claim": "There is a risk of recurrence given the missing confirmatory device confidence-score log.",
+          "support_note": "While the quality management system must include setting up, implementing, and maintaining a post-market surveillance system as described in Article 83, the specific missing log is not directly cited.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The post-market surveillance system is required to actively and systematically gather, record, and analyze relevant data on the quality, performance, and safety of a device."
+        },
+        {
+          "artifact_id": "mdr-art10-9-qms-elements",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The quality management system must include setting up, implementing, and maintaining a post-market surveillance system as described in Article 83."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The CI test log shows VTach sensitivity drop from 0.97 to 0.89, triggering the automated risk-gate block."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0042",
+          "artifact_type": "test_log",
+          "relevance_note": "The unit test log shows VTach classifier validation suite passing at the time of release, indicating a coverage gap that allowed the regression to pass."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The device failed to flag a clinically significant ventricular fibrillation episode in real time, which may trigger obligations under EU MDR Article 10(2) and Article 83(1)-(2). The issue was contained by the CI/CD quality gate before clinical deployment. However, there is a risk of recurrence given the missing confirmatory device confidence-score log for the exact episode window.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "final_report_sha256": "cd00baba9fc00d191228f74f482d64236ccd93f92152efca60f2546049b369ea",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [],
+    "recommendation": "CAPA_INVESTIGATE",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0030",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0030_r2",
+    "scenario_id": "SYN-IND-0030",
+    "schema_version": "2.1.0",
+    "severity": 2,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "advisory_complete",
+    "timestamp_utc": "2026-08-03T09:19:19.456801Z",
+    "total_steps": 3,
+    "trace_id": "0e04c188-d413-46b5-8b3f-a3226dc2f783"
+  },
+  "trace_path": "traces/SYN-IND-0030_r2.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "The device may have failed to detect a clinically significant event.",
+          "support_note": "The post-market surveillance system is required to actively and systematically gather, record, and analyze relevant data on the quality, performance, and safety of a device.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art10-9-qms-elements",
+          "claim": "There is a risk of recurrence given the missing confirmatory device confidence-score log.",
+          "support_note": "While the quality management system must include setting up, implementing, and maintaining a post-market surveillance system as described in Article 83, the specific missing log is not directly cited.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The post-market surveillance system is required to actively and systematically gather, record, and analyze relevant data on the quality, performance, and safety of a device."
+        },
+        {
+          "artifact_id": "mdr-art10-9-qms-elements",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The quality management system must include setting up, implementing, and maintaining a post-market surveillance system as described in Article 83."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The CI test log shows VTach sensitivity drop from 0.97 to 0.89, triggering the automated risk-gate block."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0042",
+          "artifact_type": "test_log",
+          "relevance_note": "The unit test log shows VTach classifier validation suite passing at the time of release, indicating a coverage gap that allowed the regression to pass."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The device failed to flag a clinically significant ventricular fibrillation episode in real time, which may trigger obligations under EU MDR Article 10(2) and Article 83(1)-(2). The issue was contained by the CI/CD quality gate before clinical deployment. However, there is a risk of recurrence given the missing confirmatory device confidence-score log for the exact episode window.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": [
+      "The device may have failed to detect a clinically significant event.",
+      "There is a risk of recurrence given the missing confirmatory device confidence-score log."
+    ]
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0019",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic cardiology ward reported a minor, non-recurrent atrial fibrillation-adjacent irregularity with no adverse patient outcome recorded. Device logs and a retrospective clinician review both confirm a brief, self-resolving atrial fibrillation-adjacent irregularity with no adverse outcome; recurrence risk is being tracked. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+  "model_token_counts": {
+    "completion": 751,
+    "prompt": 1802
+  },
+  "raw_content": "{\n  \"severity\": 2,\n  \"confidence\": 0.75,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident narrative describes a brief, self-resolving atrial fibrillation-adjacent irregularity detected in a synthetic cardiology ward setting. While no adverse patient outcome was recorded and the event appears non-recurrent, it represents a deviation from intended performance that warrants investigation to understand root cause and prevent future occurrences. The device incorporates software (as per EU MDR Annex I Section 17.1), triggering obligations related to repeatability, reliability, and performance in line with its intended use. Furthermore, as the device is automated with computer software, it falls under the scope of 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485. The incident also highlights a potential area for review concerning IT security (MDR Annex I Section 17.4), although no unauthorized access or compromise is indicated.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"mdr-annexI-sec17.1-electronic-programmable\",\n      \"artifact_type\": \"regulatory citation\",\n      \"relevance_note\": \"Establishes software as a key component requiring reliability and performance considerations.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.10-c-design-development\",\n      \"artifact_type\": \"regulatory citation\",\n      \"relevance_note\": \"Defines design control requirements for devices with software, triggering ISO 13485 adherence.\"\n    },\n    {\n      \"artifact_id\": \"mdr-annexI-sec17.4-it-security\",\n      \"artifact_type\": \"regulatory citation\",\n      \"relevance_note\": \"Highlights the need for IT security measures, although no specific compromise is indicated in this incident.\"\n    },\n     {\n      \"artifact_id\": \"mdr-annexI-sec17.2-software-lifecycle\",\n      \"artifact_type\": \"regulatory citation\",\n      \"relevance_note\": \"Reinforces the need for a robust software development lifecycle, including risk management and verification/validation.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"The incident represents a deviation from intended performance.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.1-electronic-programmable\",\n      \"support_status\": \"supported\",\"support_note\":\"Performance in line with intended use is required.\"\n    },\n    {\n      \"claim\": \"The device requires adherence to design controls.\",\n      \"cited_artifact_id\": \"qmsr-820.10-c-design-development\",\n      \"support_status\": \"supported\",\n      \"support_note\":\"Devices automated with computer software must comply with ISO 13485.\"\n    },\n     {\n      \"claim\": \"The incident warrants investigation to prevent future occurrences.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.2-software-lifecycle\",\n      \"support_status\": \"supported\",\n      \"support_note\":\"Software development lifecycle requires risk management.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2025A",
+    "ARTIFACT-TESTLOG-2029A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.10-c-design-development",
+    "mdr-annexI-sec17.1-electronic-programmable",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "claim": "The incident represents a deviation from intended performance.",
+        "support_note": "Performance in line with intended use is required.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "The device requires adherence to design controls.",
+        "support_note": "Devices automated with computer software must comply with ISO 13485.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "claim": "The incident warrants investigation to prevent future occurrences.",
+        "support_note": "Software development lifecycle requires risk management.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Establishes software as a key component requiring reliability and performance considerations."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Defines design control requirements for devices with software, triggering ISO 13485 adherence."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Highlights the need for IT security measures, although no specific compromise is indicated in this incident."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Reinforces the need for a robust software development lifecycle, including risk management and verification/validation."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a brief, self-resolving atrial fibrillation-adjacent irregularity detected in a synthetic cardiology ward setting. While no adverse patient outcome was recorded and the event appears non-recurrent, it represents a deviation from intended performance that warrants investigation to understand root cause and prevent future occurrences. The device incorporates software (as per EU MDR Annex I Section 17.1), triggering obligations related to repeatability, reliability, and performance in line with its intended use. Furthermore, as the device is automated with computer software, it falls under the scope of 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485. The incident also highlights a potential area for review concerning IT security (MDR Annex I Section 17.4), although no unauthorized access or compromise is indicated.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.6667,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+          "claim": "The incident represents a deviation from intended performance.",
+          "support_note": "Performance in line with intended use is required.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-c-design-development",
+          "claim": "The device requires adherence to design controls.",
+          "support_note": "Devices automated with computer software must comply with ISO 13485.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+          "claim": "The incident warrants investigation to prevent future occurrences.",
+          "support_note": "Software development lifecycle requires risk management.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+          "artifact_type": "regulatory citation",
+          "relevance_note": "Establishes software as a key component requiring reliability and performance considerations."
+        },
+        {
+          "artifact_id": "qmsr-820.10-c-design-development",
+          "artifact_type": "regulatory citation",
+          "relevance_note": "Defines design control requirements for devices with software, triggering ISO 13485 adherence."
+        },
+        {
+          "artifact_id": "mdr-annexI-sec17.4-it-security",
+          "artifact_type": "regulatory citation",
+          "relevance_note": "Highlights the need for IT security measures, although no specific compromise is indicated in this incident."
+        },
+        {
+          "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+          "artifact_type": "regulatory citation",
+          "relevance_note": "Reinforces the need for a robust software development lifecycle, including risk management and verification/validation."
+        }
+      ],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment."
+      ],
+      "rationale": "The incident narrative describes a brief, self-resolving atrial fibrillation-adjacent irregularity detected in a synthetic cardiology ward setting. While no adverse patient outcome was recorded and the event appears non-recurrent, it represents a deviation from intended performance that warrants investigation to understand root cause and prevent future occurrences. The device incorporates software (as per EU MDR Annex I Section 17.1), triggering obligations related to repeatability, reliability, and performance in line with its intended use. Furthermore, as the device is automated with computer software, it falls under the scope of 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485. The incident also highlights a potential area for review concerning IT security (MDR Annex I Section 17.4), although no unauthorized access or compromise is indicated.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": [
+      "The incident warrants investigation to prevent future occurrences."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "claim": "The incident represents a deviation from intended performance.",
+        "support_note": "Performance in line with intended use is required.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "The device requires adherence to design controls.",
+        "support_note": "Devices automated with computer software must comply with ISO 13485.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "claim": "The incident warrants investigation to prevent future occurrences.",
+        "support_note": "Software development lifecycle requires risk management.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Establishes software as a key component requiring reliability and performance considerations."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Defines design control requirements for devices with software, triggering ISO 13485 adherence."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Highlights the need for IT security measures, although no specific compromise is indicated in this incident."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Reinforces the need for a robust software development lifecycle, including risk management and verification/validation."
+      }
+    ],
+    "missing_evidence": [
+      "At least one retrieved technical artifact supporting the incident judgment."
+    ],
+    "rationale": "The incident narrative describes a brief, self-resolving atrial fibrillation-adjacent irregularity detected in a synthetic cardiology ward setting. While no adverse patient outcome was recorded and the event appears non-recurrent, it represents a deviation from intended performance that warrants investigation to understand root cause and prevent future occurrences. The device incorporates software (as per EU MDR Annex I Section 17.1), triggering obligations related to repeatability, reliability, and performance in line with its intended use. Furthermore, as the device is automated with computer software, it falls under the scope of 21 CFR \u00a7 820.10(c) requiring adherence to design controls outlined in ISO 13485. The incident also highlights a potential area for review concerning IT security (MDR Annex I Section 17.4), although no unauthorized access or compromise is indicated.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  }
+}

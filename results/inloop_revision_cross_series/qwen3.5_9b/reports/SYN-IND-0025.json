@@ -1,0 +1,212 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0025",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic step-down telemetry unit reported that the device failed to flag a clinically significant ventricular tachycardia episode in real time. A retrospective clinician review confirms a single missed, sustained ventricular tachycardia episode that self-resolved with no recorded adverse outcome; no second occurrence has yet been confirmed. The device confidence-score log, the retrospective clinician read, and the raw waveform export are all consistent.",
+  "model_token_counts": {
+    "completion": 547,
+    "prompt": 2309
+  },
+  "raw_content": "{\n  \"severity\": 3,\n  \"confidence\": 0.75,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The device failed to flag a clinically significant ventricular tachycardia (VT) episode in real-time. Although the event self-resolved with no recorded adverse outcome and was contained by clinician review without immediate harm realization, this represents a failure of a safety-critical function (arrhythmia detection). Under FDA QMSR 21 CFR \u00a7 820.10(c), design controls must ensure device performance meets intended use; missing a sustained VT indicates a potential for serious patient harm if the event had evolved differently or occurred in an unmonitored context, satisfying Severity 3 criteria (serious potential patient-safety risk). The lack of a root cause analysis report and incident history regarding recurrence constitutes missing evidence required to fully assess scope. Clinical SHACL nonconformance is triggered by this missed detection.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2023A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Confirms the specific instance of a missed VT episode in release v23, grounding the technical claim that detection failed.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.10-c-design-development\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Establishes regulatory obligation for design controls to ensure device performance; failure to detect VT triggers obligations under this clause.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.10-b-regulatory-crossrefs\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"References reporting requirements (part 803) and advisory notices, supporting the need for investigation if recurrence or serious risk is suspected.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Requires post-market surveillance to analyze such safety events and determine corrective actions.\"\n    }\n  ],\n  \"missing_evidence\": [\n    \"Root cause analysis report detailing why the classifier failed to flag VT in release v23.\",\n    \"Incident report confirming whether any other similar missed-detection events have occurred since then (to assess recurrence).\"\n  ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: Root cause analysis report detailing why the classifier failed to flag VT in release v23.; Incident report confirming whether any other similar events have occurred since then (to assess recurrence).; Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (concept_severity_undercall) Predicted severity 2 is below derived clinical floor 3. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.\n- (concept_severity_undercall) concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Confirms the specific instance of a missed VT episode in release v23, grounding the technical claim that detection failed."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes regulatory obligation for design controls to ensure device performance; failure to detect VT triggers obligations under this clause."
+      },
+      {
+        "artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "References reporting requirements (part 803) and advisory notices, supporting the need for investigation if recurrence or serious risk is suspected."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Requires post-market surveillance to analyze such safety events and determine corrective actions."
+      }
+    ],
+    "missing_evidence": [
+      "Root cause analysis report detailing why the classifier failed to flag VT in release v23.",
+      "Incident report confirming whether any other similar missed-detection events have occurred since then (to assess recurrence)."
+    ],
+    "rationale": "The device failed to flag a clinically significant ventricular tachycardia (VT) episode in real-time. Although the event self-resolved with no recorded adverse outcome and was contained by clinician review without immediate harm realization, this represents a failure of a safety-critical function (arrhythmia detection). Under FDA QMSR 21 CFR \u00a7 820.10(c), design controls must ensure device performance meets intended use; missing a sustained VT indicates a potential for serious patient harm if the event had evolved differently or occurred in an unmonitored context, satisfying Severity 3 criteria (serious potential patient-safety risk). The lack of a root cause analysis report and incident history regarding recurrence constitutes missing evidence required to fully assess scope. Clinical SHACL nonconformance is triggered by this missed detection.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 3
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.6,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The device failed to flag a clinically significant ventricular tachycardia (VT) episode in real-time.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "Although the event self-resolved with no recorded adverse outcome and was contained by clinician review without immediate harm realization, this represents a failure of a safety-critical function (arrhythmia detection).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "Under FDA QMSR 21 CFR \u00a7 820.10(c), design controls must ensure device performance meets intended use; missing a sustained VT indicates a potential for serious patient harm if the event had evolved differently or occurred in an unmonitored context, satisfying Severity 3 criteria (serious potential patient-safety risk).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The lack of a root cause analysis report and incident history regarding recurrence constitutes missing evidence required to fully assess scope.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "Clinical SHACL nonconformance is triggered by this missed detection.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "artifact_type": "test_log",
+          "relevance_note": "Confirms the specific instance of a missed VT episode in release v23, grounding the technical claim that detection failed."
+        },
+        {
+          "artifact_id": "qmsr-820.10-c-design-development",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Establishes regulatory obligation for design controls to ensure device performance; failure to detect VT triggers obligations under this clause."
+        },
+        {
+          "artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "References reporting requirements (part 803) and advisory notices, supporting the need for investigation if recurrence or serious risk is suspected."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Requires post-market surveillance to analyze such safety events and determine corrective actions."
+        }
+      ],
+      "missing_evidence": [
+        "Root cause analysis report detailing why the classifier failed to flag VT in release v23.",
+        "Incident report confirming whether any other similar missed-detection events have occurred since then (to assess recurrence)."
+      ],
+      "rationale": "The device failed to flag a clinically significant ventricular tachycardia (VT) episode in real-time. Although the event self-resolved with no recorded adverse outcome and was contained by clinician review without immediate harm realization, this represents a failure of a safety-critical function (arrhythmia detection). Under FDA QMSR 21 CFR \u00a7 820.10(c), design controls must ensure device performance meets intended use; missing a sustained VT indicates a potential for serious patient harm if the event had evolved differently or occurred in an unmonitored context, satisfying Severity 3 criteria (serious potential patient-safety risk). The lack of a root cause analysis report and incident history regarding recurrence constitutes missing evidence required to fully assess scope. Clinical SHACL nonconformance is triggered by this missed detection.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "weakly_supported_claims": [
+      "Under FDA QMSR 21 CFR \u00a7 820.10(c), design controls must ensure device performance meets intended use; missing a sustained VT indicates a potential for serious patient harm if the event had evolved differently or occurred in an unmonitored context, satisfying Severity 3 criteria (serious potential patient-safety risk).",
+      "The lack of a root cause analysis report and incident history regarding recurrence constitutes missing evidence required to fully assess scope."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The device failed to flag a clinically significant ventricular tachycardia (VT) episode in real-time.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "Although the event self-resolved with no recorded adverse outcome and was contained by clinician review without immediate harm realization, this represents a failure of a safety-critical function (arrhythmia detection).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "Under FDA QMSR 21 CFR \u00a7 820.10(c), design controls must ensure device performance meets intended use; missing a sustained VT indicates a potential for serious patient harm if the event had evolved differently or occurred in an unmonitored context, satisfying Severity 3 criteria (serious potential patient-safety risk).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The lack of a root cause analysis report and incident history regarding recurrence constitutes missing evidence required to fully assess scope.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "Clinical SHACL nonconformance is triggered by this missed detection.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Confirms the specific instance of a missed VT episode in release v23, grounding the technical claim that detection failed."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes regulatory obligation for design controls to ensure device performance; failure to detect VT triggers obligations under this clause."
+      },
+      {
+        "artifact_id": "qmsr-820.10-b-regulatory-crossrefs",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "References reporting requirements (part 803) and advisory notices, supporting the need for investigation if recurrence or serious risk is suspected."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Requires post-market surveillance to analyze such safety events and determine corrective actions."
+      }
+    ],
+    "missing_evidence": [
+      "Root cause analysis report detailing why the classifier failed to flag VT in release v23.",
+      "Incident report confirming whether any other similar missed-detection events have occurred since then (to assess recurrence)."
+    ],
+    "rationale": "The device failed to flag a clinically significant ventricular tachycardia (VT) episode in real-time. Although the event self-resolved with no recorded adverse outcome and was contained by clinician review without immediate harm realization, this represents a failure of a safety-critical function (arrhythmia detection). Under FDA QMSR 21 CFR \u00a7 820.10(c), design controls must ensure device performance meets intended use; missing a sustained VT indicates a potential for serious patient harm if the event had evolved differently or occurred in an unmonitored context, satisfying Severity 3 criteria (serious potential patient-safety risk). The lack of a root cause analysis report and incident history regarding recurrence constitutes missing evidence required to fully assess scope. Clinical SHACL nonconformance is triggered by this missed detection.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  }
+}

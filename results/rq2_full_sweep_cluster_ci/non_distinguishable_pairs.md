@@ -1,0 +1,21 @@
+# Cells whose cluster-adjusted CIs overlap despite different point estimates
+
+- gemma3_4b/development: raw=10/100 [0.0279,0.301] vs opa=5/100 [0.0089,0.2361] -- cluster-adjusted CIs OVERLAP despite different point estimates
+- gemma3_4b/held_out: raw=0/100 [0.0,0.037] vs opa=10/100 [0.0279,0.301] -- cluster-adjusted CIs OVERLAP despite different point estimates
+- qwen3.5_4b/development: raw=25/100 [0.1119,0.4687] vs opa=20/100 [0.0842,0.4046] -- cluster-adjusted CIs OVERLAP despite different point estimates
+- qwen3.5_4b/held_out: raw=0/100 [0.0,0.037] vs opa=5/100 [0.0089,0.2361] -- cluster-adjusted CIs OVERLAP despite different point estimates
+- qwen3.5_9b/development: raw=28/100 [0.1357,0.4906] vs opa=14/100 [0.0487,0.3411] -- cluster-adjusted CIs OVERLAP despite different point estimates
+- qwen3.5_9b/held_out: raw=13/100 [0.0481,0.3063] vs opa=8/100 [0.0224,0.2485] -- cluster-adjusted CIs OVERLAP despite different point estimates
+- gemma3_12b/development: raw=30/100 [0.1455,0.519] vs opa=25/100 [0.1119,0.4687] -- cluster-adjusted CIs OVERLAP despite different point estimates
+- gemma3_12b/held_out: raw=0/100 [0.0,0.037] vs opa=9/100 [0.0249,0.2767] -- cluster-adjusted CIs OVERLAP despite different point estimates
+- gemma3_27b/development: raw=30/100 [0.1455,0.519] vs opa=20/100 [0.0807,0.416] -- cluster-adjusted CIs OVERLAP despite different point estimates
+- gemma3_27b/held_out: raw=0/100 [0.0,0.037] vs opa=5/100 [0.0089,0.2361] -- cluster-adjusted CIs OVERLAP despite different point estimates
+- qwen3.5_27b/development: raw=25/100 [0.1119,0.4687] vs opa=30/100 [0.1455,0.519] -- cluster-adjusted CIs OVERLAP despite different point estimates
+- qwen2.5_7b/held_out: raw=0/100 [0.0,0.037] vs opa=10/100 [0.0279,0.301] -- cluster-adjusted CIs OVERLAP despite different point estimates
+- gemma3_4b/agent_opa held_out=10/100 adj_ci=[0.0279,0.301] vs zero-baseline adj_ci_hi=0.037 -- NOT reliably distinguishable from 0 under cluster adjustment
+- qwen3.5_4b/agent_opa held_out=5/100 adj_ci=[0.0089,0.2361] vs zero-baseline adj_ci_hi=0.037 -- NOT reliably distinguishable from 0 under cluster adjustment
+- qwen3.5_9b/agent_raw held_out=13/100 adj_ci=[0.0481,0.3063] vs zero-baseline adj_ci_hi=0.037 -- DISTINGUISHABLE from 0
+- qwen3.5_9b/agent_opa held_out=8/100 adj_ci=[0.0224,0.2485] vs zero-baseline adj_ci_hi=0.037 -- NOT reliably distinguishable from 0 under cluster adjustment
+- gemma3_12b/agent_opa held_out=9/100 adj_ci=[0.0249,0.2767] vs zero-baseline adj_ci_hi=0.037 -- NOT reliably distinguishable from 0 under cluster adjustment
+- gemma3_27b/agent_opa held_out=5/100 adj_ci=[0.0089,0.2361] vs zero-baseline adj_ci_hi=0.037 -- NOT reliably distinguishable from 0 under cluster adjustment
+- qwen2.5_7b/agent_opa held_out=10/100 adj_ci=[0.0279,0.301] vs zero-baseline adj_ci_hi=0.037 -- NOT reliably distinguishable from 0 under cluster adjustment

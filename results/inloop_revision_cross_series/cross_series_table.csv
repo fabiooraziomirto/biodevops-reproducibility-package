@@ -1,0 +1,4 @@
+model,n,completions,real_generation_events,fallback_events,mock_events,revise_attempted,revise_shacl_triggered,revise_opa_only,changed_output_shacl_triggered,changed_output_opa_only,changed_output_any,changed_rate_shacl_triggered,changed_rate_opa_only,residual_shacl_violations_final_event,mean_evidence_links_final_report_shacl_triggered,schema_or_parse_failures,illegal_state_transitions_blocked,second_revision_attempts_blocked,opa_actions_count_on_synthesize_events,opa_actions_count_on_revise_events
+qwen2.5:3b,40,40,69,0,0,20,16,4,6,0,6,0.375,0.0,8,3.88,0,0,9,37,15
+qwen3.5:9b,40,40,97,0,0,25,12,13,5,3,8,0.4167,0.2308,19,4.58,0,0,23,67,48
+gemma3:12b,40,40,87,0,0,11,11,0,5,0,5,0.4545,None,34,5.18,0,0,11,118,41

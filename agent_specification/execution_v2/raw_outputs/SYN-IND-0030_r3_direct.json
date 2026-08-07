@@ -1,0 +1,141 @@
+{
+  "arm": "direct",
+  "artifact_recall": 0.0,
+  "citation_resolution": 0,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 5899.43,
+  "model_token_counts": {
+    "completion": 230,
+    "prompt": 1183
+  },
+  "observed_governance": {
+    "citation_unresolved": true,
+    "evidence_insufficient": false,
+    "policy_contradiction": true,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [
+    "technical_incident_missing_technical_evidence",
+    "deny:risk_report_contains_unresolved_or_trap_citation",
+    "deny:technical_incident_missing_technical_evidence"
+  ],
+  "raw_model_output": "{\n  \"severity\": 2,\n  \"confidence\": 0.8,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The device failed to flag a clinically significant ventricular fibrillation episode in real time, which may trigger obligations under the FDA QMSR and EU MDR for post-market surveillance and corrective actions. While no adverse outcome was recorded, the potential for serious harm exists due to the missed detection in a safety-critical function.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ID: REGULATORY-QMSR-001\",\n      \"artifact_type\": \"REGULATORY_CONTEXT\",\n      \"relevance_note\": \"Requires review under FDA QMSR for post-market surveillance and corrective actions.\"\n    },\n    {\n      \"artifact_id\": \"ID: REGULATORY-MDR-002\",\n      \"artifact_type\": \"REGULATORY_CONTEXT\",\n      \"relevance_note\": \"May trigger obligations under EU MDR for post-market surveillance and corrective actions.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "reference": {
+    "citation_unresolved": true,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE",
+    "scenario_id": "SYN-IND-0030"
+  },
+  "replicate": 3,
+  "report": {
+    "claim_support": [],
+    "confidence": 0.8,
+    "evidence_links": [
+      {
+        "artifact_id": "ID: REGULATORY-QMSR-001",
+        "artifact_type": "REGULATORY_CONTEXT",
+        "relevance_note": "Requires review under FDA QMSR for post-market surveillance and corrective actions."
+      },
+      {
+        "artifact_id": "ID: REGULATORY-MDR-002",
+        "artifact_type": "REGULATORY_CONTEXT",
+        "relevance_note": "May trigger obligations under EU MDR for post-market surveillance and corrective actions."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The device failed to flag a clinically significant ventricular fibrillation episode in real time, which may trigger obligations under the FDA QMSR and EU MDR for post-market surveillance and corrective actions. While no adverse outcome was recorded, the potential for serious harm exists due to the missed detection in a safety-critical function.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  },
+  "scenario_id": "SYN-IND-0030",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 2 is below derived clinical floor 3. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {},
+  "trace_path": null,
+  "unsupported_claim_count": 2,
+  "verification": {
+    "citation_hallucination": 1,
+    "citation_validity": 0.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [
+      "ID: REGULATORY-QMSR-001",
+      "ID: REGULATORY-MDR-002"
+    ],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "technical_incident_missing_technical_evidence",
+      "deny:risk_report_contains_unresolved_or_trap_citation",
+      "deny:technical_incident_missing_technical_evidence"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "The device failed to flag a clinically significant ventricular fibrillation episode in real time, which may trigger obligations under the FDA QMSR and EU MDR for post-market surveillance and corrective actions.",
+      "While no adverse outcome was recorded, the potential for serious harm exists due to the missed detection in a safety-critical function."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ID: REGULATORY-QMSR-001",
+          "claim": "The device failed to flag a clinically significant ventricular fibrillation episode in real time, which may trigger obligations under the FDA QMSR and EU MDR for post-market surveillance and corrective actions.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "ID: REGULATORY-QMSR-001",
+          "claim": "While no adverse outcome was recorded, the potential for serious harm exists due to the missed detection in a safety-critical function.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        }
+      ],
+      "confidence": 0.8,
+      "evidence_links": [
+        {
+          "artifact_id": "ID: REGULATORY-QMSR-001",
+          "artifact_type": "REGULATORY_CONTEXT",
+          "relevance_note": "Requires review under FDA QMSR for post-market surveillance and corrective actions."
+        },
+        {
+          "artifact_id": "ID: REGULATORY-MDR-002",
+          "artifact_type": "REGULATORY_CONTEXT",
+          "relevance_note": "May trigger obligations under EU MDR for post-market surveillance and corrective actions."
+        }
+      ],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment."
+      ],
+      "rationale": "The device failed to flag a clinically significant ventricular fibrillation episode in real time, which may trigger obligations under the FDA QMSR and EU MDR for post-market surveillance and corrective actions. While no adverse outcome was recorded, the potential for serious harm exists due to the missed detection in a safety-critical function.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": []
+  }
+}

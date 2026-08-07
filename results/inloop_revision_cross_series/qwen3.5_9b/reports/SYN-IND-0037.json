@@ -1,0 +1,165 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0037",
+    "clinical_inconsistency_class": "none",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic post-market surveillance queue reported that the patient lost consciousness and required emergency resuscitation following an unflagged complete atrioventricular block episode, confirmed by hospital emergency response records. The emergency-response record and the device telemetry log disagree on episode onset time by several minutes, an unresolved discrepancy that does not change the outcome.",
+  "model_token_counts": {
+    "completion": 207,
+    "prompt": 2255
+  },
+  "raw_content": "{\n  \"severity\": 4,\n  \"confidence\": 0.85,\n  \"recommendation\": \"FIELD_SAFETY_CORRECTIVE_ACTION\",\n  \"rationale\": \"The incident narrative describes a realized serious harm (patient lost consciousness requiring emergency resuscitation) due to an unflagged safety-critical event (complete atrioventricular block). The device telemetry log failed to detect or flag this episode, indicating a failure in the post-market surveillance system and potentially the design controls regarding detection algorithms. This constitutes a broad deployed-population exposure risk where automatic containment was absent at the time of harm. According to severity rubric dimension (a), serious harm occurred; dimension (b) is moot as harm realized; dimension (c) shows lack of containment before patient impact. The discrepancy in onset times between records does not mitigate the fact that a life-threatening event went unflagged by the device, leading to delayed or missed intervention.\",\n  \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: fsca_without_confirmatory_evidence_downgraded; severity4_or_death_forced_immediate_human_escalation; technical_incident_missing_technical_evidence; deny:technical_incident_missing_technical_evidence; clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: At least one retrieved technical artifact supporting the incident judgment.; Causal link between the artifact/change and the observed event.; Evidence of recurrence or confirmed deployed-population impact.; Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (shacl) RiskReport must link at least one evidence id.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.85,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a realized serious harm (patient lost consciousness requiring emergency resuscitation) due to an unflagged safety-critical event (complete atrioventricular block). The device telemetry log failed to detect or flag this episode, indicating a failure in the post-market surveillance system and potentially the design controls regarding detection algorithms. This constitutes a broad deployed-population exposure risk where automatic containment was absent at the time of harm. According to severity rubric dimension (a), serious harm occurred; dimension (b) is moot as harm realized; dimension (c) shows lack of containment before patient impact. The discrepancy in onset times between records does not mitigate the fact that a life-threatening event went unflagged by the device, leading to delayed or missed intervention.",
+    "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "requires_human_review": true,
+    "severity": 4
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "fsca_without_confirmatory_evidence_downgraded",
+      "severity4_or_death_forced_immediate_human_escalation",
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence",
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "The incident narrative describes a realized serious harm (patient lost consciousness requiring emergency resuscitation) due to an unflagged safety-critical event (complete atrioventricular block).",
+      "The device telemetry log failed to detect or flag this episode, indicating a failure in the post-market surveillance system and potentially the design controls regarding detection algorithms.",
+      "This constitutes a broad deployed-population exposure risk where automatic containment was absent at the time of harm.",
+      "According to severity rubric dimension (a), serious harm occurred; dimension (b) is moot as harm realized; dimension (c) shows lack of containment before patient impact.",
+      "The discrepancy in onset times between records does not mitigate the fact that a life-threatening event went unflagged by the device, leading to delayed or missed intervention."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "",
+          "claim": "The incident narrative describes a realized serious harm (patient lost consciousness requiring emergency resuscitation) due to an unflagged safety-critical event (complete atrioventricular block).",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "The device telemetry log failed to detect or flag this episode, indicating a failure in the post-market surveillance system and potentially the design controls regarding detection algorithms.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "This constitutes a broad deployed-population exposure risk where automatic containment was absent at the time of harm.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "According to severity rubric dimension (a), serious harm occurred; dimension (b) is moot as harm realized; dimension (c) shows lack of containment before patient impact.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "The discrepancy in onset times between records does not mitigate the fact that a life-threatening event went unflagged by the device, leading to delayed or missed intervention.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment.",
+        "Causal link between the artifact/change and the observed event.",
+        "Evidence of recurrence or confirmed deployed-population impact.",
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident narrative describes a realized serious harm (patient lost consciousness requiring emergency resuscitation) due to an unflagged safety-critical event (complete atrioventricular block). The device telemetry log failed to detect or flag this episode, indicating a failure in the post-market surveillance system and potentially the design controls regarding detection algorithms. This constitutes a broad deployed-population exposure risk where automatic containment was absent at the time of harm. According to severity rubric dimension (a), serious harm occurred; dimension (b) is moot as harm realized; dimension (c) shows lack of containment before patient impact. The discrepancy in onset times between records does not mitigate the fact that a life-threatening event went unflagged by the device, leading to delayed or missed intervention.",
+      "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "requires_human_review": true,
+      "severity": 4
+    },
+    "weakly_supported_claims": []
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "",
+        "claim": "The incident narrative describes a realized serious harm (patient lost consciousness requiring emergency resuscitation) due to an unflagged safety-critical event (complete atrioventricular block).",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "The device telemetry log failed to detect or flag this episode, indicating a failure in the post-market surveillance system and potentially the design controls regarding detection algorithms.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "This constitutes a broad deployed-population exposure risk where automatic containment was absent at the time of harm.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "According to severity rubric dimension (a), serious harm occurred; dimension (b) is moot as harm realized; dimension (c) shows lack of containment before patient impact.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "The discrepancy in onset times between records does not mitigate the fact that a life-threatening event went unflagged by the device, leading to delayed or missed intervention.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [],
+    "missing_evidence": [
+      "At least one retrieved technical artifact supporting the incident judgment.",
+      "Causal link between the artifact/change and the observed event.",
+      "Evidence of recurrence or confirmed deployed-population impact.",
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident narrative describes a realized serious harm (patient lost consciousness requiring emergency resuscitation) due to an unflagged safety-critical event (complete atrioventricular block). The device telemetry log failed to detect or flag this episode, indicating a failure in the post-market surveillance system and potentially the design controls regarding detection algorithms. This constitutes a broad deployed-population exposure risk where automatic containment was absent at the time of harm. According to severity rubric dimension (a), serious harm occurred; dimension (b) is moot as harm realized; dimension (c) shows lack of containment before patient impact. The discrepancy in onset times between records does not mitigate the fact that a life-threatening event went unflagged by the device, leading to delayed or missed intervention.",
+    "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+    "requires_human_review": true,
+    "severity": 4
+  }
+}

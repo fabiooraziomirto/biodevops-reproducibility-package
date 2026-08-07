@@ -1,0 +1,165 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0003",
+    "clinical_inconsistency_class": "none",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic remote monitoring center reported a routine software validation finding for the ventricular fibrillation detection pathway. An automated log flagged a transient signal artifact resembling ventricular fibrillation, but the paired raw-waveform export and bedside monitor cross-check both show a clean sinus trace for the same window, resolving the apparent conflict as a non-event. No patient-facing exposure occurred and the engineering finding was fully contained pre-release or resolved as a non-event.",
+  "model_token_counts": {
+    "completion": 419,
+    "prompt": 2080
+  },
+  "raw_content": "{\n  \"severity\": 1,\n  \"confidence\": 0.92,\n  \"recommendation\": \"NO_ACTION\",\n  \"rationale\": \"The incident narrative describes a transient signal artifact that was resolved as a non-event through cross-checking with raw-waveform exports and bedside monitors. No patient exposure occurred, and the finding was contained pre-release or determined to be invalid data. This aligns with Severity Level 1 criteria: no harm realized, potential harm blocked by automatic controls (validation checks), and containment before clinical deployment.\",\n  \"claim_support\": [\n    {\n      \"claim\": \"No patient exposure occurred\",\n      \"cited_artifact_id\": \"\",\n      \"support_status\": \"supported\",\"support_note\":\"Explicitly stated in the incident narrative.\"},\n    {\n      \"claim\": \"The engineering finding was fully contained pre-release or resolved as a non-event.\",\n      \"cited_artifact_id\": \"\",\n      \"support_status\": \"supported\",\n      \"support_note\": \"Explicitly stated in the incident narrative; no technical artifact directly describes this specific event, but regulatory context confirms obligation to document such findings.\"},\n    {\n      \"claim\": \"Regulatory obligations require documentation of design validation findings (21 CFR \u00a7 820.10(c))\",\n      \"cited_artifact_id\": \"qmsr-820.10-c-design-development\",\n      \"support_status\": \"supported\",\"support_note\":\"Cites requirement for manufacturers to comply with Design and Development controls including validation activities.\"},\n    {\n      \"claim\": \"Post-market surveillance system must gather data on device performance throughout lifetime (EU MDR Art 83)\",\n      \"cited_artifact_id\": \"mdr-art83-pms-system\",\n      \"support_status\": \"supported\",\"support_note\":\"Cites requirement for PMS to actively and systematically gather relevant safety/performance data.\"}\n    ]\n  }",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "",
+        "claim": "No patient exposure occurred",
+        "support_note": "Explicitly stated in the incident narrative.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "The engineering finding was fully contained pre-release or resolved as a non-event.",
+        "support_note": "Explicitly stated in the incident narrative; no technical artifact directly describes this specific event, but regulatory context confirms obligation to document such findings.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "Regulatory obligations require documentation of design validation findings (21 CFR \u00a7 820.10(c))",
+        "support_note": "Cites requirement for manufacturers to comply with Design and Development controls including validation activities.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art83-pms-system",
+        "claim": "Post-market surveillance system must gather data on device performance throughout lifetime (EU MDR Art 83)",
+        "support_note": "Cites requirement for PMS to actively and systematically gather relevant safety/performance data.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.92,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a transient signal artifact that was resolved as a non-event through cross-checking with raw-waveform exports and bedside monitors. No patient exposure occurred, and the finding was contained pre-release or determined to be invalid data. This aligns with Severity Level 1 criteria: no harm realized, potential harm blocked by automatic controls (validation checks), and containment before clinical deployment.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.5,
+    "hallucinated_citations": [],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "No patient exposure occurred",
+      "The engineering finding was fully contained pre-release or resolved as a non-event."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "",
+          "claim": "No patient exposure occurred",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "",
+          "claim": "The engineering finding was fully contained pre-release or resolved as a non-event.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-c-design-development",
+          "claim": "Regulatory obligations require documentation of design validation findings (21 CFR \u00a7 820.10(c))",
+          "support_note": "Cites requirement for manufacturers to comply with Design and Development controls including validation activities.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "Post-market surveillance system must gather data on device performance throughout lifetime (EU MDR Art 83)",
+          "support_note": "Cites requirement for PMS to actively and systematically gather relevant safety/performance data.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.92,
+      "evidence_links": [],
+      "missing_evidence": [
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident narrative describes a transient signal artifact that was resolved as a non-event through cross-checking with raw-waveform exports and bedside monitors. No patient exposure occurred, and the finding was contained pre-release or determined to be invalid data. This aligns with Severity Level 1 criteria: no harm realized, potential harm blocked by automatic controls (validation checks), and containment before clinical deployment.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": []
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "",
+        "claim": "No patient exposure occurred",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "",
+        "claim": "The engineering finding was fully contained pre-release or resolved as a non-event.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "Regulatory obligations require documentation of design validation findings (21 CFR \u00a7 820.10(c))",
+        "support_note": "Cites requirement for manufacturers to comply with Design and Development controls including validation activities.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art83-pms-system",
+        "claim": "Post-market surveillance system must gather data on device performance throughout lifetime (EU MDR Art 83)",
+        "support_note": "Cites requirement for PMS to actively and systematically gather relevant safety/performance data.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.92,
+    "evidence_links": [],
+    "missing_evidence": [
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident narrative describes a transient signal artifact that was resolved as a non-event through cross-checking with raw-waveform exports and bedside monitors. No patient exposure occurred, and the finding was contained pre-release or determined to be invalid data. This aligns with Severity Level 1 criteria: no harm realized, potential harm blocked by automatic controls (validation checks), and containment before clinical deployment.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0011",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic home telemetry program reported a minor, non-recurrent atrial fibrillation-adjacent irregularity with no adverse patient outcome recorded. Device logs and a retrospective clinician review both confirm a brief, self-resolving atrial fibrillation-adjacent irregularity with no adverse outcome; recurrence risk is being tracked. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+  "model_token_counts": {
+    "completion": 556,
+    "prompt": 2229
+  },
+  "raw_content": "{\n  \"severity\": 2,\n  \"confidence\": 0.85,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident narrative describes a 'minor, non-recurrent atrial fibrillation-adjacent irregularity' with no adverse patient outcome and confirmed self-resolution by clinician review. This aligns with Severity Level 2 (low/moderate concern, recoverable degradation) as the event did not result in realized harm or serious potential failure of a safety-critical function leading to exposure. The case is explicitly handled at a 'monitoring/investigation level,' supporting a CAPA_INVESTIGATE recommendation rather than immediate field action. While technical artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) were retrieved in the context list, they describe unrelated episodes ('missed complete atrioventricular block') and are not relevant to grounding a claim about this specific 'minor irregularity' event. Therefore, no technical artifact is cited for *this* incident's causality; however, regulatory obligations under QMSR 820.10(c) (Design Controls/Post-market surveillance integration per MDR Art 83) require investigation and documentation of such findings to ensure the PMS system captures relevant data on device safety throughout its lifetime.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"qmsr-820.10-c-design-development\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Establishes the regulatory requirement for Design and Development controls (Clause 7.3) applicable to automated devices, mandating that findings from post-market surveillance be integrated into design updates or CAPA processes.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Supports the obligation to actively gather, record, and analyze relevant data on device safety (Article 83(1)-(2)) which necessitates investigating this reported irregularity within the PMS system.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.45-labeling\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Indicates that labeling must include handling instructions and UDI, which are relevant for tracking the specific device instance involved in this monitoring case.\"\n    }\n  ],\n  \"requires_human_review\": false\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: technical_incident_missing_technical_evidence; deny:technical_incident_missing_technical_evidence; clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: At least one retrieved technical artifact supporting the incident judgment.; Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (shacl) RiskReport must link at least one evidence id.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes the regulatory requirement for Design and Development controls (Clause 7.3) applicable to automated devices, mandating that findings from post-market surveillance be integrated into design updates or CAPA processes."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the obligation to actively gather, record, and analyze relevant data on device safety (Article 83(1)-(2)) which necessitates investigating this reported irregularity within the PMS system."
+      },
+      {
+        "artifact_id": "qmsr-820.45-labeling",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Indicates that labeling must include handling instructions and UDI, which are relevant for tracking the specific device instance involved in this monitoring case."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a 'minor, non-recurrent atrial fibrillation-adjacent irregularity' with no adverse patient outcome and confirmed self-resolution by clinician review. This aligns with Severity Level 2 (low/moderate concern, recoverable degradation) as the event did not result in realized harm or serious potential failure of a safety-critical function leading to exposure. The case is explicitly handled at a 'monitoring/investigation level,' supporting a CAPA_INVESTIGATE recommendation rather than immediate field action. While technical artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) were retrieved in the context list, they describe unrelated episodes ('missed complete atrioventricular block') and are not relevant to grounding a claim about this specific 'minor irregularity' event. Therefore, no technical artifact is cited for *this* incident's causality; however, regulatory obligations under QMSR 820.10(c) (Design Controls/Post-market surveillance integration per MDR Art 83) require investigation and documentation of such findings to ensure the PMS system captures relevant data on device safety throughout its lifetime.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 2
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.2,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "qmsr-820.10-c-design-development",
+          "claim": "The incident narrative describes a 'minor, non-recurrent atrial fibrillation-adjacent irregularity' with no adverse patient outcome and confirmed self-resolution by clinician review.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-c-design-development",
+          "claim": "This aligns with Severity Level 2 (low/moderate concern, recoverable degradation) as the event did not result in realized harm or serious potential failure of a safety-critical function leading to exposure.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-c-design-development",
+          "claim": "The case is explicitly handled at a 'monitoring/investigation level,' supporting a CAPA_INVESTIGATE recommendation rather than immediate field action.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-c-design-development",
+          "claim": "While technical artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) were retrieved in the context list, they describe unrelated episodes ('missed complete atrioventricular block') and are not relevant to grounding a claim about this specific 'minor irregularity' event.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-c-design-development",
+          "claim": "Therefore, no technical artifact is cited for *this* incident's causality; however, regulatory obligations under QMSR 820.10(c) (Design Controls/Post-market surveillance integration per MDR Art 83) require investigation and documentation of such findings to ensure the PMS system captures relevant data on device safety throughout its lifetime.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "qmsr-820.10-c-design-development",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Establishes the regulatory requirement for Design and Development controls (Clause 7.3) applicable to automated devices, mandating that findings from post-market surveillance be integrated into design updates or CAPA processes."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Supports the obligation to actively gather, record, and analyze relevant data on device safety (Article 83(1)-(2)) which necessitates investigating this reported irregularity within the PMS system."
+        },
+        {
+          "artifact_id": "qmsr-820.45-labeling",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Indicates that labeling must include handling instructions and UDI, which are relevant for tracking the specific device instance involved in this monitoring case."
+        }
+      ],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment."
+      ],
+      "rationale": "The incident narrative describes a 'minor, non-recurrent atrial fibrillation-adjacent irregularity' with no adverse patient outcome and confirmed self-resolution by clinician review. This aligns with Severity Level 2 (low/moderate concern, recoverable degradation) as the event did not result in realized harm or serious potential failure of a safety-critical function leading to exposure. The case is explicitly handled at a 'monitoring/investigation level,' supporting a CAPA_INVESTIGATE recommendation rather than immediate field action. While technical artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) were retrieved in the context list, they describe unrelated episodes ('missed complete atrioventricular block') and are not relevant to grounding a claim about this specific 'minor irregularity' event. Therefore, no technical artifact is cited for *this* incident's causality; however, regulatory obligations under QMSR 820.10(c) (Design Controls/Post-market surveillance integration per MDR Art 83) require investigation and documentation of such findings to ensure the PMS system captures relevant data on device safety throughout its lifetime.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": [
+      "The incident narrative describes a 'minor, non-recurrent atrial fibrillation-adjacent irregularity' with no adverse patient outcome and confirmed self-resolution by clinician review.",
+      "This aligns with Severity Level 2 (low/moderate concern, recoverable degradation) as the event did not result in realized harm or serious potential failure of a safety-critical function leading to exposure.",
+      "The case is explicitly handled at a 'monitoring/investigation level,' supporting a CAPA_INVESTIGATE recommendation rather than immediate field action.",
+      "While technical artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) were retrieved in the context list, they describe unrelated episodes ('missed complete atrioventricular block') and are not relevant to grounding a claim about this specific 'minor irregularity' event."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "The incident narrative describes a 'minor, non-recurrent atrial fibrillation-adjacent irregularity' with no adverse patient outcome and confirmed self-resolution by clinician review.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "This aligns with Severity Level 2 (low/moderate concern, recoverable degradation) as the event did not result in realized harm or serious potential failure of a safety-critical function leading to exposure.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "The case is explicitly handled at a 'monitoring/investigation level,' supporting a CAPA_INVESTIGATE recommendation rather than immediate field action.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "While technical artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) were retrieved in the context list, they describe unrelated episodes ('missed complete atrioventricular block') and are not relevant to grounding a claim about this specific 'minor irregularity' event.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "Therefore, no technical artifact is cited for *this* incident's causality; however, regulatory obligations under QMSR 820.10(c) (Design Controls/Post-market surveillance integration per MDR Art 83) require investigation and documentation of such findings to ensure the PMS system captures relevant data on device safety throughout its lifetime.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes the regulatory requirement for Design and Development controls (Clause 7.3) applicable to automated devices, mandating that findings from post-market surveillance be integrated into design updates or CAPA processes."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the obligation to actively gather, record, and analyze relevant data on device safety (Article 83(1)-(2)) which necessitates investigating this reported irregularity within the PMS system."
+      },
+      {
+        "artifact_id": "qmsr-820.45-labeling",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Indicates that labeling must include handling instructions and UDI, which are relevant for tracking the specific device instance involved in this monitoring case."
+      }
+    ],
+    "missing_evidence": [
+      "At least one retrieved technical artifact supporting the incident judgment."
+    ],
+    "rationale": "The incident narrative describes a 'minor, non-recurrent atrial fibrillation-adjacent irregularity' with no adverse patient outcome and confirmed self-resolution by clinician review. This aligns with Severity Level 2 (low/moderate concern, recoverable degradation) as the event did not result in realized harm or serious potential failure of a safety-critical function leading to exposure. The case is explicitly handled at a 'monitoring/investigation level,' supporting a CAPA_INVESTIGATE recommendation rather than immediate field action. While technical artifacts (ARTIFACT-TESTLOG-2023A, ARTIFACT-TESTLOG-2027A) were retrieved in the context list, they describe unrelated episodes ('missed complete atrioventricular block') and are not relevant to grounding a claim about this specific 'minor irregularity' event. Therefore, no technical artifact is cited for *this* incident's causality; however, regulatory obligations under QMSR 820.10(c) (Design Controls/Post-market surveillance integration per MDR Art 83) require investigation and documentation of such findings to ensure the PMS system captures relevant data on device safety throughout its lifetime.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  }
+}

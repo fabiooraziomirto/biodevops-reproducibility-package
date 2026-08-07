@@ -1,0 +1,189 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0015",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic ambulatory monitoring clinic reported a minor, non-recurrent atrial fibrillation-adjacent irregularity with no adverse patient outcome recorded. Device logs and a retrospective clinician review both confirm a brief, self-resolving atrial fibrillation-adjacent irregularity with no adverse outcome; recurrence risk is being tracked. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+  "model_token_counts": {
+    "completion": 675,
+    "prompt": 1803
+  },
+  "raw_content": "{\n  \"severity\": 2,\n  \"confidence\": 0.75,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident narrative describes a non-recurrent atrial fibrillation-adjacent irregularity detected during ambulatory monitoring, with no adverse patient outcome. While the event was self-resolving and handled at a monitoring/investigation level, recurrence risk is being tracked. This indicates a potential deviation from intended performance that warrants investigation to understand the root cause and prevent future occurrences. The device incorporates software (EU MDR Annex I, Section 17.1), requiring adherence to principles of development lifecycle, risk management, and verification/validation (EU MDR Annex I, Section 17.2).  The incident may trigger obligations under EU MDR Annex I, Section 17.1 regarding repeatability, reliability, and performance. The device is automated with computer software, triggering design control requirements (qmsr-820.10-c-design-development).\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"mdr-annexI-sec17.1-electronic-programmable\",\n      \"artifact_type\": \"regulatory citation\",\n      \"relevance_note\": \"Highlights the requirement for repeatability, reliability and performance in devices with software.\"\n    },\n    {\n      \"artifact_id\": \"mdr-annexI-sec17.2-software-lifecycle\",\n      \"artifact_type\": \"regulatory citation\",\n      \"relevance_note\": \"Emphasizes the need for a robust software development lifecycle and risk management.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.10-c-design-development\",\n      \"artifact_type\": \"regulatory citation\",\n      \"relevance_note\": \"Design controls apply to devices automated with computer software.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"The incident requires investigation due to the potential for recurrence.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.2-software-lifecycle\",\n      \"support_status\": \"supported\",\"support_note\":\"Software development lifecycle principles require risk management and investigation of deviations.\"\n    },\n    {\n      \"claim\": \"The device's software functionality necessitates adherence to regulatory requirements.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.1-electronic-programmable\",\n      \"support_status\": \"supported\",\n      \"support_note\":\"Highlights the requirement for repeatability, reliability and performance in devices with software.\"\n    },\n     {\n      \"claim\": \"Design controls apply to this device.\",\n      \"cited_artifact_id\": \"qmsr-820.10-c-design-development\",\n      \"support_status\": \"supported\",\n      \"support_note\":\"The device is automated with computer software.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2025A",
+    "ARTIFACT-TESTLOG-2029A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.10-c-design-development",
+    "mdr-annexI-sec17.1-electronic-programmable",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "claim": "The incident requires investigation due to the potential for recurrence.",
+        "support_note": "Software development lifecycle principles require risk management and investigation of deviations.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "claim": "The device's software functionality necessitates adherence to regulatory requirements.",
+        "support_note": "Highlights the requirement for repeatability, reliability and performance in devices with software.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "Design controls apply to this device.",
+        "support_note": "The device is automated with computer software.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Highlights the requirement for repeatability, reliability and performance in devices with software."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Emphasizes the need for a robust software development lifecycle and risk management."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Design controls apply to devices automated with computer software."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a non-recurrent atrial fibrillation-adjacent irregularity detected during ambulatory monitoring, with no adverse patient outcome. While the event was self-resolving and handled at a monitoring/investigation level, recurrence risk is being tracked. This indicates a potential deviation from intended performance that warrants investigation to understand the root cause and prevent future occurrences. The device incorporates software (EU MDR Annex I, Section 17.1), requiring adherence to principles of development lifecycle, risk management, and verification/validation (EU MDR Annex I, Section 17.2).  The incident may trigger obligations under EU MDR Annex I, Section 17.1 regarding repeatability, reliability, and performance. The device is automated with computer software, triggering design control requirements (qmsr-820.10-c-design-development).",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.6667,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+          "claim": "The incident requires investigation due to the potential for recurrence.",
+          "support_note": "Software development lifecycle principles require risk management and investigation of deviations.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+          "claim": "The device's software functionality necessitates adherence to regulatory requirements.",
+          "support_note": "Highlights the requirement for repeatability, reliability and performance in devices with software.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-c-design-development",
+          "claim": "Design controls apply to this device.",
+          "support_note": "The device is automated with computer software.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+          "artifact_type": "regulatory citation",
+          "relevance_note": "Highlights the requirement for repeatability, reliability and performance in devices with software."
+        },
+        {
+          "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+          "artifact_type": "regulatory citation",
+          "relevance_note": "Emphasizes the need for a robust software development lifecycle and risk management."
+        },
+        {
+          "artifact_id": "qmsr-820.10-c-design-development",
+          "artifact_type": "regulatory citation",
+          "relevance_note": "Design controls apply to devices automated with computer software."
+        }
+      ],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment."
+      ],
+      "rationale": "The incident narrative describes a non-recurrent atrial fibrillation-adjacent irregularity detected during ambulatory monitoring, with no adverse patient outcome. While the event was self-resolving and handled at a monitoring/investigation level, recurrence risk is being tracked. This indicates a potential deviation from intended performance that warrants investigation to understand the root cause and prevent future occurrences. The device incorporates software (EU MDR Annex I, Section 17.1), requiring adherence to principles of development lifecycle, risk management, and verification/validation (EU MDR Annex I, Section 17.2).  The incident may trigger obligations under EU MDR Annex I, Section 17.1 regarding repeatability, reliability, and performance. The device is automated with computer software, triggering design control requirements (qmsr-820.10-c-design-development).",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": [
+      "The incident requires investigation due to the potential for recurrence."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "claim": "The incident requires investigation due to the potential for recurrence.",
+        "support_note": "Software development lifecycle principles require risk management and investigation of deviations.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "claim": "The device's software functionality necessitates adherence to regulatory requirements.",
+        "support_note": "Highlights the requirement for repeatability, reliability and performance in devices with software.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "Design controls apply to this device.",
+        "support_note": "The device is automated with computer software.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Highlights the requirement for repeatability, reliability and performance in devices with software."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Emphasizes the need for a robust software development lifecycle and risk management."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory citation",
+        "relevance_note": "Design controls apply to devices automated with computer software."
+      }
+    ],
+    "missing_evidence": [
+      "At least one retrieved technical artifact supporting the incident judgment."
+    ],
+    "rationale": "The incident narrative describes a non-recurrent atrial fibrillation-adjacent irregularity detected during ambulatory monitoring, with no adverse patient outcome. While the event was self-resolving and handled at a monitoring/investigation level, recurrence risk is being tracked. This indicates a potential deviation from intended performance that warrants investigation to understand the root cause and prevent future occurrences. The device incorporates software (EU MDR Annex I, Section 17.1), requiring adherence to principles of development lifecycle, risk management, and verification/validation (EU MDR Annex I, Section 17.2).  The incident may trigger obligations under EU MDR Annex I, Section 17.1 regarding repeatability, reliability, and performance. The device is automated with computer software, triggering design control requirements (qmsr-820.10-c-design-development).",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  }
+}

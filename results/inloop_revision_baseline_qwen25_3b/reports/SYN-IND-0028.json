@@ -1,0 +1,178 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0028",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [
+    "MDR-ANNEXI-SEC17.4-IT-Security"
+  ],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic home telemetry program reported that the device failed to flag a clinically significant atrial fibrillation episode in real time. A retrospective clinician review confirms a single missed, sustained atrial fibrillation episode that self-resolved with no recorded adverse outcome; no second occurrence has yet been confirmed. The only artifact attached references a prior unrelated release's static-analysis output, not this incident.",
+  "model_token_counts": {
+    "completion": 371,
+    "prompt": 2026
+  },
+  "raw_content": "{\n    \"severity\": 3,\n    \"confidence\": 0.65,\n    \"recommendation\": \"CAPA_INVESTIGATE\",\n    \"rationale\": \"The incident report indicates a missed atrial fibrillation episode, which may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements and software development lifecycle. The static analysis output for the related firmware module (ID: ARTIFACT-STATICANALYSIS-2018A) does not provide relevant information to support this claim. However, given that a missed atrial fibrillation episode was confirmed by a retrospective clinician review, it may indicate a failure in the software development lifecycle or IT security measures. The incident also falls under EU MDR Article 83(1)-(2), which requires manufacturers to establish and maintain a post-market surveillance system. Given the severity of the missed atrial fibrillation episode, further investigation is necessary to determine if this was due to a failure in the software development lifecycle or IT security measures.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2037A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"This incident report confirms the missed atrial fibrillation episode, which may trigger obligations under EU MDR Annex I and Article 83(1)-(2).\"\n        },\n        {\n            \"artifact_id\": \"MDR-ANNEXI-SEC17.4-IT-Security\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"This regulatory context provides the minimum IT security requirements for manufacturers, which may be relevant to the incident.\"\n        }\n    ],\n    \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (concept_severity_undercall) Predicted severity 2 is below derived clinical floor 3. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.\n- (concept_severity_undercall) concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.65,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "This incident report confirms the missed atrial fibrillation episode, which may trigger obligations under EU MDR Annex I and Article 83(1)-(2)."
+      },
+      {
+        "artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "This regulatory context provides the minimum IT security requirements for manufacturers, which may be relevant to the incident."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident report indicates a missed atrial fibrillation episode, which may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements and software development lifecycle. The static analysis output for the related firmware module (ID: ARTIFACT-STATICANALYSIS-2018A) does not provide relevant information to support this claim. However, given that a missed atrial fibrillation episode was confirmed by a retrospective clinician review, it may indicate a failure in the software development lifecycle or IT security measures. The incident also falls under EU MDR Article 83(1)-(2), which requires manufacturers to establish and maintain a post-market surveillance system. Given the severity of the missed atrial fibrillation episode, further investigation is necessary to determine if this was due to a failure in the software development lifecycle or IT security measures.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  },
+  "verification": {
+    "citation_hallucination": 1,
+    "citation_validity": 0.5,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.8,
+    "hallucinated_citations": [
+      "MDR-ANNEXI-SEC17.4-IT-Security"
+    ],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "deny:risk_report_contains_unresolved_or_trap_citation"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The incident report indicates a missed atrial fibrillation episode, which may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements and software development lifecycle.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The static analysis output for the related firmware module (ID: ARTIFACT-STATICANALYSIS-2018A) does not provide relevant information to support this claim.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "However, given that a missed atrial fibrillation episode was confirmed by a retrospective clinician review, it may indicate a failure in the software development lifecycle or IT security measures.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The incident also falls under EU MDR Article 83(1)-(2), which requires manufacturers to establish and maintain a post-market surveillance system.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "Given the severity of the missed atrial fibrillation episode, further investigation is necessary to determine if this was due to a failure in the software development lifecycle or IT security measures.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.65,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "artifact_type": "incident_report",
+          "relevance_note": "This incident report confirms the missed atrial fibrillation episode, which may trigger obligations under EU MDR Annex I and Article 83(1)-(2)."
+        },
+        {
+          "artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "This regulatory context provides the minimum IT security requirements for manufacturers, which may be relevant to the incident."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The incident report indicates a missed atrial fibrillation episode, which may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements and software development lifecycle. The static analysis output for the related firmware module (ID: ARTIFACT-STATICANALYSIS-2018A) does not provide relevant information to support this claim. However, given that a missed atrial fibrillation episode was confirmed by a retrospective clinician review, it may indicate a failure in the software development lifecycle or IT security measures. The incident also falls under EU MDR Article 83(1)-(2), which requires manufacturers to establish and maintain a post-market surveillance system. Given the severity of the missed atrial fibrillation episode, further investigation is necessary to determine if this was due to a failure in the software development lifecycle or IT security measures.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "weakly_supported_claims": [
+      "The static analysis output for the related firmware module (ID: ARTIFACT-STATICANALYSIS-2018A) does not provide relevant information to support this claim."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The incident report indicates a missed atrial fibrillation episode, which may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements and software development lifecycle.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The static analysis output for the related firmware module (ID: ARTIFACT-STATICANALYSIS-2018A) does not provide relevant information to support this claim.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "However, given that a missed atrial fibrillation episode was confirmed by a retrospective clinician review, it may indicate a failure in the software development lifecycle or IT security measures.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The incident also falls under EU MDR Article 83(1)-(2), which requires manufacturers to establish and maintain a post-market surveillance system.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "Given the severity of the missed atrial fibrillation episode, further investigation is necessary to determine if this was due to a failure in the software development lifecycle or IT security measures.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.65,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "This incident report confirms the missed atrial fibrillation episode, which may trigger obligations under EU MDR Annex I and Article 83(1)-(2)."
+      },
+      {
+        "artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "This regulatory context provides the minimum IT security requirements for manufacturers, which may be relevant to the incident."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident report indicates a missed atrial fibrillation episode, which may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements and software development lifecycle. The static analysis output for the related firmware module (ID: ARTIFACT-STATICANALYSIS-2018A) does not provide relevant information to support this claim. However, given that a missed atrial fibrillation episode was confirmed by a retrospective clinician review, it may indicate a failure in the software development lifecycle or IT security measures. The incident also falls under EU MDR Article 83(1)-(2), which requires manufacturers to establish and maintain a post-market surveillance system. Given the severity of the missed atrial fibrillation episode, further investigation is necessary to determine if this was due to a failure in the software development lifecycle or IT security measures.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  }
+}

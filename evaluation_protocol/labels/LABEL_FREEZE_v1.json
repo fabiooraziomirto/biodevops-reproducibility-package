@@ -1,0 +1,14 @@
+{
+  "frozen_at_utc": "2026-07-22T12:34:41.969284+00:00",
+  "git_revision": "unavailable",
+  "labeling_protocol": "single-author freeze-before-execution fallback; see rubric_v1.md",
+  "sha256": {
+    "conformance_suite/cases/arrhythmia_factorial_v1.jsonl": "1bbf4d879d8e2c3d9fa5949b4875ab93dcb413a064d0057c3f68488be1674403",
+    "conformance_suite/labels/labels_v1.jsonl": "a1079ef9307cff03ef686aca7dd3cdb27138465a88634d3435215be04566a9ae",
+    "ontology/biodevops_clinical.ttl": "49e38ef56a818dc9af62952de20cb311e788ba6796f80d0e9a96bc37d8274adf",
+    "policies/risk_report_policy.rego": "08288bd940cd017ff33ff762e89c8b3d407fc92fc904313ec2f72c75a76d3542",
+    "scripts/ontology_validate.py": "8d19420fc9d2eef9152a0550248a9ce18bc0cb46095be08af3287552d9570073",
+    "scripts/opa_policy.py": "cec207a2d4961d05f5d2987ff6cbbc86ca239c6dfe32883a191de97cb7c5a729"
+  },
+  "suite": "arrhythmia_factorial_v1"
+}

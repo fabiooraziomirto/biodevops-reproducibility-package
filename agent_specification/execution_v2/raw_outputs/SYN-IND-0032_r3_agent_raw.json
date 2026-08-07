@@ -1,0 +1,172 @@
+{
+  "arm": "agent_raw",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 19168.65,
+  "model_token_counts": {
+    "completion": 439,
+    "prompt": 1973
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "FIELD_SAFETY_CORRECTIVE_ACTION"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n    \"severity\": 4,\n    \"confidence\": 0.85,\n    \"recommendation\": \"FIELD_SAFETY_CORRECTIVE_ACTION\",\n    \"rationale\": \"The incident resulted in a patient requiring emergency resuscitation following an unflagged ventricular tachycardia episode, which is a serious harm event. The synthetic telemetry classifier change reduced sensitivity, and the regression was not caught by existing test coverage (ID: ARTIFACT-TESTLOG-0042), indicating a significant technical issue that may have led to missed detection in a safety-critical function.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n            \"artifact_type\": \"test_log\",\n            \"relevance_note\": \"The CI test log shows the VTach sensitivity drop, triggering the automated risk-gate block.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-TESTLOG-0042\",\n            \"artifact_type\": \"test_log\",\n            \"relevance_note\": \"The unit test log indicates that existing tests did not catch the regression, highlighting a coverage gap.\"\n        }\n    ],\n    \"claim_support\": [\n        {\n            \"claim\": \"Patient safety risk due to missed detection of ventricular tachycardia.\",\n            \"cited_artifact_id\": \"mdr-art83-pms-system\",\n            \"support_status\": \"weakly_supported\"\n        ,\n        \"support_note\": \"The post-market surveillance system should have actively and systematically gathered, recorded, and analyzed relevant data on the quality, performance, and safety of the device. The missed detection may indicate a failure in this system.\"\n        },\n        {\n            \"claim\": \"Technical regression not caught by existing tests.\",\n            \"cited_artifact_id\": \"ARTIFACT-TESTLOG-0042\",\n            \"support_status\": \"supported\"\n        ,\n        \"support_note\": \"The unit test log shows that the VTach classifier validation suite passed, indicating a coverage gap.\"\n        }\n    ],\n    \"requires_human_review\": true\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": true,
+    "routing_action": "ESCALATE_TO_HUMAN_IMMEDIATE",
+    "scenario_id": "SYN-IND-0032"
+  },
+  "replicate": 3,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-art83-pms-system",
+        "claim": "Patient safety risk due to missed detection of ventricular tachycardia.",
+        "support_note": "The post-market surveillance system should have actively and systematically gathered, recorded, and analyzed relevant data on the quality, performance, and safety of the device. The missed detection may indicate a failure in this system.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-0042",
+        "claim": "Technical regression not caught by existing tests.",
+        "support_note": "The unit test log shows that the VTach classifier validation suite passed, indicating a coverage gap.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The CI test log shows the VTach sensitivity drop, triggering the automated risk-gate block."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The unit test log indicates that existing tests did not catch the regression, highlighting a coverage gap."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident resulted in a patient requiring emergency resuscitation following an unflagged ventricular tachycardia episode, which is a serious harm event. The synthetic telemetry classifier change reduced sensitivity, and the regression was not caught by existing test coverage (ID: ARTIFACT-TESTLOG-0042), indicating a significant technical issue that may have led to missed detection in a safety-critical function.",
+    "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "requires_human_review": true,
+    "severity": 4
+  },
+  "scenario_id": "SYN-IND-0032",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Severity-4 report is not paired with ESCALATE_TO_HUMAN_IMMEDIATE; classified as OPA-overlap.",
+        "severity": "Violation",
+        "shape": "severity4_opa_overlap"
+      },
+      {
+        "message": "severity4_opa_overlap: severity 4 reports must escalate to human immediate; this overlaps OPA policy behavior.",
+        "severity": "Severity: sh:Violation",
+        "shape": "severity4_opa_overlap"
+      },
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The CI test log shows the VTach sensitivity drop, triggering the automated risk-gate block."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The unit test log indicates that existing tests did not catch the regression, highlighting a coverage gap."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": true,
+    "evidence_gaps": [
+      "Causal link between the artifact/change and the observed event.",
+      "Evidence of recurrence or confirmed deployed-population impact."
+    ],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "Patient safety risk due to missed detection of ventricular tachycardia.",
+          "support_note": "The post-market surveillance system should have actively and systematically gathered, recorded, and analyzed relevant data on the quality, performance, and safety of the device. The missed detection may indicate a failure in this system.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0042",
+          "claim": "Technical regression not caught by existing tests.",
+          "support_note": "The unit test log shows that the VTach classifier validation suite passed, indicating a coverage gap.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The CI test log shows the VTach sensitivity drop, triggering the automated risk-gate block."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0042",
+          "artifact_type": "test_log",
+          "relevance_note": "The unit test log indicates that existing tests did not catch the regression, highlighting a coverage gap."
+        }
+      ],
+      "missing_evidence": [
+        "Causal link between the artifact/change and the observed event.",
+        "Evidence of recurrence or confirmed deployed-population impact."
+      ],
+      "rationale": "The incident resulted in a patient requiring emergency resuscitation following an unflagged ventricular tachycardia episode, which is a serious harm event. The synthetic telemetry classifier change reduced sensitivity, and the regression was not caught by existing test coverage (ID: ARTIFACT-TESTLOG-0042), indicating a significant technical issue that may have led to missed detection in a safety-critical function.",
+      "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "requires_human_review": true,
+      "severity": 4
+    },
+    "final_report_sha256": "85b72ca33b1973f9c6c8799dc1f7f0dd047be0539cdce30e90b86fda530bc35a",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [
+      "fsca_without_confirmatory_evidence_downgraded",
+      "severity4_or_death_forced_immediate_human_escalation"
+    ],
+    "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0032",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0032_r3",
+    "scenario_id": "SYN-IND-0032",
+    "schema_version": "2.1.0",
+    "severity": 4,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "human escalation or invalid transition",
+    "timestamp_utc": "2026-08-03T09:32:41.059305Z",
+    "total_steps": 4,
+    "trace_id": "082a2de3-6632-482d-8f47-84a6bd6a367e"
+  },
+  "trace_path": "traces/SYN-IND-0032_r3.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {}
+}

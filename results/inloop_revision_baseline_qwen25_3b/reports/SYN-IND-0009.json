@@ -1,0 +1,149 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0009",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic overnight telemetry pool reported a routine software validation finding for the ventricular tachycardia detection pathway. Full overnight telemetry log and a same-shift clinician review both confirm no ventricular tachycardia episode occurred; the classifier's threshold alarm behaved as specified. No patient-facing exposure occurred and the engineering finding was fully contained pre-release or resolved as a non-event.",
+  "model_token_counts": {
+    "completion": 333,
+    "prompt": 1834
+  },
+  "raw_content": "{\n    \"severity\": 1,\n    \"confidence\": 0.95,\n    \"recommendation\": \"NO_ACTION\",\n    \"rationale\": \"The synthetic telemetry classifier change did not result in a patient-facing exposure and the engineering finding was fully contained pre-release or resolved as a non-event. The event reached no patient, and the safety control worked as intended; the regression is a real technical quality finding but it was contained before clinical deployment.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2037A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"Synthetic emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37. This confirms that no patient was exposed to this synthetic event.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-STATICANALYSIS-2014A\",\n            \"artifact_type\": \"static_analysis_output\",\n            \"relevance_note\": \"Synthetic static-analysis report for an unrelated firmware module. This provides context on the general quality controls in place, but does not support or refute the specific event.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-STATICANALYSIS-2018A\",\n            \"artifact_type\": \"static_analysis_output\",\n            \"relevance_note\": \"Synthetic static-analysis report for an unrelated firmware module. This provides context on the general quality controls in place, but does not support or refute the specific event.\"\n        }\n    ],\n    \"requires_human_review\": false\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Synthetic emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37. This confirms that no patient was exposed to this synthetic event."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Synthetic static-analysis report for an unrelated firmware module. This provides context on the general quality controls in place, but does not support or refute the specific event."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Synthetic static-analysis report for an unrelated firmware module. This provides context on the general quality controls in place, but does not support or refute the specific event."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic telemetry classifier change did not result in a patient-facing exposure and the engineering finding was fully contained pre-release or resolved as a non-event. The event reached no patient, and the safety control worked as intended; the regression is a real technical quality finding but it was contained before clinical deployment.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 1.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The synthetic telemetry classifier change did not result in a patient-facing exposure and the engineering finding was fully contained pre-release or resolved as a non-event.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The event reached no patient, and the safety control worked as intended; the regression is a real technical quality finding but it was contained before clinical deployment.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Synthetic emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37. This confirms that no patient was exposed to this synthetic event."
+        },
+        {
+          "artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "artifact_type": "static_analysis_output",
+          "relevance_note": "Synthetic static-analysis report for an unrelated firmware module. This provides context on the general quality controls in place, but does not support or refute the specific event."
+        },
+        {
+          "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+          "artifact_type": "static_analysis_output",
+          "relevance_note": "Synthetic static-analysis report for an unrelated firmware module. This provides context on the general quality controls in place, but does not support or refute the specific event."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic telemetry classifier change did not result in a patient-facing exposure and the engineering finding was fully contained pre-release or resolved as a non-event. The event reached no patient, and the safety control worked as intended; the regression is a real technical quality finding but it was contained before clinical deployment.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": []
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The synthetic telemetry classifier change did not result in a patient-facing exposure and the engineering finding was fully contained pre-release or resolved as a non-event.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The event reached no patient, and the safety control worked as intended; the regression is a real technical quality finding but it was contained before clinical deployment.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Synthetic emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37. This confirms that no patient was exposed to this synthetic event."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Synthetic static-analysis report for an unrelated firmware module. This provides context on the general quality controls in place, but does not support or refute the specific event."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Synthetic static-analysis report for an unrelated firmware module. This provides context on the general quality controls in place, but does not support or refute the specific event."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic telemetry classifier change did not result in a patient-facing exposure and the engineering finding was fully contained pre-release or resolved as a non-event. The event reached no patient, and the safety control worked as intended; the regression is a real technical quality finding but it was contained before clinical deployment.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

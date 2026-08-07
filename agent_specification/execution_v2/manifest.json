@@ -1,0 +1,54 @@
+{
+  "assets": {
+    "biodevops_rag/corpus/independent_40_split.json": "3b82e3b713c6bfd4b80457bd9ee4f3fda4294be186e97b41504857ef06ba60b6",
+    "biodevops_rag/corpus/synthetic_maude_arrhythmia_independent_40.json": "b70dccc46a866d5351adc2cdb8acdbe56b1c56bf5db1bdfb2bf3330123aeb98e",
+    "biodevops_rag/ontology/biodevops_clinical.ttl": "49e38ef56a818dc9af62952de20cb311e788ba6796f80d0e9a96bc37d8274adf",
+    "biodevops_rag/policies/risk_report_policy.rego": "3688fc7f9cc06813ab8c0c381a0052077a6a2b696f49e9c743d699589114e20b",
+    "biodevops_rag/scripts/bounded_agent.py": "094a6a7d251c7fa032912b75285fbd5675afba5af2049206444a83252b235853",
+    "biodevops_rag/scripts/risk_report_schema.py": "53879eda564ee62754b9b1b510aad66f5907bf658e0ec641aa3f5ac24ca84bc3",
+    "experiments/matched_agentic_campaign_2026/heldout_v2/heldout_governance_reference_v1.json": "49c6c22f2001174e9b141aa139506bcce3ad30f2deabfd355169b47c7e6195e6"
+  },
+  "decoding": {
+    "seeds": [
+      20260802,
+      20260803,
+      20260804,
+      20260805,
+      20260806
+    ],
+    "temperature": 0.0
+  },
+  "development_ids": [
+    "SYN-IND-0002",
+    "SYN-IND-0004",
+    "SYN-IND-0006",
+    "SYN-IND-0008",
+    "SYN-IND-0010",
+    "SYN-IND-0012",
+    "SYN-IND-0014",
+    "SYN-IND-0016",
+    "SYN-IND-0018",
+    "SYN-IND-0020",
+    "SYN-IND-0022",
+    "SYN-IND-0024",
+    "SYN-IND-0026",
+    "SYN-IND-0028",
+    "SYN-IND-0030",
+    "SYN-IND-0032",
+    "SYN-IND-0034",
+    "SYN-IND-0036",
+    "SYN-IND-0038",
+    "SYN-IND-0040"
+  ],
+  "manifest_version": "heldout_matched_v2",
+  "model": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "replicates": 5,
+  "replication_policy": "replicated",
+  "retrieval_snapshot_sha256": "e29d7ca95fbde2c126f301641c743c6f6ae6de3f30f3657c7254d11b3128e20c",
+  "runtime_bounds": {
+    "max_revisions": 1,
+    "max_steps": 6
+  },
+  "split": "held_out"
+}

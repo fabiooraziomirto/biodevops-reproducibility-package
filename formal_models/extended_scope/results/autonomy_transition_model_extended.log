@@ -1,0 +1,45 @@
+==============================================================================
+BioDevOps — Transition-system reachability check: AI Autonomy Constraint
+==============================================================================
+Actors: ['agent_1', 'human_clin', 'human_dev']  (Agents: ['agent_1'], Humans: ['human_clin', 'human_dev'])
+Stages: ['unit_test', 'sil_sim', 'integration']   Components: ['app', 'ml_model']   Gates: ['release_gate', 'deploy_gate']
+Action alphabet size: 36
+Search depth bound: 22 (bounded exhaustive, BFS over reachable states)
+
+Note: the action alphabet deliberately includes
+  gate_authorize_execute(gate, AGENT, stage) and
+  gate_authorize_deploy(gate, AGENT, component)
+as syntactically available actions -- i.e. we do NOT assume an
+agent can't be *named* as the grantee. We test whether the
+transition's PRECONDITION alone is sufficient to block it across
+every reachable state, which is the actual claim made in the paper.
+
+------------------------------------------------------------------------------
+RESULT: 12,292 distinct states reachable within depth 15
+        (search reached a fixed point: True)
+        0 transitions produced a state violating the
+        AI Autonomy Constraint.
+------------------------------------------------------------------------------
+
+>>> NO COUNTEREXAMPLE FOUND.
+>>> No sequence of actions, up to the depth bound, drives the system
+>>> into a state where any Agent holds execute or deploy capability —
+>>> including sequences where the action 'gate_authorize_execute' or
+>>> 'gate_authorize_deploy' is invoked with an Agent named as the
+>>> grantee. The precondition inside the single capability-granting
+>>> transition is sufficient, by itself, to uphold the invariant.
+
+>>> Total distinct reachable states explored: 12,292
+
+==============================================================================
+NEGATIVE CONTROL: re-running search against a deliberately broken
+transition function (precondition removed) to confirm the search
+procedure itself is capable of detecting violations.
+==============================================================================
+Broken-model violations found: 13795328
+>>> Control PASSED: the search procedure correctly detects the
+>>> violation once the precondition is removed, confirming the
+>>> 'no counterexample' result above is not an artifact of a
+>>> search that can never find violations.
+    Example violating action: ('gate_authorize_execute', 'deploy_gate', 'agent_1', 'unit_test')
+    Resulting state: State(can_execute=frozenset({('agent_1', 'unit_test')}), can_deploy=frozenset(), approved=frozenset({'deploy_gate'}), recommended=frozenset())

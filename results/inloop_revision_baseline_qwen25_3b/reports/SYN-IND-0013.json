@@ -1,0 +1,243 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0013",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [
+    "ID: mdr-annexI-sec17.2-software-lifecycle",
+    "ID: mdr-art83-pms-system",
+    "ID: mdr-annexI-sec17.4-it-security"
+  ],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic post-market surveillance queue reported a minor, non-recurrent complete atrioventricular block-adjacent irregularity with no adverse patient outcome recorded. The bedside monitor log and the cloud-side classifier log disagree on whether the irregularity met the complete atrioventricular block detection threshold, an unresolved discordance. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+  "model_token_counts": {
+    "completion": 580,
+    "prompt": 1841
+  },
+  "raw_content": "{\n    \"severity\": 2,\n    \"confidence\": 0.75,\n    \"recommendation\": \"CAPA_INVESTIGATE\",\n    \"rationale\": \"The incident reported a minor, non-recurrent complete atrioventricular block with no adverse patient outcome recorded. The disagreement between the bedside monitor log and cloud-side classifier log on whether the irregularity met the detection threshold indicates an issue in the software or monitoring system that may have led to this event. This could be related to the software development lifecycle as per EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. The incident also involves post-market surveillance (PMS) as per EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. Given that this is a non-recurrent event with no adverse patient outcome, it may trigger obligations under ISO 13485 Clause 7.5.1 and related device labeling and packaging controls (MDR-annexI-sec17.4-it-security). The issue requires further investigation to ensure the integrity of the software development lifecycle and PMS system.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2033A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"Confirms the occurrence of a life-threatening complete atrioventricular block event, which is relevant to the incident.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2037A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"Another record confirming the same type of event but with a different release version. This provides additional context and may help in understanding the system's behavior over time.\"\n        },\n        {\n            \"artifact_id\": \"ID: mdr-annexI-sec17.2-software-lifecycle\",\n            \"artifact_type\": \"regulatory_extract\",\n            \"relevance_note\": \"Provides regulatory guidance on software development lifecycle and cybersecurity, which is relevant to the incident.\"\n        },\n        {\n            \"artifact_id\": \"ID: mdr-art83-pms-system\",\n            \"artifact_type\": \"regulatory_extract\",\n            \"relevance_note\": \"Describes the requirements for post-market surveillance system of the manufacturer, including gathering, recording and analyzing data on device quality, performance and safety.\"\n        },\n        {\n            \"artifact_id\": \"ID: mdr-annexI-sec17.4-it-security\",\n            \"artifact_type\": \"regulatory_extract\",\n            \"relevance_note\": \"Outlines minimum IT security requirements for manufacturers to ensure the integrity of their systems.\"\n        }\n    ],\n    \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event, which is relevant to the incident."
+      },
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Another record confirming the same type of event but with a different release version. This provides additional context and may help in understanding the system's behavior over time."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "Provides regulatory guidance on software development lifecycle and cybersecurity, which is relevant to the incident."
+      },
+      {
+        "artifact_id": "ID: mdr-art83-pms-system",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "Describes the requirements for post-market surveillance system of the manufacturer, including gathering, recording and analyzing data on device quality, performance and safety."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "Outlines minimum IT security requirements for manufacturers to ensure the integrity of their systems."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident reported a minor, non-recurrent complete atrioventricular block with no adverse patient outcome recorded. The disagreement between the bedside monitor log and cloud-side classifier log on whether the irregularity met the detection threshold indicates an issue in the software or monitoring system that may have led to this event. This could be related to the software development lifecycle as per EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. The incident also involves post-market surveillance (PMS) as per EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. Given that this is a non-recurrent event with no adverse patient outcome, it may trigger obligations under ISO 13485 Clause 7.5.1 and related device labeling and packaging controls (MDR-annexI-sec17.4-it-security). The issue requires further investigation to ensure the integrity of the software development lifecycle and PMS system.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  },
+  "verification": {
+    "citation_hallucination": 1,
+    "citation_validity": 0.4,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.1667,
+    "hallucinated_citations": [
+      "ID: mdr-annexI-sec17.2-software-lifecycle",
+      "ID: mdr-art83-pms-system",
+      "ID: mdr-annexI-sec17.4-it-security"
+    ],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "deny:risk_report_contains_unresolved_or_trap_citation"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "The incident reported a minor, non-recurrent complete atrioventricular block with no adverse patient outcome recorded.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "The disagreement between the bedside monitor log and cloud-side classifier log on whether the irregularity met the detection threshold indicates an issue in the software or monitoring system that may have led to this event.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "This could be related to the software development lifecycle as per EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "The incident also involves post-market surveillance (PMS) as per EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "Given that this is a non-recurrent event with no adverse patient outcome, it may trigger obligations under ISO 13485 Clause 7.5.1 and related device labeling and packaging controls (MDR-annexI-sec17.4-it-security).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "The issue requires further investigation to ensure the integrity of the software development lifecycle and PMS system.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event, which is relevant to the incident."
+        },
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Another record confirming the same type of event but with a different release version. This provides additional context and may help in understanding the system's behavior over time."
+        },
+        {
+          "artifact_id": "ID: mdr-annexI-sec17.2-software-lifecycle",
+          "artifact_type": "regulatory_extract",
+          "relevance_note": "Provides regulatory guidance on software development lifecycle and cybersecurity, which is relevant to the incident."
+        },
+        {
+          "artifact_id": "ID: mdr-art83-pms-system",
+          "artifact_type": "regulatory_extract",
+          "relevance_note": "Describes the requirements for post-market surveillance system of the manufacturer, including gathering, recording and analyzing data on device quality, performance and safety."
+        },
+        {
+          "artifact_id": "ID: mdr-annexI-sec17.4-it-security",
+          "artifact_type": "regulatory_extract",
+          "relevance_note": "Outlines minimum IT security requirements for manufacturers to ensure the integrity of their systems."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The incident reported a minor, non-recurrent complete atrioventricular block with no adverse patient outcome recorded. The disagreement between the bedside monitor log and cloud-side classifier log on whether the irregularity met the detection threshold indicates an issue in the software or monitoring system that may have led to this event. This could be related to the software development lifecycle as per EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. The incident also involves post-market surveillance (PMS) as per EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. Given that this is a non-recurrent event with no adverse patient outcome, it may trigger obligations under ISO 13485 Clause 7.5.1 and related device labeling and packaging controls (MDR-annexI-sec17.4-it-security). The issue requires further investigation to ensure the integrity of the software development lifecycle and PMS system.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": [
+      "The disagreement between the bedside monitor log and cloud-side classifier log on whether the irregularity met the detection threshold indicates an issue in the software or monitoring system that may have led to this event.",
+      "This could be related to the software development lifecycle as per EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity.",
+      "The incident also involves post-market surveillance (PMS) as per EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer.",
+      "Given that this is a non-recurrent event with no adverse patient outcome, it may trigger obligations under ISO 13485 Clause 7.5.1 and related device labeling and packaging controls (MDR-annexI-sec17.4-it-security).",
+      "The issue requires further investigation to ensure the integrity of the software development lifecycle and PMS system."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "The incident reported a minor, non-recurrent complete atrioventricular block with no adverse patient outcome recorded.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "The disagreement between the bedside monitor log and cloud-side classifier log on whether the irregularity met the detection threshold indicates an issue in the software or monitoring system that may have led to this event.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "This could be related to the software development lifecycle as per EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "The incident also involves post-market surveillance (PMS) as per EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "Given that this is a non-recurrent event with no adverse patient outcome, it may trigger obligations under ISO 13485 Clause 7.5.1 and related device labeling and packaging controls (MDR-annexI-sec17.4-it-security).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "The issue requires further investigation to ensure the integrity of the software development lifecycle and PMS system.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event, which is relevant to the incident."
+      },
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Another record confirming the same type of event but with a different release version. This provides additional context and may help in understanding the system's behavior over time."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "Provides regulatory guidance on software development lifecycle and cybersecurity, which is relevant to the incident."
+      },
+      {
+        "artifact_id": "ID: mdr-art83-pms-system",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "Describes the requirements for post-market surveillance system of the manufacturer, including gathering, recording and analyzing data on device quality, performance and safety."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "Outlines minimum IT security requirements for manufacturers to ensure the integrity of their systems."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident reported a minor, non-recurrent complete atrioventricular block with no adverse patient outcome recorded. The disagreement between the bedside monitor log and cloud-side classifier log on whether the irregularity met the detection threshold indicates an issue in the software or monitoring system that may have led to this event. This could be related to the software development lifecycle as per EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. The incident also involves post-market surveillance (PMS) as per EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. Given that this is a non-recurrent event with no adverse patient outcome, it may trigger obligations under ISO 13485 Clause 7.5.1 and related device labeling and packaging controls (MDR-annexI-sec17.4-it-security). The issue requires further investigation to ensure the integrity of the software development lifecycle and PMS system.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "arm": "rag",
+  "artifact_recall": null,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 9867.729,
+  "model_token_counts": {
+    "completion": 381,
+    "prompt": 2077
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n  \"severity\": 2,\n  \"confidence\": 0.75,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The synthetic telemetry unit reported a minor irregularity that did not result in patient harm, and the event is being handled at a monitoring/investigation level. However, there are regulatory obligations under EU MDR Article 87(1)-(2) for reporting serious incidents immediately or within 15 days of awareness. The incident report (CGM-ARTIFACT-METER-0008) confirms severe hypoglycemia, which may trigger the need to review compliance with these timelines.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"mdr-art87-reporting-timelines\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The incident involves a serious health event (severe hypoglycemia) that may require immediate reporting.\"\n    },\n    {\n      \"artifact_id\": \"CGM-ARTIFACT-METER-0008\",\n      \"artifact_type\": \"incident_report\",\n      \"relevance_note\": \"Confirms the occurrence of severe hypoglycemia, which is a serious incident requiring regulatory attention.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"The event may trigger obligations under EU MDR Article 87(1)-(2) for immediate reporting.\",\n      \"cited_artifact_id\": \"mdr-art87-reporting-timelines\",\n      \"support_status\": \"weakly_supported\"\n   ,\n    \"support_note\": \"While the incident is being monitored, there is a regulatory requirement to report serious incidents immediately or within 15 days.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE",
+    "scenario_id": "SYN-IND-0018"
+  },
+  "replicate": 3,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-art87-reporting-timelines",
+        "claim": "The event may trigger obligations under EU MDR Article 87(1)-(2) for immediate reporting.",
+        "support_note": "While the incident is being monitored, there is a regulatory requirement to report serious incidents immediately or within 15 days.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art87-reporting-timelines",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The incident involves a serious health event (severe hypoglycemia) that may require immediate reporting."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-METER-0008",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms the occurrence of severe hypoglycemia, which is a serious incident requiring regulatory attention."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic telemetry unit reported a minor irregularity that did not result in patient harm, and the event is being handled at a monitoring/investigation level. However, there are regulatory obligations under EU MDR Article 87(1)-(2) for reporting serious incidents immediately or within 15 days of awareness. The incident report (CGM-ARTIFACT-METER-0008) confirms severe hypoglycemia, which may trigger the need to review compliance with these timelines.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  },
+  "scenario_id": "SYN-IND-0018",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {},
+  "trace_path": null,
+  "unsupported_claim_count": 0,
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 1.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art87-reporting-timelines",
+          "claim": "The event may trigger obligations under EU MDR Article 87(1)-(2) for immediate reporting.",
+          "support_note": "While the incident is being monitored, there is a regulatory requirement to report serious incidents immediately or within 15 days.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art87-reporting-timelines",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The incident involves a serious health event (severe hypoglycemia) that may require immediate reporting."
+        },
+        {
+          "artifact_id": "CGM-ARTIFACT-METER-0008",
+          "artifact_type": "incident_report",
+          "relevance_note": "Confirms the occurrence of severe hypoglycemia, which is a serious incident requiring regulatory attention."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic telemetry unit reported a minor irregularity that did not result in patient harm, and the event is being handled at a monitoring/investigation level. However, there are regulatory obligations under EU MDR Article 87(1)-(2) for reporting serious incidents immediately or within 15 days of awareness. The incident report (CGM-ARTIFACT-METER-0008) confirms severe hypoglycemia, which may trigger the need to review compliance with these timelines.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": []
+  }
+}

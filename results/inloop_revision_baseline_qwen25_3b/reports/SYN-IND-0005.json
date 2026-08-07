@@ -1,0 +1,179 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0005",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic regional hospital ICU reported a routine software validation finding for the ventricular tachycardia detection pathway. Full overnight telemetry log and a same-shift clinician review both confirm no ventricular tachycardia episode occurred; the classifier's threshold alarm behaved as specified. No patient-facing exposure occurred and the engineering finding was fully contained pre-release or resolved as a non-event.",
+  "model_token_counts": {
+    "completion": 400,
+    "prompt": 1768
+  },
+  "raw_content": "{\n    \"severity\": 2,\n    \"confidence\": 0.75,\n    \"recommendation\": \"CAPA_INVESTIGATE\",\n    \"rationale\": \"The synthetic telemetry classifier change reduced sensitivity in the ventricular tachycardia detection pathway, resulting in no missed episodes of ventricular tachycardia or complete atrioventricular block during testing. However, this issue was contained pre-release and caused no patient exposure. The containment is sufficient to prevent harm but does not fully address the potential for future issues related to software reliability and performance.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"ARTIFACT-TESTLOG-2025A\",\n            \"artifact_type\": \"test_log\",\n            \"relevance_note\": \"Test log confirms no missed ventricular tachycardia episodes in release v25, which is the most recent and relevant test log provided.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-TESTLOG-2023A\",\n            \"artifact_type\": \"test_log\",\n            \"relevance_note\": \"Test log confirms no missed complete atrioventricular block episodes in release v23, which is the earliest and relevant test log provided.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-TESTLOG-2029A\",\n            \"artifact_type\": \"test_log\",\n            \"relevance_note\": \"Test log confirms no missed ventricular tachycardia episodes in release v29, which is the most recent and relevant test log provided.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-TESTLOG-2027A\",\n            \"artifact_type\": \"test_log\",\n            \"relevance_note\": \"Test log confirms no missed complete atrioventricular block episodes in release v27, which is the earliest and relevant test log provided.\"\n        }\n    ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-TESTLOG-2025A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2029A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.1-electronic-programmable",
+    "mdr-annexI-sec17.2-software-lifecycle",
+    "qmsr-820.10-c-design-development",
+    "mdr-annexI-sec17.4-it-security"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "artifact_type": "test_log",
+        "relevance_note": "Test log confirms no missed ventricular tachycardia episodes in release v25, which is the most recent and relevant test log provided."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Test log confirms no missed complete atrioventricular block episodes in release v23, which is the earliest and relevant test log provided."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2029A",
+        "artifact_type": "test_log",
+        "relevance_note": "Test log confirms no missed ventricular tachycardia episodes in release v29, which is the most recent and relevant test log provided."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Test log confirms no missed complete atrioventricular block episodes in release v27, which is the earliest and relevant test log provided."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic telemetry classifier change reduced sensitivity in the ventricular tachycardia detection pathway, resulting in no missed episodes of ventricular tachycardia or complete atrioventricular block during testing. However, this issue was contained pre-release and caused no patient exposure. The containment is sufficient to prevent harm but does not fully address the potential for future issues related to software reliability and performance.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 2
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.3333,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+          "claim": "The synthetic telemetry classifier change reduced sensitivity in the ventricular tachycardia detection pathway, resulting in no missed episodes of ventricular tachycardia or complete atrioventricular block during testing.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+          "claim": "However, this issue was contained pre-release and caused no patient exposure.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+          "claim": "The containment is sufficient to prevent harm but does not fully address the potential for future issues related to software reliability and performance.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2025A",
+          "artifact_type": "test_log",
+          "relevance_note": "Test log confirms no missed ventricular tachycardia episodes in release v25, which is the most recent and relevant test log provided."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "artifact_type": "test_log",
+          "relevance_note": "Test log confirms no missed complete atrioventricular block episodes in release v23, which is the earliest and relevant test log provided."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2029A",
+          "artifact_type": "test_log",
+          "relevance_note": "Test log confirms no missed ventricular tachycardia episodes in release v29, which is the most recent and relevant test log provided."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "artifact_type": "test_log",
+          "relevance_note": "Test log confirms no missed complete atrioventricular block episodes in release v27, which is the earliest and relevant test log provided."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic telemetry classifier change reduced sensitivity in the ventricular tachycardia detection pathway, resulting in no missed episodes of ventricular tachycardia or complete atrioventricular block during testing. However, this issue was contained pre-release and caused no patient exposure. The containment is sufficient to prevent harm but does not fully address the potential for future issues related to software reliability and performance.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": [
+      "However, this issue was contained pre-release and caused no patient exposure.",
+      "The containment is sufficient to prevent harm but does not fully address the potential for future issues related to software reliability and performance."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "The synthetic telemetry classifier change reduced sensitivity in the ventricular tachycardia detection pathway, resulting in no missed episodes of ventricular tachycardia or complete atrioventricular block during testing.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "However, this issue was contained pre-release and caused no patient exposure.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "The containment is sufficient to prevent harm but does not fully address the potential for future issues related to software reliability and performance.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "artifact_type": "test_log",
+        "relevance_note": "Test log confirms no missed ventricular tachycardia episodes in release v25, which is the most recent and relevant test log provided."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Test log confirms no missed complete atrioventricular block episodes in release v23, which is the earliest and relevant test log provided."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2029A",
+        "artifact_type": "test_log",
+        "relevance_note": "Test log confirms no missed ventricular tachycardia episodes in release v29, which is the most recent and relevant test log provided."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Test log confirms no missed complete atrioventricular block episodes in release v27, which is the earliest and relevant test log provided."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic telemetry classifier change reduced sensitivity in the ventricular tachycardia detection pathway, resulting in no missed episodes of ventricular tachycardia or complete atrioventricular block during testing. However, this issue was contained pre-release and caused no patient exposure. The containment is sufficient to prevent harm but does not fully address the potential for future issues related to software reliability and performance.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  }
+}

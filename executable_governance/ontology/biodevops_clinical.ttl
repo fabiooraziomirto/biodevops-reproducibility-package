@@ -1,0 +1,126 @@
+@prefix bdv: <https://biodevops.local/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+bdv: a owl:Ontology ;
+    rdfs:comment "BioDevOps clinical ontology subset for the synthetic arrhythmia scenarios and append-only extension scenarios. Corpus severity scale: 1=no harm/nuisance, 2=minor harm/process exposure risk, 3=serious harm, 4=death or life-threatening." .
+
+bdv:ClinicalConcept a owl:Class .
+bdv:ArrhythmiaConcept a owl:Class ; rdfs:subClassOf bdv:ClinicalConcept .
+bdv:RiskReport a owl:Class .
+bdv:ClinicalCase a owl:Class .
+bdv:ApprovalRecord a owl:Class .
+bdv:HumanCreator a owl:Class .
+bdv:AutomatedCreator a owl:Class .
+bdv:HumanCreator owl:disjointWith bdv:AutomatedCreator .
+
+bdv:VentricularTachycardia a bdv:ArrhythmiaConcept ;
+    bdv:snomedCode "25569003" ;
+    bdv:lethalityClass "life_threatening" .
+
+bdv:VentricularFibrillation a bdv:ArrhythmiaConcept ;
+    bdv:snomedCode "71908006" ;
+    bdv:lethalityClass "life_threatening" .
+
+bdv:CompleteAtrioventricularBlock a bdv:ArrhythmiaConcept ;
+    bdv:snomedCode "27885002" ;
+    bdv:lethalityClass "life_threatening" .
+
+bdv:AtrialFibrillation a bdv:ArrhythmiaConcept ;
+    bdv:snomedCode "49436004" ;
+    bdv:lethalityClass "serious" .
+
+bdv:CardiacArrhythmia a bdv:ArrhythmiaConcept ;
+    bdv:snomedCode "698247007" ;
+    bdv:lethalityClass "serious" .
+
+bdv:NO_ACTION a bdv:Recommendation .
+bdv:MONITOR a bdv:Recommendation .
+bdv:CAPA_INVESTIGATE a bdv:Recommendation .
+bdv:FIELD_SAFETY_CORRECTIVE_ACTION a bdv:Recommendation .
+bdv:ESCALATE_TO_HUMAN_IMMEDIATE a bdv:Recommendation .
+
+bdv:reportConcept a owl:ObjectProperty .
+bdv:caseFact a owl:ObjectProperty .
+bdv:recommendation a owl:ObjectProperty .
+bdv:hasEvidenceId a owl:DatatypeProperty .
+bdv:predictedSeverity a owl:DatatypeProperty .
+bdv:derivedSeverityFloor a owl:DatatypeProperty .
+bdv:fhirSystem a owl:DatatypeProperty .
+bdv:fhirCode a owl:DatatypeProperty .
+bdv:clinicalEventOccurred a owl:DatatypeProperty .
+bdv:patientExposed a owl:DatatypeProperty .
+bdv:harmOutcome a owl:DatatypeProperty .
+bdv:createdByHuman a owl:DatatypeProperty .
+
+bdv:RiskReportShape a sh:NodeShape ;
+    sh:targetClass bdv:RiskReport ;
+    sh:property [
+        sh:path bdv:reportConcept ;
+        sh:minCount 1 ;
+        sh:in ( bdv:VentricularTachycardia bdv:VentricularFibrillation bdv:CompleteAtrioventricularBlock bdv:AtrialFibrillation bdv:CardiacArrhythmia ) ;
+        sh:message "Clinical concept must be one of the mapped SNOMED concepts."
+    ] ;
+    sh:property [
+        sh:path bdv:fhirSystem ;
+        sh:hasValue "http://snomed.info/sct" ;
+        sh:message "FHIR fragment must use the SNOMED-CT system http://snomed.info/sct."
+    ] ;
+    sh:property [
+        sh:path bdv:fhirCode ;
+        sh:pattern "^[0-9]+$" ;
+        sh:message "FHIR SNOMED code must be numeric."
+    ] ;
+    sh:property [
+        sh:path bdv:hasEvidenceId ;
+        sh:minCount 1 ;
+        sh:message "RiskReport must link at least one evidence id."
+    ] ;
+    sh:sparql [
+        sh:message "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label." ;
+        sh:select """
+            PREFIX bdv: <https://biodevops.local/ontology#>
+            SELECT $this WHERE {
+                $this bdv:predictedSeverity ?pred ;
+                      bdv:derivedSeverityFloor ?floor .
+                FILTER (?pred < ?floor)
+            }
+        """
+    ] ;
+    sh:sparql [
+        sh:message "severity4_opa_overlap: severity 4 reports must escalate to human immediate; this overlaps OPA policy behavior." ;
+        sh:select """
+            PREFIX bdv: <https://biodevops.local/ontology#>
+            SELECT $this WHERE {
+                $this bdv:predictedSeverity 4 .
+                FILTER NOT EXISTS { $this bdv:recommendation bdv:ESCALATE_TO_HUMAN_IMMEDIATE }
+            }
+        """
+    ] ;
+    sh:sparql [
+        sh:message "recommendation_vs_documented_outcome: documented harm/death or an actual life-threatening event must not be paired with NO_ACTION or MONITOR." ;
+        sh:select """
+            PREFIX bdv: <https://biodevops.local/ontology#>
+            SELECT $this WHERE {
+                $this bdv:recommendation ?rec ;
+                      bdv:harmOutcome ?harm ;
+                      bdv:clinicalEventOccurred ?occurred ;
+                      bdv:reportConcept ?concept .
+                OPTIONAL { ?concept bdv:lethalityClass ?lethality . }
+                FILTER (?rec IN (bdv:NO_ACTION, bdv:MONITOR))
+                FILTER (?harm IN ("harm", "death") || (?occurred = true && ?lethality = "life_threatening"))
+            }
+        """
+    ] .
+
+bdv:ApprovalRecordShape a sh:NodeShape ;
+    sh:targetClass bdv:ApprovalRecord ;
+    sh:property [
+        sh:path bdv:createdByHuman ;
+        sh:hasValue true ;
+        sh:severity sh:Info ;
+        sh:message "ApprovalRecord should have a human creator; informational when stored rows lack the field."
+    ] .

@@ -1,0 +1,148 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0006",
+    "clinical_inconsistency_class": "none",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic post-market surveillance queue reported a routine software validation finding for the atrial fibrillation detection pathway. No confirmatory clinician note is on file, but the automated CI validation gate blocked the release candidate before any clinical deployment, so no patient was exposed regardless. No patient-facing exposure occurred and the engineering finding was fully contained pre-release or resolved as a non-event.",
+  "model_token_counts": {
+    "completion": 440,
+    "prompt": 2067
+  },
+  "raw_content": "{\n  \"severity\": 1,\n  \"confidence\": 0.92,\n  \"recommendation\": \"NO_ACTION\",\n  \"rationale\": \"The incident narrative describes a synthetic validation finding where the automated CI/CD quality gate successfully blocked the release candidate before any clinical deployment. Consequently, no patient was exposed to the potential issue (atrial fibrillation detection pathway regression), and the event is contained pre-release. According to the severity rubric, an event with no realized harm or patient exposure that is blocked by automatic controls constitutes Severity 1. The engineering finding does not require field safety action as it did not reach a deployed population.\",\n  \"claim_support\": [\n    {\n      \"claim\": \"No patient was exposed and the issue was contained before clinical deployment.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2023A\",\n      \"support_status\": \"supported\",\n      \"support_note\": \"The test log confirms a validation finding for release v23; combined with the narrative stating the CI gate blocked the candidate build.\"\n    },\n    {\n      \"claim\": \"No patient-facing exposure occurred.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2027A\",\n      \"support_status\": \"supported\",\n      \"support_note\": \"The test log confirms a validation finding for release v27; combined with the narrative stating no clinical deployment.\"\n    },\n    {\n      \"claim\": \"Automated CI validation gate blocked the release candidate.\",\n      \"cited_artifact_id\": \"ARTIFACT-STATICANALYSIS-2014A\",\n      \"support_status\": \"weakly_supported\",\n      \"support_note\": \"The artifact is explicitly described as unrelated to this event in its metadata; however, it serves as a placeholder for the existence of static analysis artifacts in the retrieval set. The primary support comes from the narrative description of the CI gate behavior.\"\n    }\n  ],\n  \"requires_human_review\": false\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "No patient was exposed and the issue was contained before clinical deployment.",
+        "support_note": "The test log confirms a validation finding for release v23; combined with the narrative stating the CI gate blocked the candidate build.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "claim": "No patient-facing exposure occurred.",
+        "support_note": "The test log confirms a validation finding for release v27; combined with the narrative stating no clinical deployment.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "claim": "Automated CI validation gate blocked the release candidate.",
+        "support_note": "The artifact is explicitly described as unrelated to this event in its metadata; however, it serves as a placeholder for the existence of static analysis artifacts in the retrieval set. The primary support comes from the narrative description of the CI gate behavior.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.92,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a synthetic validation finding where the automated CI/CD quality gate successfully blocked the release candidate before any clinical deployment. Consequently, no patient was exposed to the potential issue (atrial fibrillation detection pathway regression), and the event is contained pre-release. According to the severity rubric, an event with no realized harm or patient exposure that is blocked by automatic controls constitutes Severity 1. The engineering finding does not require field safety action as it did not reach a deployed population.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "No patient was exposed and the issue was contained before clinical deployment.",
+          "support_note": "The test log confirms a validation finding for release v23; combined with the narrative stating the CI gate blocked the candidate build.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "claim": "No patient-facing exposure occurred.",
+          "support_note": "The test log confirms a validation finding for release v27; combined with the narrative stating no clinical deployment.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "claim": "Automated CI validation gate blocked the release candidate.",
+          "support_note": "The artifact is explicitly described as unrelated to this event in its metadata; however, it serves as a placeholder for the existence of static analysis artifacts in the retrieval set. The primary support comes from the narrative description of the CI gate behavior.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.92,
+      "evidence_links": [],
+      "missing_evidence": [
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident narrative describes a synthetic validation finding where the automated CI/CD quality gate successfully blocked the release candidate before any clinical deployment. Consequently, no patient was exposed to the potential issue (atrial fibrillation detection pathway regression), and the event is contained pre-release. According to the severity rubric, an event with no realized harm or patient exposure that is blocked by automatic controls constitutes Severity 1. The engineering finding does not require field safety action as it did not reach a deployed population.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": [
+      "No patient was exposed and the issue was contained before clinical deployment.",
+      "No patient-facing exposure occurred.",
+      "Automated CI validation gate blocked the release candidate."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "No patient was exposed and the issue was contained before clinical deployment.",
+        "support_note": "The test log confirms a validation finding for release v23; combined with the narrative stating the CI gate blocked the candidate build.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "claim": "No patient-facing exposure occurred.",
+        "support_note": "The test log confirms a validation finding for release v27; combined with the narrative stating no clinical deployment.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "claim": "Automated CI validation gate blocked the release candidate.",
+        "support_note": "The artifact is explicitly described as unrelated to this event in its metadata; however, it serves as a placeholder for the existence of static analysis artifacts in the retrieval set. The primary support comes from the narrative description of the CI gate behavior.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.92,
+    "evidence_links": [],
+    "missing_evidence": [
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident narrative describes a synthetic validation finding where the automated CI/CD quality gate successfully blocked the release candidate before any clinical deployment. Consequently, no patient was exposed to the potential issue (atrial fibrillation detection pathway regression), and the event is contained pre-release. According to the severity rubric, an event with no realized harm or patient exposure that is blocked by automatic controls constitutes Severity 1. The engineering finding does not require field safety action as it did not reach a deployed population.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

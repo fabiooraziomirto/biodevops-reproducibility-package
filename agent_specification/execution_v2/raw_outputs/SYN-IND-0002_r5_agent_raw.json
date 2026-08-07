@@ -1,0 +1,165 @@
+{
+  "arm": "agent_raw",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 17882.964,
+  "model_token_counts": {
+    "completion": 433,
+    "prompt": 1985
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "NO_ACTION"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n  \"severity\": 1,\n  \"confidence\": 0.95,\n  \"recommendation\": \"NO_ACTION\",\n  \"rationale\": \"The synthetic telemetry classifier change reduced sensitivity in an internal validation test but was blocked by the CI/CD quality gate before any clinical deployment, ensuring no patient exposure and a contained technical issue.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"The test log shows the regression was detected by the CI/CD quality gate, preventing clinical deployment.\"\n    },\n    {\n      \"artifact_id\": \"CGM-ARTIFACT-APPROVAL-0020\",\n      \"artifact_type\": \"approval_record\",\n      \"relevance_note\": \"The release checklist lacked authorized human approval, indicating a procedural gap but not patient exposure or safety risk.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"Technical regression contained pre-release.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"support_status\": \"supported\"\n   ,\n    \"support_note\": \"The CI/CD quality gate detected the regression and blocked the release candidate.\"\n    },\n    {\n      \"claim\": \"No patient exposure.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"support_status\": \"supported\"\n    ,\n    \"support_note\": \"The regression was contained before any clinical deployment, and no patient-facing exposure occurred.\"\n    },\n    {\n      \"claim\": \"Compliance with EU MDR Article 10(9) on quality management system.\",\n      \"cited_artifact_id\": \"mdr-art10-9-qms-elements\",\n      \"support_status\": \"weakly_supported\"\n    ,\n    \"support_note\": \"The quality management system includes setting up and maintaining a post-market surveillance system, but the specific actions are not detailed.\"\n    }\n  ]\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "NO_ACTION",
+    "scenario_id": "SYN-IND-0002"
+  },
+  "replicate": 5,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+        "claim": "Technical regression contained pre-release.",
+        "support_note": "The CI/CD quality gate detected the regression and blocked the release candidate.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+        "claim": "No patient exposure.",
+        "support_note": "The regression was contained before any clinical deployment, and no patient-facing exposure occurred.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art10-9-qms-elements",
+        "claim": "Compliance with EU MDR Article 10(9) on quality management system.",
+        "support_note": "The quality management system includes setting up and maintaining a post-market surveillance system, but the specific actions are not detailed.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The test log shows the regression was detected by the CI/CD quality gate, preventing clinical deployment."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The release checklist lacked authorized human approval, indicating a procedural gap but not patient exposure or safety risk."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic telemetry classifier change reduced sensitivity in an internal validation test but was blocked by the CI/CD quality gate before any clinical deployment, ensuring no patient exposure and a contained technical issue.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "scenario_id": "SYN-IND-0002",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The test log shows the regression was detected by the CI/CD quality gate, preventing clinical deployment."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The release checklist lacked authorized human approval, indicating a procedural gap but not patient exposure or safety risk."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": false,
+    "evidence_gaps": [],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+          "claim": "Technical regression contained pre-release.",
+          "support_note": "The CI/CD quality gate detected the regression and blocked the release candidate.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+          "claim": "No patient exposure.",
+          "support_note": "The regression was contained before any clinical deployment, and no patient-facing exposure occurred.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art10-9-qms-elements",
+          "claim": "Compliance with EU MDR Article 10(9) on quality management system.",
+          "support_note": "The quality management system includes setting up and maintaining a post-market surveillance system, but the specific actions are not detailed.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The test log shows the regression was detected by the CI/CD quality gate, preventing clinical deployment."
+        },
+        {
+          "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+          "artifact_type": "approval_record",
+          "relevance_note": "The release checklist lacked authorized human approval, indicating a procedural gap but not patient exposure or safety risk."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic telemetry classifier change reduced sensitivity in an internal validation test but was blocked by the CI/CD quality gate before any clinical deployment, ensuring no patient exposure and a contained technical issue.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "final_report_sha256": "749fefd02237f76e26984e41e0e55a6c50226c728f9227e3e72fdd1254e16e85",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [],
+    "recommendation": "NO_ACTION",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0002",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0002_r5",
+    "scenario_id": "SYN-IND-0002",
+    "schema_version": "2.1.0",
+    "severity": 1,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "advisory_complete",
+    "timestamp_utc": "2026-08-03T09:49:05.515602Z",
+    "total_steps": 3,
+    "trace_id": "8d0322cb-62ad-41d0-a22b-ecd09227f9d6"
+  },
+  "trace_path": "traces/SYN-IND-0002_r5.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {}
+}

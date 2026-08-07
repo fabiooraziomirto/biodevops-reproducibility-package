@@ -1,0 +1,166 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0007",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic device validation lab reported a routine software validation finding for the ventricular fibrillation detection pathway. An automated log flagged a transient signal artifact resembling ventricular fibrillation, but the paired raw-waveform export and bedside monitor cross-check both show a clean sinus trace for the same window, resolving the apparent conflict as a non-event. No patient-facing exposure occurred and the engineering finding was fully contained pre-release or resolved as a non-event.",
+  "model_token_counts": {
+    "completion": 368,
+    "prompt": 1844
+  },
+  "raw_content": "{\n    \"severity\": 1,\n    \"confidence\": 0.95,\n    \"recommendation\": \"NO_ACTION\",\n    \"rationale\": \"The incident was contained before clinical deployment and caused no patient exposure. The regulatory context does not mandate any specific action for this type of event, as it did not result in a realized harm or potential harm that could have led to serious injury.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"mdr-annexI-sec17.4-it-security\",\n            \"artifact_type\": \"regulatory_extract\",\n            \"relevance_note\": \"The regulation on IT security requirements does not apply directly to this incident, but it supports the overall context of maintaining robust systems.\"\n        },\n        {\n            \"artifact_id\": \"qmsr-820.45-labeling\",\n            \"artifact_type\": \"regulatory_extract\",\n            \"relevance_note\": \"The regulation on labeling and packaging does not apply directly to this incident, as it did not involve any labeling or packaging issues.\"\n        },\n        {\n            \"artifact_id\": \"mdr-art83-pms-system\",\n            \"artifact_type\": \"regulatory_extract\",\n            \"relevance_note\": \"The post-market surveillance system regulation is relevant for all incidents but does not mandate specific actions for this type of event, as it did not result in a realized harm or potential harm.\"\n        },\n        {\n            \"artifact_id\": \"mdr-annexI-sec17.2-software-lifecycle\",\n            \"artifact_type\": \"regulatory_extract\",\n            \"relevance_note\": \"The regulation on software development lifecycle and cybersecurity does not apply directly to this incident, as it did not involve any issues with the software itself.\"\n        }\n    ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "The regulation on IT security requirements does not apply directly to this incident, but it supports the overall context of maintaining robust systems."
+      },
+      {
+        "artifact_id": "qmsr-820.45-labeling",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "The regulation on labeling and packaging does not apply directly to this incident, as it did not involve any labeling or packaging issues."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "The post-market surveillance system regulation is relevant for all incidents but does not mandate specific actions for this type of event, as it did not result in a realized harm or potential harm."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "The regulation on software development lifecycle and cybersecurity does not apply directly to this incident, as it did not involve any issues with the software itself."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident was contained before clinical deployment and caused no patient exposure. The regulatory context does not mandate any specific action for this type of event, as it did not result in a realized harm or potential harm that could have led to serious injury.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.5,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+          "claim": "The incident was contained before clinical deployment and caused no patient exposure.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+          "claim": "The regulatory context does not mandate any specific action for this type of event, as it did not result in a realized harm or potential harm that could have led to serious injury.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-annexI-sec17.4-it-security",
+          "artifact_type": "regulatory_extract",
+          "relevance_note": "The regulation on IT security requirements does not apply directly to this incident, but it supports the overall context of maintaining robust systems."
+        },
+        {
+          "artifact_id": "qmsr-820.45-labeling",
+          "artifact_type": "regulatory_extract",
+          "relevance_note": "The regulation on labeling and packaging does not apply directly to this incident, as it did not involve any labeling or packaging issues."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_extract",
+          "relevance_note": "The post-market surveillance system regulation is relevant for all incidents but does not mandate specific actions for this type of event, as it did not result in a realized harm or potential harm."
+        },
+        {
+          "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+          "artifact_type": "regulatory_extract",
+          "relevance_note": "The regulation on software development lifecycle and cybersecurity does not apply directly to this incident, as it did not involve any issues with the software itself."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The incident was contained before clinical deployment and caused no patient exposure. The regulatory context does not mandate any specific action for this type of event, as it did not result in a realized harm or potential harm that could have led to serious injury.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": [
+      "The incident was contained before clinical deployment and caused no patient exposure."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+        "claim": "The incident was contained before clinical deployment and caused no patient exposure.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+        "claim": "The regulatory context does not mandate any specific action for this type of event, as it did not result in a realized harm or potential harm that could have led to serious injury.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "The regulation on IT security requirements does not apply directly to this incident, but it supports the overall context of maintaining robust systems."
+      },
+      {
+        "artifact_id": "qmsr-820.45-labeling",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "The regulation on labeling and packaging does not apply directly to this incident, as it did not involve any labeling or packaging issues."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "The post-market surveillance system regulation is relevant for all incidents but does not mandate specific actions for this type of event, as it did not result in a realized harm or potential harm."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "The regulation on software development lifecycle and cybersecurity does not apply directly to this incident, as it did not involve any issues with the software itself."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident was contained before clinical deployment and caused no patient exposure. The regulatory context does not mandate any specific action for this type of event, as it did not result in a realized harm or potential harm that could have led to serious injury.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

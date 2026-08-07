@@ -1,0 +1,240 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0014",
+    "clinical_inconsistency_class": "concept_severity_undercall",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 1 is below derived clinical floor 2. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic device validation lab reported a minor, non-recurrent ventricular fibrillation-adjacent irregularity with no adverse patient outcome recorded. The only artifact on file describing this case is a static-analysis report about an unrelated firmware module, which does not actually document the ventricular fibrillation-adjacent event. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+  "model_token_counts": {
+    "completion": 676,
+    "prompt": 2180
+  },
+  "raw_content": "{\n  \"severity\": 1,\n  \"confidence\": 0.45,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident narrative describes a 'minor, non-recurrent' event with 'no adverse patient outcome recorded.' The case is explicitly handled at a monitoring/investigation level rather than as a confirmed life-threatening event. Crucially, the retrieved artifacts (ARTIFACT-STATICANALYSIS-2014A and ARTIFACT-STATICANALYSIS-2018A) are noted in their metadata descriptions as being for 'unrelated firmware modules' and do not document this specific ventricular fibrillation-adjacent event. Consequently, there is no evidence of patient exposure or realized harm (Severity 3/4 criteria). The issue was contained by the lack of recurrence and absence of adverse outcomes before any clinical deployment impact could materialize in a way that suggests immediate field action. However, because the specific technical artifacts documenting this exact irregularity are missing from the retrieval set (the available static analysis reports are unrelated), we cannot fully ground the containment status or validate the nature of the event with high confidence without assuming facts not explicitly supported by the provided text. Therefore, a CAPA investigation is required to determine if similar events exist in other logs and to ensure design controls under 21 CFR \u00a7 820.10(c) are met.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-STATICANALYSIS-2014A\",\n      \"artifact_type\": \"static_analysis_output\",\n      \"relevance_note\": \"Metadata indicates this report is for an unrelated firmware module and does not document the specific ventricular fibrillation event mentioned in the narrative.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-STATICANALYSIS-2018A\",\n      \"artifact_type\": \"static_analysis_output\",\n      \"relevance_note\": \"Metadata indicates this report is for an unrelated firmware module and does not document the specific ventricular fibrillation event mentioned in the narrative.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.10-c-design-development\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Establishes the obligation for design and development controls (ISO 13485 Clause 7.3) which necessitates investigating this finding to ensure device safety.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Requires the post-market surveillance system to actively gather and analyze relevant data on quality, performance, and safety throughout the device lifetime.\"\n    }\n  ],\n  \"missing_evidence\": [\n    \"A specific static analysis report or test log explicitly documenting the 'ventricular fibrillation-adjacent irregularity' described in the input narrative.\",\n    \"An incident report confirming that no patient exposure occurred for this specific event and detailing the containment status.\"\n  ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "Missing or contradictory evidence flagged: Static analysis or test log specifically documenting the 'ventricular fibrillation-adjacent irregularity' mentioned in the input narrative.; Incident report confirming containment status and lack of patient exposure for this specific event.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.45,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Metadata indicates this report is for an unrelated firmware module and does not document the specific ventricular fibrillation event mentioned in the narrative."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Metadata indicates this report is for an unrelated firmware module and does not document the specific ventricular fibrillation event mentioned in the narrative."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes the obligation for design and development controls (ISO 13485 Clause 7.3) which necessitates investigating this finding to ensure device safety."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Requires the post-market surveillance system to actively gather and analyze relevant data on quality, performance, and safety throughout the device lifetime."
+      }
+    ],
+    "missing_evidence": [
+      "A specific static analysis report or test log explicitly documenting the 'ventricular fibrillation-adjacent irregularity' described in the input narrative.",
+      "An incident report confirming that no patient exposure occurred for this specific event and detailing the containment status."
+    ],
+    "rationale": "The incident narrative describes a 'minor, non-recurrent' event with 'no adverse patient outcome recorded.' The case is explicitly handled at a monitoring/investigation level rather than as a confirmed life-threatening event. Crucially, the retrieved artifacts (ARTIFACT-STATICANALYSIS-2014A and ARTIFACT-STATICANALYSIS-2018A) are noted in their metadata descriptions as being for 'unrelated firmware modules' and do not document this specific ventricular fibrillation-adjacent event. Consequently, there is no evidence of patient exposure or realized harm (Severity 3/4 criteria). The issue was contained by the lack of recurrence and absence of adverse outcomes before any clinical deployment impact could materialize in a way that suggests immediate field action. However, because the specific technical artifacts documenting this exact irregularity are missing from the retrieval set (the available static analysis reports are unrelated), we cannot fully ground the containment status or validate the nature of the event with high confidence without assuming facts not explicitly supported by the provided text. Therefore, a CAPA investigation is required to determine if similar events exist in other logs and to ensure design controls under 21 CFR \u00a7 820.10(c) are met.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.5,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "claim": "The incident narrative describes a 'minor, non-recurrent' event with 'no adverse patient outcome recorded.' The case is explicitly handled at a monitoring/investigation level rather than as a confirmed life-threatening event.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "claim": "Crucially, the retrieved artifacts (ARTIFACT-STATICANALYSIS-2014A and ARTIFACT-STATICANALYSIS-2018A) are noted in their metadata descriptions as being for 'unrelated firmware modules' and do not document this specific ventricular fibrillation-adjacent event.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "claim": "Consequently, there is no evidence of patient exposure or realized harm (Severity 3/4 criteria).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "claim": "The issue was contained by the lack of recurrence and absence of adverse outcomes before any clinical deployment impact could materialize in a way that suggests immediate field action.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "claim": "However, because the specific technical artifacts documenting this exact irregularity are missing from the retrieval set (the available static analysis reports are unrelated), we cannot fully ground the containment status or validate the nature of the event with high confidence without assuming facts not explicitly supported by the provided text.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "claim": "Therefore, a CAPA investigation is required to determine if similar events exist in other logs and to ensure design controls under 21 CFR \u00a7 820.10(c) are met.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.45,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "artifact_type": "static_analysis_output",
+          "relevance_note": "Metadata indicates this report is for an unrelated firmware module and does not document the specific ventricular fibrillation event mentioned in the narrative."
+        },
+        {
+          "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+          "artifact_type": "static_analysis_output",
+          "relevance_note": "Metadata indicates this report is for an unrelated firmware module and does not document the specific ventricular fibrillation event mentioned in the narrative."
+        },
+        {
+          "artifact_id": "qmsr-820.10-c-design-development",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Establishes the obligation for design and development controls (ISO 13485 Clause 7.3) which necessitates investigating this finding to ensure device safety."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Requires the post-market surveillance system to actively gather and analyze relevant data on quality, performance, and safety throughout the device lifetime."
+        }
+      ],
+      "missing_evidence": [
+        "A specific static analysis report or test log explicitly documenting the 'ventricular fibrillation-adjacent irregularity' described in the input narrative.",
+        "An incident report confirming that no patient exposure occurred for this specific event and detailing the containment status.",
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident narrative describes a 'minor, non-recurrent' event with 'no adverse patient outcome recorded.' The case is explicitly handled at a monitoring/investigation level rather than as a confirmed life-threatening event. Crucially, the retrieved artifacts (ARTIFACT-STATICANALYSIS-2014A and ARTIFACT-STATICANALYSIS-2018A) are noted in their metadata descriptions as being for 'unrelated firmware modules' and do not document this specific ventricular fibrillation-adjacent event. Consequently, there is no evidence of patient exposure or realized harm (Severity 3/4 criteria). The issue was contained by the lack of recurrence and absence of adverse outcomes before any clinical deployment impact could materialize in a way that suggests immediate field action. However, because the specific technical artifacts documenting this exact irregularity are missing from the retrieval set (the available static analysis reports are unrelated), we cannot fully ground the containment status or validate the nature of the event with high confidence without assuming facts not explicitly supported by the provided text. Therefore, a CAPA investigation is required to determine if similar events exist in other logs and to ensure design controls under 21 CFR \u00a7 820.10(c) are met.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": [
+      "Consequently, there is no evidence of patient exposure or realized harm (Severity 3/4 criteria).",
+      "The issue was contained by the lack of recurrence and absence of adverse outcomes before any clinical deployment impact could materialize in a way that suggests immediate field action.",
+      "Therefore, a CAPA investigation is required to determine if similar events exist in other logs and to ensure design controls under 21 CFR \u00a7 820.10(c) are met."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "claim": "The incident narrative describes a 'minor, non-recurrent' event with 'no adverse patient outcome recorded.' The case is explicitly handled at a monitoring/investigation level rather than as a confirmed life-threatening event.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "claim": "Crucially, the retrieved artifacts (ARTIFACT-STATICANALYSIS-2014A and ARTIFACT-STATICANALYSIS-2018A) are noted in their metadata descriptions as being for 'unrelated firmware modules' and do not document this specific ventricular fibrillation-adjacent event.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "claim": "Consequently, there is no evidence of patient exposure or realized harm (Severity 3/4 criteria).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "claim": "The issue was contained by the lack of recurrence and absence of adverse outcomes before any clinical deployment impact could materialize in a way that suggests immediate field action.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "claim": "However, because the specific technical artifacts documenting this exact irregularity are missing from the retrieval set (the available static analysis reports are unrelated), we cannot fully ground the containment status or validate the nature of the event with high confidence without assuming facts not explicitly supported by the provided text.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "claim": "Therefore, a CAPA investigation is required to determine if similar events exist in other logs and to ensure design controls under 21 CFR \u00a7 820.10(c) are met.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.45,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Metadata indicates this report is for an unrelated firmware module and does not document the specific ventricular fibrillation event mentioned in the narrative."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Metadata indicates this report is for an unrelated firmware module and does not document the specific ventricular fibrillation event mentioned in the narrative."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes the obligation for design and development controls (ISO 13485 Clause 7.3) which necessitates investigating this finding to ensure device safety."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Requires the post-market surveillance system to actively gather and analyze relevant data on quality, performance, and safety throughout the device lifetime."
+      }
+    ],
+    "missing_evidence": [
+      "A specific static analysis report or test log explicitly documenting the 'ventricular fibrillation-adjacent irregularity' described in the input narrative.",
+      "An incident report confirming that no patient exposure occurred for this specific event and detailing the containment status.",
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident narrative describes a 'minor, non-recurrent' event with 'no adverse patient outcome recorded.' The case is explicitly handled at a monitoring/investigation level rather than as a confirmed life-threatening event. Crucially, the retrieved artifacts (ARTIFACT-STATICANALYSIS-2014A and ARTIFACT-STATICANALYSIS-2018A) are noted in their metadata descriptions as being for 'unrelated firmware modules' and do not document this specific ventricular fibrillation-adjacent event. Consequently, there is no evidence of patient exposure or realized harm (Severity 3/4 criteria). The issue was contained by the lack of recurrence and absence of adverse outcomes before any clinical deployment impact could materialize in a way that suggests immediate field action. However, because the specific technical artifacts documenting this exact irregularity are missing from the retrieval set (the available static analysis reports are unrelated), we cannot fully ground the containment status or validate the nature of the event with high confidence without assuming facts not explicitly supported by the provided text. Therefore, a CAPA investigation is required to determine if similar events exist in other logs and to ensure design controls under 21 CFR \u00a7 820.10(c) are met.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

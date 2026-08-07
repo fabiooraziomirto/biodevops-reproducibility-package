@@ -1,0 +1,191 @@
+{
+  "arm": "rag",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 18788.023,
+  "model_token_counts": {
+    "completion": 730,
+    "prompt": 2077
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "FIELD_SAFETY_CORRECTIVE_ACTION"
+  },
+  "opa_actions": [
+    "fsca_without_confirmatory_evidence_downgraded",
+    "severity4_or_death_forced_immediate_human_escalation"
+  ],
+  "raw_model_output": "{\n  \"severity\": 4,\n  \"confidence\": 0.85,\n  \"recommendation\": \"FIELD_SAFETY_CORRECTIVE_ACTION\",\n  \"rationale\": \"The incident resulted in a patient losing consciousness and requiring emergency resuscitation, which directly led to the death of a user (a serious incident as defined by EU MDR Article 2(64) and Article 87). The device-side confidence log for the exact episode window was not retained, indicating potential gaps in post-market surveillance. While the CI/CD quality gate detected the regression, it did not prevent patient exposure due to the severity of the event.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"mdr-art87-reporting-timelines\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The incident qualifies as a serious public health threat, requiring immediate reporting under EU MDR Article 87(1)-(2).\"\n    },\n    {\n      \"artifact_id\": \"mdr-art2-def-risk-incident\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The event directly led to the death of a user, qualifying as a serious incident under EU MDR Article 2(64) and Article 87.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.35-records\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The manufacturer must maintain records of the review, evaluation, and investigation for any complaints involving possible device failure or labeling issues (21 CFR \u00a7 820.35).\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-4-corrective-link\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The need for preventive or corrective action identified in post-market surveillance must be reported under Article 87 if a serious incident is identified.\"\n    },\n    {\n      \"artifact_id\": \"CGM-ARTIFACT-METER-0008\",\n      \"artifact_type\": \"incident_report\",\n      \"relevance_note\": \"The external meter record confirms severe hypoglycemia, supporting the severity of the event.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"Immediate reporting required under EU MDR Article 87(1)-(2)\",\n      \"cited_artifact_id\": \"mdr-art87-reporting-timelines\",\n      \"support_status\": \"supported\"\n    ,\n    \"support_note\": \"The incident directly led to the death of a user, necessitating immediate reporting.\"\n    },\n    {\n      \"claim\": \"Serious patient-safety risk due to device failure\",\n      \"cited_artifact_id\": \"mdr-art2-def-risk-incident\",\n      \"support_status\": \"supported\"\n    ,\n    \"support_note\": \"The event directly led to the death of a user, qualifying as a serious incident.\"\n    },\n    {\n      \"claim\": \"Gaps in post-market surveillance and device-side logging\",\n      \"cited_artifact_id\": \"ARTIFACT-DIFF-0009\",\n      \"support_status\": \"weakly_supported\"\n    ,\n    \"support_note\": \"The code diff modifying the severity-scoring submodule was made three weeks before the incident, without a linked revalidation test run.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "scenario_id": "SYN-IND-0036"
+  },
+  "replicate": 5,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-art87-reporting-timelines",
+        "claim": "Immediate reporting required under EU MDR Article 87(1)-(2)",
+        "support_note": "The incident directly led to the death of a user, necessitating immediate reporting.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art2-def-risk-incident",
+        "claim": "Serious patient-safety risk due to device failure",
+        "support_note": "The event directly led to the death of a user, qualifying as a serious incident.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-DIFF-0009",
+        "claim": "Gaps in post-market surveillance and device-side logging",
+        "support_note": "The code diff modifying the severity-scoring submodule was made three weeks before the incident, without a linked revalidation test run.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art87-reporting-timelines",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The incident qualifies as a serious public health threat, requiring immediate reporting under EU MDR Article 87(1)-(2)."
+      },
+      {
+        "artifact_id": "mdr-art2-def-risk-incident",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The event directly led to the death of a user, qualifying as a serious incident under EU MDR Article 2(64) and Article 87."
+      },
+      {
+        "artifact_id": "qmsr-820.35-records",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The manufacturer must maintain records of the review, evaluation, and investigation for any complaints involving possible device failure or labeling issues (21 CFR \u00a7 820.35)."
+      },
+      {
+        "artifact_id": "mdr-art83-4-corrective-link",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The need for preventive or corrective action identified in post-market surveillance must be reported under Article 87 if a serious incident is identified."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-METER-0008",
+        "artifact_type": "incident_report",
+        "relevance_note": "The external meter record confirms severe hypoglycemia, supporting the severity of the event."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident resulted in a patient losing consciousness and requiring emergency resuscitation, which directly led to the death of a user (a serious incident as defined by EU MDR Article 2(64) and Article 87). The device-side confidence log for the exact episode window was not retained, indicating potential gaps in post-market surveillance. While the CI/CD quality gate detected the regression, it did not prevent patient exposure due to the severity of the event.",
+    "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "requires_human_review": true,
+    "severity": 4
+  },
+  "scenario_id": "SYN-IND-0036",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Severity-4 report is not paired with ESCALATE_TO_HUMAN_IMMEDIATE; classified as OPA-overlap.",
+        "severity": "Violation",
+        "shape": "severity4_opa_overlap"
+      },
+      {
+        "message": "severity4_opa_overlap: severity 4 reports must escalate to human immediate; this overlaps OPA policy behavior.",
+        "severity": "Severity: sh:Violation",
+        "shape": "severity4_opa_overlap"
+      },
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {},
+  "trace_path": null,
+  "unsupported_claim_count": 0,
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.6667,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [
+      "fsca_without_confirmatory_evidence_downgraded",
+      "severity4_or_death_forced_immediate_human_escalation"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art87-reporting-timelines",
+          "claim": "Immediate reporting required under EU MDR Article 87(1)-(2)",
+          "support_note": "The incident directly led to the death of a user, necessitating immediate reporting.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art2-def-risk-incident",
+          "claim": "Serious patient-safety risk due to device failure",
+          "support_note": "The event directly led to the death of a user, qualifying as a serious incident.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-DIFF-0009",
+          "claim": "Gaps in post-market surveillance and device-side logging",
+          "support_note": "The code diff modifying the severity-scoring submodule was made three weeks before the incident, without a linked revalidation test run.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art87-reporting-timelines",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The incident qualifies as a serious public health threat, requiring immediate reporting under EU MDR Article 87(1)-(2)."
+        },
+        {
+          "artifact_id": "mdr-art2-def-risk-incident",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The event directly led to the death of a user, qualifying as a serious incident under EU MDR Article 2(64) and Article 87."
+        },
+        {
+          "artifact_id": "qmsr-820.35-records",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The manufacturer must maintain records of the review, evaluation, and investigation for any complaints involving possible device failure or labeling issues (21 CFR \u00a7 820.35)."
+        },
+        {
+          "artifact_id": "mdr-art83-4-corrective-link",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The need for preventive or corrective action identified in post-market surveillance must be reported under Article 87 if a serious incident is identified."
+        },
+        {
+          "artifact_id": "CGM-ARTIFACT-METER-0008",
+          "artifact_type": "incident_report",
+          "relevance_note": "The external meter record confirms severe hypoglycemia, supporting the severity of the event."
+        }
+      ],
+      "missing_evidence": [
+        "Causal link between the artifact/change and the observed event.",
+        "Evidence of recurrence or confirmed deployed-population impact."
+      ],
+      "rationale": "The incident resulted in a patient losing consciousness and requiring emergency resuscitation, which directly led to the death of a user (a serious incident as defined by EU MDR Article 2(64) and Article 87). The device-side confidence log for the exact episode window was not retained, indicating potential gaps in post-market surveillance. While the CI/CD quality gate detected the regression, it did not prevent patient exposure due to the severity of the event.",
+      "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "requires_human_review": true,
+      "severity": 4
+    },
+    "weakly_supported_claims": [
+      "Gaps in post-market surveillance and device-side logging"
+    ]
+  }
+}

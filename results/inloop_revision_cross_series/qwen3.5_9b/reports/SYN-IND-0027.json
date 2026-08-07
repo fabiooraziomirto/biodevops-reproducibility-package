@@ -1,0 +1,215 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0027",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic remote monitoring center reported that the device failed to flag a clinically significant complete atrioventricular block episode in real time. A retrospective clinician review confirms a single missed, sustained complete atrioventricular block episode that self-resolved with no recorded adverse outcome; no second occurrence has yet been confirmed. The device's own confidence-score log and the clinician's retrospective read disagree on episode duration, an unresolved discrepancy.",
+  "model_token_counts": {
+    "completion": 579,
+    "prompt": 2316
+  },
+  "raw_content": "{\n  \"severity\": 3,\n  \"confidence\": 0.55,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident involves a missed detection of a clinically significant complete atrioventricular block (AVB), which is a safety-critical function failure with potential for serious harm if sustained or misdiagnosed. Although the event self-resolved and no adverse outcome was recorded, the discrepancy between device confidence-score logs and clinician retrospective review indicates an unresolved validation gap in duration calculation logic. This constitutes a 'serious potential patient-safety risk' per Severity 3 criteria (failure/missed detection in safety-critical function). The severity floor is raised to 3 because missed AVB episodes represent a failure of the primary intended use, regardless of immediate outcome containment.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2023A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Confirms existence of missed episode in release v23 and logs confidence-score discrepancy.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2027A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Provides comparative log data for release v27 to assess if the issue persists or was resolved; highlights ongoing validation uncertainty.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.10-c-design-development\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Establishes obligation to validate design and development (Clause 7.3) including verification of safety functions like AVB detection.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.45-labeling\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Relevant for ensuring labeling accurately reflects device limitations or performance characteristics if the missed episode impacts clinical decision-making instructions.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Requires post-market surveillance system to analyze such safety data and determine corrective actions (Article 83).\"\n    }\n  ],\n  \"missing_evidence\": [\n    \"Static analysis output or code diff specifically identifying root cause of duration calculation discrepancy between internal logs and clinical review.\",\n    \"Deployment log confirming whether the affected build was deployed to a broader population beyond the single reported case.\"\n  ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: Static analysis output or code diff specifically identifying root cause of duration calculation discrepancy between internal logs and clinical review.; Deployment log confirming whether the affected build was deployed to a broader population beyond the single reported case.; Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (concept_severity_undercall) Predicted severity 2 is below derived clinical floor 3. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.\n- (concept_severity_undercall) concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.55,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Confirms existence of missed episode in release v23 and logs confidence-score discrepancy."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides comparative log data for release v27 to assess if the issue persists or was resolved; highlights ongoing validation uncertainty."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes obligation to validate design and development (Clause 7.3) including verification of safety functions like AVB detection."
+      },
+      {
+        "artifact_id": "qmsr-820.45-labeling",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Relevant for ensuring labeling accurately reflects device limitations or performance characteristics if the missed episode impacts clinical decision-making instructions."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Requires post-market surveillance system to analyze such safety data and determine corrective actions (Article 83)."
+      }
+    ],
+    "missing_evidence": [
+      "Static analysis output or code diff specifically identifying root cause of duration calculation discrepancy between internal logs and clinical review.",
+      "Deployment log confirming whether the affected build was deployed to a broader population beyond the single reported case."
+    ],
+    "rationale": "The incident involves a missed detection of a clinically significant complete atrioventricular block (AVB), which is a safety-critical function failure with potential for serious harm if sustained or misdiagnosed. Although the event self-resolved and no adverse outcome was recorded, the discrepancy between device confidence-score logs and clinician retrospective review indicates an unresolved validation gap in duration calculation logic. This constitutes a 'serious potential patient-safety risk' per Severity 3 criteria (failure/missed detection in safety-critical function). The severity floor is raised to 3 because missed AVB episodes represent a failure of the primary intended use, regardless of immediate outcome containment.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 3
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.5,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The incident involves a missed detection of a clinically significant complete atrioventricular block (AVB), which is a safety-critical function failure with potential for serious harm if sustained or misdiagnosed.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "Although the event self-resolved and no adverse outcome was recorded, the discrepancy between device confidence-score logs and clinician retrospective review indicates an unresolved validation gap in duration calculation logic.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "This constitutes a 'serious potential patient-safety risk' per Severity 3 criteria (failure/missed detection in safety-critical function).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The severity floor is raised to 3 because missed AVB episodes represent a failure of the primary intended use, regardless of immediate outcome containment.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.55,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "artifact_type": "test_log",
+          "relevance_note": "Confirms existence of missed episode in release v23 and logs confidence-score discrepancy."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "artifact_type": "test_log",
+          "relevance_note": "Provides comparative log data for release v27 to assess if the issue persists or was resolved; highlights ongoing validation uncertainty."
+        },
+        {
+          "artifact_id": "qmsr-820.10-c-design-development",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Establishes obligation to validate design and development (Clause 7.3) including verification of safety functions like AVB detection."
+        },
+        {
+          "artifact_id": "qmsr-820.45-labeling",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Relevant for ensuring labeling accurately reflects device limitations or performance characteristics if the missed episode impacts clinical decision-making instructions."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Requires post-market surveillance system to analyze such safety data and determine corrective actions (Article 83)."
+        }
+      ],
+      "missing_evidence": [
+        "Static analysis output or code diff specifically identifying root cause of duration calculation discrepancy between internal logs and clinical review.",
+        "Deployment log confirming whether the affected build was deployed to a broader population beyond the single reported case."
+      ],
+      "rationale": "The incident involves a missed detection of a clinically significant complete atrioventricular block (AVB), which is a safety-critical function failure with potential for serious harm if sustained or misdiagnosed. Although the event self-resolved and no adverse outcome was recorded, the discrepancy between device confidence-score logs and clinician retrospective review indicates an unresolved validation gap in duration calculation logic. This constitutes a 'serious potential patient-safety risk' per Severity 3 criteria (failure/missed detection in safety-critical function). The severity floor is raised to 3 because missed AVB episodes represent a failure of the primary intended use, regardless of immediate outcome containment.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "weakly_supported_claims": [
+      "This constitutes a 'serious potential patient-safety risk' per Severity 3 criteria (failure/missed detection in safety-critical function).",
+      "The severity floor is raised to 3 because missed AVB episodes represent a failure of the primary intended use, regardless of immediate outcome containment."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The incident involves a missed detection of a clinically significant complete atrioventricular block (AVB), which is a safety-critical function failure with potential for serious harm if sustained or misdiagnosed.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "Although the event self-resolved and no adverse outcome was recorded, the discrepancy between device confidence-score logs and clinician retrospective review indicates an unresolved validation gap in duration calculation logic.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "This constitutes a 'serious potential patient-safety risk' per Severity 3 criteria (failure/missed detection in safety-critical function).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The severity floor is raised to 3 because missed AVB episodes represent a failure of the primary intended use, regardless of immediate outcome containment.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.55,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Confirms existence of missed episode in release v23 and logs confidence-score discrepancy."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides comparative log data for release v27 to assess if the issue persists or was resolved; highlights ongoing validation uncertainty."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes obligation to validate design and development (Clause 7.3) including verification of safety functions like AVB detection."
+      },
+      {
+        "artifact_id": "qmsr-820.45-labeling",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Relevant for ensuring labeling accurately reflects device limitations or performance characteristics if the missed episode impacts clinical decision-making instructions."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Requires post-market surveillance system to analyze such safety data and determine corrective actions (Article 83)."
+      }
+    ],
+    "missing_evidence": [
+      "Static analysis output or code diff specifically identifying root cause of duration calculation discrepancy between internal logs and clinical review.",
+      "Deployment log confirming whether the affected build was deployed to a broader population beyond the single reported case."
+    ],
+    "rationale": "The incident involves a missed detection of a clinically significant complete atrioventricular block (AVB), which is a safety-critical function failure with potential for serious harm if sustained or misdiagnosed. Although the event self-resolved and no adverse outcome was recorded, the discrepancy between device confidence-score logs and clinician retrospective review indicates an unresolved validation gap in duration calculation logic. This constitutes a 'serious potential patient-safety risk' per Severity 3 criteria (failure/missed detection in safety-critical function). The severity floor is raised to 3 because missed AVB episodes represent a failure of the primary intended use, regardless of immediate outcome containment.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  }
+}

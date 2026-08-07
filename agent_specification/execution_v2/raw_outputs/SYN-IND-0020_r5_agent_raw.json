@@ -1,0 +1,237 @@
+{
+  "arm": "agent_raw",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 30596.646,
+  "model_token_counts": {
+    "completion": 932,
+    "prompt": 1999
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n  \"severity\": 2,\n  \"confidence\": 0.85,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The synthetic remote monitoring center reported a minor, non-recurrent ventricular tachycardia-adjacent irregularity with no adverse patient outcome recorded. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The post-market surveillance system is an integral part of the quality management system and should actively gather relevant data on device safety. The missing clinician note documentation may indicate a gap in this system.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art10-9-qms-elements\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The quality management system should include processes for setting up, implementing, and maintaining the post-market surveillance system. The missing clinician note documentation may indicate a gap in this process.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"The synthetic CI test log shows a drop in VTach sensitivity from 0.97 to 0.89, triggering the automated risk-gate block. This indicates a technical issue that was contained before clinical deployment.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-DEPLOYLOG-0006\",\n      \"artifact_type\": \"deployment_log\",\n      \"relevance_note\": \"The synthetic deployment log shows an update outside the documented maintenance window, which may indicate a process issue. However, no patient was exposed.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-0042\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"The synthetic unit test log shows VTach classifier validation passing at the time of release, indicating a coverage gap in existing tests. This may have allowed the regression to slip through.\"\n    },\n    {\n      \"artifact_id\": \"CGM-ARTIFACT-APPROVAL-0020\",\n      \"artifact_type\": \"approval_record\",\n      \"relevance_note\": \"The synthetic release checklist is missing authorized human approval, indicating a process gap in quality management. This may have contributed to the issue not being caught earlier.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"The post-market surveillance system requires review under EU MDR Article 83.\",\n      \"cited_artifact_id\": \"mdr-art83-pms-system\",\n      \"support_status\": \"weakly_supported\"\n   ,\n      \"support_note\": \"While the missing clinician note documentation may indicate a gap in the post-market surveillance system, it is not explicitly stated as a violation.\"\n    },\n    {\n      \"claim\": \"The quality management system requires review under EU MDR Article 10(9).\",\n      \"cited_artifact_id\": \"mdr-art10-9-qms-elements\",\n      \"support_status\": \"weakly_supported\"\n    ,\n      \"support_note\": \"While the missing clinician note documentation may indicate a gap in the quality management system, it is not explicitly stated as a violation.\"\n    },\n    {\n      \"claim\": \"The risk management process requires review under EU MDR Article 10(2).\",\n      \"cited_artifact_id\": \"mdr-art10-2-risk-management-obligation\",\n      \"support_status\": \"weakly_supported\"\n    ,\n      \"support_note\": \"While the synthetic CI test log and deployment log indicate technical issues, they are contained before clinical exposure. The risk management process is not explicitly violated.\"\n    },\n    {\n      \"claim\": \"The IT security measures require review under EU MDR Annex I, Section 17.4.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.4-it-security\",\n      \"support_status\": \"weakly_supported\"\n    ,\n      \"support_note\": \"While the synthetic CI test log and deployment log indicate technical issues, they are contained before clinical exposure. The IT security measures are not explicitly violated.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "reference": {
+    "citation_unresolved": true,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE",
+    "scenario_id": "SYN-IND-0020"
+  },
+  "replicate": 5,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-art83-pms-system",
+        "claim": "The post-market surveillance system requires review under EU MDR Article 83.",
+        "support_note": "While the missing clinician note documentation may indicate a gap in the post-market surveillance system, it is not explicitly stated as a violation.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art10-9-qms-elements",
+        "claim": "The quality management system requires review under EU MDR Article 10(9).",
+        "support_note": "While the missing clinician note documentation may indicate a gap in the quality management system, it is not explicitly stated as a violation.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art10-2-risk-management-obligation",
+        "claim": "The risk management process requires review under EU MDR Article 10(2).",
+        "support_note": "While the synthetic CI test log and deployment log indicate technical issues, they are contained before clinical exposure. The risk management process is not explicitly violated.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+        "claim": "The IT security measures require review under EU MDR Annex I, Section 17.4.",
+        "support_note": "While the synthetic CI test log and deployment log indicate technical issues, they are contained before clinical exposure. The IT security measures are not explicitly violated.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The post-market surveillance system is an integral part of the quality management system and should actively gather relevant data on device safety. The missing clinician note documentation may indicate a gap in this system."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The quality management system should include processes for setting up, implementing, and maintaining the post-market surveillance system. The missing clinician note documentation may indicate a gap in this process."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic CI test log shows a drop in VTach sensitivity from 0.97 to 0.89, triggering the automated risk-gate block. This indicates a technical issue that was contained before clinical deployment."
+      },
+      {
+        "artifact_id": "ARTIFACT-DEPLOYLOG-0006",
+        "artifact_type": "deployment_log",
+        "relevance_note": "The synthetic deployment log shows an update outside the documented maintenance window, which may indicate a process issue. However, no patient was exposed."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic unit test log shows VTach classifier validation passing at the time of release, indicating a coverage gap in existing tests. This may have allowed the regression to slip through."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The synthetic release checklist is missing authorized human approval, indicating a process gap in quality management. This may have contributed to the issue not being caught earlier."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic remote monitoring center reported a minor, non-recurrent ventricular tachycardia-adjacent irregularity with no adverse patient outcome recorded. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  },
+  "scenario_id": "SYN-IND-0020",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The post-market surveillance system is an integral part of the quality management system and should actively gather relevant data on device safety. The missing clinician note documentation may indicate a gap in this system."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The quality management system should include processes for setting up, implementing, and maintaining the post-market surveillance system. The missing clinician note documentation may indicate a gap in this process."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic CI test log shows a drop in VTach sensitivity from 0.97 to 0.89, triggering the automated risk-gate block. This indicates a technical issue that was contained before clinical deployment."
+      },
+      {
+        "artifact_id": "ARTIFACT-DEPLOYLOG-0006",
+        "artifact_type": "deployment_log",
+        "relevance_note": "The synthetic deployment log shows an update outside the documented maintenance window, which may indicate a process issue. However, no patient was exposed."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic unit test log shows VTach classifier validation passing at the time of release, indicating a coverage gap in existing tests. This may have allowed the regression to slip through."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The synthetic release checklist is missing authorized human approval, indicating a process gap in quality management. This may have contributed to the issue not being caught earlier."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": false,
+    "evidence_gaps": [],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "The post-market surveillance system requires review under EU MDR Article 83.",
+          "support_note": "While the missing clinician note documentation may indicate a gap in the post-market surveillance system, it is not explicitly stated as a violation.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art10-9-qms-elements",
+          "claim": "The quality management system requires review under EU MDR Article 10(9).",
+          "support_note": "While the missing clinician note documentation may indicate a gap in the quality management system, it is not explicitly stated as a violation.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art10-2-risk-management-obligation",
+          "claim": "The risk management process requires review under EU MDR Article 10(2).",
+          "support_note": "While the synthetic CI test log and deployment log indicate technical issues, they are contained before clinical exposure. The risk management process is not explicitly violated.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+          "claim": "The IT security measures require review under EU MDR Annex I, Section 17.4.",
+          "support_note": "While the synthetic CI test log and deployment log indicate technical issues, they are contained before clinical exposure. The IT security measures are not explicitly violated.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The post-market surveillance system is an integral part of the quality management system and should actively gather relevant data on device safety. The missing clinician note documentation may indicate a gap in this system."
+        },
+        {
+          "artifact_id": "mdr-art10-9-qms-elements",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The quality management system should include processes for setting up, implementing, and maintaining the post-market surveillance system. The missing clinician note documentation may indicate a gap in this process."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The synthetic CI test log shows a drop in VTach sensitivity from 0.97 to 0.89, triggering the automated risk-gate block. This indicates a technical issue that was contained before clinical deployment."
+        },
+        {
+          "artifact_id": "ARTIFACT-DEPLOYLOG-0006",
+          "artifact_type": "deployment_log",
+          "relevance_note": "The synthetic deployment log shows an update outside the documented maintenance window, which may indicate a process issue. However, no patient was exposed."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0042",
+          "artifact_type": "test_log",
+          "relevance_note": "The synthetic unit test log shows VTach classifier validation passing at the time of release, indicating a coverage gap in existing tests. This may have allowed the regression to slip through."
+        },
+        {
+          "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+          "artifact_type": "approval_record",
+          "relevance_note": "The synthetic release checklist is missing authorized human approval, indicating a process gap in quality management. This may have contributed to the issue not being caught earlier."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic remote monitoring center reported a minor, non-recurrent ventricular tachycardia-adjacent irregularity with no adverse patient outcome recorded. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "final_report_sha256": "ba053e75f202e1fe25f43762a7d5eccea12d638c291a06e9054662090a18160b",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [],
+    "recommendation": "CAPA_INVESTIGATE",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0020",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0020_r5",
+    "scenario_id": "SYN-IND-0020",
+    "schema_version": "2.1.0",
+    "severity": 2,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "advisory_complete",
+    "timestamp_utc": "2026-08-03T09:54:04.481749Z",
+    "total_steps": 3,
+    "trace_id": "807d5f78-a1b2-4dda-8639-551fffc8bd56"
+  },
+  "trace_path": "traces/SYN-IND-0020_r5.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {}
+}

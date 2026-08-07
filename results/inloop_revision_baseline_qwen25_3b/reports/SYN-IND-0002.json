@@ -1,0 +1,191 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0002",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [
+    "ID: mdr-annexI-sec17.4-it-security",
+    "ID: qmsr-820.45-labeling",
+    "ID: mdr-art83-pms-system",
+    "ID: mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic cardiology ward reported a routine software validation finding for the atrial fibrillation detection pathway. No confirmatory clinician note is on file, but the automated CI validation gate blocked the release candidate before any clinical deployment, so no patient was exposed regardless. No patient-facing exposure occurred and the engineering finding was fully contained pre-release or resolved as a non-event.",
+  "model_token_counts": {
+    "completion": 470,
+    "prompt": 1830
+  },
+  "raw_content": "{\n    \"severity\": 1,\n    \"confidence\": 0.95,\n    \"recommendation\": \"NO_ACTION\",\n    \"rationale\": \"The synthetic cardiology ward incident was contained before clinical deployment and caused no patient exposure. The engineering finding was fully resolved as a non-event, with the release candidate blocked by the CI/CD quality gate.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2037A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"Synthetic emergency-response incident record confirming a life-threatening complete atrioventricular block event, release v37. This confirms the severity of the issue and its containment.\"\n        },\n        {\n            \"artifact_id\": \"ID: mdr-annexI-sec17.4-it-security\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements. The incident was contained before clinical deployment and caused no patient exposure.\"\n        },\n        {\n            \"artifact_id\": \"ID: qmsr-820.45-labeling\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls. The incident was contained before clinical deployment and caused no patient exposure.\"\n        },\n        {\n            \"artifact_id\": \"ID: mdr-art83-pms-system\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. The incident was contained before clinical deployment and caused no patient exposure.\"\n        },\n        {\n            \"artifact_id\": \"ID: mdr-annexI-sec17.2-software-lifecycle\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. The incident was contained before clinical deployment and caused no patient exposure.\"\n        }\n    ],\n    \"requires_human_review\": false\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Synthetic emergency-response incident record confirming a life-threatening complete atrioventricular block event, release v37. This confirms the severity of the issue and its containment."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements. The incident was contained before clinical deployment and caused no patient exposure."
+      },
+      {
+        "artifact_id": "ID: qmsr-820.45-labeling",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls. The incident was contained before clinical deployment and caused no patient exposure."
+      },
+      {
+        "artifact_id": "ID: mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. The incident was contained before clinical deployment and caused no patient exposure."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. The incident was contained before clinical deployment and caused no patient exposure."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic cardiology ward incident was contained before clinical deployment and caused no patient exposure. The engineering finding was fully resolved as a non-event, with the release candidate blocked by the CI/CD quality gate.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 1,
+    "citation_validity": 0.2,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 1.0,
+    "hallucinated_citations": [
+      "ID: mdr-annexI-sec17.4-it-security",
+      "ID: qmsr-820.45-labeling",
+      "ID: mdr-art83-pms-system",
+      "ID: mdr-annexI-sec17.2-software-lifecycle"
+    ],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "deny:risk_report_contains_unresolved_or_trap_citation"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The synthetic cardiology ward incident was contained before clinical deployment and caused no patient exposure.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The engineering finding was fully resolved as a non-event, with the release candidate blocked by the CI/CD quality gate.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Synthetic emergency-response incident record confirming a life-threatening complete atrioventricular block event, release v37. This confirms the severity of the issue and its containment."
+        },
+        {
+          "artifact_id": "ID: mdr-annexI-sec17.4-it-security",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements. The incident was contained before clinical deployment and caused no patient exposure."
+        },
+        {
+          "artifact_id": "ID: qmsr-820.45-labeling",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls. The incident was contained before clinical deployment and caused no patient exposure."
+        },
+        {
+          "artifact_id": "ID: mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. The incident was contained before clinical deployment and caused no patient exposure."
+        },
+        {
+          "artifact_id": "ID: mdr-annexI-sec17.2-software-lifecycle",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. The incident was contained before clinical deployment and caused no patient exposure."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic cardiology ward incident was contained before clinical deployment and caused no patient exposure. The engineering finding was fully resolved as a non-event, with the release candidate blocked by the CI/CD quality gate.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": []
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The synthetic cardiology ward incident was contained before clinical deployment and caused no patient exposure.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The engineering finding was fully resolved as a non-event, with the release candidate blocked by the CI/CD quality gate.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Synthetic emergency-response incident record confirming a life-threatening complete atrioventricular block event, release v37. This confirms the severity of the issue and its containment."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements. The incident was contained before clinical deployment and caused no patient exposure."
+      },
+      {
+        "artifact_id": "ID: qmsr-820.45-labeling",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls. The incident was contained before clinical deployment and caused no patient exposure."
+      },
+      {
+        "artifact_id": "ID: mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. The incident was contained before clinical deployment and caused no patient exposure."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. The incident was contained before clinical deployment and caused no patient exposure."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic cardiology ward incident was contained before clinical deployment and caused no patient exposure. The engineering finding was fully resolved as a non-event, with the release candidate blocked by the CI/CD quality gate.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0021",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic device validation lab reported that the device failed to flag a clinically significant ventricular tachycardia episode in real time. A retrospective clinician review confirms a single missed, sustained ventricular tachycardia episode that self-resolved with no recorded adverse outcome; no second occurrence has yet been confirmed. The device confidence-score log, the retrospective clinician read, and the raw waveform export are all consistent.",
+  "model_token_counts": {
+    "completion": 554,
+    "prompt": 2321
+  },
+  "raw_content": "{\n  \"severity\": 3,\n  \"confidence\": 0.75,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The device failed to flag a clinically significant ventricular tachycardia (VT) episode in real-time during validation testing. Although the event self-resolved with no recorded adverse outcome and was contained within the lab environment before clinical deployment, this represents a failure of a safety-critical function (arrhythmia detection). Under FDA QMSR 21 CFR \u00a7 820.10(c), manufacturers must comply with design controls including validation to ensure device performance meets intended use; a missed VT episode indicates a potential for serious harm if the event were not self-resolving or contained by lab protocols. The lack of patient exposure prevents Severity 4, but the nature of the failure (missed life-threatening arrhythmia) elevates it above Severity 2 nuisance alerts to at least Severity 3 due to high-potential-harm in a safety-critical function.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2027A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Confirms the device confidence-score log and retrospective review for a missed arrhythmia episode in release v27, grounding the technical claim of detection failure.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2023A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Provides comparative context for confidence-score logs across releases (v23 vs v27), supporting the technical analysis of detection performance regression or specific failure mode.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.10-c-design-development\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Establishes regulatory obligation for design validation (Clause 7.3 of ISO 13485) which was not met by the failure to detect VT, triggering CAPA obligations.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Supports obligation under EU MDR Article 83(1)-(2) to analyze relevant data on device safety and determine preventive/corrective actions following the identified failure.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: technical_incident_missing_technical_evidence; deny:technical_incident_missing_technical_evidence; clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: At least one retrieved technical artifact supporting the incident judgment.; Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (concept_severity_undercall) Predicted severity 2 is below derived clinical floor 3. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.\n- (concept_severity_undercall) concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.\n- (shacl) RiskReport must link at least one evidence id.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Confirms the device confidence-score log and retrospective review for a missed arrhythmia episode in release v27, grounding the technical claim of detection failure."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides comparative context for confidence-score logs across releases (v23 vs v27), supporting the technical analysis of detection performance regression or specific failure mode."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes regulatory obligation for design validation (Clause 7.3 of ISO 13485) which was not met by the failure to detect VT, triggering CAPA obligations."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports obligation under EU MDR Article 83(1)-(2) to analyze relevant data on device safety and determine preventive/corrective actions following the identified failure."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The device failed to flag a clinically significant ventricular tachycardia (VT) episode in real-time during validation testing. Although the event self-resolved with no recorded adverse outcome and was contained within the lab environment before clinical deployment, this represents a failure of a safety-critical function (arrhythmia detection). Under FDA QMSR 21 CFR \u00a7 820.10(c), manufacturers must comply with design controls including validation to ensure device performance meets intended use; a missed VT episode indicates a potential for serious harm if the event were not self-resolving or contained by lab protocols. The lack of patient exposure prevents Severity 4, but the nature of the failure (missed life-threatening arrhythmia) elevates it above Severity 2 nuisance alerts to at least Severity 3 due to high-potential-harm in a safety-critical function.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.75,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "claim": "The device failed to flag a clinically significant ventricular tachycardia (VT) episode in real-time during validation testing.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "claim": "Although the event self-resolved with no recorded adverse outcome and was contained within the lab environment before clinical deployment, this represents a failure of a safety-critical function (arrhythmia detection).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "claim": "Under FDA QMSR 21 CFR \u00a7 820.10(c), manufacturers must comply with design controls including validation to ensure device performance meets intended use; a missed VT episode indicates a potential for serious harm if the event were not self-resolving or contained by lab protocols.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "claim": "The lack of patient exposure prevents Severity 4, but the nature of the failure (missed life-threatening arrhythmia) elevates it above Severity 2 nuisance alerts to at least Severity 3 due to high-potential-harm in a safety-critical function.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "artifact_type": "test_log",
+          "relevance_note": "Confirms the device confidence-score log and retrospective review for a missed arrhythmia episode in release v27, grounding the technical claim of detection failure."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "artifact_type": "test_log",
+          "relevance_note": "Provides comparative context for confidence-score logs across releases (v23 vs v27), supporting the technical analysis of detection performance regression or specific failure mode."
+        },
+        {
+          "artifact_id": "qmsr-820.10-c-design-development",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Establishes regulatory obligation for design validation (Clause 7.3 of ISO 13485) which was not met by the failure to detect VT, triggering CAPA obligations."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Supports obligation under EU MDR Article 83(1)-(2) to analyze relevant data on device safety and determine preventive/corrective actions following the identified failure."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The device failed to flag a clinically significant ventricular tachycardia (VT) episode in real-time during validation testing. Although the event self-resolved with no recorded adverse outcome and was contained within the lab environment before clinical deployment, this represents a failure of a safety-critical function (arrhythmia detection). Under FDA QMSR 21 CFR \u00a7 820.10(c), manufacturers must comply with design controls including validation to ensure device performance meets intended use; a missed VT episode indicates a potential for serious harm if the event were not self-resolving or contained by lab protocols. The lack of patient exposure prevents Severity 4, but the nature of the failure (missed life-threatening arrhythmia) elevates it above Severity 2 nuisance alerts to at least Severity 3 due to high-potential-harm in a safety-critical function.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "weakly_supported_claims": [
+      "The device failed to flag a clinically significant ventricular tachycardia (VT) episode in real-time during validation testing."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "claim": "The device failed to flag a clinically significant ventricular tachycardia (VT) episode in real-time during validation testing.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "claim": "Although the event self-resolved with no recorded adverse outcome and was contained within the lab environment before clinical deployment, this represents a failure of a safety-critical function (arrhythmia detection).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "claim": "Under FDA QMSR 21 CFR \u00a7 820.10(c), manufacturers must comply with design controls including validation to ensure device performance meets intended use; a missed VT episode indicates a potential for serious harm if the event were not self-resolving or contained by lab protocols.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "claim": "The lack of patient exposure prevents Severity 4, but the nature of the failure (missed life-threatening arrhythmia) elevates it above Severity 2 nuisance alerts to at least Severity 3 due to high-potential-harm in a safety-critical function.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Confirms the device confidence-score log and retrospective review for a missed arrhythmia episode in release v27, grounding the technical claim of detection failure."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Provides comparative context for confidence-score logs across releases (v23 vs v27), supporting the technical analysis of detection performance regression or specific failure mode."
+      },
+      {
+        "artifact_id": "qmsr-820.10-c-design-development",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Establishes regulatory obligation for design validation (Clause 7.3 of ISO 13485) which was not met by the failure to detect VT, triggering CAPA obligations."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports obligation under EU MDR Article 83(1)-(2) to analyze relevant data on device safety and determine preventive/corrective actions following the identified failure."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The device failed to flag a clinically significant ventricular tachycardia (VT) episode in real-time during validation testing. Although the event self-resolved with no recorded adverse outcome and was contained within the lab environment before clinical deployment, this represents a failure of a safety-critical function (arrhythmia detection). Under FDA QMSR 21 CFR \u00a7 820.10(c), manufacturers must comply with design controls including validation to ensure device performance meets intended use; a missed VT episode indicates a potential for serious harm if the event were not self-resolving or contained by lab protocols. The lack of patient exposure prevents Severity 4, but the nature of the failure (missed life-threatening arrhythmia) elevates it above Severity 2 nuisance alerts to at least Severity 3 due to high-potential-harm in a safety-critical function.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  }
+}

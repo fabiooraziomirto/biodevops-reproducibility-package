@@ -1,0 +1,35 @@
+%% Figura standalone per la submission IEEE JBHI.
+%% Compilare con: pdflatex <file>.tex   -> PDF vettoriale, font incorporati.
+%% Font Times (ptm) per corrispondere a ieeecolor.cls.
+\documentclass[tikz,border=1pt]{standalone}
+\renewcommand{\rmdefault}{ptm}
+\usepackage{amsmath,amssymb}
+\usetikzlibrary{positioning, arrows.meta, shapes.geometric}
+\begin{document}
+\begin{tikzpicture}[
+  node distance=3.2mm,
+  box/.style={draw, rounded corners, align=center, font=\footnotesize, minimum height=7mm, text width=3.3cm, inner sep=2pt},
+  ext/.style={draw, dashed, rounded corners, align=center, font=\footnotesize, minimum height=7mm, text width=3.3cm, inner sep=2pt},
+  side/.style={draw, dashed, rounded corners, align=center, font=\footnotesize, minimum height=8mm, text width=1.8cm, inner sep=2pt},
+  lbl/.style={font=\scriptsize\itshape},
+  >=Latex
+]
+  \node[box] (signals) {Signals \& evidence \textit{(clinical events, device artifacts, test evidence, regulatory obligations, FHIR/SNOMED facts)}};
+  \node[box, below=of signals] (agent) {Bounded agent: \textit{inspect, retrieve, request, synthesize, revise, escalate}};
+  \node[box, below=of agent] (report) {\textit{RiskReport}: severity, confidence, evidenceLinks, recommendation};
+  \node[box, below=of report] (opa) {OPA/Rego enforcement};
+  \node[box, below=of opa] (review) {Human review of advisory package};
+  \node[ext, below=of review] (gate) {External authorization service \textit{(modeled, not integrated)}};
+  \node[ext, below=of gate] (deploy) {Deployment};
+  \node[side, right=4mm of opa] (shacl) {SHACL analysis \textit{(evaluation / revision mode)}};
+
+  \draw[->] (signals) -- (agent);
+  \draw[->] (agent) -- (report);
+  \draw[->] (report) -- (opa);
+  \draw[->] (opa) -- (review);
+  \draw[->] (review) -- (gate);
+  \draw[->] (gate) -- (deploy);
+  \draw[dashed,->] (opa.east) -- (shacl.west);
+  \draw[dashed,->] (shacl.north) |- node[lbl, pos=0.32, right] {revise $\times$1} (agent.east);
+\end{tikzpicture}
+\end{document}

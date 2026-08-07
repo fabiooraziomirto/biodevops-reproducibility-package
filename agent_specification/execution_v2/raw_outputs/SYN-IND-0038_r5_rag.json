@@ -1,0 +1,177 @@
+{
+  "arm": "rag",
+  "artifact_recall": null,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 16322.146,
+  "model_token_counts": {
+    "completion": 639,
+    "prompt": 2010
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "FIELD_SAFETY_CORRECTIVE_ACTION"
+  },
+  "opa_actions": [
+    "fsca_without_confirmatory_evidence_downgraded",
+    "severity4_or_death_forced_immediate_human_escalation"
+  ],
+  "raw_model_output": "{\n  \"severity\": 4,\n  \"confidence\": 0.85,\n  \"recommendation\": \"FIELD_SAFETY_CORRECTIVE_ACTION\",\n  \"rationale\": \"The incident report of a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode is a serious patient safety risk that requires immediate action under EU MDR Article 87(1)-(2) and Article 10(12). The severity-scoring submodule changes (ARTIFACT-DIFF-0009) may have contributed to the missed detection, as flagged by static analysis (ARTIFACT-STATICANALYSIS-0003), which requires Class II revalidation. This incident also triggers obligations under EU MDR Article 88(1) for trend reporting.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"mdr-art87-reporting-timelines\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"Immediate reporting is required due to the serious patient safety risk.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art10-12-corrective-action\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The device may present a serious risk, requiring immediate corrective action and notification of competent authorities.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art88-trend-reporting\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"There is a need for trend reporting due to the statistically significant increase in severity or frequency of incidents that could impact benefit-risk analysis.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-DIFF-0009\",\n      \"artifact_type\": \"code_diff\",\n      \"relevance_note\": \"The severity-scoring submodule changes may have contributed to the missed detection, as flagged by static analysis.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-STATICANALYSIS-0003\",\n      \"artifact_type\": \"static_analysis_output\",\n      \"relevance_note\": \"Static analysis flags the severity-scoring submodule diff as touching a safety-critical path requiring Class II revalidation.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"Immediate field safety action is required.\",\n      \"cited_artifact_id\": \"mdr-art10-12-corrective-action\",\n      \"support_status\": \"supported\"\n   ,\n    \"support_note\": \"The device may present a serious risk, requiring immediate corrective action and notification of competent authorities.\"\n    },\n    {\n      \"claim\": \"Trend reporting is necessary.\",\n      \"cited_artifact_id\": \"mdr-art88-trend-reporting\",\n      \"support_status\": \"supported\"\n    ,\n    \"support_note\": \"There is a need for trend reporting due to the statistically significant increase in severity or frequency of incidents that could impact benefit-risk analysis.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "ESCALATE_TO_HUMAN_IMMEDIATE",
+    "scenario_id": "SYN-IND-0038"
+  },
+  "replicate": 5,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-art10-12-corrective-action",
+        "claim": "Immediate field safety action is required.",
+        "support_note": "The device may present a serious risk, requiring immediate corrective action and notification of competent authorities.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art88-trend-reporting",
+        "claim": "Trend reporting is necessary.",
+        "support_note": "There is a need for trend reporting due to the statistically significant increase in severity or frequency of incidents that could impact benefit-risk analysis.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art87-reporting-timelines",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "Immediate reporting is required due to the serious patient safety risk."
+      },
+      {
+        "artifact_id": "mdr-art10-12-corrective-action",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The device may present a serious risk, requiring immediate corrective action and notification of competent authorities."
+      },
+      {
+        "artifact_id": "mdr-art88-trend-reporting",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "There is a need for trend reporting due to the statistically significant increase in severity or frequency of incidents that could impact benefit-risk analysis."
+      },
+      {
+        "artifact_id": "ARTIFACT-DIFF-0009",
+        "artifact_type": "code_diff",
+        "relevance_note": "The severity-scoring submodule changes may have contributed to the missed detection, as flagged by static analysis."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Static analysis flags the severity-scoring submodule diff as touching a safety-critical path requiring Class II revalidation."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident report of a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode is a serious patient safety risk that requires immediate action under EU MDR Article 87(1)-(2) and Article 10(12). The severity-scoring submodule changes (ARTIFACT-DIFF-0009) may have contributed to the missed detection, as flagged by static analysis (ARTIFACT-STATICANALYSIS-0003), which requires Class II revalidation. This incident also triggers obligations under EU MDR Article 88(1) for trend reporting.",
+    "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "requires_human_review": true,
+    "severity": 4
+  },
+  "scenario_id": "SYN-IND-0038",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Severity-4 report is not paired with ESCALATE_TO_HUMAN_IMMEDIATE; classified as OPA-overlap.",
+        "severity": "Violation",
+        "shape": "severity4_opa_overlap"
+      },
+      {
+        "message": "severity4_opa_overlap: severity 4 reports must escalate to human immediate; this overlaps OPA policy behavior.",
+        "severity": "Severity: sh:Violation",
+        "shape": "severity4_opa_overlap"
+      },
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {},
+  "trace_path": null,
+  "unsupported_claim_count": 0,
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 1.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [
+      "fsca_without_confirmatory_evidence_downgraded",
+      "severity4_or_death_forced_immediate_human_escalation"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art10-12-corrective-action",
+          "claim": "Immediate field safety action is required.",
+          "support_note": "The device may present a serious risk, requiring immediate corrective action and notification of competent authorities.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art88-trend-reporting",
+          "claim": "Trend reporting is necessary.",
+          "support_note": "There is a need for trend reporting due to the statistically significant increase in severity or frequency of incidents that could impact benefit-risk analysis.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art87-reporting-timelines",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "Immediate reporting is required due to the serious patient safety risk."
+        },
+        {
+          "artifact_id": "mdr-art10-12-corrective-action",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The device may present a serious risk, requiring immediate corrective action and notification of competent authorities."
+        },
+        {
+          "artifact_id": "mdr-art88-trend-reporting",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "There is a need for trend reporting due to the statistically significant increase in severity or frequency of incidents that could impact benefit-risk analysis."
+        },
+        {
+          "artifact_id": "ARTIFACT-DIFF-0009",
+          "artifact_type": "code_diff",
+          "relevance_note": "The severity-scoring submodule changes may have contributed to the missed detection, as flagged by static analysis."
+        },
+        {
+          "artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+          "artifact_type": "static_analysis_output",
+          "relevance_note": "Static analysis flags the severity-scoring submodule diff as touching a safety-critical path requiring Class II revalidation."
+        }
+      ],
+      "missing_evidence": [
+        "Causal link between the artifact/change and the observed event.",
+        "Evidence of recurrence or confirmed deployed-population impact."
+      ],
+      "rationale": "The incident report of a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode is a serious patient safety risk that requires immediate action under EU MDR Article 87(1)-(2) and Article 10(12). The severity-scoring submodule changes (ARTIFACT-DIFF-0009) may have contributed to the missed detection, as flagged by static analysis (ARTIFACT-STATICANALYSIS-0003), which requires Class II revalidation. This incident also triggers obligations under EU MDR Article 88(1) for trend reporting.",
+      "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "requires_human_review": true,
+      "severity": 4
+    },
+    "weakly_supported_claims": []
+  }
+}

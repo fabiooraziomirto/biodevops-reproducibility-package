@@ -1,0 +1,220 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0010",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway. No confirmatory clinician note is on file, but the automated CI validation gate blocked the release candidate before any clinical deployment, so no patient was exposed regardless. No patient-facing exposure occurred and the engineering finding was fully contained pre-release or resolved as a non-event.",
+  "model_token_counts": {
+    "completion": 581,
+    "prompt": 1945
+  },
+  "raw_content": "{\n  \"severity\": 1,\n  \"confidence\": 0.95,\n  \"recommendation\": \"NO_ACTION\",\n  \"rationale\": \"The synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway, which was blocked by the CI/CD quality gate before any clinical deployment. No patient exposure occurred and no confirmatory clinician note is on file. The safety control worked as intended; the regression is a real technical quality finding but it was contained before clinical deployment and caused no patient exposure. Do not escalate severity merely because the blocked regression involved a software validation, which did not lead to any patient-facing exposure.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-INCIDENT-2037A\",\n      \"artifact_type\": \"incident_report\",\n      \"relevance_note\": \"Synthetic emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37. This confirms that no patient exposure occurred.\"\n    },\n    {\n      \"artifact_id\": \"mdr-annexI-sec17.4-it-security\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements. The software development lifecycle and cybersecurity principles were followed.\"\n    },\n    {\n      \"artifact_id\": \"qmsr-820.45-labeling\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls. The release candidate was not deployed to any clinical environment, ensuring the integrity of the labeling and packaging.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. The post-market surveillance system was not triggered as no patient exposure occurred.\"\n    },\n    {\n      \"artifact_id\": \"mdr-annexI-sec17.2-software-lifecycle\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. The software was developed in accordance with the state of the art.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-STATICANALYSIS-2018A\",\n      \"artifact_type\": \"static_analysis_output\",\n      \"relevance_note\": \"Synthetic static-analysis report for an unrelated firmware module. This does not provide relevant information about this event.\"\n    }\n  ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (shacl) RiskReport must link at least one evidence id.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Synthetic emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37. This confirms that no patient exposure occurred."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements. The software development lifecycle and cybersecurity principles were followed."
+      },
+      {
+        "artifact_id": "qmsr-820.45-labeling",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls. The release candidate was not deployed to any clinical environment, ensuring the integrity of the labeling and packaging."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. The post-market surveillance system was not triggered as no patient exposure occurred."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. The software was developed in accordance with the state of the art."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Synthetic static-analysis report for an unrelated firmware module. This does not provide relevant information about this event."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway, which was blocked by the CI/CD quality gate before any clinical deployment. No patient exposure occurred and no confirmatory clinician note is on file. The safety control worked as intended; the regression is a real technical quality finding but it was contained before clinical deployment and caused no patient exposure. Do not escalate severity merely because the blocked regression involved a software validation, which did not lead to any patient-facing exposure.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.75,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway, which was blocked by the CI/CD quality gate before any clinical deployment.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "No patient exposure occurred and no confirmatory clinician note is on file.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The safety control worked as intended; the regression is a real technical quality finding but it was contained before clinical deployment and caused no patient exposure.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "Do not escalate severity merely because the blocked regression involved a software validation, which did not lead to any patient-facing exposure.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Synthetic emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37. This confirms that no patient exposure occurred."
+        },
+        {
+          "artifact_id": "mdr-annexI-sec17.4-it-security",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements. The software development lifecycle and cybersecurity principles were followed."
+        },
+        {
+          "artifact_id": "qmsr-820.45-labeling",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls. The release candidate was not deployed to any clinical environment, ensuring the integrity of the labeling and packaging."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. The post-market surveillance system was not triggered as no patient exposure occurred."
+        },
+        {
+          "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. The software was developed in accordance with the state of the art."
+        },
+        {
+          "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+          "artifact_type": "static_analysis_output",
+          "relevance_note": "Synthetic static-analysis report for an unrelated firmware module. This does not provide relevant information about this event."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway, which was blocked by the CI/CD quality gate before any clinical deployment. No patient exposure occurred and no confirmatory clinician note is on file. The safety control worked as intended; the regression is a real technical quality finding but it was contained before clinical deployment and caused no patient exposure. Do not escalate severity merely because the blocked regression involved a software validation, which did not lead to any patient-facing exposure.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": [
+      "The synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway, which was blocked by the CI/CD quality gate before any clinical deployment."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway, which was blocked by the CI/CD quality gate before any clinical deployment.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "No patient exposure occurred and no confirmatory clinician note is on file.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The safety control worked as intended; the regression is a real technical quality finding but it was contained before clinical deployment and caused no patient exposure.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "Do not escalate severity merely because the blocked regression involved a software validation, which did not lead to any patient-facing exposure.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Synthetic emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37. This confirms that no patient exposure occurred."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements. The software development lifecycle and cybersecurity principles were followed."
+      },
+      {
+        "artifact_id": "qmsr-820.45-labeling",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls. The release candidate was not deployed to any clinical environment, ensuring the integrity of the labeling and packaging."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. The post-market surveillance system was not triggered as no patient exposure occurred."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. The software was developed in accordance with the state of the art."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Synthetic static-analysis report for an unrelated firmware module. This does not provide relevant information about this event."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic field service engineering desk reported a routine software validation finding for the atrial fibrillation detection pathway, which was blocked by the CI/CD quality gate before any clinical deployment. No patient exposure occurred and no confirmatory clinician note is on file. The safety control worked as intended; the regression is a real technical quality finding but it was contained before clinical deployment and caused no patient exposure. Do not escalate severity merely because the blocked regression involved a software validation, which did not lead to any patient-facing exposure.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

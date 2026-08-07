@@ -1,0 +1,148 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0001",
+    "clinical_inconsistency_class": "none",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic step-down telemetry unit reported a routine software validation finding for the ventricular tachycardia detection pathway. Full overnight telemetry log and a same-shift clinician review both confirm no ventricular tachycardia episode occurred; the classifier's threshold alarm behaved as specified. No patient-facing exposure occurred and the engineering finding was fully contained pre-release or resolved as a non-event.",
+  "model_token_counts": {
+    "completion": 404,
+    "prompt": 2144
+  },
+  "raw_content": "{\n  \"severity\": 1,\n  \"confidence\": 0.95,\n  \"recommendation\": \"NO_ACTION\",\n  \"rationale\": \"The incident narrative describes a software validation finding for the ventricular tachycardia detection pathway in a synthetic telemetry unit. Crucially, both overnight telemetry logs and clinician review confirm no ventricular tachycardia episode occurred, and the classifier's threshold alarm behaved as specified. The finding was fully contained pre-release or resolved as a non-event, with no patient-facing exposure. This aligns with a Severity 1 classification due to the absence of patient exposure and containment by automatic controls before clinical deployment. While the incident involves software related to a safety-critical function (telemetry), the control mechanisms functioned correctly, preventing any potential harm. The finding represents a technical quality issue that should be addressed through standard engineering processes.\",\n  \"claim_support\": [\n    {\n      \"claim\": \"The event resulted in no patient exposure.\",\n      \"cited_artifact_id\": \"SYNTHETIC NARRATIVE\",\"support_status\": \"supported\",\"support_note\":\"Narrative explicitly states 'No patient-facing exposure occurred'.\"\n    },\n    {\n      \"claim\": \"The issue was contained before clinical deployment or resolved as a non-event.\",\n      \"cited_artifact_id\": \"SYNTHETIC NARRATIVE\", \"support_status\": \"supported\",\"support_note\":\"Narrative explicitly states 'the engineering finding was fully contained pre-release or resolved as a non-event'.\"\n    },\n    {\n      \"claim\": \"The incident represents a technical quality issue.\",\n      \"cited_artifact_id\": \"SYNTHETIC NARRATIVE\", \"support_status\":\"supported\",\"support_note\":\"The finding was a software validation issue, indicating a technical matter.\"\n    }\n  ],\n  \"requires_human_review\": false\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-STATICANALYSIS-2024A",
+    "ARTIFACT-STATICANALYSIS-2028A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art10-9-qms-elements",
+    "qmsr-820.7-incorporation",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "The event resulted in no patient exposure.",
+        "support_note": "Narrative explicitly states 'No patient-facing exposure occurred'.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "The issue was contained before clinical deployment or resolved as a non-event.",
+        "support_note": "Narrative explicitly states 'the engineering finding was fully contained pre-release or resolved as a non-event'.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "The incident represents a technical quality issue.",
+        "support_note": "The finding was a software validation issue, indicating a technical matter.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a software validation finding for the ventricular tachycardia detection pathway in a synthetic telemetry unit. Crucially, both overnight telemetry logs and clinician review confirm no ventricular tachycardia episode occurred, and the classifier's threshold alarm behaved as specified. The finding was fully contained pre-release or resolved as a non-event, with no patient-facing exposure. This aligns with a Severity 1 classification due to the absence of patient exposure and containment by automatic controls before clinical deployment. While the incident involves software related to a safety-critical function (telemetry), the control mechanisms functioned correctly, preventing any potential harm. The finding represents a technical quality issue that should be addressed through standard engineering processes.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "The event resulted in no patient exposure.",
+      "The issue was contained before clinical deployment or resolved as a non-event.",
+      "The incident represents a technical quality issue."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "SYNTHETIC NARRATIVE",
+          "claim": "The event resulted in no patient exposure.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "SYNTHETIC NARRATIVE",
+          "claim": "The issue was contained before clinical deployment or resolved as a non-event.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "SYNTHETIC NARRATIVE",
+          "claim": "The incident represents a technical quality issue.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [],
+      "missing_evidence": [
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident narrative describes a software validation finding for the ventricular tachycardia detection pathway in a synthetic telemetry unit. Crucially, both overnight telemetry logs and clinician review confirm no ventricular tachycardia episode occurred, and the classifier's threshold alarm behaved as specified. The finding was fully contained pre-release or resolved as a non-event, with no patient-facing exposure. This aligns with a Severity 1 classification due to the absence of patient exposure and containment by automatic controls before clinical deployment. While the incident involves software related to a safety-critical function (telemetry), the control mechanisms functioned correctly, preventing any potential harm. The finding represents a technical quality issue that should be addressed through standard engineering processes.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": []
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "The event resulted in no patient exposure.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "The issue was contained before clinical deployment or resolved as a non-event.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "The incident represents a technical quality issue.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [],
+    "missing_evidence": [
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident narrative describes a software validation finding for the ventricular tachycardia detection pathway in a synthetic telemetry unit. Crucially, both overnight telemetry logs and clinician review confirm no ventricular tachycardia episode occurred, and the classifier's threshold alarm behaved as specified. The finding was fully contained pre-release or resolved as a non-event, with no patient-facing exposure. This aligns with a Severity 1 classification due to the absence of patient exposure and containment by automatic controls before clinical deployment. While the incident involves software related to a safety-critical function (telemetry), the control mechanisms functioned correctly, preventing any potential harm. The finding represents a technical quality issue that should be addressed through standard engineering processes.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0005",
+    "clinical_inconsistency_class": "none",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic regional hospital ICU reported a routine software validation finding for the ventricular tachycardia detection pathway. Full overnight telemetry log and a same-shift clinician review both confirm no ventricular tachycardia episode occurred; the classifier's threshold alarm behaved as specified. No patient-facing exposure occurred and the engineering finding was fully contained pre-release or resolved as a non-event.",
+  "model_token_counts": {
+    "completion": 521,
+    "prompt": 1795
+  },
+  "raw_content": "{\n  \"severity\": 1,\n  \"confidence\": 0.85,\n  \"recommendation\": \"NO_ACTION\",\n  \"rationale\": \"The incident narrative describes a software validation finding for the ventricular tachycardia detection pathway that was fully contained pre-release and resulted in no patient exposure. The telemetry log and clinician review confirmed the classifier's behavior aligned with specifications. This indicates an engineering quality issue, but not a safety concern given the containment measures. While the device incorporates software, and therefore falls under regulatory requirements for design controls (qmsr-820.10-c-design-development) and software lifecycle management (mdr-annexI-sec17.2-software-lifecycle), the finding did not result in harm or potential harm to patients.\",\n  \"claim_support\": [\n    {\n      \"claim\": \"The incident resulted in no patient exposure.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2025A\",\"support_status\": \"supported\",\"support_note\":\"Test log confirms no episode occurred.\"\n    },\n    {\n      \"claim\": \"The classifier behaved as specified.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2029A\", \"support_status\": \"supported\",\"support_note\":\"Test log and clinician review confirm behavior aligned with specifications.\"\n    },\n    {\n      \"claim\": \"This is an engineering quality issue, not a safety concern.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2025A\", \"support_status\": \"supported\",\"support_note\":\"No patient exposure and classifier behavior as expected.\"\n    },\n     {\n      \"claim\": \"The device incorporates software, triggering regulatory requirements.\",\n      \"cited_artifact_id\": \"qmsr-820.10-c-design-development\", \"support_status\": \"supported\",\"support_note\":\"Devices automated with computer software must comply with design controls.\"\n    },\n     {\n      \"claim\": \"The device incorporates software, triggering regulatory requirements.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.2-software-lifecycle\", \"support_status\": \"supported\",\"support_note\":\"Software devices require lifecycle management.\"\n    }\n  ],\n  \"requires_human_review\": false\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2025A",
+    "ARTIFACT-TESTLOG-2029A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.10-c-design-development",
+    "mdr-annexI-sec17.1-electronic-programmable",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "The incident resulted in no patient exposure.",
+        "support_note": "Test log confirms no episode occurred.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2029A",
+        "claim": "The classifier behaved as specified.",
+        "support_note": "Test log and clinician review confirm behavior aligned with specifications.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "This is an engineering quality issue, not a safety concern.",
+        "support_note": "No patient exposure and classifier behavior as expected.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "The device incorporates software, triggering regulatory requirements.",
+        "support_note": "Devices automated with computer software must comply with design controls.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "claim": "The device incorporates software, triggering regulatory requirements.",
+        "support_note": "Software devices require lifecycle management.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a software validation finding for the ventricular tachycardia detection pathway that was fully contained pre-release and resulted in no patient exposure. The telemetry log and clinician review confirmed the classifier's behavior aligned with specifications. This indicates an engineering quality issue, but not a safety concern given the containment measures. While the device incorporates software, and therefore falls under regulatory requirements for design controls (qmsr-820.10-c-design-development) and software lifecycle management (mdr-annexI-sec17.2-software-lifecycle), the finding did not result in harm or potential harm to patients.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.4,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+          "claim": "The incident resulted in no patient exposure.",
+          "support_note": "Test log confirms no episode occurred.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2029A",
+          "claim": "The classifier behaved as specified.",
+          "support_note": "Test log and clinician review confirm behavior aligned with specifications.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+          "claim": "This is an engineering quality issue, not a safety concern.",
+          "support_note": "No patient exposure and classifier behavior as expected.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-c-design-development",
+          "claim": "The device incorporates software, triggering regulatory requirements.",
+          "support_note": "Devices automated with computer software must comply with design controls.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+          "claim": "The device incorporates software, triggering regulatory requirements.",
+          "support_note": "Software devices require lifecycle management.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [],
+      "missing_evidence": [
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident narrative describes a software validation finding for the ventricular tachycardia detection pathway that was fully contained pre-release and resulted in no patient exposure. The telemetry log and clinician review confirmed the classifier's behavior aligned with specifications. This indicates an engineering quality issue, but not a safety concern given the containment measures. While the device incorporates software, and therefore falls under regulatory requirements for design controls (qmsr-820.10-c-design-development) and software lifecycle management (mdr-annexI-sec17.2-software-lifecycle), the finding did not result in harm or potential harm to patients.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": [
+      "The incident resulted in no patient exposure.",
+      "The classifier behaved as specified.",
+      "This is an engineering quality issue, not a safety concern."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "The incident resulted in no patient exposure.",
+        "support_note": "Test log confirms no episode occurred.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2029A",
+        "claim": "The classifier behaved as specified.",
+        "support_note": "Test log and clinician review confirm behavior aligned with specifications.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "This is an engineering quality issue, not a safety concern.",
+        "support_note": "No patient exposure and classifier behavior as expected.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "The device incorporates software, triggering regulatory requirements.",
+        "support_note": "Devices automated with computer software must comply with design controls.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "claim": "The device incorporates software, triggering regulatory requirements.",
+        "support_note": "Software devices require lifecycle management.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [],
+    "missing_evidence": [
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident narrative describes a software validation finding for the ventricular tachycardia detection pathway that was fully contained pre-release and resulted in no patient exposure. The telemetry log and clinician review confirmed the classifier's behavior aligned with specifications. This indicates an engineering quality issue, but not a safety concern given the containment measures. While the device incorporates software, and therefore falls under regulatory requirements for design controls (qmsr-820.10-c-design-development) and software lifecycle management (mdr-annexI-sec17.2-software-lifecycle), the finding did not result in harm or potential harm to patients.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

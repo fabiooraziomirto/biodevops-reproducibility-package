@@ -1,0 +1,264 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0032",
+    "clinical_inconsistency_class": "concept_severity_undercall",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 3 is below derived clinical floor 4. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [
+    "MDR-ANNEXI-SEC17.4-IT-Security",
+    "QMSR-820.45-labeling",
+    "MDR-Art83-pms-system",
+    "MDR-ANNEXI-SEC17.2-software-lifecycle"
+  ],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic step-down telemetry unit reported that the patient lost consciousness and required emergency resuscitation following an unflagged ventricular tachycardia episode, confirmed by hospital emergency response records. The device-side confidence log for the exact episode window was not retained, though the emergency-response record is complete.",
+  "model_token_counts": {
+    "completion": 577,
+    "prompt": 2023
+  },
+  "raw_content": "{\n    \"severity\": 3,\n    \"confidence\": 0.65,\n    \"recommendation\": \"CAPA_INVESTIGATE\",\n    \"rationale\": \"The incident report indicates a patient experienced life-threatening complete atrioventricular block following an unflagged ventricular tachycardia episode, requiring emergency resuscitation. The device-side confidence log for the exact episode window was not retained, but the hospital records confirm the event. This may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements and software development lifecycle. Additionally, it requires review under ISO 13485 Clause 7.5.1 for control of production and service provision, including labeling and packaging controls. The incident also falls under the EU MDR Article 83(1)-(2) post-market surveillance system as a proportionate risk class device event.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"MDR-ANNEXI-SEC17.4-IT-Security\",\n            \"artifact_type\": \"regulatory_extract\",\n            \"relevance_note\": \"EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements\"\n        },\n        {\n            \"artifact_id\": \"QMSR-820.45-labeling\",\n            \"artifact_type\": \"regulatory_extract\",\n            \"relevance_note\": \"21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls\"\n        },\n        {\n            \"artifact_id\": \"MDR-Art83-pms-system\",\n            \"artifact_type\": \"regulatory_extract\",\n            \"relevance_note\": \"EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer\"\n        },\n        {\n            \"artifact_id\": \"MDR-ANNEXI-SEC17.2-software-lifecycle\",\n            \"artifact_type\": \"regulatory_extract\",\n            \"relevance_note\": \"EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2033A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"SYNTHETIC emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v33.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2037A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"SYNTHETIC emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37.\"\n        }\n    ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: deny:risk_report_contains_unresolved_or_trap_citation; clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (concept_severity_undercall) Predicted severity 3 is below derived clinical floor 4. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.\n- (concept_severity_undercall) concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.65,
+    "evidence_links": [
+      {
+        "artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements"
+      },
+      {
+        "artifact_id": "QMSR-820.45-labeling",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls"
+      },
+      {
+        "artifact_id": "MDR-Art83-pms-system",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer"
+      },
+      {
+        "artifact_id": "MDR-ANNEXI-SEC17.2-software-lifecycle",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity"
+      },
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "artifact_type": "incident_report",
+        "relevance_note": "SYNTHETIC emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v33."
+      },
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "SYNTHETIC emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident report indicates a patient experienced life-threatening complete atrioventricular block following an unflagged ventricular tachycardia episode, requiring emergency resuscitation. The device-side confidence log for the exact episode window was not retained, but the hospital records confirm the event. This may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements and software development lifecycle. Additionally, it requires review under ISO 13485 Clause 7.5.1 for control of production and service provision, including labeling and packaging controls. The incident also falls under the EU MDR Article 83(1)-(2) post-market surveillance system as a proportionate risk class device event.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 3
+  },
+  "verification": {
+    "citation_hallucination": 1,
+    "citation_validity": 0.3333,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [
+      "MDR-ANNEXI-SEC17.4-IT-Security",
+      "QMSR-820.45-labeling",
+      "MDR-Art83-pms-system",
+      "MDR-ANNEXI-SEC17.2-software-lifecycle"
+    ],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "deny:risk_report_contains_unresolved_or_trap_citation",
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "The incident report indicates a patient experienced life-threatening complete atrioventricular block following an unflagged ventricular tachycardia episode, requiring emergency resuscitation.",
+      "The device-side confidence log for the exact episode window was not retained, but the hospital records confirm the event.",
+      "This may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements and software development lifecycle.",
+      "Additionally, it requires review under ISO 13485 Clause 7.5.1 for control of production and service provision, including labeling and packaging controls.",
+      "The incident also falls under the EU MDR Article 83(1)-(2) post-market surveillance system as a proportionate risk class device event."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+          "claim": "The incident report indicates a patient experienced life-threatening complete atrioventricular block following an unflagged ventricular tachycardia episode, requiring emergency resuscitation.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+          "claim": "The device-side confidence log for the exact episode window was not retained, but the hospital records confirm the event.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+          "claim": "This may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements and software development lifecycle.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+          "claim": "Additionally, it requires review under ISO 13485 Clause 7.5.1 for control of production and service provision, including labeling and packaging controls.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+          "claim": "The incident also falls under the EU MDR Article 83(1)-(2) post-market surveillance system as a proportionate risk class device event.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        }
+      ],
+      "confidence": 0.65,
+      "evidence_links": [
+        {
+          "artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+          "artifact_type": "regulatory_extract",
+          "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements"
+        },
+        {
+          "artifact_id": "QMSR-820.45-labeling",
+          "artifact_type": "regulatory_extract",
+          "relevance_note": "21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls"
+        },
+        {
+          "artifact_id": "MDR-Art83-pms-system",
+          "artifact_type": "regulatory_extract",
+          "relevance_note": "EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer"
+        },
+        {
+          "artifact_id": "MDR-ANNEXI-SEC17.2-software-lifecycle",
+          "artifact_type": "regulatory_extract",
+          "relevance_note": "EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity"
+        },
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "artifact_type": "incident_report",
+          "relevance_note": "SYNTHETIC emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v33."
+        },
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "artifact_type": "incident_report",
+          "relevance_note": "SYNTHETIC emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37."
+        }
+      ],
+      "missing_evidence": [
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident report indicates a patient experienced life-threatening complete atrioventricular block following an unflagged ventricular tachycardia episode, requiring emergency resuscitation. The device-side confidence log for the exact episode window was not retained, but the hospital records confirm the event. This may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements and software development lifecycle. Additionally, it requires review under ISO 13485 Clause 7.5.1 for control of production and service provision, including labeling and packaging controls. The incident also falls under the EU MDR Article 83(1)-(2) post-market surveillance system as a proportionate risk class device event.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "weakly_supported_claims": []
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+        "claim": "The incident report indicates a patient experienced life-threatening complete atrioventricular block following an unflagged ventricular tachycardia episode, requiring emergency resuscitation.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+        "claim": "The device-side confidence log for the exact episode window was not retained, but the hospital records confirm the event.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+        "claim": "This may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements and software development lifecycle.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+        "claim": "Additionally, it requires review under ISO 13485 Clause 7.5.1 for control of production and service provision, including labeling and packaging controls.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+        "claim": "The incident also falls under the EU MDR Article 83(1)-(2) post-market surveillance system as a proportionate risk class device event.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      }
+    ],
+    "confidence": 0.65,
+    "evidence_links": [
+      {
+        "artifact_id": "MDR-ANNEXI-SEC17.4-IT-Security",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements"
+      },
+      {
+        "artifact_id": "QMSR-820.45-labeling",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls"
+      },
+      {
+        "artifact_id": "MDR-Art83-pms-system",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer"
+      },
+      {
+        "artifact_id": "MDR-ANNEXI-SEC17.2-software-lifecycle",
+        "artifact_type": "regulatory_extract",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity"
+      },
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "artifact_type": "incident_report",
+        "relevance_note": "SYNTHETIC emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v33."
+      },
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "SYNTHETIC emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37."
+      }
+    ],
+    "missing_evidence": [
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident report indicates a patient experienced life-threatening complete atrioventricular block following an unflagged ventricular tachycardia episode, requiring emergency resuscitation. The device-side confidence log for the exact episode window was not retained, but the hospital records confirm the event. This may trigger obligations under EU MDR Annex I, Chapter II, Section 17.4 regarding minimum IT security requirements and software development lifecycle. Additionally, it requires review under ISO 13485 Clause 7.5.1 for control of production and service provision, including labeling and packaging controls. The incident also falls under the EU MDR Article 83(1)-(2) post-market surveillance system as a proportionate risk class device event.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  }
+}

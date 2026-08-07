@@ -1,0 +1,193 @@
+{
+  "arm": "agent_raw",
+  "artifact_recall": null,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 19766.637,
+  "model_token_counts": {
+    "completion": 494,
+    "prompt": 1989
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n  \"severity\": 2,\n  \"confidence\": 0.85,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The device failed to flag a clinically significant atrial fibrillation episode, which may trigger obligations under EU MDR Article 10(9) and Article 83 for post-market surveillance and corrective actions.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The manufacturer must establish a post-market surveillance system as part of the quality management system.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art10-9-qms-elements\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The quality management system should include processes for handling serious incidents and field safety corrective actions.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"The CI test log shows a significant drop in VTach sensitivity, which was blocked by the automated risk-gate. This indicates a technical issue that may have gone undetected.\"\n    },\n    {\n      \"artifact_id\": \"CGM-ARTIFACT-APPROVAL-0020\",\n      \"artifact_type\": \"approval_record\",\n      \"relevance_note\": \"The release checklist was missing authorized human approval, indicating potential process gaps in the quality management system.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"Requires review under EU MDR Article 10(9)\",\n      \"cited_artifact_id\": \"mdr-art10-9-qms-elements\",\n      \"support_status\": \"supported\"\n    ,\n    \"support_note\": \"The quality management system should include processes for handling serious incidents and field safety corrective actions.\"\n    },\n    {\n      \"claim\": \"May trigger obligations under EU MDR Article 83(1)-(2)\",\n      \"cited_artifact_id\": \"mdr-art83-pms-system\",\n      \"support_status\": \"supported\"\n    ,\n    \"support_note\": \"The manufacturer must establish a post-market surveillance system as part of the quality management system.\"\n    }\n  ]\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE",
+    "scenario_id": "SYN-IND-0024"
+  },
+  "replicate": 5,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-art10-9-qms-elements",
+        "claim": "Requires review under EU MDR Article 10(9)",
+        "support_note": "The quality management system should include processes for handling serious incidents and field safety corrective actions.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art83-pms-system",
+        "claim": "May trigger obligations under EU MDR Article 83(1)-(2)",
+        "support_note": "The manufacturer must establish a post-market surveillance system as part of the quality management system.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The manufacturer must establish a post-market surveillance system as part of the quality management system."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The quality management system should include processes for handling serious incidents and field safety corrective actions."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The CI test log shows a significant drop in VTach sensitivity, which was blocked by the automated risk-gate. This indicates a technical issue that may have gone undetected."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The release checklist was missing authorized human approval, indicating potential process gaps in the quality management system."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The device failed to flag a clinically significant atrial fibrillation episode, which may trigger obligations under EU MDR Article 10(9) and Article 83 for post-market surveillance and corrective actions.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": false,
+    "severity": 2
+  },
+  "scenario_id": "SYN-IND-0024",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 2 is below derived clinical floor 3. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The manufacturer must establish a post-market surveillance system as part of the quality management system."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The quality management system should include processes for handling serious incidents and field safety corrective actions."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The CI test log shows a significant drop in VTach sensitivity, which was blocked by the automated risk-gate. This indicates a technical issue that may have gone undetected."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The release checklist was missing authorized human approval, indicating potential process gaps in the quality management system."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": false,
+    "evidence_gaps": [],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art10-9-qms-elements",
+          "claim": "Requires review under EU MDR Article 10(9)",
+          "support_note": "The quality management system should include processes for handling serious incidents and field safety corrective actions.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "May trigger obligations under EU MDR Article 83(1)-(2)",
+          "support_note": "The manufacturer must establish a post-market surveillance system as part of the quality management system.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The manufacturer must establish a post-market surveillance system as part of the quality management system."
+        },
+        {
+          "artifact_id": "mdr-art10-9-qms-elements",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The quality management system should include processes for handling serious incidents and field safety corrective actions."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The CI test log shows a significant drop in VTach sensitivity, which was blocked by the automated risk-gate. This indicates a technical issue that may have gone undetected."
+        },
+        {
+          "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+          "artifact_type": "approval_record",
+          "relevance_note": "The release checklist was missing authorized human approval, indicating potential process gaps in the quality management system."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The device failed to flag a clinically significant atrial fibrillation episode, which may trigger obligations under EU MDR Article 10(9) and Article 83 for post-market surveillance and corrective actions.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "final_report_sha256": "5ed1fd76dff2ee66f9a341e832116d7d04d1e6a7985f782ce57720ce526c602d",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [],
+    "recommendation": "CAPA_INVESTIGATE",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0024",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0024_r5",
+    "scenario_id": "SYN-IND-0024",
+    "schema_version": "2.1.0",
+    "severity": 2,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "advisory_complete",
+    "timestamp_utc": "2026-08-03T09:55:16.391458Z",
+    "total_steps": 3,
+    "trace_id": "b7225374-12de-4f9f-92fd-f69f3a299952"
+  },
+  "trace_path": "traces/SYN-IND-0024_r5.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {}
+}

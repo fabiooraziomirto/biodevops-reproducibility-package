@@ -1,0 +1,210 @@
+{
+  "arm": "agent_raw",
+  "artifact_recall": null,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 20485.393,
+  "model_token_counts": {
+    "completion": 479,
+    "prompt": 1979
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "FIELD_SAFETY_CORRECTIVE_ACTION"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n  \"severity\": 4,\n  \"confidence\": 0.85,\n  \"recommendation\": \"FIELD_SAFETY_CORRECTIVE_ACTION\",\n  \"rationale\": \"The incident narrative describes a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode, which is a serious patient-safety risk. The event potentially involves a critical safety function of the device. Although no harm was realized in this specific case, the potential for serious harm exists due to the nature of the event and the fact that it was not detected by existing alerting mechanisms.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The post-market surveillance system is required to actively gather and analyze relevant data on the safety of the device, which this incident highlights as lacking.\"\n    },\n    {\n      \"artifact_id\": \"mdr-annexI-sec17.4-it-security\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The IT security requirements are not directly relevant to this specific technical issue but highlight the importance of robust systems in preventing such incidents.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"The test log shows a significant drop in VTach sensitivity, which was blocked by the CI/CD quality gate. However, this does not directly address the patient exposure issue.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-0042\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"The unit test log indicates that existing tests did not catch the regression in VTach classifier sensitivity, highlighting a coverage gap and potential for undetected issues.\"\n    },\n    {\n      \"artifact_id\": \"CGM-ARTIFACT-APPROVAL-0020\",\n      \"artifact_type\": \"approval_record\",\n      \"relevance_note\": \"The missing authorized human approval in the release checklist indicates a procedural oversight that could contribute to such incidents.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "ESCALATE_TO_HUMAN_IMMEDIATE",
+    "scenario_id": "SYN-IND-0038"
+  },
+  "replicate": 1,
+  "report": {
+    "claim_support": [],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The post-market surveillance system is required to actively gather and analyze relevant data on the safety of the device, which this incident highlights as lacking."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The IT security requirements are not directly relevant to this specific technical issue but highlight the importance of robust systems in preventing such incidents."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The test log shows a significant drop in VTach sensitivity, which was blocked by the CI/CD quality gate. However, this does not directly address the patient exposure issue."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The unit test log indicates that existing tests did not catch the regression in VTach classifier sensitivity, highlighting a coverage gap and potential for undetected issues."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The missing authorized human approval in the release checklist indicates a procedural oversight that could contribute to such incidents."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode, which is a serious patient-safety risk. The event potentially involves a critical safety function of the device. Although no harm was realized in this specific case, the potential for serious harm exists due to the nature of the event and the fact that it was not detected by existing alerting mechanisms.",
+    "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "requires_human_review": true,
+    "severity": 4
+  },
+  "scenario_id": "SYN-IND-0038",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Severity-4 report is not paired with ESCALATE_TO_HUMAN_IMMEDIATE; classified as OPA-overlap.",
+        "severity": "Violation",
+        "shape": "severity4_opa_overlap"
+      },
+      {
+        "message": "severity4_opa_overlap: severity 4 reports must escalate to human immediate; this overlaps OPA policy behavior.",
+        "severity": "Severity: sh:Violation",
+        "shape": "severity4_opa_overlap"
+      },
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The post-market surveillance system is required to actively gather and analyze relevant data on the safety of the device, which this incident highlights as lacking."
+      },
+      {
+        "artifact_id": "mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The IT security requirements are not directly relevant to this specific technical issue but highlight the importance of robust systems in preventing such incidents."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The test log shows a significant drop in VTach sensitivity, which was blocked by the CI/CD quality gate. However, this does not directly address the patient exposure issue."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The unit test log indicates that existing tests did not catch the regression in VTach classifier sensitivity, highlighting a coverage gap and potential for undetected issues."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The missing authorized human approval in the release checklist indicates a procedural oversight that could contribute to such incidents."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": true,
+    "evidence_gaps": [
+      "Causal link between the artifact/change and the observed event.",
+      "Evidence of recurrence or confirmed deployed-population impact."
+    ],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "The incident narrative describes a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode, which is a serious patient-safety risk.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "The event potentially involves a critical safety function of the device.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "Although no harm was realized in this specific case, the potential for serious harm exists due to the nature of the event and the fact that it was not detected by existing alerting mechanisms.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The post-market surveillance system is required to actively gather and analyze relevant data on the safety of the device, which this incident highlights as lacking."
+        },
+        {
+          "artifact_id": "mdr-annexI-sec17.4-it-security",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The IT security requirements are not directly relevant to this specific technical issue but highlight the importance of robust systems in preventing such incidents."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The test log shows a significant drop in VTach sensitivity, which was blocked by the CI/CD quality gate. However, this does not directly address the patient exposure issue."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0042",
+          "artifact_type": "test_log",
+          "relevance_note": "The unit test log indicates that existing tests did not catch the regression in VTach classifier sensitivity, highlighting a coverage gap and potential for undetected issues."
+        },
+        {
+          "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+          "artifact_type": "approval_record",
+          "relevance_note": "The missing authorized human approval in the release checklist indicates a procedural oversight that could contribute to such incidents."
+        }
+      ],
+      "missing_evidence": [
+        "Causal link between the artifact/change and the observed event.",
+        "Evidence of recurrence or confirmed deployed-population impact."
+      ],
+      "rationale": "The incident narrative describes a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode, which is a serious patient-safety risk. The event potentially involves a critical safety function of the device. Although no harm was realized in this specific case, the potential for serious harm exists due to the nature of the event and the fact that it was not detected by existing alerting mechanisms.",
+      "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "requires_human_review": true,
+      "severity": 4
+    },
+    "final_report_sha256": "d717c9e7e49ff3e3e9341a11ca39964dbe151077ea49ace72b58695389812651",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [
+      "fsca_without_confirmatory_evidence_downgraded",
+      "severity4_or_death_forced_immediate_human_escalation"
+    ],
+    "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0038",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0038_r1",
+    "scenario_id": "SYN-IND-0038",
+    "schema_version": "2.1.0",
+    "severity": 4,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "human escalation or invalid transition",
+    "timestamp_utc": "2026-08-03T09:09:48.716564Z",
+    "total_steps": 4,
+    "trace_id": "3bbd42fe-73bd-43c9-ab08-b7ac339e35d0"
+  },
+  "trace_path": "traces/SYN-IND-0038_r1.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {}
+}

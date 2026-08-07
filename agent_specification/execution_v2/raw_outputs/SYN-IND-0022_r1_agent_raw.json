@@ -1,0 +1,176 @@
+{
+  "arm": "agent_raw",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 17472.907,
+  "model_token_counts": {
+    "completion": 383,
+    "prompt": 1995
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n  \"severity\": 3,\n  \"confidence\": 0.85,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The device failed to flag a clinically significant ventricular fibrillation episode, which may trigger obligations under EU MDR Article 10(2) and Article 83(1)-(2). The risk management system must be reviewed for adequacy in detecting such critical events. Additionally, the missing confirmatory device confidence-score log (ARTIFACT-TESTLOG-0050) indicates a potential data integrity issue that requires further investigation.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The post-market surveillance system must be reviewed for adequacy in detecting such critical events.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art10-9-qms-elements\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The quality management system should include processes for monitoring and measurement of output, data analysis, and product improvement. The missing confirmatory log may indicate a gap in this process.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art10-2-risk-management-obligation\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The risk management system must be reviewed for adequacy in detecting such critical events.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"The missing confirmatory device confidence-score log indicates a potential data integrity issue that requires further investigation.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": true,
+    "routing_action": "CAPA_INVESTIGATE",
+    "scenario_id": "SYN-IND-0022"
+  },
+  "replicate": 1,
+  "report": {
+    "claim_support": [],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The post-market surveillance system must be reviewed for adequacy in detecting such critical events."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The quality management system should include processes for monitoring and measurement of output, data analysis, and product improvement. The missing confirmatory log may indicate a gap in this process."
+      },
+      {
+        "artifact_id": "mdr-art10-2-risk-management-obligation",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The risk management system must be reviewed for adequacy in detecting such critical events."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The missing confirmatory device confidence-score log indicates a potential data integrity issue that requires further investigation."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The device failed to flag a clinically significant ventricular fibrillation episode, which may trigger obligations under EU MDR Article 10(2) and Article 83(1)-(2). The risk management system must be reviewed for adequacy in detecting such critical events. Additionally, the missing confirmatory device confidence-score log (ARTIFACT-TESTLOG-0050) indicates a potential data integrity issue that requires further investigation.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  },
+  "scenario_id": "SYN-IND-0022",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The post-market surveillance system must be reviewed for adequacy in detecting such critical events."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The quality management system should include processes for monitoring and measurement of output, data analysis, and product improvement. The missing confirmatory log may indicate a gap in this process."
+      },
+      {
+        "artifact_id": "mdr-art10-2-risk-management-obligation",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The risk management system must be reviewed for adequacy in detecting such critical events."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The missing confirmatory device confidence-score log indicates a potential data integrity issue that requires further investigation."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": false,
+    "evidence_gaps": [],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "The device failed to flag a clinically significant ventricular fibrillation episode, which may trigger obligations under EU MDR Article 10(2) and Article 83(1)-(2).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "The risk management system must be reviewed for adequacy in detecting such critical events.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "Additionally, the missing confirmatory device confidence-score log (ARTIFACT-TESTLOG-0050) indicates a potential data integrity issue that requires further investigation.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The post-market surveillance system must be reviewed for adequacy in detecting such critical events."
+        },
+        {
+          "artifact_id": "mdr-art10-9-qms-elements",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The quality management system should include processes for monitoring and measurement of output, data analysis, and product improvement. The missing confirmatory log may indicate a gap in this process."
+        },
+        {
+          "artifact_id": "mdr-art10-2-risk-management-obligation",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The risk management system must be reviewed for adequacy in detecting such critical events."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The missing confirmatory device confidence-score log indicates a potential data integrity issue that requires further investigation."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The device failed to flag a clinically significant ventricular fibrillation episode, which may trigger obligations under EU MDR Article 10(2) and Article 83(1)-(2). The risk management system must be reviewed for adequacy in detecting such critical events. Additionally, the missing confirmatory device confidence-score log (ARTIFACT-TESTLOG-0050) indicates a potential data integrity issue that requires further investigation.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "final_report_sha256": "e08c3947af5ade23250887736c142623d2055793ff431704398762581010b92d",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [],
+    "recommendation": "CAPA_INVESTIGATE",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0022",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0022_r1",
+    "scenario_id": "SYN-IND-0022",
+    "schema_version": "2.1.0",
+    "severity": 3,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "advisory_complete",
+    "timestamp_utc": "2026-08-03T09:03:53.569738Z",
+    "total_steps": 3,
+    "trace_id": "833c33f8-3f23-4bea-9d89-4606c8d0c5d7"
+  },
+  "trace_path": "traces/SYN-IND-0022_r1.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {}
+}

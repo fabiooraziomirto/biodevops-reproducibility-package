@@ -1,0 +1,245 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0006",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [
+    "ID: mdr-annexI-sec17.4-it-security",
+    "ID: qmsr-820.45-labeling",
+    "ID: mdr-art83-pms-system",
+    "ID: mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic post-market surveillance queue reported a routine software validation finding for the atrial fibrillation detection pathway. No confirmatory clinician note is on file, but the automated CI validation gate blocked the release candidate before any clinical deployment, so no patient was exposed regardless. No patient-facing exposure occurred and the engineering finding was fully contained pre-release or resolved as a non-event.",
+  "model_token_counts": {
+    "completion": 747,
+    "prompt": 1831
+  },
+  "raw_content": "{\n    \"severity\": 1,\n    \"confidence\": 0.95,\n    \"recommendation\": \"NO_ACTION\",\n    \"rationale\": \"The synthetic post-market surveillance queue reported a routine software validation finding for the atrial fibrillation detection pathway. The CI/CD quality gate detected and blocked the release candidate before any clinical deployment, ensuring no patient was exposed to this event. No clinician note is on file, but the automated CI validation gate acted as intended, containing the issue before it could reach a patient. The engineering finding was fully contained pre-release or resolved as a non-event.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2037A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"Synthetic emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37. This confirms that no patient was exposed to this software validation finding.\"\n        },\n        {\n            \"artifact_id\": \"ID: mdr-annexI-sec17.4-it-security\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements. Manufacturers shall set out minimum requirements concerning hardware, IT networks characteristics and IT security measures, including protection against unauthorised access, necessary to run the software as intended.\"\n        },\n        {\n            \"artifact_id\": \"ID: qmsr-820.45-labeling\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls. The manufacturer must ensure that the correct unique device identifier (UDI), expiration date, storage instructions, handling instructions, and any additional processing instructions are provided on the labeling and packaging.\"\n        },\n        {\n            \"artifact_id\": \"ID: mdr-art83-pms-system\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. The post-market surveillance system shall be suited to actively and systematically gathering, recording and analysing relevant data on the quality, performance and safety of a device throughout its entire lifetime.\"\n        },\n        {\n            \"artifact_id\": \"ID: mdr-annexI-sec17.2-software-lifecycle\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. For devices that incorporate software or for software that are devices in themselves, the software shall be developed and manufactured in accordance with the state of the art taking into account the principles of development life cycle, risk management, including information security, verification and validation.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-STATICANALYSIS-2018A\",\n            \"artifact_type\": \"static_analysis_output\",\n            \"relevance_note\": \"Synthetic static-analysis report for an unrelated firmware module. This artifact does not provide any information relevant to the current event.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-STATICANALYSIS-2014A\",\n            \"artifact_type\": \"static_analysis_output\",\n            \"relevance_note\": \"Synthetic static-analysis report for an unrelated firmware module. This artifact does not provide any information relevant to the current event.\"\n        }\n    ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Synthetic emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37. This confirms that no patient was exposed to this software validation finding."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements. Manufacturers shall set out minimum requirements concerning hardware, IT networks characteristics and IT security measures, including protection against unauthorised access, necessary to run the software as intended."
+      },
+      {
+        "artifact_id": "ID: qmsr-820.45-labeling",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls. The manufacturer must ensure that the correct unique device identifier (UDI), expiration date, storage instructions, handling instructions, and any additional processing instructions are provided on the labeling and packaging."
+      },
+      {
+        "artifact_id": "ID: mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. The post-market surveillance system shall be suited to actively and systematically gathering, recording and analysing relevant data on the quality, performance and safety of a device throughout its entire lifetime."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. For devices that incorporate software or for software that are devices in themselves, the software shall be developed and manufactured in accordance with the state of the art taking into account the principles of development life cycle, risk management, including information security, verification and validation."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Synthetic static-analysis report for an unrelated firmware module. This artifact does not provide any information relevant to the current event."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Synthetic static-analysis report for an unrelated firmware module. This artifact does not provide any information relevant to the current event."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic post-market surveillance queue reported a routine software validation finding for the atrial fibrillation detection pathway. The CI/CD quality gate detected and blocked the release candidate before any clinical deployment, ensuring no patient was exposed to this event. No clinician note is on file, but the automated CI validation gate acted as intended, containing the issue before it could reach a patient. The engineering finding was fully contained pre-release or resolved as a non-event.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": false,
+    "severity": 1
+  },
+  "verification": {
+    "citation_hallucination": 1,
+    "citation_validity": 0.4286,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 1.0,
+    "hallucinated_citations": [
+      "ID: mdr-annexI-sec17.4-it-security",
+      "ID: qmsr-820.45-labeling",
+      "ID: mdr-art83-pms-system",
+      "ID: mdr-annexI-sec17.2-software-lifecycle"
+    ],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "deny:risk_report_contains_unresolved_or_trap_citation"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The synthetic post-market surveillance queue reported a routine software validation finding for the atrial fibrillation detection pathway.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The CI/CD quality gate detected and blocked the release candidate before any clinical deployment, ensuring no patient was exposed to this event.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "No clinician note is on file, but the automated CI validation gate acted as intended, containing the issue before it could reach a patient.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "claim": "The engineering finding was fully contained pre-release or resolved as a non-event.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Synthetic emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37. This confirms that no patient was exposed to this software validation finding."
+        },
+        {
+          "artifact_id": "ID: mdr-annexI-sec17.4-it-security",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements. Manufacturers shall set out minimum requirements concerning hardware, IT networks characteristics and IT security measures, including protection against unauthorised access, necessary to run the software as intended."
+        },
+        {
+          "artifact_id": "ID: qmsr-820.45-labeling",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls. The manufacturer must ensure that the correct unique device identifier (UDI), expiration date, storage instructions, handling instructions, and any additional processing instructions are provided on the labeling and packaging."
+        },
+        {
+          "artifact_id": "ID: mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. The post-market surveillance system shall be suited to actively and systematically gathering, recording and analysing relevant data on the quality, performance and safety of a device throughout its entire lifetime."
+        },
+        {
+          "artifact_id": "ID: mdr-annexI-sec17.2-software-lifecycle",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. For devices that incorporate software or for software that are devices in themselves, the software shall be developed and manufactured in accordance with the state of the art taking into account the principles of development life cycle, risk management, including information security, verification and validation."
+        },
+        {
+          "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+          "artifact_type": "static_analysis_output",
+          "relevance_note": "Synthetic static-analysis report for an unrelated firmware module. This artifact does not provide any information relevant to the current event."
+        },
+        {
+          "artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "artifact_type": "static_analysis_output",
+          "relevance_note": "Synthetic static-analysis report for an unrelated firmware module. This artifact does not provide any information relevant to the current event."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic post-market surveillance queue reported a routine software validation finding for the atrial fibrillation detection pathway. The CI/CD quality gate detected and blocked the release candidate before any clinical deployment, ensuring no patient was exposed to this event. No clinician note is on file, but the automated CI validation gate acted as intended, containing the issue before it could reach a patient. The engineering finding was fully contained pre-release or resolved as a non-event.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": []
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The synthetic post-market surveillance queue reported a routine software validation finding for the atrial fibrillation detection pathway.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The CI/CD quality gate detected and blocked the release candidate before any clinical deployment, ensuring no patient was exposed to this event.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "No clinician note is on file, but the automated CI validation gate acted as intended, containing the issue before it could reach a patient.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "claim": "The engineering finding was fully contained pre-release or resolved as a non-event.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Synthetic emergency-response incident record confirming the life-threatening complete atrioventricular block event, release v37. This confirms that no patient was exposed to this software validation finding."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.4-it-security",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.4 \u2014 Minimum IT security requirements. Manufacturers shall set out minimum requirements concerning hardware, IT networks characteristics and IT security measures, including protection against unauthorised access, necessary to run the software as intended."
+      },
+      {
+        "artifact_id": "ID: qmsr-820.45-labeling",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "21 CFR \u00a7 820.45 \u2014 Device labeling and packaging controls. The manufacturer must ensure that the correct unique device identifier (UDI), expiration date, storage instructions, handling instructions, and any additional processing instructions are provided on the labeling and packaging."
+      },
+      {
+        "artifact_id": "ID: mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Article 83(1)-(2) \u2014 Post-market surveillance system of the manufacturer. The post-market surveillance system shall be suited to actively and systematically gathering, recording and analysing relevant data on the quality, performance and safety of a device throughout its entire lifetime."
+      },
+      {
+        "artifact_id": "ID: mdr-annexI-sec17.2-software-lifecycle",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "EU MDR Annex I, Chapter II, Section 17.2 \u2014 Software development lifecycle and cybersecurity. For devices that incorporate software or for software that are devices in themselves, the software shall be developed and manufactured in accordance with the state of the art taking into account the principles of development life cycle, risk management, including information security, verification and validation."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Synthetic static-analysis report for an unrelated firmware module. This artifact does not provide any information relevant to the current event."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Synthetic static-analysis report for an unrelated firmware module. This artifact does not provide any information relevant to the current event."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic post-market surveillance queue reported a routine software validation finding for the atrial fibrillation detection pathway. The CI/CD quality gate detected and blocked the release candidate before any clinical deployment, ensuring no patient was exposed to this event. No clinician note is on file, but the automated CI validation gate acted as intended, containing the issue before it could reach a patient. The engineering finding was fully contained pre-release or resolved as a non-event.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  }
+}

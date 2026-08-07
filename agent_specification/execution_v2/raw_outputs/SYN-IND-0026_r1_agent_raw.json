@@ -1,0 +1,210 @@
+{
+  "arm": "agent_raw",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 24997.176,
+  "model_token_counts": {
+    "completion": 713,
+    "prompt": 2015
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n  \"severity\": 3,\n  \"confidence\": 0.85,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The device failed to flag a clinically significant ventricular fibrillation episode, and this issue has been confirmed to be recurrent across the deployed population. This event may trigger obligations under EU MDR Article 10(2) for risk management and Article 83(1)-(2) for post-market surveillance.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The manufacturer must establish a post-market surveillance system as part of the quality management system, which is required to actively and systematically gather relevant data on device safety.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art10-9-qms-elements\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The manufacturer's quality management system must include processes for setting up, implementing, and maintaining a post-market surveillance system as required by Article 83.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art10-2-risk-management-obligation\",\n      \"artifact_type\": \"regulatory_context\",\n      \"relevance_note\": \"The manufacturer must establish a risk management system as described in Annex I, Section 3, which includes the necessary steps to address safety concerns.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-0050\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"The synthetic CI test log shows a significant drop in VTach sensitivity from 0.97 to 0.89, which was blocked by the automated risk-gate but not caught by existing tests.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-0042\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"The unit test log shows that VTach classifier validation passed at 0.94 sensitivity, indicating a coverage gap in the existing tests.\"\n    }\n  ],\n  \"claim_support\": [\n    {\n      \"claim\": \"Recurrence of safety-critical function failure across deployed population\",\n      \"cited_artifact_id\": \"mdr-art83-pms-system\",\n      \"support_status\": \"supported\"\n   ,\n    \"support_note\": \"The recurrence indicates a systemic issue that may require immediate attention.\"\n  },\n  {\n    \"claim\": \"Risk management obligations under EU MDR Article 10(2)\",\n    \"cited_artifact_id\": \"mdr-art10-2-risk-management-obligation\",\n    \"support_status\": \"supported\"\n  ,\n    \"support_note\": \"The manufacturer must have a risk management system in place, which has not been fully implemented as evidenced by the uncovered regression.\"\n  },\n  {\n    \"claim\": \"Post-market surveillance obligations under EU MDR Article 83(1)-(2)\",\n    \"cited_artifact_id\": \"mdr-art83-pms-system\",\n    \"support_status\": \"supported\"\n  ,\n    \"support_note\": \"The manufacturer must establish a post-market surveillance system, which has not been fully implemented as evidenced by the uncovered regression.\"\n  }\n  ],\n  \"requires_human_review\": true\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "scenario_id": "SYN-IND-0026"
+  },
+  "replicate": 1,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-art83-pms-system",
+        "claim": "Recurrence of safety-critical function failure across deployed population",
+        "support_note": "The recurrence indicates a systemic issue that may require immediate attention.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art10-2-risk-management-obligation",
+        "claim": "Risk management obligations under EU MDR Article 10(2)",
+        "support_note": "The manufacturer must have a risk management system in place, which has not been fully implemented as evidenced by the uncovered regression.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-art83-pms-system",
+        "claim": "Post-market surveillance obligations under EU MDR Article 83(1)-(2)",
+        "support_note": "The manufacturer must establish a post-market surveillance system, which has not been fully implemented as evidenced by the uncovered regression.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The manufacturer must establish a post-market surveillance system as part of the quality management system, which is required to actively and systematically gather relevant data on device safety."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The manufacturer's quality management system must include processes for setting up, implementing, and maintaining a post-market surveillance system as required by Article 83."
+      },
+      {
+        "artifact_id": "mdr-art10-2-risk-management-obligation",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The manufacturer must establish a risk management system as described in Annex I, Section 3, which includes the necessary steps to address safety concerns."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic CI test log shows a significant drop in VTach sensitivity from 0.97 to 0.89, which was blocked by the automated risk-gate but not caught by existing tests."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The unit test log shows that VTach classifier validation passed at 0.94 sensitivity, indicating a coverage gap in the existing tests."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The device failed to flag a clinically significant ventricular fibrillation episode, and this issue has been confirmed to be recurrent across the deployed population. This event may trigger obligations under EU MDR Article 10(2) for risk management and Article 83(1)-(2) for post-market surveillance.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  },
+  "scenario_id": "SYN-IND-0026",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The manufacturer must establish a post-market surveillance system as part of the quality management system, which is required to actively and systematically gather relevant data on device safety."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The manufacturer's quality management system must include processes for setting up, implementing, and maintaining a post-market surveillance system as required by Article 83."
+      },
+      {
+        "artifact_id": "mdr-art10-2-risk-management-obligation",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The manufacturer must establish a risk management system as described in Annex I, Section 3, which includes the necessary steps to address safety concerns."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic CI test log shows a significant drop in VTach sensitivity from 0.97 to 0.89, which was blocked by the automated risk-gate but not caught by existing tests."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The unit test log shows that VTach classifier validation passed at 0.94 sensitivity, indicating a coverage gap in the existing tests."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": false,
+    "evidence_gaps": [],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "Recurrence of safety-critical function failure across deployed population",
+          "support_note": "The recurrence indicates a systemic issue that may require immediate attention.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art10-2-risk-management-obligation",
+          "claim": "Risk management obligations under EU MDR Article 10(2)",
+          "support_note": "The manufacturer must have a risk management system in place, which has not been fully implemented as evidenced by the uncovered regression.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-art83-pms-system",
+          "claim": "Post-market surveillance obligations under EU MDR Article 83(1)-(2)",
+          "support_note": "The manufacturer must establish a post-market surveillance system, which has not been fully implemented as evidenced by the uncovered regression.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The manufacturer must establish a post-market surveillance system as part of the quality management system, which is required to actively and systematically gather relevant data on device safety."
+        },
+        {
+          "artifact_id": "mdr-art10-9-qms-elements",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The manufacturer's quality management system must include processes for setting up, implementing, and maintaining a post-market surveillance system as required by Article 83."
+        },
+        {
+          "artifact_id": "mdr-art10-2-risk-management-obligation",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The manufacturer must establish a risk management system as described in Annex I, Section 3, which includes the necessary steps to address safety concerns."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The synthetic CI test log shows a significant drop in VTach sensitivity from 0.97 to 0.89, which was blocked by the automated risk-gate but not caught by existing tests."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0042",
+          "artifact_type": "test_log",
+          "relevance_note": "The unit test log shows that VTach classifier validation passed at 0.94 sensitivity, indicating a coverage gap in the existing tests."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The device failed to flag a clinically significant ventricular fibrillation episode, and this issue has been confirmed to be recurrent across the deployed population. This event may trigger obligations under EU MDR Article 10(2) for risk management and Article 83(1)-(2) for post-market surveillance.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "final_report_sha256": "7d8799fb1cb791a3ec21d8f33a6916a3a7079722bac67d364dc8469fd0e89c88",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [],
+    "recommendation": "CAPA_INVESTIGATE",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0026",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0026_r1",
+    "scenario_id": "SYN-IND-0026",
+    "schema_version": "2.1.0",
+    "severity": 3,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "advisory_complete",
+    "timestamp_utc": "2026-08-03T09:05:16.840193Z",
+    "total_steps": 3,
+    "trace_id": "791298db-3213-4c17-beff-aa14b19d138d"
+  },
+  "trace_path": "traces/SYN-IND-0026_r1.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {}
+}

@@ -1,0 +1,217 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0014",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic device validation lab reported a minor, non-recurrent ventricular fibrillation-adjacent irregularity with no adverse patient outcome recorded. The only artifact on file describing this case is a static-analysis report about an unrelated firmware module, which does not actually document the ventricular fibrillation-adjacent event. The case is being handled at a monitoring/investigation level, not as a confirmed life-threatening event.",
+  "model_token_counts": {
+    "completion": 538,
+    "prompt": 1840
+  },
+  "raw_content": "{\n    \"severity\": 2,\n    \"confidence\": 0.75,\n    \"recommendation\": \"CAPA_INVESTIGATE\",\n    \"rationale\": \"The incident report (ID: ARTIFACT-INCIDENT-2033A and ID: ARTIFACT-INCIDENT-2037A) confirms the occurrence of a life-threatening complete atrioventricular block event, which is a serious potential patient-safety risk. Although no adverse patient outcome was recorded, this incident highlights a failure in ensuring the integrity and accuracy of labeling and packaging for the device. The static analysis reports (ID: ARTIFACT-STATICANALYSIS-2014A and ID: ARTIFACT-STATICANALYSIS-2018A) do not provide information about the specific event, but they indicate that there are issues with related firmware modules. This suggests a potential issue in the software development lifecycle or cybersecurity measures, which may have contributed to the incident. The regulatory context (ID: mdr-art83-pms-system, ID: mdr-annexI-sec17.2-software-lifecycle, and ID: mdr-annexI-sec17.4-it-security) supports that manufacturers must ensure integrity of labeling and packaging to prevent serious harm. The incident is not yet at a patient level exposure but requires investigation into the potential root causes.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2033A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"Confirms the occurrence of a life-threatening complete atrioventricular block event.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-INCIDENT-2037A\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"Confirms the occurrence of a life-threatening complete atrioventricular block event.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-STATICANALYSIS-2014A\",\n            \"artifact_type\": \"static_analysis_output\",\n            \"relevance_note\": \"Does not provide information about the specific event, but indicates issues with related firmware modules.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-STATICANALYSIS-2018A\",\n            \"artifact_type\": \"static_analysis_output\",\n            \"relevance_note\": \"Does not provide information about the specific event, but indicates issues with related firmware modules.\"\n        }\n    ],\n    \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-INCIDENT-2033A",
+    "ARTIFACT-INCIDENT-2037A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.45-labeling",
+    "mdr-art83-pms-system",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event."
+      },
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Does not provide information about the specific event, but indicates issues with related firmware modules."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Does not provide information about the specific event, but indicates issues with related firmware modules."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident report (ID: ARTIFACT-INCIDENT-2033A and ID: ARTIFACT-INCIDENT-2037A) confirms the occurrence of a life-threatening complete atrioventricular block event, which is a serious potential patient-safety risk. Although no adverse patient outcome was recorded, this incident highlights a failure in ensuring the integrity and accuracy of labeling and packaging for the device. The static analysis reports (ID: ARTIFACT-STATICANALYSIS-2014A and ID: ARTIFACT-STATICANALYSIS-2018A) do not provide information about the specific event, but they indicate that there are issues with related firmware modules. This suggests a potential issue in the software development lifecycle or cybersecurity measures, which may have contributed to the incident. The regulatory context (ID: mdr-art83-pms-system, ID: mdr-annexI-sec17.2-software-lifecycle, and ID: mdr-annexI-sec17.4-it-security) supports that manufacturers must ensure integrity of labeling and packaging to prevent serious harm. The incident is not yet at a patient level exposure but requires investigation into the potential root causes.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.3333,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "The incident report (ID: ARTIFACT-INCIDENT-2033A and ID: ARTIFACT-INCIDENT-2037A) confirms the occurrence of a life-threatening complete atrioventricular block event, which is a serious potential patient-safety risk.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "Although no adverse patient outcome was recorded, this incident highlights a failure in ensuring the integrity and accuracy of labeling and packaging for the device.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "The static analysis reports (ID: ARTIFACT-STATICANALYSIS-2014A and ID: ARTIFACT-STATICANALYSIS-2018A) do not provide information about the specific event, but they indicate that there are issues with related firmware modules.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "This suggests a potential issue in the software development lifecycle or cybersecurity measures, which may have contributed to the incident.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "The regulatory context (ID: mdr-art83-pms-system, ID: mdr-annexI-sec17.2-software-lifecycle, and ID: mdr-annexI-sec17.4-it-security) supports that manufacturers must ensure integrity of labeling and packaging to prevent serious harm.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "claim": "The incident is not yet at a patient level exposure but requires investigation into the potential root causes.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2033A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event."
+        },
+        {
+          "artifact_id": "ARTIFACT-INCIDENT-2037A",
+          "artifact_type": "incident_report",
+          "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event."
+        },
+        {
+          "artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+          "artifact_type": "static_analysis_output",
+          "relevance_note": "Does not provide information about the specific event, but indicates issues with related firmware modules."
+        },
+        {
+          "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+          "artifact_type": "static_analysis_output",
+          "relevance_note": "Does not provide information about the specific event, but indicates issues with related firmware modules."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The incident report (ID: ARTIFACT-INCIDENT-2033A and ID: ARTIFACT-INCIDENT-2037A) confirms the occurrence of a life-threatening complete atrioventricular block event, which is a serious potential patient-safety risk. Although no adverse patient outcome was recorded, this incident highlights a failure in ensuring the integrity and accuracy of labeling and packaging for the device. The static analysis reports (ID: ARTIFACT-STATICANALYSIS-2014A and ID: ARTIFACT-STATICANALYSIS-2018A) do not provide information about the specific event, but they indicate that there are issues with related firmware modules. This suggests a potential issue in the software development lifecycle or cybersecurity measures, which may have contributed to the incident. The regulatory context (ID: mdr-art83-pms-system, ID: mdr-annexI-sec17.2-software-lifecycle, and ID: mdr-annexI-sec17.4-it-security) supports that manufacturers must ensure integrity of labeling and packaging to prevent serious harm. The incident is not yet at a patient level exposure but requires investigation into the potential root causes.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": [
+      "Although no adverse patient outcome was recorded, this incident highlights a failure in ensuring the integrity and accuracy of labeling and packaging for the device.",
+      "This suggests a potential issue in the software development lifecycle or cybersecurity measures, which may have contributed to the incident.",
+      "The regulatory context (ID: mdr-art83-pms-system, ID: mdr-annexI-sec17.2-software-lifecycle, and ID: mdr-annexI-sec17.4-it-security) supports that manufacturers must ensure integrity of labeling and packaging to prevent serious harm.",
+      "The incident is not yet at a patient level exposure but requires investigation into the potential root causes."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "The incident report (ID: ARTIFACT-INCIDENT-2033A and ID: ARTIFACT-INCIDENT-2037A) confirms the occurrence of a life-threatening complete atrioventricular block event, which is a serious potential patient-safety risk.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "Although no adverse patient outcome was recorded, this incident highlights a failure in ensuring the integrity and accuracy of labeling and packaging for the device.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "The static analysis reports (ID: ARTIFACT-STATICANALYSIS-2014A and ID: ARTIFACT-STATICANALYSIS-2018A) do not provide information about the specific event, but they indicate that there are issues with related firmware modules.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "This suggests a potential issue in the software development lifecycle or cybersecurity measures, which may have contributed to the incident.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "The regulatory context (ID: mdr-art83-pms-system, ID: mdr-annexI-sec17.2-software-lifecycle, and ID: mdr-annexI-sec17.4-it-security) supports that manufacturers must ensure integrity of labeling and packaging to prevent serious harm.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "claim": "The incident is not yet at a patient level exposure but requires investigation into the potential root causes.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2033A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event."
+      },
+      {
+        "artifact_id": "ARTIFACT-INCIDENT-2037A",
+        "artifact_type": "incident_report",
+        "relevance_note": "Confirms the occurrence of a life-threatening complete atrioventricular block event."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2014A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Does not provide information about the specific event, but indicates issues with related firmware modules."
+      },
+      {
+        "artifact_id": "ARTIFACT-STATICANALYSIS-2018A",
+        "artifact_type": "static_analysis_output",
+        "relevance_note": "Does not provide information about the specific event, but indicates issues with related firmware modules."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The incident report (ID: ARTIFACT-INCIDENT-2033A and ID: ARTIFACT-INCIDENT-2037A) confirms the occurrence of a life-threatening complete atrioventricular block event, which is a serious potential patient-safety risk. Although no adverse patient outcome was recorded, this incident highlights a failure in ensuring the integrity and accuracy of labeling and packaging for the device. The static analysis reports (ID: ARTIFACT-STATICANALYSIS-2014A and ID: ARTIFACT-STATICANALYSIS-2018A) do not provide information about the specific event, but they indicate that there are issues with related firmware modules. This suggests a potential issue in the software development lifecycle or cybersecurity measures, which may have contributed to the incident. The regulatory context (ID: mdr-art83-pms-system, ID: mdr-annexI-sec17.2-software-lifecycle, and ID: mdr-annexI-sec17.4-it-security) supports that manufacturers must ensure integrity of labeling and packaging to prevent serious harm. The incident is not yet at a patient level exposure but requires investigation into the potential root causes.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  }
+}

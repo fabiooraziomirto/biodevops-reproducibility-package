@@ -1,0 +1,3828 @@
+{
+  "gemma3_12b": {
+    "cases": [
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0001",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0003",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0005",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0007",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0009",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0011",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 1 is below derived clinical floor 2. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0013",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0015",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 1 is below derived clinical floor 2. For "
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0017",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 1 is below derived clinical floor 2. For "
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0019",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 1 is below derived clinical floor 2. For "
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0021",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0023",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0025",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0027",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0029",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0031",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0033",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0035",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0037",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0039",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0002",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0004",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0006",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0008",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0010",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0012",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 1 is below derived clinical floor 2. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0014",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0016",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 1 is below derived clinical floor 2. For "
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0018",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 1 is below derived clinical floor 2. For "
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0020",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 1 is below derived clinical floor 2. For "
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0022",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0024",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0026",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0028",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0030",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0032",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0034",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0036",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0038",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0040",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      }
+    ],
+    "development": {
+      "genuine_incremental_shacl_value": "7/20=0.350",
+      "n": 20,
+      "neither": 3,
+      "opa_only": 7,
+      "overlap": 3,
+      "overlap_genuinely_independent": 0,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 3,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "17/20=0.850",
+      "shacl_only": 7,
+      "structurally_redundant_share_of_union": "3/17=0.176",
+      "union_yield_ci95": [
+        0.64,
+        0.948
+      ]
+    },
+    "held_out": {
+      "genuine_incremental_shacl_value": "7/20=0.350",
+      "n": 20,
+      "neither": 3,
+      "opa_only": 4,
+      "overlap": 6,
+      "overlap_genuinely_independent": 0,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 6,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "17/20=0.850",
+      "shacl_only": 7,
+      "structurally_redundant_share_of_union": "6/17=0.353",
+      "union_yield_ci95": [
+        0.64,
+        0.948
+      ]
+    },
+    "pooled": {
+      "genuine_incremental_shacl_value": "14/40=0.350",
+      "n": 40,
+      "neither": 6,
+      "opa_only": 11,
+      "overlap": 9,
+      "overlap_genuinely_independent": 0,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 9,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "34/40=0.850",
+      "shacl_only": 14,
+      "structurally_redundant_share_of_union": "9/34=0.265",
+      "union_yield_ci95": [
+        0.709,
+        0.929
+      ]
+    },
+    "status": "OK"
+  },
+  "gemma3_1b": {
+    "cases": [
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0001",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0003",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0005",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0007",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0009",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0011",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0013",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0015",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0017",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0019",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0021",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0023",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0025",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0027",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0029",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0031",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0033",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 3 is below derived clinical floor 4. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0035",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0037",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0039",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0002",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0004",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0006",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0008",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0010",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0012",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0014",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0016",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0018",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0020",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0022",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0024",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0026",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0028",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0030",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0032",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0034",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0036",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0038",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0040",
+        "shacl_shapes": []
+      }
+    ],
+    "development": {
+      "genuine_incremental_shacl_value": "0/20=0.000",
+      "n": 20,
+      "neither": 5,
+      "opa_only": 2,
+      "overlap": 13,
+      "overlap_genuinely_independent": 0,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 13,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "15/20=0.750",
+      "shacl_only": 0,
+      "structurally_redundant_share_of_union": "13/15=0.867",
+      "union_yield_ci95": [
+        0.531,
+        0.888
+      ]
+    },
+    "held_out": {
+      "genuine_incremental_shacl_value": "0/20=0.000",
+      "n": 20,
+      "neither": 3,
+      "opa_only": 3,
+      "overlap": 14,
+      "overlap_genuinely_independent": 0,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 14,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "17/20=0.850",
+      "shacl_only": 0,
+      "structurally_redundant_share_of_union": "14/17=0.824",
+      "union_yield_ci95": [
+        0.64,
+        0.948
+      ]
+    },
+    "pooled": {
+      "genuine_incremental_shacl_value": "0/40=0.000",
+      "n": 40,
+      "neither": 8,
+      "opa_only": 5,
+      "overlap": 27,
+      "overlap_genuinely_independent": 0,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 27,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "32/40=0.800",
+      "shacl_only": 0,
+      "structurally_redundant_share_of_union": "27/32=0.844",
+      "union_yield_ci95": [
+        0.652,
+        0.895
+      ]
+    },
+    "status": "OK"
+  },
+  "gemma3_27b": {
+    "cases": [
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0001",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0003",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0005",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0007",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0009",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0011",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0013",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0015",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0017",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0019",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0021",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0023",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0025",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0027",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0029",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0031",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0033",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0035",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0037",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0039",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0002",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0004",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0006",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0008",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0010",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0012",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0014",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0016",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0018",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0020",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0022",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0024",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0026",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0028",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0030",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0032",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0034",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0036",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0038",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0040",
+        "shacl_shapes": []
+      }
+    ],
+    "development": {
+      "genuine_incremental_shacl_value": "3/20=0.150",
+      "n": 20,
+      "neither": 0,
+      "opa_only": 1,
+      "overlap": 16,
+      "overlap_genuinely_independent": 0,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 16,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "20/20=1.000",
+      "shacl_only": 3,
+      "structurally_redundant_share_of_union": "16/20=0.800",
+      "union_yield_ci95": [
+        0.839,
+        1.0
+      ]
+    },
+    "held_out": {
+      "genuine_incremental_shacl_value": "0/20=0.000",
+      "n": 20,
+      "neither": 0,
+      "opa_only": 1,
+      "overlap": 19,
+      "overlap_genuinely_independent": 0,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 19,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "20/20=1.000",
+      "shacl_only": 0,
+      "structurally_redundant_share_of_union": "19/20=0.950",
+      "union_yield_ci95": [
+        0.839,
+        1.0
+      ]
+    },
+    "pooled": {
+      "genuine_incremental_shacl_value": "3/40=0.075",
+      "n": 40,
+      "neither": 0,
+      "opa_only": 2,
+      "overlap": 35,
+      "overlap_genuinely_independent": 0,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 35,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "40/40=1.000",
+      "shacl_only": 3,
+      "structurally_redundant_share_of_union": "35/40=0.875",
+      "union_yield_ci95": [
+        0.912,
+        1.0
+      ]
+    },
+    "status": "OK"
+  },
+  "gemma3_4b": {
+    "cases": [
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0001",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0003",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0005",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0007",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0009",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0011",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0013",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0015",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0017",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0019",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0021",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0023",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "unclassified",
+        "report_id": "SYN-IND-0025",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0027",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0029",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0031",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0033",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 3 is below derived clinical floor 4. For "
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0035",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 3 is below derived clinical floor 4. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "genuinely_independent",
+        "report_id": "SYN-IND-0037",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 3 is below derived clinical floor 4. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0039",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0002",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0004",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0006",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0008",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0010",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0012",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0014",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0016",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0018",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0020",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0022",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0024",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0026",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0028",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "genuinely_independent",
+        "report_id": "SYN-IND-0030",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0032",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0034",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0036",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 3 is below derived clinical floor 4. For "
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0038",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0040",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 3 is below derived clinical floor 4. For "
+        ]
+      }
+    ],
+    "development": {
+      "genuine_incremental_shacl_value": "8/20=0.400",
+      "n": 20,
+      "neither": 6,
+      "opa_only": 3,
+      "overlap": 4,
+      "overlap_genuinely_independent": 1,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 2,
+      "overlap_unclassified": 1,
+      "raw_union_yield": "14/20=0.700",
+      "shacl_only": 7,
+      "structurally_redundant_share_of_union": "2/14=0.143",
+      "union_yield_ci95": [
+        0.481,
+        0.855
+      ]
+    },
+    "held_out": {
+      "genuine_incremental_shacl_value": "6/20=0.300",
+      "n": 20,
+      "neither": 6,
+      "opa_only": 7,
+      "overlap": 2,
+      "overlap_genuinely_independent": 1,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 1,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "14/20=0.700",
+      "shacl_only": 5,
+      "structurally_redundant_share_of_union": "1/14=0.071",
+      "union_yield_ci95": [
+        0.481,
+        0.855
+      ]
+    },
+    "pooled": {
+      "genuine_incremental_shacl_value": "14/40=0.350",
+      "n": 40,
+      "neither": 12,
+      "opa_only": 10,
+      "overlap": 6,
+      "overlap_genuinely_independent": 2,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 3,
+      "overlap_unclassified": 1,
+      "raw_union_yield": "28/40=0.700",
+      "shacl_only": 12,
+      "structurally_redundant_share_of_union": "3/28=0.107",
+      "union_yield_ci95": [
+        0.546,
+        0.819
+      ]
+    },
+    "status": "OK"
+  },
+  "qwen3.5_0.8b": {
+    "status": "FAILED_OR_MISSING"
+  },
+  "qwen3.5_27b": {
+    "cases": [
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0001",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0003",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0005",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0007",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0009",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0011",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0013",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0015",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0017",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0019",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0021",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0023",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "unclassified",
+        "report_id": "SYN-IND-0025",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0027",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0029",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0031",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0033",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0035",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0037",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0039",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0002",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0004",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0006",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0008",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0010",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0012",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0014",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0016",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0018",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0020",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0022",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0024",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0026",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0028",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0030",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0032",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0034",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0036",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0038",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0040",
+        "shacl_shapes": []
+      }
+    ],
+    "development": {
+      "genuine_incremental_shacl_value": "0/20=0.000",
+      "n": 20,
+      "neither": 16,
+      "opa_only": 3,
+      "overlap": 1,
+      "overlap_genuinely_independent": 0,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 0,
+      "overlap_unclassified": 1,
+      "raw_union_yield": "4/20=0.200",
+      "shacl_only": 0,
+      "structurally_redundant_share_of_union": "0/4=0.000",
+      "union_yield_ci95": [
+        0.081,
+        0.416
+      ]
+    },
+    "held_out": {
+      "genuine_incremental_shacl_value": "0/20=0.000",
+      "n": 20,
+      "neither": 19,
+      "opa_only": 1,
+      "overlap": 0,
+      "overlap_genuinely_independent": 0,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 0,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "1/20=0.050",
+      "shacl_only": 0,
+      "structurally_redundant_share_of_union": "0/1=0.000",
+      "union_yield_ci95": [
+        0.009,
+        0.236
+      ]
+    },
+    "pooled": {
+      "genuine_incremental_shacl_value": "0/40=0.000",
+      "n": 40,
+      "neither": 35,
+      "opa_only": 4,
+      "overlap": 1,
+      "overlap_genuinely_independent": 0,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 0,
+      "overlap_unclassified": 1,
+      "raw_union_yield": "5/40=0.125",
+      "shacl_only": 0,
+      "structurally_redundant_share_of_union": "0/5=0.000",
+      "union_yield_ci95": [
+        0.055,
+        0.261
+      ]
+    },
+    "status": "OK"
+  },
+  "qwen3.5_2b": {
+    "cases": [
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0001",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0003",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0005",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0007",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0009",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0011",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0013",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0015",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0017",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0019",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0021",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0023",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0025",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0027",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "genuinely_independent",
+        "report_id": "SYN-IND-0029",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0031",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 4. For "
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0033",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 4. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0035",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 4. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "genuinely_independent",
+        "report_id": "SYN-IND-0037",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 4. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "genuinely_independent",
+        "report_id": "SYN-IND-0039",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 4. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0002",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0004",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0006",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0008",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0010",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0012",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0014",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0016",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0018",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0020",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0022",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "genuinely_independent",
+        "report_id": "SYN-IND-0024",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "genuinely_independent",
+        "report_id": "SYN-IND-0026",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0028",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0030",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0032",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 4. For "
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0034",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "genuinely_independent",
+        "report_id": "SYN-IND-0036",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 4. For "
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0038",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "genuinely_independent",
+        "report_id": "SYN-IND-0040",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 4. For "
+        ]
+      }
+    ],
+    "development": {
+      "genuine_incremental_shacl_value": "7/20=0.350",
+      "n": 20,
+      "neither": 3,
+      "opa_only": 1,
+      "overlap": 12,
+      "overlap_genuinely_independent": 3,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 9,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "17/20=0.850",
+      "shacl_only": 4,
+      "structurally_redundant_share_of_union": "9/17=0.529",
+      "union_yield_ci95": [
+        0.64,
+        0.948
+      ]
+    },
+    "held_out": {
+      "genuine_incremental_shacl_value": "5/20=0.250",
+      "n": 20,
+      "neither": 8,
+      "opa_only": 1,
+      "overlap": 10,
+      "overlap_genuinely_independent": 4,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 6,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "12/20=0.600",
+      "shacl_only": 1,
+      "structurally_redundant_share_of_union": "6/12=0.500",
+      "union_yield_ci95": [
+        0.387,
+        0.781
+      ]
+    },
+    "pooled": {
+      "genuine_incremental_shacl_value": "12/40=0.300",
+      "n": 40,
+      "neither": 11,
+      "opa_only": 2,
+      "overlap": 22,
+      "overlap_genuinely_independent": 7,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 15,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "29/40=0.725",
+      "shacl_only": 5,
+      "structurally_redundant_share_of_union": "15/29=0.517",
+      "union_yield_ci95": [
+        0.572,
+        0.839
+      ]
+    },
+    "status": "OK"
+  },
+  "qwen3.5_4b": {
+    "cases": [
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0001",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0003",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0005",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0007",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0009",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0011",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0013",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0015",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0017",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0019",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0021",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0023",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0025",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0027",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0029",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0031",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0033",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 4. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0035",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0037",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 4. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0039",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0002",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0004",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0006",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0008",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0010",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0012",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0014",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0016",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0018",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0020",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0022",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0024",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0026",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0028",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0030",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0032",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0034",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0036",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0038",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0040",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      }
+    ],
+    "development": {
+      "genuine_incremental_shacl_value": "3/20=0.150",
+      "n": 20,
+      "neither": 0,
+      "opa_only": 0,
+      "overlap": 17,
+      "overlap_genuinely_independent": 0,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 17,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "20/20=1.000",
+      "shacl_only": 3,
+      "structurally_redundant_share_of_union": "17/20=0.850",
+      "union_yield_ci95": [
+        0.839,
+        1.0
+      ]
+    },
+    "held_out": {
+      "genuine_incremental_shacl_value": "0/20=0.000",
+      "n": 20,
+      "neither": 0,
+      "opa_only": 0,
+      "overlap": 20,
+      "overlap_genuinely_independent": 0,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 20,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "20/20=1.000",
+      "shacl_only": 0,
+      "structurally_redundant_share_of_union": "20/20=1.000",
+      "union_yield_ci95": [
+        0.839,
+        1.0
+      ]
+    },
+    "pooled": {
+      "genuine_incremental_shacl_value": "3/40=0.075",
+      "n": 40,
+      "neither": 0,
+      "opa_only": 0,
+      "overlap": 37,
+      "overlap_genuinely_independent": 0,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 37,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "40/40=1.000",
+      "shacl_only": 3,
+      "structurally_redundant_share_of_union": "37/40=0.925",
+      "union_yield_ci95": [
+        0.912,
+        1.0
+      ]
+    },
+    "status": "OK"
+  },
+  "qwen3.5_9b": {
+    "cases": [
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0001",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0003",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0005",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0007",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "shacl_only",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0009",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0011",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0013",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0015",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0017",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0019",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0021",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0023",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0025",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "genuinely_independent",
+        "report_id": "SYN-IND-0027",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0029",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0031",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0033",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0035",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0037",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0039",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0002",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0004",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0006",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0008",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0010",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0012",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0014",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0016",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0018",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0020",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0022",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0024",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0026",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:risk_report_contains_unresolved_or_trap_citation"
+        ],
+        "overlap_class": "genuinely_independent",
+        "report_id": "SYN-IND-0028",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0030",
+        "shacl_shapes": [
+          "concept_severity_undercall",
+          "evidence_shared_field",
+          "shacl_other:Predicted severity 2 is below derived clinical floor 3. For "
+        ]
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0032",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      },
+      {
+        "bucket": "neither",
+        "opa_actions": [],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0034",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0036",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "opa_only",
+        "opa_actions": [
+          "fsca_without_confirmatory_evidence_downgraded",
+          "severity4_or_death_forced_immediate_human_escalation"
+        ],
+        "overlap_class": "",
+        "report_id": "SYN-IND-0038",
+        "shacl_shapes": []
+      },
+      {
+        "bucket": "overlap",
+        "opa_actions": [
+          "deny:technical_incident_missing_technical_evidence",
+          "severity4_or_death_forced_immediate_human_escalation",
+          "technical_incident_missing_technical_evidence"
+        ],
+        "overlap_class": "structurally_redundant",
+        "report_id": "SYN-IND-0040",
+        "shacl_shapes": [
+          "evidence_shared_field"
+        ]
+      }
+    ],
+    "development": {
+      "genuine_incremental_shacl_value": "4/20=0.200",
+      "n": 20,
+      "neither": 3,
+      "opa_only": 5,
+      "overlap": 9,
+      "overlap_genuinely_independent": 1,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 8,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "17/20=0.850",
+      "shacl_only": 3,
+      "structurally_redundant_share_of_union": "8/17=0.471",
+      "union_yield_ci95": [
+        0.64,
+        0.948
+      ]
+    },
+    "held_out": {
+      "genuine_incremental_shacl_value": "1/20=0.050",
+      "n": 20,
+      "neither": 5,
+      "opa_only": 2,
+      "overlap": 13,
+      "overlap_genuinely_independent": 1,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 12,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "15/20=0.750",
+      "shacl_only": 0,
+      "structurally_redundant_share_of_union": "12/15=0.800",
+      "union_yield_ci95": [
+        0.531,
+        0.888
+      ]
+    },
+    "pooled": {
+      "genuine_incremental_shacl_value": "5/40=0.125",
+      "n": 40,
+      "neither": 8,
+      "opa_only": 7,
+      "overlap": 22,
+      "overlap_genuinely_independent": 2,
+      "overlap_mixed": 0,
+      "overlap_structurally_redundant": 20,
+      "overlap_unclassified": 0,
+      "raw_union_yield": "32/40=0.800",
+      "shacl_only": 3,
+      "structurally_redundant_share_of_union": "20/32=0.625",
+      "union_yield_ci95": [
+        0.652,
+        0.895
+      ]
+    },
+    "status": "OK"
+  }
+}

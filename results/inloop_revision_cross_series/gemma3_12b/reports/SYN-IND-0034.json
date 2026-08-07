@@ -1,0 +1,213 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0034",
+    "clinical_inconsistency_class": "none",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic remote monitoring center reported that the patient suffered a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode, confirmed by hospital emergency response records. The only artifact filed against this report is an unrelated code-review diff that predates this device version and does not describe the event.",
+  "model_token_counts": {
+    "completion": 753,
+    "prompt": 1999
+  },
+  "raw_content": "{\n  \"severity\": 4,\n  \"confidence\": 0.65,\n  \"recommendation\": \"FIELD_SAFETY_CORRECTIVE_ACTION\",\n  \"rationale\": \"A patient suffered a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode. This represents realized serious harm and potential broad deployed-population exposure to a serious risk, triggering obligations under EU MDR Annex I, Chapter II, Section 17.1 regarding electronic programmable systems ensuring repeatability, reliability, and performance in line with intended use, and Section 17.2 concerning the software development lifecycle and cybersecurity. The incident also requires review under 21 CFR \u00a7 820.10(c) due to the device being automated with computer software. While a code-review diff predating the device version is present, it's unrelated and doesn\u2019t describe the event; therefore, further investigation is needed to determine the root cause of the missed detection. The presence of confidence score logs (ARTIFACT-TESTLOG-2025A, ARTIFACT-TESTLOG-2029A) suggests a potential systemic issue with device performance that warrants immediate field safety action.\",\n  \"claim_support\": [\n    {\n      \"claim\": \"Realized serious harm to a patient occurred.\",\n      \"cited_artifact_id\": \"SYNTHETIC NARRATIVE\",\"support_status\": \"supported\",\"support_note\":\"The narrative explicitly states the patient suffered an embolic stroke.\"\n    },\n    {\n      \"claim\": \"Potential broad deployed-population exposure to a serious risk exists.\",\n      \"cited_artifact_id\": \"SYNTHETIC NARRATIVE\", \"support_status\": \"supported\",\"support_note\":\"The incident involved rapid ventricular response atrial fibrillation, suggesting the potential for similar events in other patients using the device.\"\n    },\n    {\n      \"claim\": \"EU MDR Annex I, Chapter II, Section 17.1 obligations are triggered.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.1-electronic-programmable\", \"support_status\":\"supported\",\"support_note\":\"The incident involves an electronic programmable system failing to perform as intended.\"\n    },\n    {\n      \"claim\": \"EU MDR Annex I, Chapter II, Section 17.2 obligations are triggered.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.2-software-lifecycle\", \"support_status\":\"supported\",\"support_note\":\"The incident involves software that is a device in itself and requires adherence to lifecycle principles, risk management, and cybersecurity.\"\n    },\n    {\n      \"claim\": \"21 CFR \u00a7 820.10(c) requirements are triggered.\",\n      \"cited_artifact_id\": \"qmsr-820.10-c-design-development\", \"support_status\":\"supported\",\"support_note\":\"The device is automated with computer software, necessitating compliance with design and development controls.\"\n    },\n    {\n      \"claim\": \"A systemic issue with device performance may exist.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2025A\", \"support_status\":\"weakly_supported\",\"support_note\":\"The existence of confidence score logs suggests a potential pattern or trend in missed detections.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2025A",
+    "ARTIFACT-TESTLOG-2029A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.10-c-design-development",
+    "mdr-annexI-sec17.1-electronic-programmable",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: fsca_without_confirmatory_evidence_downgraded; severity4_or_death_forced_immediate_human_escalation; technical_incident_missing_technical_evidence; deny:technical_incident_missing_technical_evidence; clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: At least one retrieved technical artifact supporting the incident judgment.; Causal link between the artifact/change and the observed event.; Evidence of recurrence or confirmed deployed-population impact.; Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (shacl) RiskReport must link at least one evidence id.",
+  "risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "Realized serious harm to a patient occurred.",
+        "support_note": "The narrative explicitly states the patient suffered an embolic stroke.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "Potential broad deployed-population exposure to a serious risk exists.",
+        "support_note": "The incident involved rapid ventricular response atrial fibrillation, suggesting the potential for similar events in other patients using the device.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "claim": "EU MDR Annex I, Chapter II, Section 17.1 obligations are triggered.",
+        "support_note": "The incident involves an electronic programmable system failing to perform as intended.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "claim": "EU MDR Annex I, Chapter II, Section 17.2 obligations are triggered.",
+        "support_note": "The incident involves software that is a device in itself and requires adherence to lifecycle principles, risk management, and cybersecurity.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "21 CFR \u00a7 820.10(c) requirements are triggered.",
+        "support_note": "The device is automated with computer software, necessitating compliance with design and development controls.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "A systemic issue with device performance may exist.",
+        "support_note": "The existence of confidence score logs suggests a potential pattern or trend in missed detections.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.65,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "A patient suffered a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode. This represents realized serious harm and potential broad deployed-population exposure to a serious risk, triggering obligations under EU MDR Annex I, Chapter II, Section 17.1 regarding electronic programmable systems ensuring repeatability, reliability, and performance in line with intended use, and Section 17.2 concerning the software development lifecycle and cybersecurity. The incident also requires review under 21 CFR \u00a7 820.10(c) due to the device being automated with computer software. While a code-review diff predating the device version is present, it's unrelated and doesn\u2019t describe the event; therefore, further investigation is needed to determine the root cause of the missed detection. The presence of confidence score logs (ARTIFACT-TESTLOG-2025A, ARTIFACT-TESTLOG-2029A) suggests a potential systemic issue with device performance that warrants immediate field safety action.",
+    "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "requires_human_review": true,
+    "severity": 4
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.5,
+    "hallucinated_citations": [],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "fsca_without_confirmatory_evidence_downgraded",
+      "severity4_or_death_forced_immediate_human_escalation",
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence",
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "Realized serious harm to a patient occurred.",
+      "Potential broad deployed-population exposure to a serious risk exists."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "SYNTHETIC NARRATIVE",
+          "claim": "Realized serious harm to a patient occurred.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "SYNTHETIC NARRATIVE",
+          "claim": "Potential broad deployed-population exposure to a serious risk exists.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+          "claim": "EU MDR Annex I, Chapter II, Section 17.1 obligations are triggered.",
+          "support_note": "The incident involves an electronic programmable system failing to perform as intended.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+          "claim": "EU MDR Annex I, Chapter II, Section 17.2 obligations are triggered.",
+          "support_note": "The incident involves software that is a device in itself and requires adherence to lifecycle principles, risk management, and cybersecurity.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-c-design-development",
+          "claim": "21 CFR \u00a7 820.10(c) requirements are triggered.",
+          "support_note": "The device is automated with computer software, necessitating compliance with design and development controls.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+          "claim": "A systemic issue with device performance may exist.",
+          "support_note": "The existence of confidence score logs suggests a potential pattern or trend in missed detections.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.65,
+      "evidence_links": [],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment.",
+        "Causal link between the artifact/change and the observed event.",
+        "Evidence of recurrence or confirmed deployed-population impact.",
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "A patient suffered a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode. This represents realized serious harm and potential broad deployed-population exposure to a serious risk, triggering obligations under EU MDR Annex I, Chapter II, Section 17.1 regarding electronic programmable systems ensuring repeatability, reliability, and performance in line with intended use, and Section 17.2 concerning the software development lifecycle and cybersecurity. The incident also requires review under 21 CFR \u00a7 820.10(c) due to the device being automated with computer software. While a code-review diff predating the device version is present, it's unrelated and doesn\u2019t describe the event; therefore, further investigation is needed to determine the root cause of the missed detection. The presence of confidence score logs (ARTIFACT-TESTLOG-2025A, ARTIFACT-TESTLOG-2029A) suggests a potential systemic issue with device performance that warrants immediate field safety action.",
+      "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "requires_human_review": true,
+      "severity": 4
+    },
+    "weakly_supported_claims": [
+      "A systemic issue with device performance may exist."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "Realized serious harm to a patient occurred.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "Potential broad deployed-population exposure to a serious risk exists.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "claim": "EU MDR Annex I, Chapter II, Section 17.1 obligations are triggered.",
+        "support_note": "The incident involves an electronic programmable system failing to perform as intended.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "claim": "EU MDR Annex I, Chapter II, Section 17.2 obligations are triggered.",
+        "support_note": "The incident involves software that is a device in itself and requires adherence to lifecycle principles, risk management, and cybersecurity.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "21 CFR \u00a7 820.10(c) requirements are triggered.",
+        "support_note": "The device is automated with computer software, necessitating compliance with design and development controls.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "A systemic issue with device performance may exist.",
+        "support_note": "The existence of confidence score logs suggests a potential pattern or trend in missed detections.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.65,
+    "evidence_links": [],
+    "missing_evidence": [
+      "At least one retrieved technical artifact supporting the incident judgment.",
+      "Causal link between the artifact/change and the observed event.",
+      "Evidence of recurrence or confirmed deployed-population impact.",
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "A patient suffered a confirmed embolic stroke temporally linked to an unflagged rapid-ventricular-response atrial fibrillation episode. This represents realized serious harm and potential broad deployed-population exposure to a serious risk, triggering obligations under EU MDR Annex I, Chapter II, Section 17.1 regarding electronic programmable systems ensuring repeatability, reliability, and performance in line with intended use, and Section 17.2 concerning the software development lifecycle and cybersecurity. The incident also requires review under 21 CFR \u00a7 820.10(c) due to the device being automated with computer software. While a code-review diff predating the device version is present, it's unrelated and doesn\u2019t describe the event; therefore, further investigation is needed to determine the root cause of the missed detection. The presence of confidence score logs (ARTIFACT-TESTLOG-2025A, ARTIFACT-TESTLOG-2029A) suggests a potential systemic issue with device performance that warrants immediate field safety action.",
+    "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+    "requires_human_review": true,
+    "severity": 4
+  }
+}

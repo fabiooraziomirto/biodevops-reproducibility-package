@@ -1,0 +1,89 @@
+{
+  "sources": {
+    "/root/Desktop/BioDevOps/si_scaling_sweep_2026/results/scaling_summary_table.json": "c44c25801743a223236a58fb2c1ad2eb39e25ae6f6a04b089e4870e00eb25634",
+    "/root/Desktop/BioDevOps/si_scaling_sweep_2026/results/redundancy_audit/new_sweep_decomposition.json": "197f1832e338d1464b6ea466aa05b671f07ade96ac118d8d20ea0aafc02fed83"
+  },
+  "rows": [
+    {
+      "model": "qwen3.5_0.8b",
+      "status": "FAILED_OR_MISSING",
+      "severity_exact": null,
+      "severity_within1": null,
+      "raw_union_yield": null,
+      "structural_share_of_overlap": null,
+      "genuine_incremental_shacl_value": null
+    },
+    {
+      "model": "gemma3_1b",
+      "status": "OK",
+      "severity_exact": "13/40=0.325",
+      "severity_within1": "26/40=0.650",
+      "raw_union_yield": "32/40=0.800",
+      "structural_share_of_overlap": "27/32=0.844",
+      "genuine_incremental_shacl_value": "0/40=0.000"
+    },
+    {
+      "model": "qwen3.5_2b",
+      "status": "OK",
+      "severity_exact": "13/40=0.325",
+      "severity_within1": "30/40=0.750",
+      "raw_union_yield": "29/40=0.725",
+      "structural_share_of_overlap": "15/29=0.517",
+      "genuine_incremental_shacl_value": "12/40=0.300"
+    },
+    {
+      "model": "gemma3_4b",
+      "status": "OK",
+      "severity_exact": "19/40=0.475",
+      "severity_within1": "40/40=1.000",
+      "raw_union_yield": "28/40=0.700",
+      "structural_share_of_overlap": "3/28=0.107",
+      "genuine_incremental_shacl_value": "14/40=0.350"
+    },
+    {
+      "model": "qwen3.5_4b",
+      "status": "OK",
+      "severity_exact": "20/40=0.500",
+      "severity_within1": "37/40=0.925",
+      "raw_union_yield": "40/40=1.000",
+      "structural_share_of_overlap": "37/40=0.925",
+      "genuine_incremental_shacl_value": "3/40=0.075"
+    },
+    {
+      "model": "gemma3_12b",
+      "status": "OK",
+      "severity_exact": "20/40=0.500",
+      "severity_within1": "40/40=1.000",
+      "raw_union_yield": "34/40=0.850",
+      "structural_share_of_overlap": "9/34=0.265",
+      "genuine_incremental_shacl_value": "14/40=0.350"
+    },
+    {
+      "model": "qwen3.5_9b",
+      "status": "OK",
+      "severity_exact": "23/40=0.575",
+      "severity_within1": "40/40=1.000",
+      "raw_union_yield": "32/40=0.800",
+      "structural_share_of_overlap": "20/32=0.625",
+      "genuine_incremental_shacl_value": "5/40=0.125"
+    },
+    {
+      "model": "gemma3_27b",
+      "status": "OK",
+      "severity_exact": "30/40=0.750",
+      "severity_within1": "40/40=1.000",
+      "raw_union_yield": "40/40=1.000",
+      "structural_share_of_overlap": "35/40=0.875",
+      "genuine_incremental_shacl_value": "3/40=0.075"
+    },
+    {
+      "model": "qwen3.5_27b",
+      "status": "OK",
+      "severity_exact": "26/40=0.650",
+      "severity_within1": "40/40=1.000",
+      "raw_union_yield": "5/40=0.125",
+      "structural_share_of_overlap": "0/5=0.000",
+      "genuine_incremental_shacl_value": "0/40=0.000"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "purpose": "Frozen development governance-reference labels; not clinical ground truth.",
+  "merged_annotations_sha256": "cfcf82fc4fb224df4e074a093be231991835820d9b71475faa7d3bae0ef98f4f",
+  "adjudication_decisions_sha256": "2ffb96667d6e4b70fe8e0915e2e19d523a77688d30af0cc9f439ef908bfb7e4b",
+  "final_labels_sha256": "848bce1073a02abeb7b4cff6d9a09969e5f467daf861eb8b50c41a5083a11a11",
+  "policy_sha256": "08288bd940cd017ff33ff762e89c8b3d407fc92fc904313ec2f72c75a76d3542",
+  "ontology_sha256": "49e38ef56a818dc9af62952de20cb311e788ba6796f80d0e9a96bc37d8274adf"
+}

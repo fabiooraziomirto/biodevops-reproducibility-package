@@ -1,0 +1,151 @@
+{
+  "arm": "rag",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 14286.527,
+  "model_token_counts": {
+    "completion": 556,
+    "prompt": 2055
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [],
+  "raw_model_output": "{\n    \"severity\": 3,\n    \"confidence\": 0.85,\n    \"recommendation\": \"CAPA_INVESTIGATE\",\n    \"rationale\": \"The device failed to flag a clinically significant ventricular fibrillation episode, and this issue has been confirmed to recur across the deployed population. This event may trigger obligations under EU MDR Article 10(12) for corrective action due to the potential serious risk to patient safety.\",\n    \"evidence_links\": [\n        {\n            \"artifact_id\": \"mdr-art87-reporting-timelines\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"The incident involves a serious public health threat, requiring immediate reporting.\"\n        },\n        {\n            \"artifact_id\": \"mdr-art10-12-corrective-action\",\n            \"artifact_type\": \"regulatory_context\",\n            \"relevance_note\": \"The device presents a potential serious risk that requires immediate corrective action and notification to the competent authorities.\"\n        },\n        {\n            \"artifact_id\": \"ARTIFACT-DIFF-0009\",\n            \"artifact_type\": \"code_diff\",\n            \"relevance_note\": \"A code change in the severity-scoring submodule, which may have impacted the device's ability to detect critical events. This change was made three weeks before the incident.\"\n        },\n        {\n            \"artifact_id\": \"CGM-ARTIFACT-METER-0008\",\n            \"artifact_type\": \"incident_report\",\n            \"relevance_note\": \"A synthetic external meter record confirming severe hypoglycemia, which is related to the device's overall performance but not directly linked to the ventricular fibrillation incident.\"\n        }\n    ],\n    \"claim_support\": [\n        {\n            \"claim\": \"The device failed to flag a clinically significant ventricular fibrillation episode.\",\n            \"cited_artifact_id\": \"mdr-art87-reporting-timelines\",\n            \"support_status\": \"supported\"\n        ,\n            \"support_note\": \"This event may trigger obligations under EU MDR Article 10(12) for corrective action due to the potential serious risk to patient safety.\"\n        },\n        {\n            \"claim\": \"The issue has been confirmed to recur across the deployed population.\",\n            \"cited_artifact_id\": \"ARTIFACT-DIFF-0009\",\n            \"support_status\": \"weakly_supported\"\n        ,\n            \"support_note\": \"A code change in the severity-scoring submodule, which may have impacted the device's ability to detect critical events. This change was made three weeks before the incident.\"\n        }\n    ],\n    \"requires_human_review\": true\n}",
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "scenario_id": "SYN-IND-0026"
+  },
+  "replicate": 2,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-art87-reporting-timelines",
+        "claim": "The device failed to flag a clinically significant ventricular fibrillation episode.",
+        "support_note": "This event may trigger obligations under EU MDR Article 10(12) for corrective action due to the potential serious risk to patient safety.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-DIFF-0009",
+        "claim": "The issue has been confirmed to recur across the deployed population.",
+        "support_note": "A code change in the severity-scoring submodule, which may have impacted the device's ability to detect critical events. This change was made three weeks before the incident.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art87-reporting-timelines",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The incident involves a serious public health threat, requiring immediate reporting."
+      },
+      {
+        "artifact_id": "mdr-art10-12-corrective-action",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The device presents a potential serious risk that requires immediate corrective action and notification to the competent authorities."
+      },
+      {
+        "artifact_id": "ARTIFACT-DIFF-0009",
+        "artifact_type": "code_diff",
+        "relevance_note": "A code change in the severity-scoring submodule, which may have impacted the device's ability to detect critical events. This change was made three weeks before the incident."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-METER-0008",
+        "artifact_type": "incident_report",
+        "relevance_note": "A synthetic external meter record confirming severe hypoglycemia, which is related to the device's overall performance but not directly linked to the ventricular fibrillation incident."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The device failed to flag a clinically significant ventricular fibrillation episode, and this issue has been confirmed to recur across the deployed population. This event may trigger obligations under EU MDR Article 10(12) for corrective action due to the potential serious risk to patient safety.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  },
+  "scenario_id": "SYN-IND-0026",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {},
+  "trace_path": null,
+  "unsupported_claim_count": 0,
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art87-reporting-timelines",
+          "claim": "The device failed to flag a clinically significant ventricular fibrillation episode.",
+          "support_note": "This event may trigger obligations under EU MDR Article 10(12) for corrective action due to the potential serious risk to patient safety.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-DIFF-0009",
+          "claim": "The issue has been confirmed to recur across the deployed population.",
+          "support_note": "A code change in the severity-scoring submodule, which may have impacted the device's ability to detect critical events. This change was made three weeks before the incident.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art87-reporting-timelines",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The incident involves a serious public health threat, requiring immediate reporting."
+        },
+        {
+          "artifact_id": "mdr-art10-12-corrective-action",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The device presents a potential serious risk that requires immediate corrective action and notification to the competent authorities."
+        },
+        {
+          "artifact_id": "ARTIFACT-DIFF-0009",
+          "artifact_type": "code_diff",
+          "relevance_note": "A code change in the severity-scoring submodule, which may have impacted the device's ability to detect critical events. This change was made three weeks before the incident."
+        },
+        {
+          "artifact_id": "CGM-ARTIFACT-METER-0008",
+          "artifact_type": "incident_report",
+          "relevance_note": "A synthetic external meter record confirming severe hypoglycemia, which is related to the device's overall performance but not directly linked to the ventricular fibrillation incident."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The device failed to flag a clinically significant ventricular fibrillation episode, and this issue has been confirmed to recur across the deployed population. This event may trigger obligations under EU MDR Article 10(12) for corrective action due to the potential serious risk to patient safety.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "weakly_supported_claims": [
+      "The device failed to flag a clinically significant ventricular fibrillation episode.",
+      "The issue has been confirmed to recur across the deployed population."
+    ]
+  }
+}

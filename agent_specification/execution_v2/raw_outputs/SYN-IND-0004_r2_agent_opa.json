@@ -1,0 +1,204 @@
+{
+  "arm": "agent_opa",
+  "artifact_recall": 0.0,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 0,
+  "model_token_counts": {
+    "completion": null,
+    "prompt": null
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "NO_ACTION"
+  },
+  "opa_actions": [],
+  "raw_model_output": null,
+  "reference": {
+    "citation_unresolved": false,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "NO_ACTION",
+    "scenario_id": "SYN-IND-0004"
+  },
+  "replicate": 2,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+        "claim": "Technical regression contained pre-release",
+        "support_note": "The synthetic CI test log shows the regression was detected and blocked by the automated risk-gate.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+        "claim": "No patient exposure or safety impact",
+        "support_note": "The synthetic CI test log indicates the regression was contained before any clinical deployment.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic CI test log shows a sensitivity drop in the VTach classifier, which was blocked by the automated risk-gate."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The synthetic release checklist is missing authorized human approval, indicating a procedural gap but not patient exposure or safety impact."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic telemetry classifier change reduced sensitivity in the internal validation test but was fully contained pre-release or resolved as a non-event. No patient exposure occurred, and the regression was detected by the CI/CD quality gate.",
+    "recommendation": "NO_ACTION",
+    "requires_human_review": true,
+    "severity": 1
+  },
+  "scenario_id": "SYN-IND-0004",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic CI test log shows a sensitivity drop in the VTach classifier, which was blocked by the automated risk-gate."
+      },
+      {
+        "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+        "artifact_type": "approval_record",
+        "relevance_note": "The synthetic release checklist is missing authorized human approval, indicating a procedural gap but not patient exposure or safety impact."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": false,
+    "evidence_gaps": [],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+          "claim": "Technical regression contained pre-release",
+          "support_note": "The synthetic CI test log shows the regression was detected and blocked by the automated risk-gate.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+          "claim": "No patient exposure or safety impact",
+          "support_note": "The synthetic CI test log indicates the regression was contained before any clinical deployment.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The synthetic CI test log shows a sensitivity drop in the VTach classifier, which was blocked by the automated risk-gate."
+        },
+        {
+          "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+          "artifact_type": "approval_record",
+          "relevance_note": "The synthetic release checklist is missing authorized human approval, indicating a procedural gap but not patient exposure or safety impact."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic telemetry classifier change reduced sensitivity in the internal validation test but was fully contained pre-release or resolved as a non-event. No patient exposure occurred, and the regression was detected by the CI/CD quality gate.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "final_report_sha256": "766332960b71392830dce3a4a7526875d535c40011c0529bbfe2c1f8e66c0d93",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [],
+    "recommendation": "NO_ACTION",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0004",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0004_r2",
+    "scenario_id": "SYN-IND-0004",
+    "schema_version": "2.1.0",
+    "severity": 1,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "advisory_complete",
+    "timestamp_utc": "2026-08-03T09:11:28.173446Z",
+    "total_steps": 3,
+    "trace_id": "19ce3562-e2b9-4ac1-956b-10d88dc71bd0"
+  },
+  "trace_path": "traces/SYN-IND-0004_r2.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+          "claim": "Technical regression contained pre-release",
+          "support_note": "The synthetic CI test log shows the regression was detected and blocked by the automated risk-gate.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-0050",
+          "claim": "No patient exposure or safety impact",
+          "support_note": "The synthetic CI test log indicates the regression was contained before any clinical deployment.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The synthetic CI test log shows a sensitivity drop in the VTach classifier, which was blocked by the automated risk-gate."
+        },
+        {
+          "artifact_id": "CGM-ARTIFACT-APPROVAL-0020",
+          "artifact_type": "approval_record",
+          "relevance_note": "The synthetic release checklist is missing authorized human approval, indicating a procedural gap but not patient exposure or safety impact."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic telemetry classifier change reduced sensitivity in the internal validation test but was fully contained pre-release or resolved as a non-event. No patient exposure occurred, and the regression was detected by the CI/CD quality gate.",
+      "recommendation": "NO_ACTION",
+      "requires_human_review": true,
+      "severity": 1
+    },
+    "weakly_supported_claims": [
+      "Technical regression contained pre-release",
+      "No patient exposure or safety impact"
+    ]
+  }
+}

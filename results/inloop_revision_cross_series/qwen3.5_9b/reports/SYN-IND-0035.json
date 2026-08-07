@@ -1,0 +1,218 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0035",
+    "clinical_inconsistency_class": "none",
+    "conforms": true,
+    "violations": []
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic home telemetry program reported that the patient lost consciousness and required emergency resuscitation following an unflagged ventricular fibrillation episode, confirmed by hospital emergency response records. The emergency-response record, the device telemetry log, and the retrospective clinician review are fully consistent.",
+  "model_token_counts": {
+    "completion": 583,
+    "prompt": 2165
+  },
+  "raw_content": "{\n  \"severity\": 4,\n  \"confidence\": 0.95,\n  \"recommendation\": \"FIELD_SAFETY_CORRECTIVE_ACTION\",\n  \"rationale\": \"The incident narrative describes a realized serious harm (patient lost consciousness requiring emergency resuscitation) due to an unflagged ventricular fibrillation episode in the deployed device population. This constitutes 'realized serious harm' and 'broad deployed-population exposure,' meeting Severity 4 criteria per the rubric. The event was not contained by any automatic control before patient impact, distinguishing it from a pre-deployment containment issue (Severity 1). While specific test logs for this exact V-Fib episode are missing from the retrieved artifacts (only unrelated AV block logs exist), the narrative explicitly states that hospital records and device telemetry confirm the missed detection. Under EU MDR Article 83(2) [mdr-art83-pms-system], manufacturers must determine, implement, and monitor preventive/corrective actions for such safety signals. The severity is elevated to 4 because actual patient harm occurred; under OPA policy 'severity4_or_death_forced_immediate_human_escalation', this requires immediate human review and field action rather than standard CAPA investigation.\",\n  \"evidence_links\": [\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2023A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Retrieved as a representative test log artifact to demonstrate the type of telemetry data available, though this specific file logs an unrelated AV block episode. The causal link for the V-Fib event is grounded in the incident narrative itself.\"\n    },\n    {\n      \"artifact_id\": \"ARTIFACT-TESTLOG-2027A\",\n      \"artifact_type\": \"test_log\",\n      \"relevance_note\": \"Retrieved as a representative test log artifact to demonstrate the type of telemetry data available, though this specific file logs an unrelated AV block episode. The causal link for the V-Fib event is grounded in the incident narrative itself.\"\n    },\n    {\n      \"artifact_id\": \"mdr-art83-pms-system\",\n      \"artifact_type\": \"regulatory_citation\",\n      \"relevance_note\": \"Supports the obligation to implement corrective actions for confirmed safety signals involving patient harm.\"\n    }\n  ],\n  \"missing_evidence\": [\n    \"Direct telemetry log or incident report specifically documenting the ventricular fibrillation episode and confirming it was unflagged in a deployed device.\",\n    \"Evidence of recurrence (multiple similar events) to confirm broad population impact beyond this single case, though Severity 4 is triggered by the realized harm alone.\"\n  ]\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2023A",
+    "ARTIFACT-TESTLOG-2027A"
+  ],
+  "retrieved_regulatory_ids": [
+    "qmsr-820.10-c-design-development",
+    "qmsr-820.10-b-regulatory-crossrefs",
+    "mdr-art83-pms-system",
+    "qmsr-820.45-labeling"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: fsca_without_confirmatory_evidence_downgraded; severity4_or_death_forced_immediate_human_escalation\nMissing or contradictory evidence flagged: Causal link between the artifact/change and the observed event.; Evidence of recurrence or confirmed deployed-population impact.",
+  "risk_report": {
+    "claim_support": [],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Retrieved as a representative test log artifact to demonstrate the type of telemetry data available, though this specific file logs an unrelated AV block episode. The causal link for the V-Fib event is grounded in the incident narrative itself."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Retrieved as a representative test log artifact to demonstrate the type of telemetry data available, though this specific file logs an unrelated AV block episode. The causal link for the V-Fib event is grounded in the incident narrative itself."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the obligation to implement corrective actions for confirmed safety signals involving patient harm."
+      }
+    ],
+    "missing_evidence": [
+      "Direct telemetry log or incident report specifically documenting the ventricular fibrillation episode and confirming it was unflagged in a deployed device.",
+      "Evidence of recurrence (multiple similar events) to confirm broad population impact beyond this single case, though Severity 4 is triggered by the realized harm alone."
+    ],
+    "rationale": "The incident narrative describes a realized serious harm (patient lost consciousness requiring emergency resuscitation) due to an unflagged ventricular fibrillation episode in the deployed device population. This constitutes 'realized serious harm' and 'broad deployed-population exposure,' meeting Severity 4 criteria per the rubric. The event was not contained by any automatic control before patient impact, distinguishing it from a pre-deployment containment issue (Severity 1). While specific test logs for this exact V-Fib episode are missing from the retrieved artifacts (only unrelated AV block logs exist), the narrative explicitly states that hospital records and device telemetry confirm the missed detection. Under EU MDR Article 83(2) [mdr-art83-pms-system], manufacturers must determine, implement, and monitor preventive/corrective actions for such safety signals. The severity is elevated to 4 because actual patient harm occurred; under OPA policy 'severity4_or_death_forced_immediate_human_escalation', this requires immediate human review and field action rather than standard CAPA investigation.",
+    "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "requires_human_review": false,
+    "severity": 4
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 0.3333,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [
+      "fsca_without_confirmatory_evidence_downgraded",
+      "severity4_or_death_forced_immediate_human_escalation"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The incident narrative describes a realized serious harm (patient lost consciousness requiring emergency resuscitation) due to an unflagged ventricular fibrillation episode in the deployed device population.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "This constitutes 'realized serious harm' and 'broad deployed-population exposure,' meeting Severity 4 criteria per the rubric.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The event was not contained by any automatic control before patient impact, distinguishing it from a pre-deployment containment issue (Severity 1).",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "While specific test logs for this exact V-Fib episode are missing from the retrieved artifacts (only unrelated AV block logs exist), the narrative explicitly states that hospital records and device telemetry confirm the missed detection.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "Under EU MDR Article 83(2) [mdr-art83-pms-system], manufacturers must determine, implement, and monitor preventive/corrective actions for such safety signals.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "claim": "The severity is elevated to 4 because actual patient harm occurred; under OPA policy 'severity4_or_death_forced_immediate_human_escalation', this requires immediate human review and field action rather than standard CAPA investigation.",
+          "support_note": "Verifier-generated claim from rationale.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.95,
+      "evidence_links": [
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2023A",
+          "artifact_type": "test_log",
+          "relevance_note": "Retrieved as a representative test log artifact to demonstrate the type of telemetry data available, though this specific file logs an unrelated AV block episode. The causal link for the V-Fib event is grounded in the incident narrative itself."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-2027A",
+          "artifact_type": "test_log",
+          "relevance_note": "Retrieved as a representative test log artifact to demonstrate the type of telemetry data available, though this specific file logs an unrelated AV block episode. The causal link for the V-Fib event is grounded in the incident narrative itself."
+        },
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_citation",
+          "relevance_note": "Supports the obligation to implement corrective actions for confirmed safety signals involving patient harm."
+        }
+      ],
+      "missing_evidence": [
+        "Direct telemetry log or incident report specifically documenting the ventricular fibrillation episode and confirming it was unflagged in a deployed device.",
+        "Evidence of recurrence (multiple similar events) to confirm broad population impact beyond this single case, though Severity 4 is triggered by the realized harm alone.",
+        "Causal link between the artifact/change and the observed event.",
+        "Evidence of recurrence or confirmed deployed-population impact."
+      ],
+      "rationale": "The incident narrative describes a realized serious harm (patient lost consciousness requiring emergency resuscitation) due to an unflagged ventricular fibrillation episode in the deployed device population. This constitutes 'realized serious harm' and 'broad deployed-population exposure,' meeting Severity 4 criteria per the rubric. The event was not contained by any automatic control before patient impact, distinguishing it from a pre-deployment containment issue (Severity 1). While specific test logs for this exact V-Fib episode are missing from the retrieved artifacts (only unrelated AV block logs exist), the narrative explicitly states that hospital records and device telemetry confirm the missed detection. Under EU MDR Article 83(2) [mdr-art83-pms-system], manufacturers must determine, implement, and monitor preventive/corrective actions for such safety signals. The severity is elevated to 4 because actual patient harm occurred; under OPA policy 'severity4_or_death_forced_immediate_human_escalation', this requires immediate human review and field action rather than standard CAPA investigation.",
+      "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "requires_human_review": true,
+      "severity": 4
+    },
+    "weakly_supported_claims": [
+      "This constitutes 'realized serious harm' and 'broad deployed-population exposure,' meeting Severity 4 criteria per the rubric.",
+      "The event was not contained by any automatic control before patient impact, distinguishing it from a pre-deployment containment issue (Severity 1).",
+      "Under EU MDR Article 83(2) [mdr-art83-pms-system], manufacturers must determine, implement, and monitor preventive/corrective actions for such safety signals.",
+      "The severity is elevated to 4 because actual patient harm occurred; under OPA policy 'severity4_or_death_forced_immediate_human_escalation', this requires immediate human review and field action rather than standard CAPA investigation."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The incident narrative describes a realized serious harm (patient lost consciousness requiring emergency resuscitation) due to an unflagged ventricular fibrillation episode in the deployed device population.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "This constitutes 'realized serious harm' and 'broad deployed-population exposure,' meeting Severity 4 criteria per the rubric.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The event was not contained by any automatic control before patient impact, distinguishing it from a pre-deployment containment issue (Severity 1).",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "While specific test logs for this exact V-Fib episode are missing from the retrieved artifacts (only unrelated AV block logs exist), the narrative explicitly states that hospital records and device telemetry confirm the missed detection.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "Under EU MDR Article 83(2) [mdr-art83-pms-system], manufacturers must determine, implement, and monitor preventive/corrective actions for such safety signals.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "claim": "The severity is elevated to 4 because actual patient harm occurred; under OPA policy 'severity4_or_death_forced_immediate_human_escalation', this requires immediate human review and field action rather than standard CAPA investigation.",
+        "support_note": "Verifier-generated claim from rationale.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.95,
+    "evidence_links": [
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2023A",
+        "artifact_type": "test_log",
+        "relevance_note": "Retrieved as a representative test log artifact to demonstrate the type of telemetry data available, though this specific file logs an unrelated AV block episode. The causal link for the V-Fib event is grounded in the incident narrative itself."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-2027A",
+        "artifact_type": "test_log",
+        "relevance_note": "Retrieved as a representative test log artifact to demonstrate the type of telemetry data available, though this specific file logs an unrelated AV block episode. The causal link for the V-Fib event is grounded in the incident narrative itself."
+      },
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_citation",
+        "relevance_note": "Supports the obligation to implement corrective actions for confirmed safety signals involving patient harm."
+      }
+    ],
+    "missing_evidence": [
+      "Direct telemetry log or incident report specifically documenting the ventricular fibrillation episode and confirming it was unflagged in a deployed device.",
+      "Evidence of recurrence (multiple similar events) to confirm broad population impact beyond this single case, though Severity 4 is triggered by the realized harm alone.",
+      "Causal link between the artifact/change and the observed event.",
+      "Evidence of recurrence or confirmed deployed-population impact."
+    ],
+    "rationale": "The incident narrative describes a realized serious harm (patient lost consciousness requiring emergency resuscitation) due to an unflagged ventricular fibrillation episode in the deployed device population. This constitutes 'realized serious harm' and 'broad deployed-population exposure,' meeting Severity 4 criteria per the rubric. The event was not contained by any automatic control before patient impact, distinguishing it from a pre-deployment containment issue (Severity 1). While specific test logs for this exact V-Fib episode are missing from the retrieved artifacts (only unrelated AV block logs exist), the narrative explicitly states that hospital records and device telemetry confirm the missed detection. Under EU MDR Article 83(2) [mdr-art83-pms-system], manufacturers must determine, implement, and monitor preventive/corrective actions for such safety signals. The severity is elevated to 4 because actual patient harm occurred; under OPA policy 'severity4_or_death_forced_immediate_human_escalation', this requires immediate human review and field action rather than standard CAPA investigation.",
+    "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+    "requires_human_review": true,
+    "severity": 4
+  }
+}

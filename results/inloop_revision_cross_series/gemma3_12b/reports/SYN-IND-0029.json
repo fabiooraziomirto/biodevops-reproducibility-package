@@ -1,0 +1,245 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0029",
+    "clinical_inconsistency_class": "none",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic regional hospital ICU reported that the device failed to flag a clinically significant ventricular tachycardia episode in real time. Two independent overnight telemetry reviews and the cloud-side classifier log all confirm a documented, sustained ventricular tachycardia episode that was missed at the time; a second, structurally identical miss was confirmed in a separate patient on the same software version, establishing recurrence across the deployed population. The device confidence-score log, the retrospective clinician read, and the raw waveform export are all consistent.",
+  "model_token_counts": {
+    "completion": 973,
+    "prompt": 1820
+  },
+  "raw_content": "{\n  \"severity\": 4,\n  \"confidence\": 0.75,\n  \"recommendation\": \"FIELD_SAFETY_CORRECTIVE_ACTION\",\n  \"rationale\": \"The device failed to flag a clinically significant ventricular tachycardia episode in real time, with confirmed recurrence across the deployed population (SYNTHETIC NARRATIVE). This represents a realized serious patient-safety risk, as missed detection of ventricular tachycardia can lead to severe harm or death. The confirmation of recurrence establishes a broad deployed-population exposure to this risk.  The device's failure to perform its intended function requires review under EU MDR Annex I, Section 17.1 regarding electronic programmable systems and their repeatability, reliability, and performance (mdr-annexI-sec17.1-electronic-programmable). The software development lifecycle must be reviewed in accordance with the state of the art, including risk management and verification/validation (mdr-annexI-sec17.2-software-lifecycle).  The incident also triggers obligations under 21 CFR \u00a7 820.10(c) concerning design controls for devices automated with computer software (qmsr-820.10-c-design-development), specifically related to ISO 13485 clause 7.3. The device's IT security measures also require review, as a failure in the classifier could be linked to unauthorized access or other vulnerabilities (mdr-annexI-sec17.4-it-security).  The device confidence-score logs for both missed episodes (ARTIFACT-TESTLOG-2025A, ARTIFACT-TESTLOG-2029A) confirm the failure and provide data for investigation.\",\n  \"claim_support\": [\n    {\n      \"claim\": \"Realized serious patient-safety risk due to missed detection of ventricular tachycardia.\",\n      \"cited_artifact_id\": \"SYNTHETIC NARRATIVE\",\"support_status\": \"supported\",\"support_note\":\"Narrative explicitly states the device failed to flag a clinically significant event.\"\n    },\n    {\n      \"claim\": \"Recurrence across the deployed population indicates broad exposure.\",\n      \"cited_artifact_id\": \"SYNTHETIC NARRATIVE\", \"support_status\": \"supported\",\"support_note\":\"Narrative explicitly states recurrence was confirmed in a separate patient on the same software version.\"\n    },\n    {\n      \"claim\": \"Requires review of electronic programmable system design and performance.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.1-electronic-programmable\", \"support_status\":\"supported\",\"support_note\":\"MDR Annex I, Section 17.1 mandates repeatability, reliability, and performance for electronic programmable systems.\"\n    },\n    {\n      \"claim\": \"Requires review of the software development lifecycle.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.2-software-lifecycle\", \"support_status\":\"supported\",\"support_note\":\"MDR Annex I, Section 17.2 mandates adherence to a robust software development lifecycle.\"\n    },\n    {\n      \"claim\": \"Requires review of design controls for automated devices.\",\n      \"cited_artifact_id\": \"qmsr-820.10-c-design-development\", \"support_status\":\"supported\",\"support_note\":\"21 CFR \u00a7 820.10(c) mandates design controls for computer-automated devices.\"\n    },\n     {\n      \"claim\": \"Requires review of IT security measures.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.4-it-security\", \"support_status\":\"supported\",\"support_note\":\"MDR Annex I, Section 17.4 mandates minimum IT security requirements.\"\n    },\n    {\n      \"claim\": \"Device confidence scores confirm the failure.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2025A\", \"support_status\":\"supported\",\"support_note\":\"Confidence score logs document the missed events.\"\n    },\n     {\n      \"claim\": \"Device confidence scores confirm the failure.\",\n      \"cited_artifact_id\": \"ARTIFACT-TESTLOG-2029A\", \"support_status\":\"supported\",\"support_note\":\"Confidence score logs document the missed events.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2025A",
+    "ARTIFACT-TESTLOG-2029A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.10-c-design-development",
+    "mdr-annexI-sec17.1-electronic-programmable",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "",
+  "risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "Realized serious patient-safety risk due to missed detection of ventricular tachycardia.",
+        "support_note": "Narrative explicitly states the device failed to flag a clinically significant event.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "Recurrence across the deployed population indicates broad exposure.",
+        "support_note": "Narrative explicitly states recurrence was confirmed in a separate patient on the same software version.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "claim": "Requires review of electronic programmable system design and performance.",
+        "support_note": "MDR Annex I, Section 17.1 mandates repeatability, reliability, and performance for electronic programmable systems.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "claim": "Requires review of the software development lifecycle.",
+        "support_note": "MDR Annex I, Section 17.2 mandates adherence to a robust software development lifecycle.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "Requires review of design controls for automated devices.",
+        "support_note": "21 CFR \u00a7 820.10(c) mandates design controls for computer-automated devices.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+        "claim": "Requires review of IT security measures.",
+        "support_note": "MDR Annex I, Section 17.4 mandates minimum IT security requirements.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "Device confidence scores confirm the failure.",
+        "support_note": "Confidence score logs document the missed events.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2029A",
+        "claim": "Device confidence scores confirm the failure.",
+        "support_note": "Confidence score logs document the missed events.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "The device failed to flag a clinically significant ventricular tachycardia episode in real time, with confirmed recurrence across the deployed population (SYNTHETIC NARRATIVE). This represents a realized serious patient-safety risk, as missed detection of ventricular tachycardia can lead to severe harm or death. The confirmation of recurrence establishes a broad deployed-population exposure to this risk.  The device's failure to perform its intended function requires review under EU MDR Annex I, Section 17.1 regarding electronic programmable systems and their repeatability, reliability, and performance (mdr-annexI-sec17.1-electronic-programmable). The software development lifecycle must be reviewed in accordance with the state of the art, including risk management and verification/validation (mdr-annexI-sec17.2-software-lifecycle).  The incident also triggers obligations under 21 CFR \u00a7 820.10(c) concerning design controls for devices automated with computer software (qmsr-820.10-c-design-development), specifically related to ISO 13485 clause 7.3. The device's IT security measures also require review, as a failure in the classifier could be linked to unauthorized access or other vulnerabilities (mdr-annexI-sec17.4-it-security).  The device confidence-score logs for both missed episodes (ARTIFACT-TESTLOG-2025A, ARTIFACT-TESTLOG-2029A) confirm the failure and provide data for investigation.",
+    "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "requires_human_review": true,
+    "severity": 4
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.5,
+    "hallucinated_citations": [],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "severity4_or_death_forced_immediate_human_escalation",
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence",
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "Realized serious patient-safety risk due to missed detection of ventricular tachycardia.",
+      "Recurrence across the deployed population indicates broad exposure."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "SYNTHETIC NARRATIVE",
+          "claim": "Realized serious patient-safety risk due to missed detection of ventricular tachycardia.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "SYNTHETIC NARRATIVE",
+          "claim": "Recurrence across the deployed population indicates broad exposure.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+          "claim": "Requires review of electronic programmable system design and performance.",
+          "support_note": "MDR Annex I, Section 17.1 mandates repeatability, reliability, and performance for electronic programmable systems.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+          "claim": "Requires review of the software development lifecycle.",
+          "support_note": "MDR Annex I, Section 17.2 mandates adherence to a robust software development lifecycle.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "qmsr-820.10-c-design-development",
+          "claim": "Requires review of design controls for automated devices.",
+          "support_note": "21 CFR \u00a7 820.10(c) mandates design controls for computer-automated devices.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+          "claim": "Requires review of IT security measures.",
+          "support_note": "MDR Annex I, Section 17.4 mandates minimum IT security requirements.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+          "claim": "Device confidence scores confirm the failure.",
+          "support_note": "Confidence score logs document the missed events.",
+          "support_status": "weakly_supported"
+        },
+        {
+          "cited_artifact_id": "ARTIFACT-TESTLOG-2029A",
+          "claim": "Device confidence scores confirm the failure.",
+          "support_note": "Confidence score logs document the missed events.",
+          "support_status": "weakly_supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment.",
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The device failed to flag a clinically significant ventricular tachycardia episode in real time, with confirmed recurrence across the deployed population (SYNTHETIC NARRATIVE). This represents a realized serious patient-safety risk, as missed detection of ventricular tachycardia can lead to severe harm or death. The confirmation of recurrence establishes a broad deployed-population exposure to this risk.  The device's failure to perform its intended function requires review under EU MDR Annex I, Section 17.1 regarding electronic programmable systems and their repeatability, reliability, and performance (mdr-annexI-sec17.1-electronic-programmable). The software development lifecycle must be reviewed in accordance with the state of the art, including risk management and verification/validation (mdr-annexI-sec17.2-software-lifecycle).  The incident also triggers obligations under 21 CFR \u00a7 820.10(c) concerning design controls for devices automated with computer software (qmsr-820.10-c-design-development), specifically related to ISO 13485 clause 7.3. The device's IT security measures also require review, as a failure in the classifier could be linked to unauthorized access or other vulnerabilities (mdr-annexI-sec17.4-it-security).  The device confidence-score logs for both missed episodes (ARTIFACT-TESTLOG-2025A, ARTIFACT-TESTLOG-2029A) confirm the failure and provide data for investigation.",
+      "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "requires_human_review": true,
+      "severity": 4
+    },
+    "weakly_supported_claims": [
+      "Device confidence scores confirm the failure.",
+      "Device confidence scores confirm the failure."
+    ]
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "Realized serious patient-safety risk due to missed detection of ventricular tachycardia.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "Recurrence across the deployed population indicates broad exposure.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "claim": "Requires review of electronic programmable system design and performance.",
+        "support_note": "MDR Annex I, Section 17.1 mandates repeatability, reliability, and performance for electronic programmable systems.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "claim": "Requires review of the software development lifecycle.",
+        "support_note": "MDR Annex I, Section 17.2 mandates adherence to a robust software development lifecycle.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "qmsr-820.10-c-design-development",
+        "claim": "Requires review of design controls for automated devices.",
+        "support_note": "21 CFR \u00a7 820.10(c) mandates design controls for computer-automated devices.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+        "claim": "Requires review of IT security measures.",
+        "support_note": "MDR Annex I, Section 17.4 mandates minimum IT security requirements.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2025A",
+        "claim": "Device confidence scores confirm the failure.",
+        "support_note": "Confidence score logs document the missed events.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "ARTIFACT-TESTLOG-2029A",
+        "claim": "Device confidence scores confirm the failure.",
+        "support_note": "Confidence score logs document the missed events.",
+        "support_status": "weakly_supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [],
+    "missing_evidence": [
+      "At least one retrieved technical artifact supporting the incident judgment.",
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The device failed to flag a clinically significant ventricular tachycardia episode in real time, with confirmed recurrence across the deployed population (SYNTHETIC NARRATIVE). This represents a realized serious patient-safety risk, as missed detection of ventricular tachycardia can lead to severe harm or death. The confirmation of recurrence establishes a broad deployed-population exposure to this risk.  The device's failure to perform its intended function requires review under EU MDR Annex I, Section 17.1 regarding electronic programmable systems and their repeatability, reliability, and performance (mdr-annexI-sec17.1-electronic-programmable). The software development lifecycle must be reviewed in accordance with the state of the art, including risk management and verification/validation (mdr-annexI-sec17.2-software-lifecycle).  The incident also triggers obligations under 21 CFR \u00a7 820.10(c) concerning design controls for devices automated with computer software (qmsr-820.10-c-design-development), specifically related to ISO 13485 clause 7.3. The device's IT security measures also require review, as a failure in the classifier could be linked to unauthorized access or other vulnerabilities (mdr-annexI-sec17.4-it-security).  The device confidence-score logs for both missed episodes (ARTIFACT-TESTLOG-2025A, ARTIFACT-TESTLOG-2029A) confirm the failure and provide data for investigation.",
+    "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+    "requires_human_review": true,
+    "severity": 4
+  }
+}

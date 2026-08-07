@@ -1,0 +1,162 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0036",
+    "clinical_inconsistency_class": "concept_severity_undercall",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "Predicted severity 3 is below derived clinical floor 4. For the five curated scenarios the derived severity floor equals the labelled ground-truth severity; treat this as a one-sided under-call screen, not an independent correctness oracle.",
+        "severity": "Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "concept_severity_undercall: predicted severity is below the derived clinical floor. Secondary signal; for these five scenarios the derived floor equals the ground-truth label.",
+        "severity": "Severity: sh:Violation",
+        "shape": "concept_severity_undercall"
+      },
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic regional hospital ICU reported that the patient lost consciousness and required emergency resuscitation following an unflagged ventricular tachycardia episode, confirmed by hospital emergency response records. The device-side confidence log for the exact episode window was not retained, though the emergency-response record is complete.",
+  "model_token_counts": {
+    "completion": 497,
+    "prompt": 1988
+  },
+  "raw_content": "{\n  \"severity\": 3,\n  \"confidence\": 0.65,\n  \"recommendation\": \"CAPA_INVESTIGATE\",\n  \"rationale\": \"The incident narrative describes a patient losing consciousness and requiring emergency resuscitation following an unflagged ventricular tachycardia episode. This represents a serious potential patient-safety risk (severity 3) because it involves a failure or missed detection in a safety-critical function that might have led to serious harm, even if no harm actually occurred. The loss of device-side confidence log data for the critical event window is concerning and requires investigation.  The EU MDR mandates requirements for electronic programmable systems (mdr-annexI-sec17.1) including repeatability, reliability, and performance in line with intended use, and appropriate mitigation of risks in case of single fault conditions. The incident may trigger obligations under the EU MDR Annex I, Section 17.2 regarding software development lifecycle and cybersecurity, as well as requirements for design controls (qmsr-820.10-c) for devices automated with computer software.  The lack of a retained confidence log hinders root cause analysis and requires investigation to determine if data retention policies are adequate and being followed.\",\n  \"claim_support\": [\n    {\n      \"claim\": \"This incident represents a serious potential patient-safety risk.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.1\",\"support_status\":\"weakly_supported\",\"support_note\":\"The MDR emphasizes reliability and performance, implying a need to avoid events like this.\"\n    },\n    {\n      \"claim\": \"The incident may trigger obligations under the EU MDR.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.2\",\n      \"support_status\":\"supported\",\"support_note\":\"This section outlines software development lifecycle requirements.\"\n    },\n     {\n      \"claim\": \"The incident requires investigation due to the missing confidence log data.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.1\",\n      \"support_status\":\"supported\",\"support_note\":\"Reliability and performance requirements imply adequate logging for fault analysis.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2025A",
+    "ARTIFACT-TESTLOG-2029A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.10-c-design-development",
+    "mdr-annexI-sec17.1-electronic-programmable",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: fsca_without_confirmatory_evidence_downgraded; severity4_or_death_forced_immediate_human_escalation; technical_incident_missing_technical_evidence; deny:technical_incident_missing_technical_evidence; clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: At least one retrieved technical artifact supporting the incident judgment.; Causal link between the artifact/change and the observed event.; Evidence of recurrence or confirmed deployed-population impact.; Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (shacl) RiskReport must link at least one evidence id.",
+  "risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1",
+        "claim": "This incident represents a serious potential patient-safety risk.",
+        "support_note": "The MDR emphasizes reliability and performance, implying a need to avoid events like this.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2",
+        "claim": "The incident may trigger obligations under the EU MDR.",
+        "support_note": "This section outlines software development lifecycle requirements.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1",
+        "claim": "The incident requires investigation due to the missing confidence log data.",
+        "support_note": "Reliability and performance requirements imply adequate logging for fault analysis.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.65,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "The incident narrative describes a patient losing consciousness and requiring emergency resuscitation following an unflagged ventricular tachycardia episode. This represents a serious potential patient-safety risk (severity 3) because it involves a failure or missed detection in a safety-critical function that might have led to serious harm, even if no harm actually occurred. The loss of device-side confidence log data for the critical event window is concerning and requires investigation.  The EU MDR mandates requirements for electronic programmable systems (mdr-annexI-sec17.1) including repeatability, reliability, and performance in line with intended use, and appropriate mitigation of risks in case of single fault conditions. The incident may trigger obligations under the EU MDR Annex I, Section 17.2 regarding software development lifecycle and cybersecurity, as well as requirements for design controls (qmsr-820.10-c) for devices automated with computer software.  The lack of a retained confidence log hinders root cause analysis and requires investigation to determine if data retention policies are adequate and being followed.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence",
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "This incident represents a serious potential patient-safety risk.",
+      "The incident may trigger obligations under the EU MDR.",
+      "The incident requires investigation due to the missing confidence log data."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.1",
+          "claim": "This incident represents a serious potential patient-safety risk.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.2",
+          "claim": "The incident may trigger obligations under the EU MDR.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.1",
+          "claim": "The incident requires investigation due to the missing confidence log data.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        }
+      ],
+      "confidence": 0.65,
+      "evidence_links": [],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment.",
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "The incident narrative describes a patient losing consciousness and requiring emergency resuscitation following an unflagged ventricular tachycardia episode. This represents a serious potential patient-safety risk (severity 3) because it involves a failure or missed detection in a safety-critical function that might have led to serious harm, even if no harm actually occurred. The loss of device-side confidence log data for the critical event window is concerning and requires investigation.  The EU MDR mandates requirements for electronic programmable systems (mdr-annexI-sec17.1) including repeatability, reliability, and performance in line with intended use, and appropriate mitigation of risks in case of single fault conditions. The incident may trigger obligations under the EU MDR Annex I, Section 17.2 regarding software development lifecycle and cybersecurity, as well as requirements for design controls (qmsr-820.10-c) for devices automated with computer software.  The lack of a retained confidence log hinders root cause analysis and requires investigation to determine if data retention policies are adequate and being followed.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 3
+    },
+    "weakly_supported_claims": []
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1",
+        "claim": "This incident represents a serious potential patient-safety risk.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2",
+        "claim": "The incident may trigger obligations under the EU MDR.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1",
+        "claim": "The incident requires investigation due to the missing confidence log data.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      }
+    ],
+    "confidence": 0.65,
+    "evidence_links": [],
+    "missing_evidence": [
+      "At least one retrieved technical artifact supporting the incident judgment.",
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "The incident narrative describes a patient losing consciousness and requiring emergency resuscitation following an unflagged ventricular tachycardia episode. This represents a serious potential patient-safety risk (severity 3) because it involves a failure or missed detection in a safety-critical function that might have led to serious harm, even if no harm actually occurred. The loss of device-side confidence log data for the critical event window is concerning and requires investigation.  The EU MDR mandates requirements for electronic programmable systems (mdr-annexI-sec17.1) including repeatability, reliability, and performance in line with intended use, and appropriate mitigation of risks in case of single fault conditions. The incident may trigger obligations under the EU MDR Annex I, Section 17.2 regarding software development lifecycle and cybersecurity, as well as requirements for design controls (qmsr-820.10-c) for devices automated with computer software.  The lack of a retained confidence log hinders root cause analysis and requires investigation to determine if data retention policies are adequate and being followed.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 3
+  }
+}

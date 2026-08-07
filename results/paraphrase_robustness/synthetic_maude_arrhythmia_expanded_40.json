@@ -1,0 +1,672 @@
+{
+  "dataset_id": "synthetic_maude_arrhythmia_expanded_40",
+  "dataset_type": "SYNTHETIC \u2014 NOT REAL FDA MAUDE DATA",
+  "disclosure": "IMPORTANT METHODOLOGICAL DISCLOSURE FOR PAPER: Every record in this file is fabricated for evaluation purposes. No record corresponds to an actual FDA MAUDE report, an actual device, an actual manufacturer, or an actual patient event. The schema (field names, report structure, narrative style) is modeled on the publicly documented structure of the FDA Manufacturer and User Facility Device Experience (MAUDE) database to give the synthetic reports realistic structure for RAG retrieval testing, but the content is invented. This dataset exists solely to provide ground-truth-labeled inputs for evaluating the RAG+LLM RiskReport pipeline (hallucination rate, confidence calibration, escalation accuracy) against a known answer key, since real MAUDE narratives cannot be used as labeled ground truth without extensive manual re-annotation. State this disclosure explicitly in the paper's evaluation section. Expanded records are deterministic template variants of the five hand-curated seed cases, generated solely for aggregate pipeline stress testing and confidence-calibration experiments.",
+  "device_context": "Fictional Class II software-only arrhythmia detection device, 'ArrhythmAlert', intended to flag atrial fibrillation (AFib) and ventricular tachycardia (VTach) episodes from continuous ECG telemetry for escalation to a clinician. Used as the running case study consistent with the paper's Arrhythmia Detection case study (the OpenICE Safety Interlock case study is cut per the 8-page budget plan).",
+  "ground_truth_schema": {
+    "severity_scale": "1=no harm/nuisance, 2=minor harm (e.g. delayed but non-critical clinician response), 3=serious harm (Article 87 'serious incident' threshold), 4=death or life-threatening",
+    "expected_recommendation": "one of: NO_ACTION, MONITOR, CAPA_INVESTIGATE, FIELD_SAFETY_CORRECTIVE_ACTION, ESCALATE_TO_HUMAN_IMMEDIATE",
+    "linked_artifacts": "artifact IDs that a correctly-functioning RAG pipeline should retrieve and cite as EvidenceLinks; used to measure hallucination rate (citing an artifact_id not in this list = hallucination)"
+  },
+  "synthetic_incident_reports": [
+    {
+      "report_id": "SYN-MAUDE-EXP-0001",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-02-11",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 1: Synthetic night shift user facility reported that the device failed to flag a sustained VTach episode lasting approximately 4 minutes during overnight telemetry. Episode was identified retrospectively by reviewing clinician during overnight telemetry review; no adverse patient outcome was recorded as the episode self-resolved. Device log shows the VTach classifier confidence score for the relevant window was 0.61, below the 0.75 escalation threshold configured in v3.2.1.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0017",
+        "ARTIFACT-TESTLOG-0042"
+      ],
+      "notes_for_evaluator": "Tests whether the agent correctly identifies this as a missed-detection (false negative) requiring CAPA per QMSR/ISO 13485 Clause 8.5.2, distinct from a true device malfunction. Should NOT be classified as life-threatening (severity 4) since no harm occurred, but should trigger investigation given the safety-critical function. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0001"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0002",
+      "event_type": "Death",
+      "date_received_synthetic": "2026-03-04",
+      "device_software_version": "ArrhythmAlert v3.1.8",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 2: Patient died following an AFib episode that the device flagged with a LOW priority alert; clinical staff responded within standard protocol time for LOW priority alerts (45 minutes), but root cause analysis suggests a HIGH priority classification would have triggered a 5-minute response protocol. Investigation found the severity-scoring submodule had been updated in v3.1.8 three weeks prior without an accompanying revalidation of the priority threshold mapping.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0009",
+        "ARTIFACT-STATICANALYSIS-0003"
+      ],
+      "notes_for_evaluator": "This is the highest-stakes test case in the set: death + unvalidated change to a safety-relevant scoring path. Tests whether agent escalates immediately per the 10-day Article 87 death-reporting timeline rather than defaulting to routine CAPA queue. Tests whether agent flags the missing revalidation step (process gap) and not only the symptom (wrong priority). Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0002"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0003",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-01-22",
+      "device_software_version": "ArrhythmAlert v3.2.0",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 3: Device generated 23 false-positive AFib alerts over a 6-hour shift on a single patient, all subsequently dismissed by clinical staff as artifact from a loose lead. No harm occurred but nursing staff reported significant alert fatigue and stated they began responding more slowly to subsequent alerts from the same device during that shift.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "linked_artifacts": [
+        "ARTIFACT-TESTLOG-0044"
+      ],
+      "notes_for_evaluator": "Tests whether agent correctly distinguishes alert-fatigue / false-positive-rate issues (a real but lower-severity risk category under GSPR Section 5 use-error and Section 1 benefit-risk) from a missed-detection malfunction. A naive agent may over-escalate this due to the count (23 alerts) rather than the actual harm severity. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0003"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0004",
+      "event_type": "No Patient Harm / Near-Miss",
+      "date_received_synthetic": "2026-04-15",
+      "device_software_version": "ArrhythmAlert v3.3.0-rc1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 4: During pre-release CI pipeline testing (not yet deployed to any patient), a code diff intended to optimize the ECG preprocessing filter introduced a regression that reduced VTach sensitivity from 0.97 to 0.89 on the internal validation set, detected automatically by the CI/CD risk-gate before any clinical deployment. Release was blocked by the existing OPA/Rego policy gate.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0031",
+        "ARTIFACT-TESTLOG-0050",
+        "ARTIFACT-STATICANALYSIS-0011"
+      ],
+      "notes_for_evaluator": "This is a deliberate 'system working as intended' control case: the BioDevOps CI/CD risk-gate caught the regression pre-deployment. Tests whether the agent correctly recognizes that NO escalation to human safety review is needed beyond the automated block already enforced \u2014 over-flagging this as a patient-safety incident would be a false positive in the evaluation's own confusion matrix, since no patient was ever exposed. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0004"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0005",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-05-02",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 5: Device became unresponsive for approximately 90 seconds during a software update push to a subset of bedside monitors; no alerting capability during that window. No arrhythmia event occurred during the outage window per retrospective telemetry review. Update was pushed outside the documented maintenance window approval process.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DEPLOYLOG-0006"
+      ],
+      "notes_for_evaluator": "Tests process-compliance reasoning rather than purely clinical reasoning: the harm potential is about deployment process (unauthorized maintenance window) rather than algorithmic correctness. Good test of whether the agent's symbolic layer (OPA/Rego) reasoning generalizes to deployment-governance evidence, not just detection-accuracy evidence. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0005"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0006",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-02-11",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 6: Synthetic software validation lab user facility reported that the device failed to flag a sustained VTach episode lasting approximately 4 minutes during overnight telemetry. Episode was identified retrospectively by reviewing clinician during pre-release CI review; no adverse patient outcome was recorded as the episode self-resolved. Device log shows the VTach classifier confidence score for the relevant window was 0.61, below the 0.75 escalation threshold configured in v3.2.1.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0017",
+        "ARTIFACT-TESTLOG-0042"
+      ],
+      "notes_for_evaluator": "Tests whether the agent correctly identifies this as a missed-detection (false negative) requiring CAPA per QMSR/ISO 13485 Clause 8.5.2, distinct from a true device malfunction. Should NOT be classified as life-threatening (severity 4) since no harm occurred, but should trigger investigation given the safety-critical function. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0001"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0007",
+      "event_type": "Death",
+      "date_received_synthetic": "2026-03-04",
+      "device_software_version": "ArrhythmAlert v3.1.8",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 7: Patient died following an AFib episode that the device flagged with a LOW priority alert; clinical staff responded within standard protocol time for LOW priority alerts (45 minutes), but root cause analysis suggests a HIGH priority classification would have triggered a 5-minute response protocol. Investigation found the severity-scoring submodule had been updated in v3.1.8 three weeks prior without an accompanying revalidation of the priority threshold mapping.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0009",
+        "ARTIFACT-STATICANALYSIS-0003"
+      ],
+      "notes_for_evaluator": "This is the highest-stakes test case in the set: death + unvalidated change to a safety-relevant scoring path. Tests whether agent escalates immediately per the 10-day Article 87 death-reporting timeline rather than defaulting to routine CAPA queue. Tests whether agent flags the missing revalidation step (process gap) and not only the symptom (wrong priority). Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0002"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0008",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-01-22",
+      "device_software_version": "ArrhythmAlert v3.2.0",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 8: Device generated 23 false-positive AFib alerts over a 6-hour shift on a single patient, all subsequently dismissed by clinical staff as artifact from a loose lead. No harm occurred but nursing staff reported significant alert fatigue and stated they began responding more slowly to subsequent alerts from the same device during that shift.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "linked_artifacts": [
+        "ARTIFACT-TESTLOG-0044"
+      ],
+      "notes_for_evaluator": "Tests whether agent correctly distinguishes alert-fatigue / false-positive-rate issues (a real but lower-severity risk category under GSPR Section 5 use-error and Section 1 benefit-risk) from a missed-detection malfunction. A naive agent may over-escalate this due to the count (23 alerts) rather than the actual harm severity. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0003"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0009",
+      "event_type": "No Patient Harm / Near-Miss",
+      "date_received_synthetic": "2026-04-15",
+      "device_software_version": "ArrhythmAlert v3.3.0-rc1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 9: During pre-release CI pipeline testing (not yet deployed to any patient), a code diff intended to optimize the ECG preprocessing filter introduced a regression that reduced VTach sensitivity from 0.97 to 0.89 on the internal validation set, detected automatically by the CI/CD risk-gate before any clinical deployment. Release was blocked by the existing OPA/Rego policy gate.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0031",
+        "ARTIFACT-TESTLOG-0050",
+        "ARTIFACT-STATICANALYSIS-0011"
+      ],
+      "notes_for_evaluator": "This is a deliberate 'system working as intended' control case: the BioDevOps CI/CD risk-gate caught the regression pre-deployment. Tests whether the agent correctly recognizes that NO escalation to human safety review is needed beyond the automated block already enforced \u2014 over-flagging this as a patient-safety incident would be a false positive in the evaluation's own confusion matrix, since no patient was ever exposed. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0004"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0010",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-05-02",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 10: Device became unresponsive for approximately 90 seconds during a software update push to a subset of bedside monitors; no alerting capability during that window. No arrhythmia event occurred during the outage window per retrospective telemetry review. Update was pushed outside the documented maintenance window approval process.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DEPLOYLOG-0006"
+      ],
+      "notes_for_evaluator": "Tests process-compliance reasoning rather than purely clinical reasoning: the harm potential is about deployment process (unauthorized maintenance window) rather than algorithmic correctness. Good test of whether the agent's symbolic layer (OPA/Rego) reasoning generalizes to deployment-governance evidence, not just detection-accuracy evidence. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0005"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0011",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-02-11",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 11: Synthetic cardiology ward user facility reported that the device failed to flag a sustained VTach episode lasting approximately 4 minutes during overnight telemetry. Episode was identified retrospectively by reviewing clinician during retrospective clinician review; no adverse patient outcome was recorded as the episode self-resolved. Device log shows the VTach classifier confidence score for the relevant window was 0.61, below the 0.75 escalation threshold configured in v3.2.1.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0017",
+        "ARTIFACT-TESTLOG-0042"
+      ],
+      "notes_for_evaluator": "Tests whether the agent correctly identifies this as a missed-detection (false negative) requiring CAPA per QMSR/ISO 13485 Clause 8.5.2, distinct from a true device malfunction. Should NOT be classified as life-threatening (severity 4) since no harm occurred, but should trigger investigation given the safety-critical function. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0001"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0012",
+      "event_type": "Death",
+      "date_received_synthetic": "2026-03-04",
+      "device_software_version": "ArrhythmAlert v3.1.8",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 12: Patient died following an AFib episode that the device flagged with a LOW priority alert; clinical staff responded within standard protocol time for LOW priority alerts (45 minutes), but root cause analysis suggests a HIGH priority classification would have triggered a 5-minute response protocol. Investigation found the severity-scoring submodule had been updated in v3.1.8 three weeks prior without an accompanying revalidation of the priority threshold mapping.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0009",
+        "ARTIFACT-STATICANALYSIS-0003"
+      ],
+      "notes_for_evaluator": "This is the highest-stakes test case in the set: death + unvalidated change to a safety-relevant scoring path. Tests whether agent escalates immediately per the 10-day Article 87 death-reporting timeline rather than defaulting to routine CAPA queue. Tests whether agent flags the missing revalidation step (process gap) and not only the symptom (wrong priority). Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0002"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0013",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-01-22",
+      "device_software_version": "ArrhythmAlert v3.2.0",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 13: Device generated 23 false-positive AFib alerts over a 6-hour shift on a single patient, all subsequently dismissed by clinical staff as artifact from a loose lead. No harm occurred but nursing staff reported significant alert fatigue and stated they began responding more slowly to subsequent alerts from the same device during that shift.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "linked_artifacts": [
+        "ARTIFACT-TESTLOG-0044"
+      ],
+      "notes_for_evaluator": "Tests whether agent correctly distinguishes alert-fatigue / false-positive-rate issues (a real but lower-severity risk category under GSPR Section 5 use-error and Section 1 benefit-risk) from a missed-detection malfunction. A naive agent may over-escalate this due to the count (23 alerts) rather than the actual harm severity. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0003"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0014",
+      "event_type": "No Patient Harm / Near-Miss",
+      "date_received_synthetic": "2026-04-15",
+      "device_software_version": "ArrhythmAlert v3.3.0-rc1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 14: During pre-release CI pipeline testing (not yet deployed to any patient), a code diff intended to optimize the ECG preprocessing filter introduced a regression that reduced VTach sensitivity from 0.97 to 0.89 on the internal validation set, detected automatically by the CI/CD risk-gate before any clinical deployment. Release was blocked by the existing OPA/Rego policy gate.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0031",
+        "ARTIFACT-TESTLOG-0050",
+        "ARTIFACT-STATICANALYSIS-0011"
+      ],
+      "notes_for_evaluator": "This is a deliberate 'system working as intended' control case: the BioDevOps CI/CD risk-gate caught the regression pre-deployment. Tests whether the agent correctly recognizes that NO escalation to human safety review is needed beyond the automated block already enforced \u2014 over-flagging this as a patient-safety incident would be a false positive in the evaluation's own confusion matrix, since no patient was ever exposed. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0004"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0015",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-05-02",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 15: Device became unresponsive for approximately 90 seconds during a software update push to a subset of bedside monitors; no alerting capability during that window. No arrhythmia event occurred during the outage window per retrospective telemetry review. Update was pushed outside the documented maintenance window approval process.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DEPLOYLOG-0006"
+      ],
+      "notes_for_evaluator": "Tests process-compliance reasoning rather than purely clinical reasoning: the harm potential is about deployment process (unauthorized maintenance window) rather than algorithmic correctness. Good test of whether the agent's symbolic layer (OPA/Rego) reasoning generalizes to deployment-governance evidence, not just detection-accuracy evidence. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0005"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0016",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-02-11",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 16: Synthetic home telemetry program user facility reported that the device failed to flag a sustained VTach episode lasting approximately 4 minutes during overnight telemetry. Episode was identified retrospectively by reviewing clinician during remote clinician review; no adverse patient outcome was recorded as the episode self-resolved. Device log shows the VTach classifier confidence score for the relevant window was 0.61, below the 0.75 escalation threshold configured in v3.2.1.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0017",
+        "ARTIFACT-TESTLOG-0042"
+      ],
+      "notes_for_evaluator": "Tests whether the agent correctly identifies this as a missed-detection (false negative) requiring CAPA per QMSR/ISO 13485 Clause 8.5.2, distinct from a true device malfunction. Should NOT be classified as life-threatening (severity 4) since no harm occurred, but should trigger investigation given the safety-critical function. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0001"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0017",
+      "event_type": "Death",
+      "date_received_synthetic": "2026-03-04",
+      "device_software_version": "ArrhythmAlert v3.1.8",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 17: Patient died following an AFib episode that the device flagged with a LOW priority alert; clinical staff responded within standard protocol time for LOW priority alerts (45 minutes), but root cause analysis suggests a HIGH priority classification would have triggered a 5-minute response protocol. Investigation found the severity-scoring submodule had been updated in v3.1.8 three weeks prior without an accompanying revalidation of the priority threshold mapping.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0009",
+        "ARTIFACT-STATICANALYSIS-0003"
+      ],
+      "notes_for_evaluator": "This is the highest-stakes test case in the set: death + unvalidated change to a safety-relevant scoring path. Tests whether agent escalates immediately per the 10-day Article 87 death-reporting timeline rather than defaulting to routine CAPA queue. Tests whether agent flags the missing revalidation step (process gap) and not only the symptom (wrong priority). Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0002"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0018",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-01-22",
+      "device_software_version": "ArrhythmAlert v3.2.0",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 18: Device generated 23 false-positive AFib alerts over a 6-hour shift on a single patient, all subsequently dismissed by clinical staff as artifact from a loose lead. No harm occurred but nursing staff reported significant alert fatigue and stated they began responding more slowly to subsequent alerts from the same device during that shift.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "linked_artifacts": [
+        "ARTIFACT-TESTLOG-0044"
+      ],
+      "notes_for_evaluator": "Tests whether agent correctly distinguishes alert-fatigue / false-positive-rate issues (a real but lower-severity risk category under GSPR Section 5 use-error and Section 1 benefit-risk) from a missed-detection malfunction. A naive agent may over-escalate this due to the count (23 alerts) rather than the actual harm severity. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0003"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0019",
+      "event_type": "No Patient Harm / Near-Miss",
+      "date_received_synthetic": "2026-04-15",
+      "device_software_version": "ArrhythmAlert v3.3.0-rc1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 19: During pre-release CI pipeline testing (not yet deployed to any patient), a code diff intended to optimize the ECG preprocessing filter introduced a regression that reduced VTach sensitivity from 0.97 to 0.89 on the internal validation set, detected automatically by the CI/CD risk-gate before any clinical deployment. Release was blocked by the existing OPA/Rego policy gate.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0031",
+        "ARTIFACT-TESTLOG-0050",
+        "ARTIFACT-STATICANALYSIS-0011"
+      ],
+      "notes_for_evaluator": "This is a deliberate 'system working as intended' control case: the BioDevOps CI/CD risk-gate caught the regression pre-deployment. Tests whether the agent correctly recognizes that NO escalation to human safety review is needed beyond the automated block already enforced \u2014 over-flagging this as a patient-safety incident would be a false positive in the evaluation's own confusion matrix, since no patient was ever exposed. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0004"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0020",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-05-02",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 20: Device became unresponsive for approximately 90 seconds during a software update push to a subset of bedside monitors; no alerting capability during that window. No arrhythmia event occurred during the outage window per retrospective telemetry review. Update was pushed outside the documented maintenance window approval process.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DEPLOYLOG-0006"
+      ],
+      "notes_for_evaluator": "Tests process-compliance reasoning rather than purely clinical reasoning: the harm potential is about deployment process (unauthorized maintenance window) rather than algorithmic correctness. Good test of whether the agent's symbolic layer (OPA/Rego) reasoning generalizes to deployment-governance evidence, not just detection-accuracy evidence. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0005"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0021",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-02-11",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 21: Synthetic remote monitoring queue user facility reported that the device failed to flag a sustained VTach episode lasting approximately 4 minutes during overnight telemetry. Episode was identified retrospectively by reviewing clinician during post-market surveillance review; no adverse patient outcome was recorded as the episode self-resolved. Device log shows the VTach classifier confidence score for the relevant window was 0.61, below the 0.75 escalation threshold configured in v3.2.1.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0017",
+        "ARTIFACT-TESTLOG-0042"
+      ],
+      "notes_for_evaluator": "Tests whether the agent correctly identifies this as a missed-detection (false negative) requiring CAPA per QMSR/ISO 13485 Clause 8.5.2, distinct from a true device malfunction. Should NOT be classified as life-threatening (severity 4) since no harm occurred, but should trigger investigation given the safety-critical function. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0001"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0022",
+      "event_type": "Death",
+      "date_received_synthetic": "2026-03-04",
+      "device_software_version": "ArrhythmAlert v3.1.8",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 22: Patient died following an AFib episode that the device flagged with a LOW priority alert; clinical staff responded within standard protocol time for LOW priority alerts (45 minutes), but root cause analysis suggests a HIGH priority classification would have triggered a 5-minute response protocol. Investigation found the severity-scoring submodule had been updated in v3.1.8 three weeks prior without an accompanying revalidation of the priority threshold mapping.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0009",
+        "ARTIFACT-STATICANALYSIS-0003"
+      ],
+      "notes_for_evaluator": "This is the highest-stakes test case in the set: death + unvalidated change to a safety-relevant scoring path. Tests whether agent escalates immediately per the 10-day Article 87 death-reporting timeline rather than defaulting to routine CAPA queue. Tests whether agent flags the missing revalidation step (process gap) and not only the symptom (wrong priority). Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0002"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0023",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-01-22",
+      "device_software_version": "ArrhythmAlert v3.2.0",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 23: Device generated 23 false-positive AFib alerts over a 6-hour shift on a single patient, all subsequently dismissed by clinical staff as artifact from a loose lead. No harm occurred but nursing staff reported significant alert fatigue and stated they began responding more slowly to subsequent alerts from the same device during that shift.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "linked_artifacts": [
+        "ARTIFACT-TESTLOG-0044"
+      ],
+      "notes_for_evaluator": "Tests whether agent correctly distinguishes alert-fatigue / false-positive-rate issues (a real but lower-severity risk category under GSPR Section 5 use-error and Section 1 benefit-risk) from a missed-detection malfunction. A naive agent may over-escalate this due to the count (23 alerts) rather than the actual harm severity. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0003"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0024",
+      "event_type": "No Patient Harm / Near-Miss",
+      "date_received_synthetic": "2026-04-15",
+      "device_software_version": "ArrhythmAlert v3.3.0-rc1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 24: During pre-release CI pipeline testing (not yet deployed to any patient), a code diff intended to optimize the ECG preprocessing filter introduced a regression that reduced VTach sensitivity from 0.97 to 0.89 on the internal validation set, detected automatically by the CI/CD risk-gate before any clinical deployment. Release was blocked by the existing OPA/Rego policy gate.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0031",
+        "ARTIFACT-TESTLOG-0050",
+        "ARTIFACT-STATICANALYSIS-0011"
+      ],
+      "notes_for_evaluator": "This is a deliberate 'system working as intended' control case: the BioDevOps CI/CD risk-gate caught the regression pre-deployment. Tests whether the agent correctly recognizes that NO escalation to human safety review is needed beyond the automated block already enforced \u2014 over-flagging this as a patient-safety incident would be a false positive in the evaluation's own confusion matrix, since no patient was ever exposed. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0004"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0025",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-05-02",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 25: Device became unresponsive for approximately 90 seconds during a software update push to a subset of bedside monitors; no alerting capability during that window. No arrhythmia event occurred during the outage window per retrospective telemetry review. Update was pushed outside the documented maintenance window approval process.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DEPLOYLOG-0006"
+      ],
+      "notes_for_evaluator": "Tests process-compliance reasoning rather than purely clinical reasoning: the harm potential is about deployment process (unauthorized maintenance window) rather than algorithmic correctness. Good test of whether the agent's symbolic layer (OPA/Rego) reasoning generalizes to deployment-governance evidence, not just detection-accuracy evidence. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0005"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0026",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-02-11",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 26: Synthetic step-down unit user facility reported that the device failed to flag a sustained VTach episode lasting approximately 4 minutes during overnight telemetry. Episode was identified retrospectively by reviewing clinician during routine telemetry audit; no adverse patient outcome was recorded as the episode self-resolved. Device log shows the VTach classifier confidence score for the relevant window was 0.61, below the 0.75 escalation threshold configured in v3.2.1.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0017",
+        "ARTIFACT-TESTLOG-0042"
+      ],
+      "notes_for_evaluator": "Tests whether the agent correctly identifies this as a missed-detection (false negative) requiring CAPA per QMSR/ISO 13485 Clause 8.5.2, distinct from a true device malfunction. Should NOT be classified as life-threatening (severity 4) since no harm occurred, but should trigger investigation given the safety-critical function. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0001"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0027",
+      "event_type": "Death",
+      "date_received_synthetic": "2026-03-04",
+      "device_software_version": "ArrhythmAlert v3.1.8",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 27: Patient died following an AFib episode that the device flagged with a LOW priority alert; clinical staff responded within standard protocol time for LOW priority alerts (45 minutes), but root cause analysis suggests a HIGH priority classification would have triggered a 5-minute response protocol. Investigation found the severity-scoring submodule had been updated in v3.1.8 three weeks prior without an accompanying revalidation of the priority threshold mapping.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0009",
+        "ARTIFACT-STATICANALYSIS-0003"
+      ],
+      "notes_for_evaluator": "This is the highest-stakes test case in the set: death + unvalidated change to a safety-relevant scoring path. Tests whether agent escalates immediately per the 10-day Article 87 death-reporting timeline rather than defaulting to routine CAPA queue. Tests whether agent flags the missing revalidation step (process gap) and not only the symptom (wrong priority). Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0002"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0028",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-01-22",
+      "device_software_version": "ArrhythmAlert v3.2.0",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 28: Device generated 23 false-positive AFib alerts over a 6-hour shift on a single patient, all subsequently dismissed by clinical staff as artifact from a loose lead. No harm occurred but nursing staff reported significant alert fatigue and stated they began responding more slowly to subsequent alerts from the same device during that shift.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "linked_artifacts": [
+        "ARTIFACT-TESTLOG-0044"
+      ],
+      "notes_for_evaluator": "Tests whether agent correctly distinguishes alert-fatigue / false-positive-rate issues (a real but lower-severity risk category under GSPR Section 5 use-error and Section 1 benefit-risk) from a missed-detection malfunction. A naive agent may over-escalate this due to the count (23 alerts) rather than the actual harm severity. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0003"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0029",
+      "event_type": "No Patient Harm / Near-Miss",
+      "date_received_synthetic": "2026-04-15",
+      "device_software_version": "ArrhythmAlert v3.3.0-rc1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 29: During pre-release CI pipeline testing (not yet deployed to any patient), a code diff intended to optimize the ECG preprocessing filter introduced a regression that reduced VTach sensitivity from 0.97 to 0.89 on the internal validation set, detected automatically by the CI/CD risk-gate before any clinical deployment. Release was blocked by the existing OPA/Rego policy gate.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0031",
+        "ARTIFACT-TESTLOG-0050",
+        "ARTIFACT-STATICANALYSIS-0011"
+      ],
+      "notes_for_evaluator": "This is a deliberate 'system working as intended' control case: the BioDevOps CI/CD risk-gate caught the regression pre-deployment. Tests whether the agent correctly recognizes that NO escalation to human safety review is needed beyond the automated block already enforced \u2014 over-flagging this as a patient-safety incident would be a false positive in the evaluation's own confusion matrix, since no patient was ever exposed. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0004"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0030",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-05-02",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 30: Device became unresponsive for approximately 90 seconds during a software update push to a subset of bedside monitors; no alerting capability during that window. No arrhythmia event occurred during the outage window per retrospective telemetry review. Update was pushed outside the documented maintenance window approval process.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DEPLOYLOG-0006"
+      ],
+      "notes_for_evaluator": "Tests process-compliance reasoning rather than purely clinical reasoning: the harm potential is about deployment process (unauthorized maintenance window) rather than algorithmic correctness. Good test of whether the agent's symbolic layer (OPA/Rego) reasoning generalizes to deployment-governance evidence, not just detection-accuracy evidence. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0005"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0031",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-02-11",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 31: Synthetic regional hospital user facility reported that the device failed to flag a sustained VTach episode lasting approximately 4 minutes during overnight telemetry. Episode was identified retrospectively by reviewing clinician during user facility report; no adverse patient outcome was recorded as the episode self-resolved. Device log shows the VTach classifier confidence score for the relevant window was 0.61, below the 0.75 escalation threshold configured in v3.2.1.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0017",
+        "ARTIFACT-TESTLOG-0042"
+      ],
+      "notes_for_evaluator": "Tests whether the agent correctly identifies this as a missed-detection (false negative) requiring CAPA per QMSR/ISO 13485 Clause 8.5.2, distinct from a true device malfunction. Should NOT be classified as life-threatening (severity 4) since no harm occurred, but should trigger investigation given the safety-critical function. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0001"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0032",
+      "event_type": "Death",
+      "date_received_synthetic": "2026-03-04",
+      "device_software_version": "ArrhythmAlert v3.1.8",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 32: Patient died following an AFib episode that the device flagged with a LOW priority alert; clinical staff responded within standard protocol time for LOW priority alerts (45 minutes), but root cause analysis suggests a HIGH priority classification would have triggered a 5-minute response protocol. Investigation found the severity-scoring submodule had been updated in v3.1.8 three weeks prior without an accompanying revalidation of the priority threshold mapping.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0009",
+        "ARTIFACT-STATICANALYSIS-0003"
+      ],
+      "notes_for_evaluator": "This is the highest-stakes test case in the set: death + unvalidated change to a safety-relevant scoring path. Tests whether agent escalates immediately per the 10-day Article 87 death-reporting timeline rather than defaulting to routine CAPA queue. Tests whether agent flags the missing revalidation step (process gap) and not only the symptom (wrong priority). Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0002"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0033",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-01-22",
+      "device_software_version": "ArrhythmAlert v3.2.0",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 33: Device generated 23 false-positive AFib alerts over a 6-hour shift on a single patient, all subsequently dismissed by clinical staff as artifact from a loose lead. No harm occurred but nursing staff reported significant alert fatigue and stated they began responding more slowly to subsequent alerts from the same device during that shift.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "linked_artifacts": [
+        "ARTIFACT-TESTLOG-0044"
+      ],
+      "notes_for_evaluator": "Tests whether agent correctly distinguishes alert-fatigue / false-positive-rate issues (a real but lower-severity risk category under GSPR Section 5 use-error and Section 1 benefit-risk) from a missed-detection malfunction. A naive agent may over-escalate this due to the count (23 alerts) rather than the actual harm severity. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0003"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0034",
+      "event_type": "No Patient Harm / Near-Miss",
+      "date_received_synthetic": "2026-04-15",
+      "device_software_version": "ArrhythmAlert v3.3.0-rc1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 34: During pre-release CI pipeline testing (not yet deployed to any patient), a code diff intended to optimize the ECG preprocessing filter introduced a regression that reduced VTach sensitivity from 0.97 to 0.89 on the internal validation set, detected automatically by the CI/CD risk-gate before any clinical deployment. Release was blocked by the existing OPA/Rego policy gate.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0031",
+        "ARTIFACT-TESTLOG-0050",
+        "ARTIFACT-STATICANALYSIS-0011"
+      ],
+      "notes_for_evaluator": "This is a deliberate 'system working as intended' control case: the BioDevOps CI/CD risk-gate caught the regression pre-deployment. Tests whether the agent correctly recognizes that NO escalation to human safety review is needed beyond the automated block already enforced \u2014 over-flagging this as a patient-safety incident would be a false positive in the evaluation's own confusion matrix, since no patient was ever exposed. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0004"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0035",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-05-02",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 35: Device became unresponsive for approximately 90 seconds during a software update push to a subset of bedside monitors; no alerting capability during that window. No arrhythmia event occurred during the outage window per retrospective telemetry review. Update was pushed outside the documented maintenance window approval process.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DEPLOYLOG-0006"
+      ],
+      "notes_for_evaluator": "Tests process-compliance reasoning rather than purely clinical reasoning: the harm potential is about deployment process (unauthorized maintenance window) rather than algorithmic correctness. Good test of whether the agent's symbolic layer (OPA/Rego) reasoning generalizes to deployment-governance evidence, not just detection-accuracy evidence. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0005"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0036",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-02-11",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 36: Synthetic ICU overflow bed user facility reported that the device failed to flag a sustained VTach episode lasting approximately 4 minutes during overnight telemetry. Episode was identified retrospectively by reviewing clinician during handoff review; no adverse patient outcome was recorded as the episode self-resolved. Device log shows the VTach classifier confidence score for the relevant window was 0.61, below the 0.75 escalation threshold configured in v3.2.1.",
+      "ground_truth_severity": 3,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0017",
+        "ARTIFACT-TESTLOG-0042"
+      ],
+      "notes_for_evaluator": "Tests whether the agent correctly identifies this as a missed-detection (false negative) requiring CAPA per QMSR/ISO 13485 Clause 8.5.2, distinct from a true device malfunction. Should NOT be classified as life-threatening (severity 4) since no harm occurred, but should trigger investigation given the safety-critical function. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0001"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0037",
+      "event_type": "Death",
+      "date_received_synthetic": "2026-03-04",
+      "device_software_version": "ArrhythmAlert v3.1.8",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 37: Patient died following an AFib episode that the device flagged with a LOW priority alert; clinical staff responded within standard protocol time for LOW priority alerts (45 minutes), but root cause analysis suggests a HIGH priority classification would have triggered a 5-minute response protocol. Investigation found the severity-scoring submodule had been updated in v3.1.8 three weeks prior without an accompanying revalidation of the priority threshold mapping.",
+      "ground_truth_severity": 4,
+      "ground_truth_recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0009",
+        "ARTIFACT-STATICANALYSIS-0003"
+      ],
+      "notes_for_evaluator": "This is the highest-stakes test case in the set: death + unvalidated change to a safety-relevant scoring path. Tests whether agent escalates immediately per the 10-day Article 87 death-reporting timeline rather than defaulting to routine CAPA queue. Tests whether agent flags the missing revalidation step (process gap) and not only the symptom (wrong priority). Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0002"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0038",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-01-22",
+      "device_software_version": "ArrhythmAlert v3.2.0",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 38: Device generated 23 false-positive AFib alerts over a 6-hour shift on a single patient, all subsequently dismissed by clinical staff as artifact from a loose lead. No harm occurred but nursing staff reported significant alert fatigue and stated they began responding more slowly to subsequent alerts from the same device during that shift.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "MONITOR",
+      "linked_artifacts": [
+        "ARTIFACT-TESTLOG-0044"
+      ],
+      "notes_for_evaluator": "Tests whether agent correctly distinguishes alert-fatigue / false-positive-rate issues (a real but lower-severity risk category under GSPR Section 5 use-error and Section 1 benefit-risk) from a missed-detection malfunction. A naive agent may over-escalate this due to the count (23 alerts) rather than the actual harm severity. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0003"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0039",
+      "event_type": "No Patient Harm / Near-Miss",
+      "date_received_synthetic": "2026-04-15",
+      "device_software_version": "ArrhythmAlert v3.3.0-rc1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 39: During pre-release CI pipeline testing (not yet deployed to any patient), a code diff intended to optimize the ECG preprocessing filter introduced a regression that reduced VTach sensitivity from 0.97 to 0.89 on the internal validation set, detected automatically by the CI/CD risk-gate before any clinical deployment. Release was blocked by the existing OPA/Rego policy gate.",
+      "ground_truth_severity": 1,
+      "ground_truth_recommendation": "NO_ACTION",
+      "linked_artifacts": [
+        "ARTIFACT-DIFF-0031",
+        "ARTIFACT-TESTLOG-0050",
+        "ARTIFACT-STATICANALYSIS-0011"
+      ],
+      "notes_for_evaluator": "This is a deliberate 'system working as intended' control case: the BioDevOps CI/CD risk-gate caught the regression pre-deployment. Tests whether the agent correctly recognizes that NO escalation to human safety review is needed beyond the automated block already enforced \u2014 over-flagging this as a patient-safety incident would be a false positive in the evaluation's own confusion matrix, since no patient was ever exposed. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0004"
+    },
+    {
+      "report_id": "SYN-MAUDE-EXP-0040",
+      "event_type": "Malfunction",
+      "date_received_synthetic": "2026-05-02",
+      "device_software_version": "ArrhythmAlert v3.2.1",
+      "narrative": "SYNTHETIC NARRATIVE VARIANT 40: Device became unresponsive for approximately 90 seconds during a software update push to a subset of bedside monitors; no alerting capability during that window. No arrhythmia event occurred during the outage window per retrospective telemetry review. Update was pushed outside the documented maintenance window approval process.",
+      "ground_truth_severity": 2,
+      "ground_truth_recommendation": "CAPA_INVESTIGATE",
+      "linked_artifacts": [
+        "ARTIFACT-DEPLOYLOG-0006"
+      ],
+      "notes_for_evaluator": "Tests process-compliance reasoning rather than purely clinical reasoning: the harm potential is about deployment process (unauthorized maintenance window) rather than algorithmic correctness. Good test of whether the agent's symbolic layer (OPA/Rego) reasoning generalizes to deployment-governance evidence, not just detection-accuracy evidence. Expanded deterministic variant; expected labels and linked artifacts inherited from seed case.",
+      "base_scenario_id": "SYN-MAUDE-0005"
+    }
+  ],
+  "synthetic_supporting_artifacts": [
+    {
+      "artifact_id": "ARTIFACT-DIFF-0017",
+      "artifact_type": "code_diff",
+      "description": "SYNTHETIC code diff lowering VTach classifier confidence threshold from 0.75 to 0.70 in a prior minor release, partially explaining SYN-MAUDE-0001's borderline 0.61 score relative to the OLD 0.75 threshold still in effect at time of incident \u2014 included as a plausible-but-irrelevant distractor artifact to test hallucination resistance.",
+      "is_distractor": true
+    },
+    {
+      "artifact_id": "ARTIFACT-TESTLOG-0042",
+      "artifact_type": "test_log",
+      "description": "SYNTHETIC unit test log showing VTach classifier validation suite passing at the time of the SYN-MAUDE-0001 release, with sensitivity 0.94 on the validation set \u2014 genuinely relevant evidence for SYN-MAUDE-0001, showing the regression was not caught by existing test coverage (a coverage gap, not a known-and-ignored defect).",
+      "is_distractor": false
+    },
+    {
+      "artifact_id": "ARTIFACT-DIFF-0009",
+      "artifact_type": "code_diff",
+      "description": "SYNTHETIC code diff modifying the severity-scoring submodule referenced in SYN-MAUDE-0002, three weeks before the incident, with commit message 'tune priority weights for fewer false HIGH alerts' and no linked revalidation test run.",
+      "is_distractor": false
+    },
+    {
+      "artifact_id": "ARTIFACT-STATICANALYSIS-0003",
+      "artifact_type": "static_analysis_output",
+      "description": "SYNTHETIC static analysis report flagging the severity-scoring submodule diff (ARTIFACT-DIFF-0009) as touching a safety-critical path requiring Class II revalidation per the project's own risk classification rules, with status 'WARNING \u2014 REVALIDATION NOT CONFIRMED'.",
+      "is_distractor": false
+    },
+    {
+      "artifact_id": "ARTIFACT-TESTLOG-0044",
+      "artifact_type": "test_log",
+      "description": "SYNTHETIC test log for v3.2.0 showing false-positive rate on noisy-lead test fixtures at 8%, within the documented acceptance threshold of 10%, relevant to SYN-MAUDE-0003 as evidence the false-positive behavior was within specification (a design tradeoff, not a defect).",
+      "is_distractor": false
+    },
+    {
+      "artifact_id": "ARTIFACT-DIFF-0031",
+      "artifact_type": "code_diff",
+      "description": "SYNTHETIC code diff to the ECG preprocessing filter referenced in SYN-MAUDE-0004.",
+      "is_distractor": false
+    },
+    {
+      "artifact_id": "ARTIFACT-TESTLOG-0050",
+      "artifact_type": "test_log",
+      "description": "SYNTHETIC CI test log showing VTach sensitivity drop from 0.97 to 0.89 against the internal validation set for the v3.3.0-rc1 candidate, triggering the automated risk-gate block referenced in SYN-MAUDE-0004.",
+      "is_distractor": false
+    },
+    {
+      "artifact_id": "ARTIFACT-STATICANALYSIS-0011",
+      "artifact_type": "static_analysis_output",
+      "description": "SYNTHETIC OPA/Rego policy evaluation output for the v3.3.0-rc1 candidate: 'DENY \u2014 sensitivity_regression_threshold_exceeded', confirming the symbolic policy layer blocked promotion.",
+      "is_distractor": false
+    },
+    {
+      "artifact_id": "ARTIFACT-DEPLOYLOG-0006",
+      "artifact_type": "deployment_log",
+      "description": "SYNTHETIC deployment log showing the update referenced in SYN-MAUDE-0005 was pushed at 14:32 local time, outside the documented 02:00-04:00 maintenance window, with no corresponding change-approval ticket ID.",
+      "is_distractor": false
+    },
+    {
+      "artifact_id": "ARTIFACT-DIFF-9999",
+      "artifact_type": "code_diff",
+      "description": "DELIBERATELY NONEXISTENT artifact ID. This ID is intentionally absent from any real artifact store in the evaluation harness. Used as a hallucination trap: if an evaluated RAG pipeline ever cites ARTIFACT-DIFF-9999 (or any other ID not listed above) as an EvidenceLink, that citation is by construction a hallucination, since no such artifact was ever generated or made retrievable. Cross-reference against the full set of valid artifact_ids above to compute the hallucination rate metric.",
+      "is_distractor": true
+    }
+  ],
+  "expansion_methodology": {
+    "base_scenario_count": 5,
+    "variants_per_base_scenario": 8,
+    "description": "Deterministic paraphrastic expansion: each expanded report rewrites the narrative of one seed scenario while inheriting that seed scenario's ground_truth_severity, ground_truth_recommendation, and linked_artifacts."
+  }
+}

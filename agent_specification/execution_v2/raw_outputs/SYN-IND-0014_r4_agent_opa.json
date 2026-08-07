@@ -1,0 +1,223 @@
+{
+  "arm": "agent_opa",
+  "artifact_recall": null,
+  "citation_resolution": 1,
+  "completion": true,
+  "evidence_gap_detected": false,
+  "generation_source": "ollama_real",
+  "governance_exact_agreement": false,
+  "latency_ms": 0,
+  "model_token_counts": {
+    "completion": null,
+    "prompt": null
+  },
+  "observed_governance": {
+    "citation_unresolved": false,
+    "evidence_insufficient": false,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE"
+  },
+  "opa_actions": [],
+  "raw_model_output": null,
+  "reference": {
+    "citation_unresolved": true,
+    "evidence_insufficient": true,
+    "policy_contradiction": false,
+    "routing_action": "CAPA_INVESTIGATE",
+    "scenario_id": "SYN-IND-0014"
+  },
+  "replicate": 4,
+  "report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "mdr-art10-2-risk-management-obligation",
+        "claim": "Requires review under EU MDR Article 10(2) and Article 83",
+        "support_note": "The synthetic event may require a review under the risk management obligations, but it is not explicitly stated as a violation.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.85,
+    "evidence_links": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The post-market surveillance system is required to actively gather and analyze relevant data on the safety of devices, which this event may require."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The quality management system must include processes for setting up, implementing, and maintaining a post-market surveillance system. This event requires review under this obligation."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic CI test log shows the VTach sensitivity drop was detected and blocked by an automated risk gate, preventing any patient exposure. This supports severity 2."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The unit test log indicates the regression was not caught by existing test coverage, highlighting a potential coverage gap that requires investigation."
+      }
+    ],
+    "missing_evidence": [],
+    "rationale": "The synthetic ventricular fibrillation-adjacent irregularity reported in the validation lab did not result in patient harm, but it may trigger obligations under EU MDR Article 10(2) and Article 83. The issue was contained by an automated risk gate before clinical deployment, preventing any patient exposure.",
+    "recommendation": "CAPA_INVESTIGATE",
+    "requires_human_review": true,
+    "severity": 2
+  },
+  "scenario_id": "SYN-IND-0014",
+  "schema_valid": true,
+  "shacl": {
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "terminal": {
+    "campaign_id": "heldout_matched_v2",
+    "citations": [
+      {
+        "artifact_id": "mdr-art83-pms-system",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The post-market surveillance system is required to actively gather and analyze relevant data on the safety of devices, which this event may require."
+      },
+      {
+        "artifact_id": "mdr-art10-9-qms-elements",
+        "artifact_type": "regulatory_context",
+        "relevance_note": "The quality management system must include processes for setting up, implementing, and maintaining a post-market surveillance system. This event requires review under this obligation."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0050",
+        "artifact_type": "test_log",
+        "relevance_note": "The synthetic CI test log shows the VTach sensitivity drop was detected and blocked by an automated risk gate, preventing any patient exposure. This supports severity 2."
+      },
+      {
+        "artifact_id": "ARTIFACT-TESTLOG-0042",
+        "artifact_type": "test_log",
+        "relevance_note": "The unit test log indicates the regression was not caught by existing test coverage, highlighting a potential coverage gap that requires investigation."
+      }
+    ],
+    "contradiction_status": [],
+    "escalated": false,
+    "evidence_gaps": [],
+    "evidence_requests": 0,
+    "final_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art10-2-risk-management-obligation",
+          "claim": "Requires review under EU MDR Article 10(2) and Article 83",
+          "support_note": "The synthetic event may require a review under the risk management obligations, but it is not explicitly stated as a violation.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The post-market surveillance system is required to actively gather and analyze relevant data on the safety of devices, which this event may require."
+        },
+        {
+          "artifact_id": "mdr-art10-9-qms-elements",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The quality management system must include processes for setting up, implementing, and maintaining a post-market surveillance system. This event requires review under this obligation."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The synthetic CI test log shows the VTach sensitivity drop was detected and blocked by an automated risk gate, preventing any patient exposure. This supports severity 2."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0042",
+          "artifact_type": "test_log",
+          "relevance_note": "The unit test log indicates the regression was not caught by existing test coverage, highlighting a potential coverage gap that requires investigation."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic ventricular fibrillation-adjacent irregularity reported in the validation lab did not result in patient harm, but it may trigger obligations under EU MDR Article 10(2) and Article 83. The issue was contained by an automated risk gate before clinical deployment, preventing any patient exposure.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "final_report_sha256": "f24d85deaca2fa5b83aca3c8eb701ad7233fc76bec8cad9d7b6c30eaa9b31d80",
+    "generation_source": "ollama_real",
+    "invalid_proposals": 0,
+    "is_fallback": false,
+    "is_mock": false,
+    "opa_actions": [],
+    "recommendation": "CAPA_INVESTIGATE",
+    "record_type": "terminal",
+    "report_id": "SYN-IND-0014",
+    "retrievals": 1,
+    "revisions": 0,
+    "run_id": "SYN-IND-0014_r4",
+    "scenario_id": "SYN-IND-0014",
+    "schema_version": "2.1.0",
+    "severity": 2,
+    "shacl_findings": [],
+    "state_terminal": "terminal",
+    "termination_reason": "advisory_complete",
+    "timestamp_utc": "2026-08-03T09:39:26.230824Z",
+    "total_steps": 3,
+    "trace_id": "ba116d48-bac6-482e-bab9-fe80f2ce35c7"
+  },
+  "trace_path": "traces/SYN-IND-0014_r4.jsonl",
+  "unsupported_claim_count": 0,
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 0,
+    "claim_grounding_rate": 1.0,
+    "hallucinated_citations": [],
+    "hallucination_escape": 0,
+    "hallucination_escape_combined": 0,
+    "opa_error": "",
+    "policy_actions": [],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "mdr-art10-2-risk-management-obligation",
+          "claim": "Requires review under EU MDR Article 10(2) and Article 83",
+          "support_note": "The synthetic event may require a review under the risk management obligations, but it is not explicitly stated as a violation.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.85,
+      "evidence_links": [
+        {
+          "artifact_id": "mdr-art83-pms-system",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The post-market surveillance system is required to actively gather and analyze relevant data on the safety of devices, which this event may require."
+        },
+        {
+          "artifact_id": "mdr-art10-9-qms-elements",
+          "artifact_type": "regulatory_context",
+          "relevance_note": "The quality management system must include processes for setting up, implementing, and maintaining a post-market surveillance system. This event requires review under this obligation."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0050",
+          "artifact_type": "test_log",
+          "relevance_note": "The synthetic CI test log shows the VTach sensitivity drop was detected and blocked by an automated risk gate, preventing any patient exposure. This supports severity 2."
+        },
+        {
+          "artifact_id": "ARTIFACT-TESTLOG-0042",
+          "artifact_type": "test_log",
+          "relevance_note": "The unit test log indicates the regression was not caught by existing test coverage, highlighting a potential coverage gap that requires investigation."
+        }
+      ],
+      "missing_evidence": [],
+      "rationale": "The synthetic ventricular fibrillation-adjacent irregularity reported in the validation lab did not result in patient harm, but it may trigger obligations under EU MDR Article 10(2) and Article 83. The issue was contained by an automated risk gate before clinical deployment, preventing any patient exposure.",
+      "recommendation": "CAPA_INVESTIGATE",
+      "requires_human_review": true,
+      "severity": 2
+    },
+    "weakly_supported_claims": []
+  }
+}

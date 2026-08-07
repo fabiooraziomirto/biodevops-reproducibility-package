@@ -1,0 +1,230 @@
+{
+  "clinical_validation": {
+    "bundle_path": "/root/Desktop/BioDevOps/biodevops_rag/ontology/clinical_concepts_independent_40.json",
+    "case_id": "SYN-IND-0039",
+    "clinical_inconsistency_class": "none",
+    "conforms": false,
+    "violations": [
+      {
+        "message": "RiskReport must link at least one evidence id.",
+        "severity": "Severity: sh:Violation",
+        "shape": "shacl"
+      }
+    ]
+  },
+  "generation_source": "ollama_real",
+  "hallucinated_citations": [],
+  "input_narrative": "SYNTHETIC NARRATIVE: Synthetic ambulatory monitoring clinic reported that the patient lost consciousness and required emergency resuscitation following an unflagged ventricular fibrillation episode, confirmed by hospital emergency response records. The emergency-response record, the device telemetry log, and the retrospective clinician review are fully consistent.",
+  "model_token_counts": {
+    "completion": 788,
+    "prompt": 1984
+  },
+  "raw_content": "{\n  \"severity\": 4,\n  \"confidence\": 0.75,\n  \"recommendation\": \"FIELD_SAFETY_CORRECTIVE_ACTION\",\n  \"rationale\": \"A patient experienced loss of consciousness and required emergency resuscitation following a missed ventricular fibrillation episode. This represents realized serious harm (death averted by emergency intervention) with potential for broader deployed-population exposure if the underlying issue is not addressed. The event was confirmed by hospital records, device telemetry logs, and clinician review, indicating a failure in a safety-critical function \u2013 detection of life-threatening arrhythmia.  The incident narrative explicitly states 'confirmed by hospital emergency response records,' establishing realized harm potential. Given the severity of the event and the lack of information to suggest containment beyond the immediate resuscitation, a FIELD_SAFETY_CORRECTIVE_ACTION is warranted to investigate and mitigate the risk.\",\n  \"claim_support\": [\n    {\n      \"claim\": \"The incident resulted in serious patient harm (loss of consciousness requiring emergency intervention).\",\n      \"cited_artifact_id\": \"SYNTHETIC NARRATIVE\",\"support_status\": \"supported\",\"support_note\":\"Narrative explicitly states loss of consciousness and need for resuscitation.\"\n    },\n    {\n      \"claim\": \"The device failed to detect a life-threatening arrhythmia (ventricular fibrillation).\",\n      \"cited_artifact_id\": \"SYNTHETIC NARRATIVE\",\n      \"support_status\":\"supported\",\"support_note\":\"Narrative explicitly states 'unflagged ventricular fibrillation episode'.\"\n    },\n    {\n      \"claim\": \"The incident requires a field safety corrective action due to the potential for broader patient harm.\",\n      \"cited_artifact_id\": \"SYNTHETIC NARRATIVE\",\n      \"support_status\":\"supported\",\"support_note\":\"Realized serious harm necessitates immediate investigation and mitigation.\"\n    },\n    {\n      \"claim\": \"The device's software development lifecycle must be reviewed to ensure adherence to state-of-the-art practices.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.2-software-lifecycle\",\n      \"support_status\":\"weakly_supported\",\"support_note\":\"EU MDR Annex I, Section 17.2 mandates a robust software development lifecycle including risk management and cybersecurity.\"\n    },\n    {\n      \"claim\": \"The device's design must ensure repeatability, reliability, and performance in line with its intended use.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.1-electronic-programmable\",\n      \"support_status\":\"supported\",\"support_note\":\"EU MDR Annex I, Section 17.1 requires devices with programmable systems to be designed for reliability and performance.\"\n    },\n     {\n      \"claim\": \"The device must have appropriate means to eliminate or reduce risks in the event of a single fault condition.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.1-electronic-programmable\",\n      \"support_status\":\"supported\",\"support_note\":\"EU MDR Annex I, Section 17.1 requires mitigation strategies for single faults.\"\n    },\n     {\n      \"claim\": \"The device's IT security measures must be reviewed.\",\n      \"cited_artifact_id\": \"mdr-annexI-sec17.4-it-security\",\n      \"support_status\":\"supported\",\"support_note\":\"EU MDR Annex I, Section 17.4 mandates minimum IT security requirements.\"\n    }\n  ],\n  \"requires_human_review\": true\n}",
+  "retrieved_artifact_ids": [
+    "ARTIFACT-STATICANALYSIS-2014A",
+    "ARTIFACT-STATICANALYSIS-2018A",
+    "ARTIFACT-TESTLOG-2025A",
+    "ARTIFACT-TESTLOG-2029A"
+  ],
+  "retrieved_regulatory_ids": [
+    "mdr-annexI-sec17.4-it-security",
+    "qmsr-820.10-c-design-development",
+    "mdr-annexI-sec17.1-electronic-programmable",
+    "mdr-annexI-sec17.2-software-lifecycle"
+  ],
+  "revision_feedback": "OPA policy actions from the previous attempt: fsca_without_confirmatory_evidence_downgraded; severity4_or_death_forced_immediate_human_escalation; technical_incident_missing_technical_evidence; deny:technical_incident_missing_technical_evidence; clinical_shacl_nonconformance_routes_review\nMissing or contradictory evidence flagged: At least one retrieved technical artifact supporting the incident judgment.; Causal link between the artifact/change and the observed event.; Evidence of recurrence or confirmed deployed-population impact.; Clinical SHACL nonconformance requires human review.\nClinical SHACL/ontology violations against curated facts:\n- (shacl) RiskReport must link at least one evidence id.",
+  "risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "The incident resulted in serious patient harm (loss of consciousness requiring emergency intervention).",
+        "support_note": "Narrative explicitly states loss of consciousness and need for resuscitation.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "The device failed to detect a life-threatening arrhythmia (ventricular fibrillation).",
+        "support_note": "Narrative explicitly states 'unflagged ventricular fibrillation episode'.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "The incident requires a field safety corrective action due to the potential for broader patient harm.",
+        "support_note": "Realized serious harm necessitates immediate investigation and mitigation.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "claim": "The device's software development lifecycle must be reviewed to ensure adherence to state-of-the-art practices.",
+        "support_note": "EU MDR Annex I, Section 17.2 mandates a robust software development lifecycle including risk management and cybersecurity.",
+        "support_status": "weakly_supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "claim": "The device's design must ensure repeatability, reliability, and performance in line with its intended use.",
+        "support_note": "EU MDR Annex I, Section 17.1 requires devices with programmable systems to be designed for reliability and performance.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "claim": "The device must have appropriate means to eliminate or reduce risks in the event of a single fault condition.",
+        "support_note": "EU MDR Annex I, Section 17.1 requires mitigation strategies for single faults.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+        "claim": "The device's IT security measures must be reviewed.",
+        "support_note": "EU MDR Annex I, Section 17.4 mandates minimum IT security requirements.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [],
+    "missing_evidence": [],
+    "rationale": "A patient experienced loss of consciousness and required emergency resuscitation following a missed ventricular fibrillation episode. This represents realized serious harm (death averted by emergency intervention) with potential for broader deployed-population exposure if the underlying issue is not addressed. The event was confirmed by hospital records, device telemetry logs, and clinician review, indicating a failure in a safety-critical function \u2013 detection of life-threatening arrhythmia.  The incident narrative explicitly states 'confirmed by hospital emergency response records,' establishing realized harm potential. Given the severity of the event and the lack of information to suggest containment beyond the immediate resuscitation, a FIELD_SAFETY_CORRECTIVE_ACTION is warranted to investigate and mitigate the risk.",
+    "recommendation": "FIELD_SAFETY_CORRECTIVE_ACTION",
+    "requires_human_review": true,
+    "severity": 4
+  },
+  "verification": {
+    "citation_hallucination": 0,
+    "citation_validity": 1.0,
+    "claim_grounding_omission": 1,
+    "claim_grounding_rate": 0.5714,
+    "hallucinated_citations": [],
+    "hallucination_escape": 1,
+    "hallucination_escape_combined": 1,
+    "opa_error": "",
+    "policy_actions": [
+      "fsca_without_confirmatory_evidence_downgraded",
+      "severity4_or_death_forced_immediate_human_escalation",
+      "technical_incident_missing_technical_evidence",
+      "deny:technical_incident_missing_technical_evidence",
+      "clinical_shacl_nonconformance_routes_review"
+    ],
+    "policy_engine": "opa",
+    "unsupported_claim_present": 0,
+    "unsupported_claims": [
+      "The incident resulted in serious patient harm (loss of consciousness requiring emergency intervention).",
+      "The device failed to detect a life-threatening arrhythmia (ventricular fibrillation).",
+      "The incident requires a field safety corrective action due to the potential for broader patient harm."
+    ],
+    "verified_report": {
+      "claim_support": [
+        {
+          "cited_artifact_id": "SYNTHETIC NARRATIVE",
+          "claim": "The incident resulted in serious patient harm (loss of consciousness requiring emergency intervention).",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "SYNTHETIC NARRATIVE",
+          "claim": "The device failed to detect a life-threatening arrhythmia (ventricular fibrillation).",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "SYNTHETIC NARRATIVE",
+          "claim": "The incident requires a field safety corrective action due to the potential for broader patient harm.",
+          "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+          "support_status": "unsupported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+          "claim": "The device's software development lifecycle must be reviewed to ensure adherence to state-of-the-art practices.",
+          "support_note": "EU MDR Annex I, Section 17.2 mandates a robust software development lifecycle including risk management and cybersecurity.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+          "claim": "The device's design must ensure repeatability, reliability, and performance in line with its intended use.",
+          "support_note": "EU MDR Annex I, Section 17.1 requires devices with programmable systems to be designed for reliability and performance.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+          "claim": "The device must have appropriate means to eliminate or reduce risks in the event of a single fault condition.",
+          "support_note": "EU MDR Annex I, Section 17.1 requires mitigation strategies for single faults.",
+          "support_status": "supported"
+        },
+        {
+          "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+          "claim": "The device's IT security measures must be reviewed.",
+          "support_note": "EU MDR Annex I, Section 17.4 mandates minimum IT security requirements.",
+          "support_status": "supported"
+        }
+      ],
+      "confidence": 0.75,
+      "evidence_links": [],
+      "missing_evidence": [
+        "At least one retrieved technical artifact supporting the incident judgment.",
+        "Causal link between the artifact/change and the observed event.",
+        "Evidence of recurrence or confirmed deployed-population impact.",
+        "Clinical SHACL nonconformance requires human review."
+      ],
+      "rationale": "A patient experienced loss of consciousness and required emergency resuscitation following a missed ventricular fibrillation episode. This represents realized serious harm (death averted by emergency intervention) with potential for broader deployed-population exposure if the underlying issue is not addressed. The event was confirmed by hospital records, device telemetry logs, and clinician review, indicating a failure in a safety-critical function \u2013 detection of life-threatening arrhythmia.  The incident narrative explicitly states 'confirmed by hospital emergency response records,' establishing realized harm potential. Given the severity of the event and the lack of information to suggest containment beyond the immediate resuscitation, a FIELD_SAFETY_CORRECTIVE_ACTION is warranted to investigate and mitigate the risk.",
+      "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+      "requires_human_review": true,
+      "severity": 4
+    },
+    "weakly_supported_claims": []
+  },
+  "verified_risk_report": {
+    "claim_support": [
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "The incident resulted in serious patient harm (loss of consciousness requiring emergency intervention).",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "The device failed to detect a life-threatening arrhythmia (ventricular fibrillation).",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "SYNTHETIC NARRATIVE",
+        "claim": "The incident requires a field safety corrective action due to the potential for broader patient harm.",
+        "support_note": "Cited ID was not retrieved or is a hallucination trap.",
+        "support_status": "unsupported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.2-software-lifecycle",
+        "claim": "The device's software development lifecycle must be reviewed to ensure adherence to state-of-the-art practices.",
+        "support_note": "EU MDR Annex I, Section 17.2 mandates a robust software development lifecycle including risk management and cybersecurity.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "claim": "The device's design must ensure repeatability, reliability, and performance in line with its intended use.",
+        "support_note": "EU MDR Annex I, Section 17.1 requires devices with programmable systems to be designed for reliability and performance.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.1-electronic-programmable",
+        "claim": "The device must have appropriate means to eliminate or reduce risks in the event of a single fault condition.",
+        "support_note": "EU MDR Annex I, Section 17.1 requires mitigation strategies for single faults.",
+        "support_status": "supported"
+      },
+      {
+        "cited_artifact_id": "mdr-annexI-sec17.4-it-security",
+        "claim": "The device's IT security measures must be reviewed.",
+        "support_note": "EU MDR Annex I, Section 17.4 mandates minimum IT security requirements.",
+        "support_status": "supported"
+      }
+    ],
+    "confidence": 0.75,
+    "evidence_links": [],
+    "missing_evidence": [
+      "At least one retrieved technical artifact supporting the incident judgment.",
+      "Causal link between the artifact/change and the observed event.",
+      "Evidence of recurrence or confirmed deployed-population impact.",
+      "Clinical SHACL nonconformance requires human review."
+    ],
+    "rationale": "A patient experienced loss of consciousness and required emergency resuscitation following a missed ventricular fibrillation episode. This represents realized serious harm (death averted by emergency intervention) with potential for broader deployed-population exposure if the underlying issue is not addressed. The event was confirmed by hospital records, device telemetry logs, and clinician review, indicating a failure in a safety-critical function \u2013 detection of life-threatening arrhythmia.  The incident narrative explicitly states 'confirmed by hospital emergency response records,' establishing realized harm potential. Given the severity of the event and the lack of information to suggest containment beyond the immediate resuscitation, a FIELD_SAFETY_CORRECTIVE_ACTION is warranted to investigate and mitigate the risk.",
+    "recommendation": "ESCALATE_TO_HUMAN_IMMEDIATE",
+    "requires_human_review": true,
+    "severity": 4
+  }
+}
